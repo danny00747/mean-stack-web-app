@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es2015.16029b17f9d4ff3d5250.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es5.16029b17f9d4ff3d5250.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.1c5836ac160f292aad8a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.1c5836ac160f292aad8a.js" beforeDir="false" />
-    </list>
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,7 +219,7 @@
       <workItem from="1587785158892" duration="622000" />
       <workItem from="1587830969168" duration="12972000" />
       <workItem from="1587869615450" duration="35000" />
-      <workItem from="1587869889948" duration="321000" />
+      <workItem from="1587869889948" duration="741000" />
     </task>
     <task id="LOCAL-00118" summary="created users tables ui">
       <created>1586302687387</created>
