@@ -7,9 +7,9 @@
 
   <div class="d-flex">
 
-      <h3 class="mb-4 font-weight-bold ml-3">
-        All Questions ({{(questions.qns).length}})
-      </h3>
+    <h3 class="mb-4 font-weight-bold ml-5">
+      All Questions ({{(questions.qns).length}})
+    </h3>
 
 
     <div class="ml-auto">
@@ -62,14 +62,6 @@
     </div>
   </div>
 
-
-
-  <h3 class="mb-4 font-weight-bold" style="margin-left: 60px">
-
-
-
-
-  </h3>
   <br>
 
   <!-- All Question Loop and pagination -->
@@ -95,41 +87,47 @@
     </a>
 
     <!-- Question & it's answer card -->
-    <div class="card" style="background-color: #31373e; margin-left: 120px; margin-right: 120px">
 
-      <!-- question number and title div -->
-      <div class="card-content">
-        <!-- question number -->
-        <p class="card-title" style="color: white; margin: 20px">Question {{qn["questionNumber"]}} :
+      <div class="col-10 justify-content-center mx-auto">
+        <div class="card"
+             style="background-color: #31373e">
 
-        </p>
-        <h5>
+          <!-- question number and title div -->
+          <div class="card-content">
 
-          <!-- question title -->
-          <p style="color: white; margin: 20px">
-            <strong>{{qn.question}}</strong>
-          </p>
-        </h5>
-      </div>
+            <!-- question number -->
+            <p class="card-title ml-3 mt-3" style="color: white">
+              Question {{qn["questionNumber"]}} :
+            </p>
 
-      <!-- question's answers div -->
-      <div class="card" style="margin: 10px;">
+            <!-- question title -->
+            <h5>
+              <p class="ml-3" style="color: white">
+                <strong>{{qn.question}}</strong>
+              </p>
+            </h5>
+          </div>
 
-        <p class="list-group list-group-flush">
+          <!-- question's answers div -->
+          <div class="card ml-3 mb-3 mr-3">
 
-          <!-- loop through all answers to the question -->
-          <ng-container *ngFor="let option of qn['answers'];let j = index">
-            <a class="list-group-item list-group-item-action">
-              {{option.option}}
-              <span *ngIf="(option['isCorrect']) === 'true'">
-                 <i class="fa fa-check-circle right-align"
-                    style="color: green; position: absolute; right: 150px"> correct answer</i>
+            <p class="list-group list-group-flush">
+
+              <!-- loop through all answers to the question -->
+              <ng-container *ngFor="let option of qn['answers'];let j = index">
+                <a class="list-group-item list-group-item-action">
+                  {{option.option}}
+                  <span *ngIf="(option['isCorrect']) === 'true'">
+                 <i class="fa fa-check-circle right-align float-right mr-5"
+                    style="color: green"> correct answer</i>
               </span>
-            </a>
-          </ng-container>
-        </p>
+                </a>
+              </ng-container>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+
     <br>
   </ng-container>
 

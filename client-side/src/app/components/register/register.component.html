@@ -1,12 +1,15 @@
 <br>
-<div class="container w-50 register-form rounded">
-  <div class="form rounded">
+<div class="container register-form col-lg-7 col-md-8 col-sm-8 rounded">
+
+  <div class="form rounded col-12">
+
     <div class="note bg-dark">
       <h3 class="font-weight-bolder mb-3">Create an Account</h3>
       <p class="font-weight-bold">It's free and anyone can join!</p>
     </div>
 
-    <form #signUpForm="ngForm" class="form-content rounded my-form" (submit)="onRegisterSubmit()">
+    <form #signUpForm="ngForm"
+          class="form-content text-center col-md-12 rounded my-form" (submit)="onRegisterSubmit()">
 
       <!-- Username -->
       <div class="row justify-content-center col-12">
@@ -105,7 +108,7 @@
         <div class="ml-auto">
           <small class="">
             <a class="nav-link"
-               style="text-decoration: underline; color: #6582B0"
+               style="text-decoration: underline; color: #343A40"
                [routerLink]="['/login']">Already have an account ? Login</a>
           </small>
         </div>
