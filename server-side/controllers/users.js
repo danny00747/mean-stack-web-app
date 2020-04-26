@@ -254,7 +254,6 @@ const update_user = (req, res) => {
 
 const update_user_score = (req, res) => {
     const {userId} = req.params;
-    console.log(req.user);
 
     if ((Number(req.body.score) > 10)) {
         return res
