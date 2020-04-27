@@ -1,5 +1,10 @@
 {
-   "question": {
+    "type": {
+        "type": "String",
+        "required": "true",
+        "enum": ["multiple", "boolean", "fill in"]
+    },
+    "question": {
       "type": "string",
       "description": "A question you want to create"
    },

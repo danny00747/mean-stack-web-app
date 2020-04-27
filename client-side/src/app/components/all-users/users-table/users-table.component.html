@@ -69,11 +69,11 @@
       <tr onmousemove="this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
                       this.style.color='green'"
           onmouseout="this.style.backgroundColor = ''; this.style.color=''">
-        <th scope="row">{{i + 1}}</th>
-        <td>{{user["username"]}}</td>
-        <td>{{user["email"]}}</td>
-        <td>{{user["score"]}}</td>
-        <td>{{user["level"]}}</td>
+        <th class="text-monospace font-italic" scope="row">{{i + 1}}</th>
+        <td class="text-monospace font-italic">{{user["username"]}}</td>
+        <td class="text-monospace font-italic">{{user["email"]}}</td>
+        <td class="text-monospace font-italic">{{user["score"]}}</td>
+        <td class="text-monospace font-italic">{{user["level"]}}</td>
       </tr>
     </ng-container>
     </tbody>

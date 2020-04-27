@@ -1,4 +1,9 @@
 {
+    "username": {
+        "type": "String",
+        "require": "true",
+        "unique": "true"
+    },
     "email": {
         "type": "String",
         "required": "true",
@@ -8,6 +13,17 @@
     "password": {
         "type": "String",
         "require": "true"
+    },
+    "score": {
+        "type": "Number",
+        "default": 0,
+        "min": 0,
+        "max": 10
+    },
+    "level": {
+        "type": "String",
+        "default" : "A1",
+        "enum": ["A1", "A2", "B1", "B2", "C1", "C2"]
     },
     "role": {
         "type": "String",

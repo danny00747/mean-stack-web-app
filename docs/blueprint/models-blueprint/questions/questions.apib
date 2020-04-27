@@ -17,11 +17,6 @@ Get a list of questions.
 
 + Response 200 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             <!-- include(get-all-questions-rep.json) -->
@@ -107,21 +102,12 @@ Get a single question.
 
 + Response 200 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
    + Body
 
             <!-- include(get-one-question.json) -->
 
 
 + Response 404 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
 
     + Body
 
@@ -135,6 +121,8 @@ Get a single question.
             {
                 message : "Server error"
             }
+
+
 ### Update a Question [PATCH]
 
 Update a single question by setting the question value in the body request.
@@ -154,11 +142,6 @@ it will **permanently overwrite** the original value.
 
 + Response 200 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             {
@@ -172,11 +155,6 @@ it will **permanently overwrite** the original value.
 
 + Response 400 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             {
@@ -186,11 +164,6 @@ it will **permanently overwrite** the original value.
 
 + Response 404 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             {
@@ -198,11 +171,6 @@ it will **permanently overwrite** the original value.
             }
 
 + Response 500 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
 
     + Body
 
@@ -215,11 +183,6 @@ Delete a single note
 
 + Response 200 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             {
@@ -228,11 +191,6 @@ Delete a single note
 
 + Response 404 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             {
@@ -240,11 +198,6 @@ Delete a single note
             }
 
 + Response 500 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
 
     + Body
 

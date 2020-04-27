@@ -98,34 +98,44 @@ export class ReviewsComponent implements OnInit {
   }
 
   onDeleteReview() {
-    this.reviews.deleteReview(this.reviewAuthor, this.deleteId)
-      .toPromise()
-      .then((data: any) => {
-        this.showReviews();
-        this.alertMessage = `${data.message}`;
-      })
-      .catch(err => {
-        this.alertMessage = "Something went wrong !";
-        console.log(err);
-      });
+    if (!localStorage.getItem('id_token')) {
+      this.alertMessage = "Something went wrong !";
+    } else {
+      this.reviews.deleteReview(this.reviewAuthor, this.deleteId)
+        .toPromise()
+        .then((data: any) => {
+          this.showReviews();
+          this.alertMessage = `${data.message}`;
+        })
+        .catch(err => {
+          this.alertMessage = "Something went wrong !";
+          console.log(err);
+        })
+    }
   }
 
   onUpdateReview() {
+
     const review = {
       rating: this.currentRate,
       reviewText: this.reviewText
     };
-    this.reviews.updateReview(this.reviewAuthor, this.updateId,
-      JSON.stringify(review))
-      .toPromise()
-      .then(() => {
-        this.showReviews();
-        this.alertMessage = "Review updated successfully !";
-      })
-      .catch(err => {
-        this.alertMessage = "Something went wrong !";
-        console.log(err);
-      });
+
+    if (!localStorage.getItem('id_token')) {
+      this.alertMessage = "Something went wrong !";
+    } else {
+      this.reviews.updateReview(this.reviewAuthor, this.updateId,
+        JSON.stringify(review))
+        .toPromise()
+        .then(() => {
+          this.showReviews();
+          this.alertMessage = "Review updated successfully !";
+        })
+        .catch(err => {
+          this.alertMessage = "Something went wrong !";
+          console.log(err);
+        });
+    }
   }
 
   choose() {
