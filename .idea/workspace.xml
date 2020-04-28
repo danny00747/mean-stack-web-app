@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es2015.cfaca3fe40bf48dfecbd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.7ed32d33468a24433c5c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.7ed32d33468a24433c5c.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,14 +229,7 @@
       <workItem from="1587922330674" duration="2400000" />
       <workItem from="1587928661660" duration="9380000" />
       <workItem from="1587952042547" duration="4119000" />
-      <workItem from="1588004148759" duration="3539000" />
-    </task>
-    <task id="LOCAL-00119" summary="add some testing files in backend">
-      <created>1586312236891</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1586312236891</updated>
+      <workItem from="1588004148759" duration="4418000" />
     </task>
     <task id="LOCAL-00120" summary="added check validation in login forms">
       <created>1586797485798</created>
@@ -572,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587955216528</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="added better ui for buttons">
+      <created>1588038582313</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1588038582314</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +595,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="working on fill in questions ui" />
     <MESSAGE value="replace pipe created" />
     <MESSAGE value="added preview in the replace pipe" />
     <MESSAGE value="added some regex functions in questions service" />
@@ -618,7 +619,8 @@
     <MESSAGE value="pushing for build new register page" />
     <MESSAGE value="removed css left &amp; right margins and added responsive margins" />
     <MESSAGE value="updated api doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated api doc" />
+    <MESSAGE value="added better ui for buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="added better ui for buttons" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -665,10 +667,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="269" y="0" key="CommitChangelistDialog2" timestamp="1588038569947">
+    <state x="269" y="0" key="CommitChangelistDialog2" timestamp="1588038578822">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="269" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1588038569947" />
+    <state x="269" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1588038578822" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
