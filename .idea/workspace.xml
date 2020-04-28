@@ -227,14 +227,7 @@
       <workItem from="1587928661660" duration="9380000" />
       <workItem from="1587952042547" duration="4119000" />
       <workItem from="1588004148759" duration="6220000" />
-      <workItem from="1588071343956" duration="1199000" />
-    </task>
-    <task id="LOCAL-00120" summary="added check validation in login forms">
-      <created>1586797485798</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1586797485799</updated>
+      <workItem from="1588071343956" duration="2006000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>
@@ -572,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588038582314</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="removed a bug in question ui">
+      <created>1588072651966</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1588072651966</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +593,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="replace pipe created" />
     <MESSAGE value="added preview in the replace pipe" />
     <MESSAGE value="added some regex functions in questions service" />
     <MESSAGE value="can display boolean in the list of questions" />
@@ -618,7 +617,8 @@
     <MESSAGE value="removed css left &amp; right margins and added responsive margins" />
     <MESSAGE value="updated api doc" />
     <MESSAGE value="added better ui for buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added better ui for buttons" />
+    <MESSAGE value="removed a bug in question ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed a bug in question ui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -665,10 +665,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-    <state x="269" y="0" key="CommitChangelistDialog2" timestamp="1588038578822">
+    <state x="269" y="0" key="CommitChangelistDialog2" timestamp="1588072649931">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="269" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1588038578822" />
+    <state x="269" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1588072649931" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -697,10 +697,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1587491976495" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587955218905">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1588072653798">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587955218905" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1588072653798" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

@@ -68,9 +68,9 @@
                 <input type="text" id="{{i}}" formControlName="name"
                        class="form-control"
                        [class.is-invalid]="group['controls'].name.invalid &&
-                      group['controls'].name.touched"
+                         group['controls'].name.touched"
                        [class.is-valid]="!(group['controls'].name.invalid &&
-                          group['controls'].name['untouched'])">
+                         group['controls'].name['untouched'])">
 
                 <!-- input error message for questions of type fill in -->
                 <small class="text-danger" style="float: left"
@@ -78,7 +78,7 @@
                      group['controls'].name['untouched']">
                   <i style="color: red" class="fa fa-exclamation-circle"
                      aria-hidden="true"></i>
-                  An answer required here
+                    An answer required here
                 </small>
               </div>
             </ng-container>
