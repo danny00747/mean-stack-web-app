@@ -7,16 +7,26 @@ const {success, info, error, debug} = require('consola');
 require('dotenv').config();
 require('./config/database');
 
+
 // Initialize the app
 const app = express();
 
 // Defining the Middlewares
 app.use(cors());
 
+//console.log(path.join(__dirname, 'server-side', 'public', 'dist', 'index.html'));
+
 // set the static folder
 if (process.env.NODE_ENV === 'production'){
+<<<<<<< HEAD:server-side/app.js
     app.use(express.static(path.join(__dirname, 'public/dist')));
+=======
+    app.use(express.static(path
+        .join(__dirname, 'server-side', 'public', 'dist')));
+>>>>>>> prod:app.js
 }
+
+
 
 
 // BodyParser Midlleware
@@ -28,11 +38,14 @@ app.use(passport.session());
 
 // bring the passport auth strategy
 require('./config/passport')(passport);
+<<<<<<< HEAD:server-side/app.js
+=======
+//require('./config/passport');
+>>>>>>> prod:app.js
 
 app.get('/', (req, res) => {
-    return res.json({
-        message: "This is node.js backend system"
-    });
+    return res.sendFile(path
+        .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
 });
 
 // Bring in the user routers
@@ -47,8 +60,14 @@ app.use('/server/api/docs', (req, res) => {
     res.sendFile(path.join(__dirname + '../../docs/index.html'));
 });
 
+<<<<<<< HEAD:server-side/app.js
 app.get('*', (req, res) =>{
     res.sendFile(path.join(__dirname + '/public/dist/index.html'));
+=======
+app.get('*', (req, res) => {
+  return res.sendFile(path
+        .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
+>>>>>>> prod:app.js
 });
 
 app.listen(process.env.PORT, () => {

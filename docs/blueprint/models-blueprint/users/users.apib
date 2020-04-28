@@ -45,11 +45,6 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdt
 
 + Response 403 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             {
@@ -222,20 +217,11 @@ Get one user.
 
 + Response 200 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
    + Body
 
             <!-- include(get-one-user-rep.json) -->
 
 + Response 403 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
 
     + Body
 
@@ -244,11 +230,6 @@ Get one user.
             }
 
 + Response 404 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
 
     + Body
 
@@ -271,12 +252,17 @@ A basic (student) user can only update his own profile. A user with a role of a 
 can update his/her profile as well as students's profiles. Only the admin can update his own
 and everyone's else profile.
 
++ Request with a body (application/json)
+
+    + Body
+
+            {
+            	"username":"dan30",
+            	"password":"toto",
+            	"role":"student"
+            }
+
 + Response 200 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
 
     + Body
 
@@ -286,11 +272,6 @@ and everyone's else profile.
 
 + Response 403 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             {
@@ -298,11 +279,6 @@ and everyone's else profile.
             }
 
 + Response 400 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
 
     + Body
 
@@ -312,11 +288,6 @@ and everyone's else profile.
 
 + Response 404 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             {
@@ -324,11 +295,6 @@ and everyone's else profile.
             }
 
 + Response 405 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
 
     + Body
 
@@ -338,11 +304,6 @@ and everyone's else profile.
 
 + Response 500 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             {
@@ -350,17 +311,10 @@ and everyone's else profile.
             }
 
 
-
-
 ### Delete a user [DELETE]
 Delete a user
 
 + Response 200 (application/json)
-
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
 
     + Body
 
@@ -370,10 +324,52 @@ Delete a user
 
 + Response 404 (application/json)
 
-    + Headers
+    + Body
 
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
+            {
+                message: "No valid entry found for provided ID"
+            }
+
++ Response 500 (application/json)
+
+    + Body
+
+            {
+                "message": "Server error"
+            }
+
+
+
+
+## User [/user/{userId}/score]
+
+Update a user'score
+
++ Parameters
+
+    + userId: `5e7c0a87e75d0f21c069c0a6` (required, string) - The user ID
+
+### Update user's score [PATCH]
+
+Update a user'score. `The request's body is required and can't be null.`
+
++ Request with a body (application/json)
+
+    + Body
+
+            {
+            	"score":7
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                message: "User's score updated successfully"
+            }
+
++ Response 404 (application/json)
 
     + Body
 
@@ -383,16 +379,9 @@ Delete a user
 
 + Response 500 (application/json)
 
-    + Headers
-
-            X-Request-ID: f72fc914
-            X-Response-Time: 4ms
-
     + Body
 
             {
                 "message": "Server error"
             }
-
-
 

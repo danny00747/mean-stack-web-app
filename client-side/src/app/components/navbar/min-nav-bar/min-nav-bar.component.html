@@ -1,17 +1,20 @@
-<div class="row">
-  <div class="col-md-8 offset-md-5">
-    <button class="btn btn-secondary btn-sm container w-25" data-toggle="collapse"
+
+<!-- Quick nagivaition title -->
+<div class="container" >
+  <div class="row justify-content-center ">
+    <button class="btn btn-secondary btn-sm " data-toggle="collapse"
             href="#collapseExample" aria-expanded="false"
             aria-controls="collapseExample">Quick navigation
     </button>
   </div>
 </div>
 
+
 <br>
 
 <!-- All questions navbar -->
-<div class="row ">
-  <div class="col-md-5 offset-md-4">
+<div class="container">
+  <div class="row justify-content-center">
     <div class="collapse w-auto" id="collapseExample">
       <div class="navbar container navbar-expand-lg rounded-pill navbar-dark bg-dark">
         <a class="navbar-brand">
@@ -38,13 +41,6 @@
                 [routerLinkActiveOptions]="{ exact: true }">
               <a [routerLink]="['/users/info']" class="nav-link" style="cursor: pointer">
                 Users results</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Users scores</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" tabindex="-1"
-                 aria-disabled="true">Disabled</a>
             </li>
           </ul>
         </div>

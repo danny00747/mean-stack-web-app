@@ -3,7 +3,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {ReviewsService} from "../../services/reviews.service";
-import { timer } from 'rxjs';
+import {timer} from 'rxjs';
 
 @Component({
   selector: 'app-reviews',
@@ -26,8 +26,8 @@ export class ReviewsComponent implements OnInit {
 
   reviewAuthor: any;
 
-  totalItems : number;
-  page:number = 1;
+  totalItems: number;
+  page: number = 1;
 
   alertMessage: string = "";
 
@@ -40,11 +40,10 @@ export class ReviewsComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.loggedInUser = this.authService.userEmail;
     this.loggedInUserRole = this.authService.role;
-    setInterval(() => {
-      this.showReviews();
-    }, 1000);
+    this.showReviews();
   }
 
   showReviews() {
@@ -58,9 +57,6 @@ export class ReviewsComponent implements OnInit {
           .sort((a, b) => Date.parse(b.CreatedOn) - Date.parse(a.CreatedOn))
           .forEach(x => {
             x.rating = Number(x.rating);
-            x.CreatedOn = this.reviews
-              .formatDate(this.reviews.getDate() - new Date(x.CreatedOn).getTime());
-
           });
         this.reviews.rev = tab;
         this.totalItems = this.reviews.rev.length;
@@ -102,34 +98,44 @@ export class ReviewsComponent implements OnInit {
   }
 
   onDeleteReview() {
-    this.reviews.deleteReview(this.reviewAuthor, this.deleteId)
-      .toPromise()
-      .then((data: any) => {
-        this.showReviews();
-        this.alertMessage = `${data.message}`;
-      })
-      .catch(err => {
-        this.alertMessage = "Something went wrong !";
-        console.log(err);
-      });
+    if (!localStorage.getItem('id_token')) {
+      this.alertMessage = "Something went wrong !";
+    } else {
+      this.reviews.deleteReview(this.reviewAuthor, this.deleteId)
+        .toPromise()
+        .then((data: any) => {
+          this.showReviews();
+          this.alertMessage = `${data.message}`;
+        })
+        .catch(err => {
+          this.alertMessage = "Something went wrong !";
+          console.log(err);
+        })
+    }
   }
 
   onUpdateReview() {
+
     const review = {
       rating: this.currentRate,
       reviewText: this.reviewText
     };
-    this.reviews.updateReview(this.reviewAuthor, this.updateId,
-      JSON.stringify(review))
-      .toPromise()
-      .then(() => {
-        this.showReviews();
-        this.alertMessage = "Review updated successfully !";
-      })
-      .catch(err => {
-        this.alertMessage = "Something went wrong !";
-        console.log(err);
-      });
+
+    if (!localStorage.getItem('id_token')) {
+      this.alertMessage = "Something went wrong !";
+    } else {
+      this.reviews.updateReview(this.reviewAuthor, this.updateId,
+        JSON.stringify(review))
+        .toPromise()
+        .then(() => {
+          this.showReviews();
+          this.alertMessage = "Review updated successfully !";
+        })
+        .catch(err => {
+          this.alertMessage = "Something went wrong !";
+          console.log(err);
+        });
+    }
   }
 
   choose() {

@@ -1,9 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.14.1"
+  },
   "description": "back end server with node.js",
   "main": "app.js",
   "scripts": {
+    "heroku-postbuild": "npm run install",
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,13 +1,15 @@
 <app-min-nav-bar></app-min-nav-bar>
 
-<form class="form-inline" style="float: right; margin-right: 20px">
-  <label for="search"></label>
-  <input #searcch="ngModel"
-     class="form-control" type="search" id="search"
-     [(ngModel)]="searchValue" name="username"
-     placeholder="Filter" aria-label="Search" >
-</form>
-
+<!-- Filter Input -->
+<div class="d-flex">
+  <div class="ml-auto mr-5">
+    <label for="search"></label>
+    <input
+      class="form-control" type="search" id="search"
+      [(ngModel)]="searchValue" name="username"
+      placeholder="Filter" aria-label="Search">
+  </div>
+</div>
 
 <!-- User Table -->
 <div class="container text-center my-3">
@@ -15,7 +17,9 @@
   <p class="font-weight-bold">The data in the table comes from the google spreadsheet</p>
 
   <!-- Table  -->
-  <table class="table table-bordered table-striped " id="testTable">
+  <table
+    class="table table-bordered table-responsive-md table-responsive-lg
+    table-responsive-sm table-striped " id="testTable">
     <!-- Table head -->
     <thead class="thead-dark">
     <tr>
@@ -65,11 +69,14 @@
       <tr onmousemove="this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
                       this.style.color='green'"
           onmouseout="this.style.backgroundColor = ''; this.style.color=''">
-        <th scope="row">{{i + 1}}</th>
-        <td>{{user["username"]}}</td>
-        <td>{{user["email"]}}</td>
-        <td>{{user["score"]}}</td>
-        <td>{{user["level"]}}</td>
+        <th class="text-monospace font-italic" scope="row">{{i + 1}}</th>
+        <td class="text-monospace font-italic">{{user["username"]}}</td>
+        <td class="text-monospace font-italic">{{user["email"]}}</td>
+        <td *ngIf="user['score'] < 5"
+          class="text-monospace font-italic" style="color: red">{{user["score"]}}</td>
+        <td *ngIf="user['score'] >= 5"
+          class="text-monospace font-italic">{{user["score"]}}</td>
+        <td class="text-monospace font-italic">{{user["level"]}}</td>
       </tr>
     </ng-container>
     </tbody>
@@ -78,19 +85,3 @@
   <!-- Table  -->
 
 </div>
-
-
-<!-- User Table
-<br><br>
-<div class="container">
-  <ag-grid-angular
-    style="width: 580px; height: 232px; font-size: medium" class="ag-theme-balham"
-    [columnDefs]="colDefs" [animateRows]="true" (gridReady)="onGridReady($event)">
-
-  </ag-grid-angular>
-</div>
-
-
-<br><br>
-
--->

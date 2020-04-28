@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --prod",
+    "clean": "rm -rfv ./server-side/public/dist/*",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -38,6 +39,7 @@
     "ngx-pagination": "^5.0.0",
     "popper.js": "^1.15.0",
     "rxjs": "~6.4.0",
+    "time-ago-pipe": "^1.3.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

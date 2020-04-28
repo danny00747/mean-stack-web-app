@@ -1,0 +1,20 @@
+[
+    {
+        "score": 0,
+        "level": "A1",
+        "role": "student",
+        "_id": "5e7fd9d5f35b123cbc246899",
+        "email": "dan30@gmail.com",
+        "password": "$2a$10$QdXZvB37qy0OftxaqEkSpOPZRZWOVgzoKLYe2anSPgak..C5yPG76",
+        "reviews": [
+            {
+                "_id": "5e868e15fb39714ba43f2eb0",
+                "author": "dan30@gmail.com",
+                "rating": 7,
+                "reviewText": "This a new review",
+                "CreatedOn": "Fri Apr 03 2020 03:15:01 GMT+0200 (Central European Summer Time)"
+            }
+        ],
+        "username": "dan30"
+    }
+]
