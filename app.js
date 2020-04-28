@@ -18,12 +18,8 @@ app.use(cors());
 
 // set the static folder
 if (process.env.NODE_ENV === 'production'){
-<<<<<<< HEAD:server-side/app.js
-    app.use(express.static(path.join(__dirname, 'public/dist')));
-=======
     app.use(express.static(path
         .join(__dirname, 'server-side', 'public', 'dist')));
->>>>>>> prod:app.js
 }
 
 
@@ -38,10 +34,7 @@ app.use(passport.session());
 
 // bring the passport auth strategy
 require('./config/passport')(passport);
-<<<<<<< HEAD:server-side/app.js
-=======
 //require('./config/passport');
->>>>>>> prod:app.js
 
 app.get('/', (req, res) => {
     return res.sendFile(path
@@ -49,9 +42,9 @@ app.get('/', (req, res) => {
 });
 
 // Bring in the user routers
-const reviews = require('./routes/reviews');
-const users = require('./routes/users');
-const questions = require('./routes/questions');
+const reviews = require('./server-side/routes/reviews');
+const users = require('./server-side/routes/users');
+const questions = require('./server-side/routes/questions');
 
 app.use('/server/api/', users);
 app.use('/server/api/', questions);
@@ -60,14 +53,9 @@ app.use('/server/api/docs', (req, res) => {
     res.sendFile(path.join(__dirname + '../../docs/index.html'));
 });
 
-<<<<<<< HEAD:server-side/app.js
-app.get('*', (req, res) =>{
-    res.sendFile(path.join(__dirname + '/public/dist/index.html'));
-=======
 app.get('*', (req, res) => {
   return res.sendFile(path
         .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
->>>>>>> prod:app.js
 });
 
 app.listen(process.env.PORT, () => {

@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/server-side/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" afterDir="false" />
->>>>>>> prod
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,65 +215,6 @@
       <workItem from="1587626255627" duration="1480000" />
       <workItem from="1587638135208" duration="593000" />
       <workItem from="1587674032389" duration="3524000" />
-<<<<<<< HEAD
-      <workItem from="1587677749294" duration="7910000" />
-    </task>
-    <task id="LOCAL-00113" summary="edwin working very hard">
-      <created>1586292068565</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1586292068565</updated>
-    </task>
-    <task id="LOCAL-00114" summary="edwin working very hard !!!!!">
-      <created>1586292269561</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1586292269561</updated>
-    </task>
-    <task id="LOCAL-00115" summary="questions ui stable">
-      <created>1586299385729</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1586299385729</updated>
-    </task>
-    <task id="LOCAL-00116" summary="questions ui stable but question pagination to be worked on">
-      <created>1586299694819</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1586299694819</updated>
-    </task>
-    <task id="LOCAL-00117" summary="testing pagination">
-      <created>1586299861847</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1586299861847</updated>
-    </task>
-    <task id="LOCAL-00118" summary="created users tables ui">
-      <created>1586302687387</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1586302687387</updated>
-    </task>
-    <task id="LOCAL-00119" summary="add some testing files in backend">
-      <created>1586312236891</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1586312236891</updated>
-    </task>
-    <task id="LOCAL-00120" summary="added check validation in login forms">
-      <created>1586797485798</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1586797485799</updated>
-=======
       <workItem from="1587677749294" duration="6897000" />
       <workItem from="1587734539542" duration="1432000" />
       <workItem from="1587737616530" duration="29289000" />
@@ -297,7 +228,6 @@
       <workItem from="1587952042547" duration="4119000" />
       <workItem from="1588004148759" duration="6220000" />
       <workItem from="1588071343956" duration="2006000" />
->>>>>>> prod
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>
@@ -579,16 +509,6 @@
       <option name="project" value="LOCAL" />
       <updated>1587685935537</updated>
     </task>
-<<<<<<< HEAD
-    <task id="LOCAL-00161" summary="push app to heroku v2">
-      <created>1587687045308</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1587687045308</updated>
-    </task>
-    <option name="localTasksCounter" value="162" />
-=======
     <task id="LOCAL-00161" summary="pushing prod branch">
       <created>1587688226266</created>
       <option name="number" value="00161" />
@@ -653,7 +573,6 @@
       <updated>1588072651966</updated>
     </task>
     <option name="localTasksCounter" value="170" />
->>>>>>> prod
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,17 +593,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-<<<<<<< HEAD
-    <MESSAGE value="added multiple choices type of questions in question ui" />
-    <MESSAGE value="added check validation in create question ui" />
-    <MESSAGE value="added boolean question ui" />
-    <MESSAGE value="updated one check validation check" />
-    <MESSAGE value="added a type in question model" />
-    <MESSAGE value="added boolean question creation ui" />
-    <MESSAGE value="working on fill in questions ui" />
-    <MESSAGE value="replace pipe created" />
-=======
->>>>>>> prod
     <MESSAGE value="added preview in the replace pipe" />
     <MESSAGE value="added some regex functions in questions service" />
     <MESSAGE value="can display boolean in the list of questions" />
@@ -701,10 +609,6 @@
     <MESSAGE value="added correct error messages in review ui" />
     <MESSAGE value="about to run prod" />
     <MESSAGE value="push app to heroku" />
-<<<<<<< HEAD
-    <MESSAGE value="push app to heroku v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="push app to heroku v2" />
-=======
     <MESSAGE value="pushing prod branch" />
     <MESSAGE value="removed some refresh pages bugs" />
     <MESSAGE value="made some pages responsive" />
@@ -715,7 +619,6 @@
     <MESSAGE value="added better ui for buttons" />
     <MESSAGE value="removed a bug in question ui" />
     <option name="LAST_COMMIT_MESSAGE" value="removed a bug in question ui" />
->>>>>>> prod
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -762,17 +665,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
-<<<<<<< HEAD
-    <state x="129" y="0" key="CommitChangelistDialog2" timestamp="1587687967047">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="129" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1587687967047" />
-=======
     <state x="269" y="0" key="CommitChangelistDialog2" timestamp="1588072649931">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="269" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1588072649931" />
->>>>>>> prod
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -801,17 +697,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1587491976495" />
-<<<<<<< HEAD
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1587687973754">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1587687973754" />
-=======
     <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1588072653798">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1588072653798" />
->>>>>>> prod
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
