@@ -33,7 +33,7 @@ export class ChartsComponent implements OnInit {
           'rgba(153, 102, 255, 1)',
           'rgba(255, 159, 64, 1)'
         ],
-        data: [65, 59, 80, 81, 56, 55, 40]
+        data: [90, 59, 80, 81, 56, 55, 40]
       },
       {
         label: "My Second dataset",
