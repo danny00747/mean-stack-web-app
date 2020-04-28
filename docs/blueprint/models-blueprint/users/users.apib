@@ -252,6 +252,16 @@ A basic (student) user can only update his own profile. A user with a role of a 
 can update his/her profile as well as students's profiles. Only the admin can update his own
 and everyone's else profile.
 
++ Request with a body (application/json)
+
+    + Body
+
+            {
+            	"username":"dan30",
+            	"password":"toto",
+            	"role":"student"
+            }
+
 + Response 200 (application/json)
 
     + Body
@@ -341,7 +351,15 @@ Update a user'score
 
 ### Update user's score [PATCH]
 
-Update a user'score
+Update a user'score. `The request's body is required and can't be null.`
+
++ Request with a body (application/json)
+
+    + Body
+
+            {
+            	"score":7
+            }
 
 + Response 200 (application/json)
 

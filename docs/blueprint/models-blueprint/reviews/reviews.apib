@@ -165,11 +165,21 @@ Get one review.
             }
 
 ### Update a review [PATCH]
-Update a review.
+
+Update a review. `The request's body is required and can't be null.`
 
 A basic (student) user can only update his own review. A user with a role of a teacher
 can update their reviews as well as students's reviews. Only the admin can update his own
 and everyone's else reviews.
+
++ Request with a body (application/json)
+
+    + Body
+
+            {
+            	"rating":"7",
+            	"reviewText":"This a review to update"
+            }
 
 + Response 200 (application/json)
 
