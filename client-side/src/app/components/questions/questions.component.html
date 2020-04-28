@@ -1,5 +1,5 @@
-<div class="row" *ngIf="question.qns">
-  <div class="col s6 ">
+<div *ngIf="question.qns">
+  <div class="col s6">
 
     <!-- Time elapsed -->
     <div class="container" style="width: 16rem;">
@@ -20,7 +20,7 @@
         <div>
           <h5 class="">Question Progress</h5>
         </div>
-        <div class=" ">
+        <div>
           <h5>{{question.qnProgress + 1}}/{{(question.qns).length}}</h5>
         </div>
       </div>
@@ -29,7 +29,7 @@
     <!-- Questions progress bar -->
     <div class="progress col-9 mx-auto">
       <div class="progress-bar progress-bar-success progress-bar-striped active"
-           [ngStyle]="{'width.%':(question.qnProgress)*10}">
+           [ngStyle]="{'width.%':(question.qnProgress)*10}" >
         {{(question.qnProgress) * 10}}%
       </div>
     </div>
@@ -41,7 +41,7 @@
 
         <!-- Question title -->
         <div class="card-content">
-          <p class="card-title ml-3 mt-4" style="color: white; margin: 20px">Question
+          <p class="card-title ml-3 mt-4" style="color: white">Question
             {{(question.qnProgress + 1)}} :</p>
           <h5>
             <p class="ml-3" style="color: white">

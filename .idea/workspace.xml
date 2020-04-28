@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es2015.cfaca3fe40bf48dfecbd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.7ed32d33468a24433c5c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.7ed32d33468a24433c5c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +226,8 @@
       <workItem from="1587922330674" duration="2400000" />
       <workItem from="1587928661660" duration="9380000" />
       <workItem from="1587952042547" duration="4119000" />
-      <workItem from="1588004148759" duration="4418000" />
+      <workItem from="1588004148759" duration="6220000" />
+      <workItem from="1588071343956" duration="1199000" />
     </task>
     <task id="LOCAL-00120" summary="added check validation in login forms">
       <created>1586797485798</created>
