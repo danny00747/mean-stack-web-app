@@ -1,5 +1,5 @@
-# mean-stack-web-app
-a web application with the mean stack
+# Website
+The website is available [here](https://devwebapp.herokuapp.com "website")
 
 # API
 
