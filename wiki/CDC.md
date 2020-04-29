@@ -45,7 +45,7 @@ Plusieurs types de personnes navigueront sur ce site :
 
 - **En tant que** client, **je veux** accéder au test de niveau (d'anglais) en ligne **afin de** faciliter la répartitions des cours du professeur.
 - **En tant que** client, **je veux** pouvoir laisser un commentaire **afin de** recommender (ou non) le produit choisi.
-- **En tant que** client, **je veux** voir le planning avec les disponibilités du professeur **afin d**'avoir déjà une idée des possibilités des rdv pour les cours.
+
 
 #### Professeur (notre client) :
 
