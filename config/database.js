@@ -5,19 +5,39 @@ const hostCloud = process.env.MONGODB_URI;
 const dbURL = `mongodb://${host}/web_app`;
 
 //connect with the database
-mongoose.connect(hostCloud || dbURL,
-    {
-        useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
-        useFindAndModify: false
-    })
-    .then(() => {
-        success({
-            message: `Database connected successfully to ${hostCloud || dbURL}`,
-            badge: true
-        });
-    }).catch(err => {
-    error({message: `Mongoose connection error: ${err}`, badge: true});
-});
+
+if (process.env.NODE_ENV === 'test') {
+    mongoose.connect(dbURL,
+        {
+            useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
+            useFindAndModify: false
+        })
+        .then(() => {
+            success({
+                message: `Database connected successfully to ${dbURL}`,
+                badge: true
+            });
+        }).catch(err => {
+        error({message: `Mongoose connection error: ${err}`, badge: true});
+    });
+} else if( process.env.NODE_ENV === 'prod'){
+    mongoose.connect(hostCloud || dbURL,
+        {
+            useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
+            useFindAndModify: false
+        })
+        .then(() => {
+            success({
+                message: `Database connected successfully to ${hostCloud || dbURL}`,
+                badge: true
+            });
+        }).catch(err => {
+        error({message: `Mongoose connection error: ${err}`, badge: true});
+    });
+}
+
+
+
 
 // If the connection throws an error
 mongoose.connection.on('error', (err) => {

@@ -188,7 +188,7 @@ optionsArray: Array<any> = [];
       .toPromise()
       .then((data) => {
         this.showAllQuestion();
-        this.alertMessage = `${data[0].message}`;
+        this.alertMessage = `${data["message"]}`;
       })
       .catch(err => {
         this.alertMessage = "Something went wrong !";

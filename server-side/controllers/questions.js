@@ -111,7 +111,7 @@ const questionCreate = (req, res) => {
             } else {
                 res
                     .status(201)
-                    .json(new Array({
+                    .json({
                         message: "Created question successfully !",
                         createdQuestion: {
                             id : result._id,
@@ -122,7 +122,7 @@ const questionCreate = (req, res) => {
                                 url: `http://localhost:5000/api/questions/${result._id}`
                             }
                         }
-                    }));
+                    });
             }
         })
         .catch(err => {
@@ -160,7 +160,6 @@ const question_delete_one = (req, res) => {
             });
         })
         .catch(err => {
-            error({message: `An error occured while to delete this question : ${err}`, badge: true});
             res
                 .status(404)
                 .json({message: "An error occured while trying to delete this question"});

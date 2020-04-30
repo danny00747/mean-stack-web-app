@@ -78,3 +78,4 @@ app.use((error, req, res) => {
     });
 });
 
+module.exports = app;
