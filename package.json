@@ -10,7 +10,9 @@
     "heroku-postbuild": "npm run install",
     "start": "node app.js",
     "test": "mocha 'server-side/tests/*.js' --timeout 10000",
-    "test-watch": "nodemon --exec \"npm test\""
+    "test-watch": "nodemon --exec \"npm test\"",
+    "test-coverage": "nyc --reporter=lcov --reporter=text-lcov npm run test-watch",
+    "coverage": "nyc --reporter=lcov --reporter=text npm run test"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,8 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.1",
-    "@types/mongoose": "^5.7.3"
+    "@types/mongoose": "^5.7.3",
+    "istanbul": "^0.4.5",
+    "nyc": "^15.0.1"
   }
 }

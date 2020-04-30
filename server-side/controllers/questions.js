@@ -37,6 +37,8 @@ const question_get_one = (req, res) => {
                 res
                     .status(200)
                     .json(new Array({
+                        id : doc._id,
+                        type: doc.type,
                         question: doc.question,
                         answers: doc.answers,
                         request: {
@@ -63,12 +65,17 @@ const question_get_one = (req, res) => {
 
 const question_update_one = (req, res) => {
     const {questionId} = req.params;
-    if (Object.keys(req.body).length > 4)
+    const userInfo = ["type", "question", "answers"];
+    const reqBodyLength = Object.keys(req.body).length;
+    const checkValues = Object.keys(req.body).filter(x => (userInfo.includes(x))).length;
+
+    if ((Object.keys(req.body).length > 3) || (reqBodyLength !== checkValues)) {
         return res
-            .status(400)
+            .status(405)
             .json({
-                message: "Please read the API doc to see how to update a question"
+                message: "Some fields are NOT allowed"
             });
+    }
 
     Question.updateOne({_id: questionId}, {$set: req.body})
         .exec()
