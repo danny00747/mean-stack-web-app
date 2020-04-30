@@ -121,8 +121,7 @@ describe('Questions', () => {
         it('it should PATCH a question by the given id', (done) => {
 
             const  questionId = '5e97354f3fb39f58e4e21ed6';
-            const question = {
-                "type": "boolean",
+            const question = {"type": "boolean",
                 "question": "is 20 / 200 equal to 10 ?",
                 "answers": [{"option": "true", "isCorrect": false},
                     {"option": "false", "isCorrect": true}]
