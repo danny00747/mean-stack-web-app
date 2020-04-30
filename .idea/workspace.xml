@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -226,7 +228,7 @@
       <workItem from="1588004148759" duration="6220000" />
       <workItem from="1588071343956" duration="2006000" />
       <workItem from="1588085757805" duration="3095000" />
-      <workItem from="1588207857618" duration="9044000" />
+      <workItem from="1588207857618" duration="9363000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>
