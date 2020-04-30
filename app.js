@@ -4,6 +4,7 @@ const cors = require('cors');
 const passport = require('passport');
 const path = require('path');
 const {success, info, error, debug} = require('consola');
+const helmet = require('helmet')
 require('dotenv').config();
 require('./config/database');
 
@@ -13,6 +14,7 @@ const app = express();
 
 // Defining the Middlewares
 app.use(cors());
+app.use(helmet());
 
 //console.log(path.join(__dirname, 'server-side', 'public', 'dist', 'index.html'));
 

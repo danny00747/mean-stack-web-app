@@ -1,7 +1,6 @@
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
 
-let mongoose = require("mongoose");
 let Question = require('../models/questions');
 
 //Require the dev-dependencies
@@ -42,7 +41,7 @@ describe('Questions', () => {
       * Test the /POST route
       */
     describe('/POST questions', () => {
-        it('it should not POST a book without type field', (done) => {
+        it('it should not POST a book without a type field', (done) => {
 
             const question = {
                 "question": "what's 2000 - 150 ?",
