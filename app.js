@@ -16,6 +16,26 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"]
+    }
+}));
+
+app.use(helmet.featurePolicy({
+    features: {
+        fullscreen: ["'self'"],
+        vibrate: ["'none'"],
+        payment: ['example.com'],
+        syncXhr: ["'none'"]
+    }
+}));
+
+app.use(helmet.permittedCrossDomainPolicies());
+
+app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
+
+
 //console.log(path.join(__dirname, 'server-side', 'public', 'dist', 'index.html'));
 
 // set the static folder
