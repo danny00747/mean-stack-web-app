@@ -171,7 +171,6 @@ describe('Questions', () => {
 
 /*
 * Test the /GET/:id route
-
 it('it should POST a question ', (done) => {
     let question = {
         "type": "boolean",
@@ -199,5 +198,4 @@ it('it should POST a question ', (done) => {
             done();
         });
 });
-
 * */
