@@ -190,7 +190,7 @@ describe('Questions', () => {
                 });
         });
 
-        it('it should not DELETE a question with a wrong id', (done) => {
+        it('it should not DELETE a question with a wrong id', () => {
 
             const questionId = '7eab24dee08248016851dd3';
 
@@ -200,7 +200,6 @@ describe('Questions', () => {
                     res.should.have.status(404);
                     res.body.should.have.property('message')
                         .eql('An error occured while trying to delete this question');
-                    done();
                 });
         });
     });
