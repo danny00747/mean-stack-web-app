@@ -5,7 +5,6 @@ const passport = require('passport');
 const path = require('path');
 const {success, info, error, debug} = require('consola');
 const helmet = require('helmet');
-const csp = require('content-security-policy');
 require('dotenv').config();
 require('./config/database');
 
@@ -16,17 +15,6 @@ const app = express();
 // Defining the Middlewares
 app.use(cors());
 app.use(helmet());
-
-const cspPolicy = {
-    'report-uri': '/reporting',
-    'default-src': csp.SRC_NONE,
-    'script-src': [ csp.SRC_SELF, csp.SRC_DATA ]
-};
-
-//const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
-const localCSP = csp.getCSP(cspPolicy);
-
-app.use(localCSP);
 
 app.use(helmet.featurePolicy({
     features: {
