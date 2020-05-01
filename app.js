@@ -20,7 +20,7 @@ app.use(helmet.featurePolicy({
     features: {
         fullscreen: ["'self'"],
         vibrate: ["'none'"],
-        payement:["'ww.paypal.com'"],
+        payment:["'paypal.com'"],
         syncXhr: ["'none'"],
         camera: ["'none'"],
         microphone : ["'none'"],
