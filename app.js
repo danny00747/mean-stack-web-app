@@ -16,12 +16,7 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
-app.use(helmet.contentSecurityPolicy({
-    directives: {
-        defaultSrc: ["'self'"],
-        styleSrc: ["'self'", 'maxcdn.bootstrapcdn.com']
-    }
-}));
+app.use(helmet.contentSecurityPolicy());
 
 app.use(helmet.featurePolicy({
     features: {
