@@ -16,25 +16,20 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
-app.use(helmet.contentSecurityPolicy({
-    directives: {
-        defaultSrc: ["'self'"],
-        styleSrc:["'self'"],
-    }
-}));
-
 app.use(helmet.featurePolicy({
     features: {
         fullscreen: ["'self'"],
         vibrate: ["'none'"],
-        payment: ['example.com'],
-        syncXhr: ["'none'"]
+        payement:["'ww.paypal.com'"],
+        syncXhr: ["'none'"],
+        camera: ["'none'"],
+        microphone : ["'none'"],
     }
 }));
 
 app.use(helmet.permittedCrossDomainPolicies());
 
-app.use(helmet.referrerPolicy({policy: 'same-origin'}));
+app.use(helmet.referrerPolicy({policy: 'strict-origin-when-cross-origin'}));
 
 
 //console.log(path.join(__dirname, 'server-side', 'public', 'dist', 'index.html'));
