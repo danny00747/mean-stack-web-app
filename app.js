@@ -16,9 +16,7 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
-app.use(helmet.contentSecurityPolicy({
-    directives:{
-        defaultSrc:["'self'"]}}));
+
 
 app.use(helmet.featurePolicy({
     features: {
@@ -31,18 +29,16 @@ app.use(helmet.featurePolicy({
 
 app.use(helmet.permittedCrossDomainPolicies());
 
-app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
+app.use(helmet.referrerPolicy({policy: 'same-origin'}));
 
 
 //console.log(path.join(__dirname, 'server-side', 'public', 'dist', 'index.html'));
 
 // set the static folder
-if (process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path
         .join(__dirname, 'server-side', 'public', 'dist')));
 }
-
-
 
 
 // BodyParser Midlleware
@@ -74,7 +70,7 @@ app.use('/server/api/docs', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  return res.sendFile(path
+    return res.sendFile(path
         .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
 });
 
