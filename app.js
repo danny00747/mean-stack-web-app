@@ -16,7 +16,12 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
-app.use(helmet.csp());
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"],
+        styleSrc:["'self'"],
+    }
+}));
 
 app.use(helmet.featurePolicy({
     features: {
