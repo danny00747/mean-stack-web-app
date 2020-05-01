@@ -17,8 +17,16 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
-const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
-app.use(globalCSP);
+const cspPolicy = {
+    'report-uri': '/reporting',
+    'default-src': csp.SRC_NONE,
+    'script-src': [ csp.SRC_SELF, csp.SRC_DATA ]
+};
+
+//const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
+const localCSP = csp.getCSP(cspPolicy);
+
+app.use(localCSP);
 
 app.use(helmet.featurePolicy({
     features: {
