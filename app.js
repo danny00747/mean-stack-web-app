@@ -16,6 +16,12 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        styleSrc: ["'self'", 'fonts.googleapis.com']
+    }
+}));
+
 app.use(helmet.featurePolicy({
     features: {
         fullscreen: ["'self'"],
