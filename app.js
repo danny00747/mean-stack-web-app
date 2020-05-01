@@ -17,10 +17,8 @@ app.use(cors());
 app.use(helmet());
 
 app.use(helmet.contentSecurityPolicy({
-    directives: {
-        defaultSrc: ["'self'"]
-    }
-}));
+    directives:{
+        defaultSrc:["'self'"]}}));
 
 app.use(helmet.featurePolicy({
     features: {
