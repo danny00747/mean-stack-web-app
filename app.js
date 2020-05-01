@@ -5,6 +5,7 @@ const passport = require('passport');
 const path = require('path');
 const {success, info, error, debug} = require('consola');
 const helmet = require('helmet');
+const nocache = require('nocache');
 require('dotenv').config();
 require('./config/database');
 
@@ -15,6 +16,7 @@ const app = express();
 // Defining the Middlewares
 app.use(cors());
 app.use(helmet());
+app.use(nocache());
 
 app.use(helmet.featurePolicy({
     features: {
@@ -28,6 +30,7 @@ app.use(helmet.featurePolicy({
 }));
 
 app.use(helmet.permittedCrossDomainPolicies());
+noCache()
 
 app.use(helmet.referrerPolicy({policy: 'strict-origin-when-cross-origin'}));
 
