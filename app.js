@@ -4,7 +4,7 @@ const cors = require('cors');
 const passport = require('passport');
 const path = require('path');
 const {success, info, error, debug} = require('consola');
-const helmet = require('helmet')
+const helmet = require('helmet');
 require('dotenv').config();
 require('./config/database');
 
@@ -16,6 +16,15 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"],
+        styleSrc: ["'self'",
+            path
+                .join(__dirname,
+                    'server-side', 'public', 'dist', 'styles.00eef741aecaa1742a2a.css')]
+    }
+}));
 
 app.use(helmet.featurePolicy({
     features: {
