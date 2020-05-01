@@ -16,7 +16,13 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
-
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"],
+        styleSrc:["'self'","'googleapis.com'", "getbootstrap.com"],
+        fontSrc:["'self'",'googleapis.com', 'getbootstrap.com']
+    }
+}));
 
 app.use(helmet.featurePolicy({
     features: {
