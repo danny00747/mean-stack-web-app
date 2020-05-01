@@ -5,6 +5,7 @@ const passport = require('passport');
 const path = require('path');
 const {success, info, error, debug} = require('consola');
 const helmet = require('helmet');
+const csp = require('content-security-policy');
 require('dotenv').config();
 require('./config/database');
 
@@ -15,6 +16,9 @@ const app = express();
 // Defining the Middlewares
 app.use(cors());
 app.use(helmet());
+
+const globalCSP = csp.getCSP(csp.STARTER_OPTIONS);
+app.use(globalCSP);
 
 app.use(helmet.featurePolicy({
     features: {
