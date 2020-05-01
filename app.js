@@ -19,10 +19,7 @@ app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
     directives: {
         defaultSrc: ["'self'"],
-        styleSrc: ["'self'",
-            path
-                .join(__dirname,
-                    'server-side', 'public', 'dist', 'styles.00eef741aecaa1742a2a.css')]
+        styleSrc: ["'self'", 'styles.00eef741aecaa1742a2a.css']
     }
 }));
 
