@@ -1,7 +1,17 @@
 const Question = require("../models/questions");
+const logs = require("./logs");
 const {success, info, error, debug} = require('consola');
+const logger = require('../../config/logger');
 
 const question_get_all = (req, res) => {
+
+    console.log(req.headers);
+    console.log(req.url);
+    console.log(req.method);
+    console.log(req.originalUrl);
+
+    logs.saveLog('info', req);
+
     let response = [];
     Question.find()
         .select("question answers _id type")
@@ -37,7 +47,7 @@ const question_get_one = (req, res) => {
                 res
                     .status(200)
                     .json(new Array({
-                        id : doc._id,
+                        id: doc._id,
                         type: doc.type,
                         question: doc.question,
                         answers: doc.answers,
@@ -121,7 +131,7 @@ const questionCreate = (req, res) => {
                     .json({
                         message: "Created question successfully !",
                         createdQuestion: {
-                            id : result._id,
+                            id: result._id,
                             name: result.question,
                             answer: result.answers.filter(x => x.isCorrect === "true")[0].option,
                             request: {
