@@ -76,7 +76,6 @@ app.get('*', (req, res) => {
 
 app.listen(process.env.PORT, () => {
     info({message: `Server started on port ${process.env.PORT}`, badge: true});
-    logger.info( `Server started on port ${process.env.PORT}`);
 });
 
 // catch 404 and forward to error handler
