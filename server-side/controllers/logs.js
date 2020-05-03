@@ -56,6 +56,7 @@ const getLogs = (req, res) => {
         });
 };
 
+
 module.exports = {
     saveLog, updateLog, getLogs
 };
