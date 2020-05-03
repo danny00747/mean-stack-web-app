@@ -1,2 +1,85 @@
 <app-min-nav-bar></app-min-nav-bar>
-<p>metrics works!</p>
+
+<!-- Filter Input -->
+<div class="d-flex">
+  <div class="ml-auto mr-5">
+    <label for="search"></label>
+    <input
+      class="form-control" type="search" id="search"
+      [(ngModel)]="searchValue" name="username"
+      placeholder="Filter" aria-label="Search">
+  </div>
+</div>
+
+<!-- User Table -->
+<div class="container text-center my-3">
+
+  <p class="font-weight-bold">The data in the table comes from the API logs</p>
+
+  <!-- Table  -->
+  <table
+    class="table table-bordered table-responsive-md table-responsive-lg
+    table-responsive-sm table-striped " id="testTable">
+    <!-- Table head -->
+    <thead class="thead-dark">
+    <tr>
+      <!-- username -->
+      <th scope="col"># <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></th>
+      <th id="username" style="cursor: pointer">Host</th>
+      <!-- Email -->
+      <th id="email" style="cursor: pointer">Method</th>
+
+      <!-- Score -->
+      <th id="score" style="cursor: pointer">URL</th>
+
+      <!-- Level -->
+      <th id="level" style="cursor: pointer">Status</th>
+
+      <!-- Level -->
+      <th id="date" style="cursor: pointer">Date</th>
+    </tr>
+    </thead>
+    <!-- Table head -->
+
+    <!-- Table body -->
+    <tbody id="demo">
+    <ng-container *ngFor="let user of users  | filter : searchValue | paginate:
+                                                    {
+                                                    id: 'allQuestionsPagination',
+                                                        itemsPerPage: 5,
+                                                        currentPage: page,
+                                                        totalItems: totalItems};
+                                                        index as i">
+      <tr onmousemove="this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
+                      this.style.color='green'"
+          onmouseout="this.style.backgroundColor = ''; this.style.color=''">
+        <th class="text-monospace font-italic" scope="row">{{i + 1}}</th>
+        <td class="text-monospace font-italic">{{user["host"]}}</td>
+        <td class="text-monospace font-italic">{{user["method"]}}</td>
+        <td class="text-monospace font-italic">{{user["url"]}}</td>
+        <td class="text-monospace font-italic">{{user["status"]}}</td>
+        <td class="text-monospace font-italic">
+          {{(user["date"]).toLocaleString('fr-BE').split(' à')[0]}}
+          at {{(user["date"]).toLocaleString('fr-BE').split(' à')[1]}}
+        </td>
+      </tr>
+    </ng-container>
+    </tbody>
+    <!-- Table body -->
+  </table>
+  <!-- Table  -->
+
+  <!-- all questions pagination controls -->
+  <div class="pagination justify-content-center pagination-lg">
+    <pagination-controls id="allQuestionsPagination"
+                         (pageChange)="page = ($event)"
+                         maxSize="{{totalItems}}"
+                         directionLinks="true"
+                         autoHide="true"
+                         responsive="true"
+                         previousLabel="Previous"
+                         nextLabel="Next">
+    </pagination-controls>
+  </div>
+
+</div>

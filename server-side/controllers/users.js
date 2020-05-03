@@ -1,10 +1,14 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcryptjs');
 const User = require("../models/users");
+const logs = require("./logs");
 
-const user_signup = (req, res) => {
+const user_signup = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
 
     if (!req.body.email || !req.body.password || !req.body.username) {
+        logs.updateLog('info', req, 'Outgoing', 400);
         return res
             .status(400)
             .json({
@@ -12,6 +16,7 @@ const user_signup = (req, res) => {
                 message: "All fields required"
             });
     } else if ((req.body.username).length < 4 || (req.body.username).length > 9) {
+        logs.updateLog('info', req, 'Outgoing', 400);
         return res
             .status(400)
             .json({
@@ -28,6 +33,7 @@ const user_signup = (req, res) => {
         .exec()
         .then(user => {
             if (user.length >= 1) {
+                logs.updateLog('info', req, 'Outgoing', 409);
                 return res
                     .status(409)
                     .json({
@@ -37,6 +43,7 @@ const user_signup = (req, res) => {
             } else {
                 bcrypt.hash(req.body.password, 10, (err, hash) => {
                     if (err) {
+                        logs.updateLog('error', req, 'Outgoing', 500);
                         return res.status(500).json({
                             error: err
                         });
@@ -50,6 +57,7 @@ const user_signup = (req, res) => {
                         user
                             .save()
                             .then(result => {
+                                logs.updateLog('info', req, 'Outgoing', 201);
                                 res
                                     .status(201)
                                     .json({
@@ -64,6 +72,7 @@ const user_signup = (req, res) => {
                                     });
                             })
                             .catch(err => {
+                                logs.updateLog('error', req, 'Outgoing', 500);
                                 res.status(500).json({
                                     success: false,
                                     error: err.message,
@@ -73,6 +82,7 @@ const user_signup = (req, res) => {
                 });
             }
         }).catch(err => {
+        logs.updateLog('error', req, 'Outgoing', 500);
         res.status(500).json({
             success: false,
             error: err.message,
@@ -80,10 +90,13 @@ const user_signup = (req, res) => {
     });
 };
 
-const user_login = (req, res) => {
+const user_login = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
 
     const {pseudo} = req.body;
     if (!pseudo || !req.body.password) {
+        logs.updateLog('info', req, 'Outgoing', 400);
         return res
             .status(400)
             .json({message: "All fields required"});
@@ -97,6 +110,7 @@ const user_login = (req, res) => {
         .exec()
         .then(user => {
             if (!user) {
+                logs.updateLog('info', req, 'Outgoing', 401);
                 return res
                     .status(401)
                     .json({
@@ -106,13 +120,14 @@ const user_login = (req, res) => {
             }
             bcrypt.compare(req.body.password, user.password, (err, result) => {
                 if (err) {
-                    console.log(user.role);
+                    logs.updateLog('info', req, 'Outgoing', 401);
                     return res.status(401).json({
                         success: false,
                         message: "Auth failed !"
                     });
                 }
                 if (result) {
+                    logs.updateLog('info', req, 'Outgoing', 200);
                     const token = jwt.sign(
                         {
                             email: user.email,
@@ -138,6 +153,7 @@ const user_login = (req, res) => {
                             }
                         });
                 }
+                logs.updateLog('info', req, 'Outgoing', 401);
                 res.status(401).json({
                     success: false,
                     message: "Auth failed"
@@ -151,18 +167,24 @@ const user_login = (req, res) => {
                     success: false,
                     error: err
                 });
+            logs.updateLog('error', req, 'Outgoing', 500);
         });
 };
 
-const user_delete = (req, res) => {
+const user_delete = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
+
     User.deleteOne({_id: req.params.userId})
         .exec()
         .then(result => {
             if (result.n === 0) {
+                logs.updateLog('info', req, 'Outgoing', 400);
                 return res
                     .status(404)
                     .json({message: "No user found for the provided ID"});
             }
+            logs.updateLog('info', req, 'Outgoing', 200);
             res.status(200).json({
                 message: "User deleted successfully !"
             });
@@ -171,18 +193,25 @@ const user_delete = (req, res) => {
             res.status(500).json({
                 error: err.message
             });
+            logs.updateLog('error', req, 'Outgoing', 500);
         });
 };
 
-const users_get_all = (req, res) => {
+const users_get_all = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
+
     User.find()
         .select("-__v")
         .exec()
         .then(users => {
-            if (users.length === 0)
+            logs.updateLog('info', req, 'Outgoing', 204);
+            if (users.length === 0){
                 return res
                     .status(204)
                     .json({message: "No Users found in the database"});
+            }
+            logs.updateLog('info', req, 'Outgoing', 200);
             res.status(200).json(users);
         })
         .catch(err => {
@@ -192,16 +221,21 @@ const users_get_all = (req, res) => {
                     errorMessage: err.message,
                     errorName: err.name
                 });
+            logs.updateLog('error', req, 'Outgoing', 500);
         });
 };
 
-const update_user = (req, res) => {
+const update_user = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
+
     const {userId} = req.params;
     const userInfo = ["username", "email", "password", "level", "role", "reviews"];
     const reqBodyLength = Object.keys(req.body).length;
     const checkValues = Object.keys(req.body).filter(x => (userInfo.includes(x))).length;
 
     if ((Object.keys(req.body).length > 7) || (reqBodyLength !== checkValues)) {
+        logs.updateLog('info', req, 'Outgoing', 405);
         return res
             .status(405)
             .json({
@@ -210,6 +244,7 @@ const update_user = (req, res) => {
     }
 
     if (userId === process.env.ADMIN_ID && req.user.role !== 'admin') {
+        logs.updateLog('info', req, 'Outgoing', 403);
         return res
             .status(403)
             .json({
@@ -219,6 +254,7 @@ const update_user = (req, res) => {
 
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err) {
+            logs.updateLog('error', req, 'Outgoing', 400);
             return res.status(400).json({
                 message: "password field is required !"
             });
@@ -228,10 +264,12 @@ const update_user = (req, res) => {
             .exec()
             .then(result => {
                 if (result.n === 0) {
+                    logs.updateLog('info', req, 'Outgoing', 404);
                     return res
                         .status(404)
                         .json({message: "No valid entry found for provided ID"});
                 } else {
+                    logs.updateLog('info', req, 'Outgoing', 200);
                     res.status(200).json({
                         message: "User info updated successfully",
                         modifiedDocs: result.nModified,
@@ -248,14 +286,19 @@ const update_user = (req, res) => {
                     errorMessage: err.message,
                     errorName: err.name
                 });
+            logs.updateLog('error', req, 'Outgoing', 500);
         });
     });
 };
 
-const update_user_score = (req, res) => {
+const update_user_score = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
+
     const {userId} = req.params;
 
     if ((Number(req.body.score) > 10)) {
+        logs.updateLog('info', req, 'Outgoing', 405);
         return res
             .status(405)
             .json({
@@ -269,10 +312,12 @@ const update_user_score = (req, res) => {
         .exec()
         .then(result => {
             if (result.n === 0) {
+                logs.updateLog('info', req, 'Outgoing', 404);
                 return res
                     .status(404)
                     .json({message: "No valid entry found for provided ID"});
             } else {
+                logs.updateLog('info', req, 'Outgoing', 200);
                 res.status(200).json({
                     message: "User info updated successfully",
                     modifiedDocs: result.nModified,
@@ -289,10 +334,13 @@ const update_user_score = (req, res) => {
                 errorMessage: err.message,
                 errorName: err.name
             });
+        logs.updateLog('error', req, 'Outgoing', 500);
     });
 };
 
-const get_user_by_id = (req, res) => {
+const get_user_by_id = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
 
     const {userId} = req.params;
     User.findById(userId)
@@ -300,6 +348,7 @@ const get_user_by_id = (req, res) => {
         .exec()
         .then(doc => {
             if (doc) {
+                logs.updateLog('info', req, 'Outgoing', 200);
                 res
                     .status(200)
                     .json({
@@ -317,6 +366,7 @@ const get_user_by_id = (req, res) => {
                         }
                     });
             } else {
+                logs.updateLog('info', req, 'Outgoing', 404);
                 res
                     .status(404)
                     .json({message: "No valid entry found for provided ID"});
@@ -329,6 +379,7 @@ const get_user_by_id = (req, res) => {
                     errorMessage: err.message,
                     errorName: err.name
                 });
+            logs.updateLog('error', req, 'Outgoing', 500);
         });
 };
 

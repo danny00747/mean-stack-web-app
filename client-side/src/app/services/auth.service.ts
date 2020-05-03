@@ -39,6 +39,10 @@ export class AuthService {
     }
   }
 
+  getLogs(){
+    return this._http.get('/server/api/users/metrics', {headers});
+  }
+
 
   updateScore(user: any) {
     this.getToken();

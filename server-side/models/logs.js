@@ -24,7 +24,7 @@ const logSchema = new mongoose.Schema({
         required: true
     },
     status: {
-        type: String,
+        type: Number,
     },
     response: {
         type: String,

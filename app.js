@@ -63,10 +63,12 @@ app.get('/', (req, res) => {
 const reviews = require('./server-side/routes/reviews');
 const users = require('./server-side/routes/users');
 const questions = require('./server-side/routes/questions');
+const logs = require('./server-side/routes/logs');
 
 app.use('/server/api/', users);
 app.use('/server/api/', questions);
 app.use('/server/api/', reviews);
+app.use('/server/api/', logs);
 app.use('/server/api/docs', (req, res) => {
     res.sendFile(path.join(__dirname + '../../docs/index.html'));
 });

@@ -12,15 +12,16 @@ const question_get_all = async (req, res) => {
         .exec()
         .then(docs => {
 
-            if (docs.length === 0)
-                return [res
+            if (docs.length === 0){
+                logs.updateLog('info', req, 'Outgoing', 204);
+                return res
                     .status(204)
-                    .json({message: "No documents found in the database"}),
-                    logs.updateLog('info', req, 'Outgoing', res)];
+                    .json({message: "No documents found in the database"});
+            }
 
             docs.forEach(x => response.push(x));
+            logs.updateLog('info', req, 'Outgoing', 200);
             res.status(200).json(response);
-            logs.updateLog('info', req, 'Outgoing', res);
         })
         .catch(err => {
             res
@@ -29,7 +30,7 @@ const question_get_all = async (req, res) => {
                     errorMessage: err.message,
                     errorName: err.name
                 });
-            logs.updateLog('error', req, 'Outgoing', res);
+            logs.updateLog('error', req, 'Outgoing', 500);
         });
 };
 
@@ -43,6 +44,7 @@ const question_get_one = async (req, res) => {
         .exec()
         .then(doc => {
             if (doc) {
+                logs.updateLog('info', req, 'Outgoing', 200);
                 res
                     .status(200)
                     .json(new Array({
@@ -52,15 +54,14 @@ const question_get_one = async (req, res) => {
                         answers: doc.answers,
                         request: {
                             type: "GET",
-                            url: `http://localhost:5000/api/questions/${doc._id}`
+                            url: `http://localhost:5000/server/api/questions/${doc._id}`
                         }
                     }));
-                logs.updateLog('info', req, 'Outgoing', res);
             } else {
+                logs.updateLog('info', req, 'Outgoing', 404);
                 res
                     .status(404)
                     .json({message: "No valid entry found for provided ID"});
-                logs.updateLog('info', req, 'Outgoing', res);
             }
         })
         .catch(err => {
@@ -70,40 +71,46 @@ const question_get_one = async (req, res) => {
                     errorMessage: err.message,
                     errorName: err.name
                 });
-            logs.updateLog('error', req, 'Outgoing', res);
+            logs.updateLog('error', req, 'Outgoing', 500);
         });
 };
 
-const question_update_one = (req, res) => {
+const question_update_one = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
+
     const {questionId} = req.params;
     const userInfo = ["type", "question", "answers"];
     const reqBodyLength = Object.keys(req.body).length;
     const checkValues = Object.keys(req.body).filter(x => (userInfo.includes(x))).length;
 
     if ((Object.keys(req.body).length > 3) || (reqBodyLength !== checkValues)) {
-        return res
+        return [res
             .status(405)
             .json({
                 message: "Some fields are NOT allowed"
-            });
+            }),
+        logs.updateLog('info', req, 'Outgoing', 405)];
     }
 
     Question.updateOne({_id: questionId}, {$set: req.body})
         .exec()
         .then(result => {
             if (result.n === 0) {
-                return res
+                return [res
                     .status(404)
-                    .json({message: "No valid entry found for provided ID"});
+                    .json({message: "No valid entry found for provided ID"}),
+                    logs.updateLog('info', req, 'Outgoing', 404)];
             } else {
                 res.status(200).json({
                     message: "Question updated successfully !",
                     modifiedDocs: result.nModified,
                     request: {
                         type: "GET",
-                        url: `http://localhost:5000/api/questions/${questionId}`
+                        url: `http://localhost:5000/server/api/questions/${questionId}`
                     }
                 });
+                logs.updateLog('info', req, 'Outgoing', 200);
             }
         })
         .catch(err => {
@@ -113,20 +120,25 @@ const question_update_one = (req, res) => {
                     errorMessage: err.message,
                     errorName: err.name
                 });
+            logs.updateLog('error', req, 'Outgoing', 500);
         });
 };
 
-const questionCreate = (req, res) => {
+const questionCreate = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
 
     const question = new Question(req.body);
     question
         .save()
         .then(result => {
+            logs.updateLog('info', req, 'Outgoing', 405);
             if (!result) {
                 res.status(405).json({
                     message: "Invalid input"
                 });
             } else {
+                logs.updateLog('info', req, 'Outgoing', 201);
                 res
                     .status(201)
                     .json({
@@ -137,7 +149,7 @@ const questionCreate = (req, res) => {
                             answer: result.answers.filter(x => x.isCorrect === "true")[0].option,
                             request: {
                                 type: "GET",
-                                url: `http://localhost:5000/api/questions/${result._id}`
+                                url: `http://localhost:5000/server/api/questions/${result._id}`
                             }
                         }
                     });
@@ -150,23 +162,29 @@ const questionCreate = (req, res) => {
                     message: "Invalid input",
                     error: err
                 });
+            logs.updateLog('error', req, 'Outgoing', 500);
         });
 };
 
-const question_delete_one = (req, res) => {
+const question_delete_one = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
+
     const {questionId} = req.params;
     Question.findByIdAndRemove(questionId)
         .exec()
         .then((doc) => {
+            logs.updateLog('info', req, 'Outgoing', 404);
             if (doc === null) return res
                 .status(404)
                 .json({message: "No valid entry found for provided ID"});
 
+            logs.updateLog('info', req, 'Outgoing', 200);
             res.status(200).json({
                 message: "Question deleted successfully !",
                 request: {
                     type: "POST",
-                    url: "http://localhost:5000/api/questions",
+                    url: "http://localhost:5000/server/api/questions",
                     body: {
                         question: "String",
                         answers: {
@@ -178,9 +196,11 @@ const question_delete_one = (req, res) => {
             });
         })
         .catch(err => {
+            logs.updateLog('error', req, 'Outgoing', 500);
             res
-                .status(404)
-                .json({message: "An error occured while trying to delete this question"});
+                .status(500)
+                .json({message:
+                        "An error occured while trying to delete this question"});
         });
 };
 
