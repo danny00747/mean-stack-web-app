@@ -2,15 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/logger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/controllers/logs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/models/logs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es2015.ba4ba1ebed55c20b8340.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es5.ba4ba1ebed55c20b8340.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/public/dist/scripts.b49ed56273b169552f2f.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/logger.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/logs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/models/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/logs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/public/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.6fb8601b6b49817610f6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.6fb8601b6b49817610f6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/scripts.23aa742c21d8986e2732.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +255,8 @@
       <workItem from="1588277387299" duration="17249000" />
       <workItem from="1588343304403" duration="2670000" />
       <workItem from="1588384625279" duration="596000" />
-      <workItem from="1588436779192" duration="12127000" />
+      <workItem from="1588436779192" duration="29845000" />
+      <workItem from="1588515663790" duration="2701000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>
@@ -668,10 +682,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="321" y="74" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.689@0.0.1280.689" timestamp="1583252224155" />
-    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584034515550">
+    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588455921079">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1584034515550" />
+    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1588455921079" />
     <state width="941" height="519" key="#com.intellij.structuralsearch.plugin.ui.StructuralReplaceDialog" timestamp="1583253654061">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -688,22 +702,22 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="358" y="86" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1586303517356" />
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1588444579798">
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1588477276987">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588444579798" />
-    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1588444579798">
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588477276987" />
+    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1588477276986">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1588444579798" />
-    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1588444579798">
+    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1588477276986" />
+    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1588477276985">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1588444579798" />
-    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1588444579798">
+    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1588477276985" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1588477276987">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1588444579798" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1588477276987" />
     <state x="79" y="0" key="SettingsEditor" timestamp="1587606736031">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

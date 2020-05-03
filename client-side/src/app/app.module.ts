@@ -38,6 +38,7 @@ import {AgGridModule} from "ag-grid-angular";
 import { FilterPipe } from './pipes/filter.pipe';
 import { ReplacePipe } from './pipes/replace.pipe';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import { MetricsComponent } from './components/all-users/metrics/metrics.component';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -50,6 +51,7 @@ const appRoutes : Routes = [
   { path: "users/info", component: UsersTableComponent},
   { path: "results", component: ResultsComponent},
   { path: "reviews", component: ReviewsComponent},
+  { path: "users/metrics", component: MetricsComponent},
   { path: "users/all", component: AllUsersComponent},
   { path: "profile/:id", component: ProfileComponent},
   { path: "**", component: HomeComponent }
@@ -81,7 +83,8 @@ enableProdMode();
     ValidInputDirective,
     FilterPipe,
     ReplacePipe,
-    TimeAgoPipe
+    TimeAgoPipe,
+    MetricsComponent
   ],
 
     imports: [

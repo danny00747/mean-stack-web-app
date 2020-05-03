@@ -6,26 +6,36 @@ const logSchema = new mongoose.Schema({
 
     host: {
         type: String,
-        require: true
+        required: true
     },
     level: {
         type: String,
     },
     method: {
         type: String,
-        require: true
+        required: true
+    },
+    requestId: {
+        type: String,
+        required: true,
     },
     url: {
         type: String,
-        require: true
+        required: true
+    },
+    status: {
+        type: String,
+    },
+    response: {
+        type: String,
     },
     message: {
         type: String,
-        require: true
+        required: true
     },
     date: {
         type: String,
-        require: true
+        required: true
     }
 
 });

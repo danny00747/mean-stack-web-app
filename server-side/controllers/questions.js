@@ -1,16 +1,10 @@
 const Question = require("../models/questions");
 const logs = require("./logs");
 const {success, info, error, debug} = require('consola');
-const logger = require('../../config/logger');
 
-const question_get_all = (req, res) => {
+const question_get_all = async (req, res) => {
 
-    console.log(req.headers);
-    console.log(req.url);
-    console.log(req.method);
-    console.log(req.originalUrl);
-
-    logs.saveLog('info', req);
+   await logs.saveLog('info', req, 'Incoming');
 
     let response = [];
     Question.find()
@@ -19,12 +13,14 @@ const question_get_all = (req, res) => {
         .then(docs => {
 
             if (docs.length === 0)
-                return res
+                return [res
                     .status(204)
-                    .json({message: "No documents found in the database"});
+                    .json({message: "No documents found in the database"}),
+                    logs.updateLog('info', req, 'Outgoing', res)];
 
             docs.forEach(x => response.push(x));
             res.status(200).json(response);
+            logs.updateLog('info', req, 'Outgoing', res);
         })
         .catch(err => {
             res
@@ -33,16 +29,19 @@ const question_get_all = (req, res) => {
                     errorMessage: err.message,
                     errorName: err.name
                 });
+            logs.updateLog('error', req, 'Outgoing', res);
         });
 };
 
-const question_get_one = (req, res) => {
+const question_get_one = async (req, res) => {
+
+    await logs.saveLog('info', req, 'Incoming');
+
     const {questionId} = req.params;
     Question.findById(questionId)
         .select("question answers _id")
         .exec()
         .then(doc => {
-            //console.log("From database", doc);
             if (doc) {
                 res
                     .status(200)
@@ -56,20 +55,22 @@ const question_get_one = (req, res) => {
                             url: `http://localhost:5000/api/questions/${doc._id}`
                         }
                     }));
+                logs.updateLog('info', req, 'Outgoing', res);
             } else {
                 res
                     .status(404)
                     .json({message: "No valid entry found for provided ID"});
+                logs.updateLog('info', req, 'Outgoing', res);
             }
         })
         .catch(err => {
-            //console.log(err);
             res
                 .status(500)
                 .json({
                     errorMessage: err.message,
                     errorName: err.name
                 });
+            logs.updateLog('error', req, 'Outgoing', res);
         });
 };
 

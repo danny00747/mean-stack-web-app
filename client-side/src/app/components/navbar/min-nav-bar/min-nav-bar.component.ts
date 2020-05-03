@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MinNavBArComponent implements OnInit {
 
+  click : boolean = true;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  clicked(){
+   return (this.click) ? this.click = false: this.click = true;
   }
 
 }
