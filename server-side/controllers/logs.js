@@ -1,6 +1,5 @@
 const Log = require("../models/logs");
 const {success, info, error, debug} = require('consola');
-const logger = require('../../config/logger');
 
 
 const saveLog = (level, log) => {

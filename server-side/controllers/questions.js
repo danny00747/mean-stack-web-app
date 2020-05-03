@@ -1,7 +1,6 @@
 const Question = require("../models/questions");
 const logs = require("./logs");
 const {success, info, error, debug} = require('consola');
-const logger = require('../../config/logger');
 
 const question_get_all = (req, res) => {
 
