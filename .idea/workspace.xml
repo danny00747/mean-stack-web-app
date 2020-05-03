@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/logger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/controllers/logs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/models/logs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/users.js" afterDir="false" />
-    </list>
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -668,10 +658,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="321" y="74" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.689@0.0.1280.689" timestamp="1583252224155" />
-    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584034515550">
+    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588518688389">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1584034515550" />
+    <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1588518688389" />
     <state width="941" height="519" key="#com.intellij.structuralsearch.plugin.ui.StructuralReplaceDialog" timestamp="1583253654061">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
