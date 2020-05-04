@@ -30,6 +30,7 @@ const updateLog = (level, log, type, status) => {
         }).save().then().catch(err => console.log(err)) : undefined;
 };
 
+
 const getLogs = (req, res) => {
     Log.find()
         .select("-__v")
