@@ -17,11 +17,13 @@ const question_get_all = async (req, res) => {
                 return res
                     .status(204)
                     .json({message: "No documents found in the database"});
+            } else {
+                docs.forEach(x => response.push(x));
+                logs.updateLog('info', req, 'Outgoing', 200);
+              return res.status(200).json(response);
             }
 
-            docs.forEach(x => response.push(x));
-            logs.updateLog('info', req, 'Outgoing', 200);
-            res.status(200).json(response);
+
         })
         .catch(err => {
             res

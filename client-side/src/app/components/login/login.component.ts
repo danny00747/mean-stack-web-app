@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
       password: this.password
     };
 
+    console.log(user);
+
     if (!this.validateService.validateLogin(user)) {
 
       this._flashMessagesService.show("Please fill in all fields", {

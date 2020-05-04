@@ -11,6 +11,9 @@ import {Router} from "@angular/router";
 export class MetricsComponent implements OnInit {
 
 
+  selectedValue : string = '';
+
+  logInfo : Array<any>;
   searchValue : string = "";
 
   users: any;
@@ -43,12 +46,13 @@ export class MetricsComponent implements OnInit {
             tab.push(
               {"host" : x.host, "level" : x.level, "response" : t1[i].response,
                 "status" : t1[i].status, "method" : x.method, "url" : x.url,
-                "date" : x.date}));
+                "date" : x.date, "message": x.message}));
 
         tab
           .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
-          .forEach(x => {
+          .forEach((x,i) => {
             x.date = new Date(x.date);
+            x.id = i;
           });
         this.users = tab;
         this.totalItems = this.users.length;
@@ -56,6 +60,17 @@ export class MetricsComponent implements OnInit {
       .catch(err => {
         console.log(err);
       });
+  }
+
+
+  logDetails(event){
+   this.logInfo = this.users.find(x => x.id === (Number(event.id) -1));
+    console.log(this.logInfo);
+
+  }
+
+  filterDate(event){
+    this.selectedValue = event.value;
   }
 
 }

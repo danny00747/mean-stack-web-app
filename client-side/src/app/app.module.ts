@@ -39,6 +39,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ReplacePipe } from './pipes/replace.pipe';
 import {TimeAgoPipe} from 'time-ago-pipe';
 import { MetricsComponent } from './components/all-users/metrics/metrics.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 const appRoutes : Routes = [
   {path: '', redirectTo : '/home', pathMatch: 'full'},
@@ -84,7 +85,8 @@ enableProdMode();
     FilterPipe,
     ReplacePipe,
     TimeAgoPipe,
-    MetricsComponent
+    MetricsComponent,
+    TruncatePipe
   ],
 
     imports: [
