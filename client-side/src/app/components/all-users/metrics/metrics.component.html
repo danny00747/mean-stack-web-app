@@ -3,11 +3,18 @@
 <!-- Filter Input -->
 <div class="d-flex">
   <div class="ml-auto mr-5">
-    <label for="search"></label>
-    <input
-      class="form-control" type="search" id="search"
-      [(ngModel)]="searchValue" name="username"
-      placeholder="Filter" aria-label="Search">
+    <div class="form-group">
+      <label for="exampleSelect1"></label>
+      <select class="custom-select" id="exampleSelect1">
+        <option disabled selected>Filter by</option>
+        <option >Today</option>
+        <option value="2">Last day</option>
+        <option value="3">Last week</option>
+        <option value="3">Last month</option>
+        <option value="3">Last year</option>
+      </select>
+
+    </div>
   </div>
 </div>
 
@@ -73,7 +80,7 @@
   <div class="pagination justify-content-center pagination-lg">
     <pagination-controls id="allQuestionsPagination"
                          (pageChange)="page = ($event)"
-                         maxSize="{{totalItems}}"
+                         maxSize="6"
                          directionLinks="true"
                          autoHide="true"
                          responsive="true"

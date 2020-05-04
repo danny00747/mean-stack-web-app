@@ -28,16 +28,29 @@ export class MetricsComponent implements OnInit {
   showUsersLogs() {
 
     let tab: Array<any> = [];
+    let t1: Array<any> = [];
+    let t2: Array<any> = [];
 
     this.authService.getLogs()
       .toPromise()
       .then((data: any) => {
-        data
+
+        t2 = data.filter(x => x.type === 'Incoming');
+        t1 = data.filter(x => x.type === 'Outgoing');
+
+        t2.filter((x,i) => x.requestId === t1[i].requestId)
+          .forEach((x, i) =>
+            tab.push(
+              {"host" : x.host, "level" : x.level, "response" : t1[i].response,
+                "status" : t1[i].status, "method" : x.method, "url" : x.url,
+                "date" : x.date}));
+
+        tab
           .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
           .forEach(x => {
             x.date = new Date(x.date);
           });
-        this.users = data;
+        this.users = tab;
         this.totalItems = this.users.length;
       })
       .catch(err => {

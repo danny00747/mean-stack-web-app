@@ -5,37 +5,35 @@ const uniqueValidator = require('mongoose-unique-validator');
 const logSchema = new mongoose.Schema({
 
     host: {
-        type: String,
-        required: true
+        type: String
     },
     level: {
         type: String,
     },
     method: {
-        type: String,
-        required: true
+        type: String
     },
     requestId: {
-        type: String,
-        required: true,
+        type: String
     },
     url: {
-        type: String,
-        required: true
+        type: String
     },
     status: {
         type: Number,
     },
-    response: {
+    type: {
         type: String,
+        enum: ["Incoming", "Outgoing"]
+    },
+    response: {
+        type: String
     },
     message: {
-        type: String,
-        required: true
+        type: String
     },
     date: {
-        type: String,
-        required: true
+        type: String
     }
 
 });

@@ -102,6 +102,7 @@ const question_update_one = async (req, res) => {
                     .json({message: "No valid entry found for provided ID"}),
                     logs.updateLog('info', req, 'Outgoing', 404)];
             } else {
+                logs.updateLog('info', req, 'Outgoing', 200);
                 res.status(200).json({
                     message: "Question updated successfully !",
                     modifiedDocs: result.nModified,
@@ -110,7 +111,6 @@ const question_update_one = async (req, res) => {
                         url: `http://localhost:5000/server/api/questions/${questionId}`
                     }
                 });
-                logs.updateLog('info', req, 'Outgoing', 200);
             }
         })
         .catch(err => {
@@ -132,8 +132,8 @@ const questionCreate = async (req, res) => {
     question
         .save()
         .then(result => {
-            logs.updateLog('info', req, 'Outgoing', 405);
             if (!result) {
+                logs.updateLog('info', req, 'Outgoing', 405);
                 res.status(405).json({
                     message: "Invalid input"
                 });
@@ -174,10 +174,12 @@ const question_delete_one = async (req, res) => {
     Question.findByIdAndRemove(questionId)
         .exec()
         .then((doc) => {
-            logs.updateLog('info', req, 'Outgoing', 404);
-            if (doc === null) return res
-                .status(404)
-                .json({message: "No valid entry found for provided ID"});
+            if (doc === null) {
+                logs.updateLog('info', req, 'Outgoing', 404);
+                return res
+                    .status(404)
+                    .json({message: "No valid entry found for provided ID"});
+            }
 
             logs.updateLog('info', req, 'Outgoing', 200);
             res.status(200).json({

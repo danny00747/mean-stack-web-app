@@ -205,8 +205,8 @@ const users_get_all = async (req, res) => {
         .select("-__v")
         .exec()
         .then(users => {
-            logs.updateLog('info', req, 'Outgoing', 204);
             if (users.length === 0){
+                logs.updateLog('info', req, 'Outgoing', 204);
                 return res
                     .status(204)
                     .json({message: "No Users found in the database"});

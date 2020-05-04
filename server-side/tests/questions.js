@@ -192,14 +192,14 @@ describe('Questions', () => {
 
         it('it should not DELETE a question with a wrong id', () => {
 
-            const questionId = '7eab24dee08248016851dd3';
+            const questionId = '5e6444e51167df04c81f4333';
 
             chai.request(server)
                 .delete(`/server/api/questions/${questionId}`)
                 .end((err, res) => {
                     res.should.have.status(404);
                     res.body.should.have.property('message')
-                        .eql('An error occured while trying to delete this question');
+                        .eql('No valid entry found for provided ID');
                 });
         });
     });
