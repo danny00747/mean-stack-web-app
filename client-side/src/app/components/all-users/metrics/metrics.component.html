@@ -4,13 +4,19 @@
 <div class="d-flex">
   <div class="ml-auto mr-5">
 
+    <div *ngIf="searchValue.length !== 0" class="custom-control custom-switch">
+      <input (click)="filterDisable($event.target)" type="checkbox" class="custom-control-input" id="customSwitch1">
+      <label class="custom-control-label text-monospace" for="customSwitch1">
+        Disable filter </label>
+    </div>
+
     <!-- Filter by date, method, status -->
     <div class="form-group">
       <label for="select1"></label>
-      <select (change)="filterDate($event.target)" class="custom-select" id="select1">
-        <option disabled selected>Filter by</option>
+      <select (change)="logsFilter($event.target)" class="custom-select" id="select1">
+        <option  disabled selected>Filter by</option>
         <option value="date">Date</option>
-        <option value="method" >Method</option>
+        <option value="method">Method</option>
         <option value="status" >Status</option>
       </select>
     </div>
@@ -31,7 +37,7 @@
     <!-- Filter by HTTP method -->
     <div *ngIf="selectedValue === 'method'" class="form-group">
       <label for="select3"></label>
-      <select class="custom-select" id="select3">
+      <select (change)="filterMethod($event.target)" class="custom-select" id="select3">
         <option disabled selected>Filter by</option>
         <option value="get">GET</option>
         <option value="post">POST</option>
@@ -43,7 +49,7 @@
     <!-- Filter HTTP status -->
     <div *ngIf="selectedValue === 'status'" class="form-group">
       <label for="select4"></label>
-      <select class="custom-select" id="select4">
+      <select (change)="filterStatus($event.target)" class="custom-select" id="select4">
         <option disabled selected>Filter by</option>
         <option value="200">200</option>
         <option value="201">201</option>
@@ -88,13 +94,13 @@
 
     <!-- Table body -->
     <tbody id="demo">
-    <ng-container *ngFor="let user of users  | filter : searchValue | paginate:
+    <ng-container *ngFor="let user of users | filterLogs : searchValue | paginate:
                                                     {
                                                     id: 'allQuestionsPagination',
                                                         itemsPerPage: 5,
                                                         currentPage: page,
                                                         totalItems: totalItems};
-                                                        index as i">
+                                                        index as i" >
 
       <tr #idRef id="{{user['id'] + 1 }}" (click)="logDetails(idRef)" data-toggle="modal"
           data-target=".bd-example-modal-lg" style="cursor: pointer"
@@ -103,7 +109,7 @@
           onmouseout="this.style.backgroundColor = ''; this.style.color=''">
 
         <th class="text-monospace font-italic"
-            scope="row"> {{user['id'] + 1 }}</th>
+            scope="row"> {{ (users) ? user['id'] + 1 : i }} </th>
         <td class="text-monospace font-italic">{{user["host"]}}</td>
         <td class="text-monospace font-italic">{{user["method"]}}</td>
         <td class="text-monospace font-italic">{{user["url"] | truncate:[26]}}</td>

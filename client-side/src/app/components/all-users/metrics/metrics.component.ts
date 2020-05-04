@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
+import {FilterLogsPipe} from "../../../pipes/filter-logs.pipe";
 
 @Component({
   selector: 'app-metrics',
@@ -22,6 +23,7 @@ export class MetricsComponent implements OnInit {
 
   constructor(private _flashMessagesService: FlashMessagesService,
               private authService: AuthService,
+              private filterLogs : FilterLogsPipe,
               private router: Router) { }
 
   ngOnInit() {
@@ -63,14 +65,40 @@ export class MetricsComponent implements OnInit {
   }
 
 
-  logDetails(event){
+  logDetails(event: any){
    this.logInfo = this.users.find(x => x.id === (Number(event.id) -1));
-    console.log(this.logInfo);
-
   }
 
-  filterDate(event){
+  logsFilter(event: any){
     this.selectedValue = event.value;
+  }
+
+  filterMethod(event: any){
+    (event.value === 'get') ? this.searchValue = 'GET' :
+      (event.value === 'post') ? this.searchValue = 'POST' :
+        (event.value === 'patch') ? this.searchValue = 'PATCH' :
+          (event.value === 'delete') ? this.searchValue = 'DELETE' :
+              undefined;
+
+    this.totalItems = this.filterLogs.transform(this.users, event.value).length;
+  }
+
+  filterStatus(event : any){
+    (event.value === '200') ? this.searchValue = '200' :
+      (event.value === '201') ? this.searchValue = '201' :
+        (event.value === '400') ? this.searchValue = '400' :
+          (event.value === '401') ? this.searchValue = '401' :
+          (event.value === '404') ? this.searchValue = '404' :
+          (event.value === '500') ? this.searchValue = '500' :
+            undefined;
+
+    this.totalItems = this.filterLogs.transform(this.users, event.value).length;
+  }
+
+  filterDisable(event : any){
+    console.log(event.checked);
+    (event.checked) ? this.searchValue = "" : undefined;
+    this.totalItems = this.users.length;
   }
 
 }

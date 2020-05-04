@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/pipes/truncate.pipe.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/pipes/truncate.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/pipes/filter-logs.pipe.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/pipes/filter-logs.pipe.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +245,7 @@
       <workItem from="1588559669732" duration="1389000" />
       <workItem from="1588561310626" duration="1592000" />
       <workItem from="1588562984094" duration="610000" />
-      <workItem from="1588599078847" duration="15604000" />
+      <workItem from="1588599078847" duration="26053000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>

@@ -4,7 +4,7 @@ const {success, info, error, debug} = require('consola');
 
 const saveLog = (level, log, type) => {
 
-    (log.hostname === 'localhost') ?
+    (log.hostname === 'devwebapp.herokuapp.com') ?
         new Log({
             level: `${level}`,
             type: `${type}`,
@@ -20,7 +20,7 @@ const saveLog = (level, log, type) => {
 
 const updateLog = (level, log, type, status) => {
 
-    (log.hostname === 'localhost') ?
+    (log.hostname === 'devwebapp.herokuapp.com') ?
         new Log({
             level: `${level}`,
             type: `${type}`,
