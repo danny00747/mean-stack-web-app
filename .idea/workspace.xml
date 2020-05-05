@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -238,7 +241,7 @@
       <workItem from="1588559669732" duration="1389000" />
       <workItem from="1588561310626" duration="1592000" />
       <workItem from="1588562984094" duration="610000" />
-      <workItem from="1588599078847" duration="26380000" />
+      <workItem from="1588599078847" duration="28477000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>
@@ -684,22 +687,22 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="358" y="86" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1586303517356" />
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1588601683122">
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1588647982628">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588601683122" />
-    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1588601683122">
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1588647982628" />
+    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1588647982627">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1588601683122" />
-    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1588601683121">
+    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1588647982627" />
+    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1588647982624">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1588601683121" />
-    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1588601683122">
+    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1588647982624" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1588647982627">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1588601683122" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1588647982627" />
     <state x="79" y="0" key="SettingsEditor" timestamp="1587606736031">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
