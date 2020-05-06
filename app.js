@@ -18,11 +18,23 @@ app.use(cors());
 app.use(helmet());
 app.use(addRequestId);
 
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    styleSrc: ["'self'", 'https://fonts.googleapis.com']
+  }
+}));
+
+app.use(helmet.hsts({
+  maxAge: 5184000,
+  includeSubDomains: true
+}))
+
 app.use(helmet.featurePolicy({
     features: {
         fullscreen: ["'self'"],
         vibrate: ["'none'"],
-        payment:["'paypal.com'"],
+        payment:["'none'"],
         syncXhr: ["'none'"],
         camera: ["'none'"],
         microphone : ["'none'"],
