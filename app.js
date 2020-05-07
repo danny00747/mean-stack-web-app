@@ -18,13 +18,6 @@ app.use(cors());
 app.use(helmet());
 app.use(addRequestId);
 
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'"],
-    styleSrc: ["'self'", 'fonts.googleapis.com' ],
-    fontSrc: ["'self'", 'https://fonts.gstatic.com' ]
-}}));
-
 app.use(helmet.hsts({
   maxAge: 5184000,
   includeSubDomains: true
