@@ -190,7 +190,7 @@ describe('Questions', () => {
                 });
         });
 
-        it('it should not DELETE a question with a wrong id', () => {
+        it('it should NOT DELETE a question with a wrong id', () => {
 
             const questionId = '5e6444e51167df04c81f4333';
 

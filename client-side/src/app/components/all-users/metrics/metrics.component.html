@@ -147,7 +147,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div *ngIf="logInfo" class="modal-content">
       <div class="modal-header font-weight-bold">
-        <h3>Log details<p></p>
+        <h3 class="text-monospace font-italic"><strong>Log details</strong><p></p>
           <p style="font-size: small" class="blockquote-footer my-0">
             {{(logInfo["date"]).toLocaleString('fr-BE').split(' à')[0]}}
             at {{(logInfo["date"]).toLocaleString('fr-BE').split(' à')[1]}}</p>
