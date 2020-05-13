@@ -25,6 +25,7 @@ describe('Questions', () => {
      * Test the /GET route
      */
     describe('/GET questions', () => {
+
         it('it should GET all the question', (done) => {
             chai.request(server)
                 .get('/server/api/questions')
@@ -41,6 +42,7 @@ describe('Questions', () => {
       * Test the /POST route
       */
     describe('/POST questions', () => {
+
         it('it should not POST a book without a type field', (done) => {
 
             const question = {
@@ -89,6 +91,7 @@ describe('Questions', () => {
     * Test the /GET/:id route
     */
     describe('/GET/:id question', () => {
+
         it('it should GET a question by the given id', async () => {
 
             const question = new Question({"type": "boolean",
@@ -117,6 +120,7 @@ describe('Questions', () => {
     * Test the /PATCH/:id route
     */
     describe('/PATCH/:id question', () => {
+
         it('it should not PATCH a question with a wrong id', (done) => {
 
             const questionId = '5e97354f3fb39f58e4e21ed6';
@@ -169,6 +173,7 @@ describe('Questions', () => {
     * Test the /DELETE/:id route
     */
     describe('/DELETE/:id question', () => {
+
         it('it should DELETE a question by the given id', async () => {
 
             const question = new Question({"type": "multiple",

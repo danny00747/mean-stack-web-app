@@ -56,7 +56,7 @@ const appRoutes : Routes = [
   { path: "users/metrics", component: MetricsComponent},
   { path: "users/all", component: AllUsersComponent},
   { path: "profile/:id", component: ProfileComponent},
-  { path: "**", component: HomeComponent }
+  { path: "**", redirectTo : '/home', pathMatch: 'full'}
 ];
 
 enableProdMode();

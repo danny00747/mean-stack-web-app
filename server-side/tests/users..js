@@ -77,10 +77,10 @@ describe('Users', () => {
                         .eql('User created successfully');
                     res.body.should.have
                         .property('user');
+                    User.deleteOne({username: "dan330"})
+                        .exec().then().catch();
                     done();
                 });
-
-           User.deleteOne({username: "dan330"}).exec().then().catch();
         });
 
         it('it should NOT create a user', (done) => {
@@ -200,6 +200,78 @@ describe('Users', () => {
                         });
                 });
         });
+
+    });
+
+    describe('/PATCH/:id user',  () => {
+
+        it('it should update a user by id',  (done) => {
+
+            const user = {
+                "pseudo": "admin",
+                "password": process.env.ADMIN_PSD
+            };
+
+            chai.request(server)
+                .post('/server/api/login')
+                .send(user)
+                .end((err, res) => {
+
+                    const userToUpdate = {
+                        "username": "admin",
+                        "password": process.env.ADMIN_PSD
+                    };
+
+                    chai.request(server)
+                        .patch(`/server/api/user/${process.env.ADMIN_ID}`)
+                        .set('Authorization', res.body.token)
+                        .send(userToUpdate)
+                        .end((err, res) => {
+                            res.should.have.status(200);
+                            res.body.should.have
+                                .property('message')
+                                .eql('User info updated successfully');
+                            res.body.should.have
+                                .property('modifiedDocs')
+                                .eql(1);
+                            done();
+                        });
+                });
+        });
+
+
+          it('it should NOT update a user by id',  (done) => {
+
+            const user = {
+                "pseudo": "admin",
+                "password": process.env.ADMIN_PSD
+            };
+
+            chai.request(server)
+                .post('/server/api/login')
+                .send(user)
+                .end((err, res) => {
+
+                    const userToUpdate = {
+                        "username": "admin",
+                        "password": process.env.ADMIN_PSD
+                    };
+
+                    chai.request(server)
+                        .patch(`/server/api/user/7e7fd1d5f71b123cbc246700`)
+                        .set('Authorization', res.body.token)
+                        .send(userToUpdate)
+                        .end((err, res) => {
+                            res.should.have.status(404);
+                            res.body.should.have
+                                .property('message')
+                                .eql('No valid entry found for provided ID');
+                            done();
+                        });
+                });
+        });
+
+
 
     });
 });

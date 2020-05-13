@@ -111,7 +111,7 @@
       <!-- Login -->
       <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" [routerLink]="['/login']">
+        <a id="loginBtn" class="nav-link" [routerLink]="['/login']">
           <i class="fa fa-sign-in"></i> Login</a>
       </li>
 
