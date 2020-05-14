@@ -36,7 +36,7 @@
     <br>
   </div>
   <button type="button" class="btn btn-primary" data-toggle="modal"
-          data-target="#exampleModal"
+          data-target="#exampleModal" id="updateUser"
           style="width:130px; margin-left:40px;">Update
   </button>
   <br>
@@ -128,8 +128,16 @@
 
           <!-- Modal footer -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button appAddClass type="submit" class="btn btn-primary"
+             <span *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
+                   style="color: green; margin-right: 30px" id="updateSuccess">
+            {{alertMessage}}
+          </span>
+            <span *ngIf="alertMessage.includes('wrong')"
+                  style="color: red; margin-right: 30px" id="updateFail">{{alertMessage}}
+          </span>
+            <button (click)="closeAlert()" type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close</button>
+            <button appAddClass type="submit" class="btn btn-primary" id="submitUpdate"
                     [disabled]="profileForm.form.invalid">Submit</button>
 
           </div>

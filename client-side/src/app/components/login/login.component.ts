@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       pseudo: this.pseudo,
       password: this.password
     };
-    
+
     if (!this.validateService.validateLogin(user)) {
 
       this._flashMessagesService.show("Please fill in all fields", {

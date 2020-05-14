@@ -9,6 +9,7 @@ import {FlashMessagesService} from 'angular2-flash-messages';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
   user: Object;
   token: any;
   userId: any;
@@ -16,6 +17,8 @@ export class ProfileComponent implements OnInit {
   username: string;
   password: string;
   confirmPassword: string;
+
+  alertMessage : string  = '';
 
   constructor(
     private authService: AuthService,
@@ -65,19 +68,17 @@ export class ProfileComponent implements OnInit {
       .toPromise()
       .then((data: any) => {
         this.getUserProfile();
-        this._flashMessagesService.show(`${data.message}`, {
-          cssClass: "alert-success w-25 p-3",
-          timeout: 2000
-        });
+        this.alertMessage = `${data["message"]} !`;
       })
       .catch(err => {
+        this.alertMessage = "Something went wrong !";
         console.log(err);
-        this._flashMessagesService.show('Something went wrong', {
-          cssClass: "alert-danger w-25",
-          timeout: 3000
-        });
       });
 
+  }
+
+  closeAlert() {
+    this.alertMessage = "";
   }
 }
 

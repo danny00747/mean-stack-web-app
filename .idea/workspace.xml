@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/tests/reviews.js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/assets/MaterialIcons-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/assets/MaterialIcons-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/assets/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/assets/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/assets/roboto-light-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/assets/roboto-light-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/assets/roboto-medium-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/assets/roboto-medium-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/assets/roboto-regular-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/assets/roboto-regular-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/mochawesome.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mochawesome-report/mochawesome.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/tests/e2e/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/tests/reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/e2e/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/e2e/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/e2e/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/app.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/app.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/config/database.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/config/database.js.html" afterDir="false" />
@@ -46,12 +37,12 @@
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/routes/users.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/routes/users.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/tests/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/tests/questions.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/tests/questions.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/tests/reviews.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/tests/reviews.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/tests/users..js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/mean-stack-web-app/server-side/tests/users..js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochawesome-report/mochawesome.html" beforeDir="false" afterPath="$PROJECT_DIR$/mochawesome-report/mochawesome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochawesome-report/mochawesome.json" beforeDir="false" afterPath="$PROJECT_DIR$/mochawesome-report/mochawesome.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/users..js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/users..js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/test.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +284,8 @@
       <workItem from="1588814423585" duration="718000" />
       <workItem from="1588836794171" duration="986000" />
       <workItem from="1589157161974" duration="5231000" />
-      <workItem from="1589302224174" duration="19309000" />
+      <workItem from="1589302224174" duration="19740000" />
+      <workItem from="1589377670451" duration="32582000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>
@@ -739,22 +731,22 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="358" y="86" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1586303517356" />
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1589329595096">
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom" timestamp="1589338859786">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1589329595096" />
-    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1589329595096">
+    <state width="1237" height="146" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1589338859786" />
+    <state width="1237" height="146" key="GridCell.Tab.0.center" timestamp="1589338859785">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1589329595096" />
-    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1589329595096">
+    <state width="1237" height="146" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1589338859785" />
+    <state width="1237" height="146" key="GridCell.Tab.0.left" timestamp="1589338859785">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1589329595096" />
-    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1589329595096">
+    <state width="1237" height="146" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1589338859785" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right" timestamp="1589338859785">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1589329595096" />
+    <state width="1237" height="146" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1589338859785" />
     <state x="79" y="0" key="SettingsEditor" timestamp="1587606736031">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -787,10 +779,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="367" y="0" key="refactoring.ChangeSignatureDialog/0.0.1280.689@0.0.1280.689" timestamp="1586909152066" />
-    <state x="297" y="153" key="run.anything.popup" timestamp="1588213036585">
+    <state x="297" y="153" key="run.anything.popup" timestamp="1589407917822">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1588213036585" />
+    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1589407917822" />
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1587503679444">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

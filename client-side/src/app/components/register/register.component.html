@@ -4,7 +4,7 @@
   <div class="form rounded col-12">
 
     <div class="note bg-dark">
-      <h3 class="font-weight-bolder mb-3">Create an Account</h3>
+      <h3 id="formTitle" class="font-weight-bolder mb-3">Create an Account</h3>
       <p class="font-weight-bold">It's free and anyone can join!</p>
     </div>
 
@@ -23,12 +23,12 @@
                placeholder="username" required>
         <div *ngIf="usernameInput.errors && (usernameInput.invalid ||
                         usernameInput.touched)">
-          <small class="text-danger" *ngIf="usernameInput.errors.minlength">
+          <small id="usernameError1" class="text-danger" *ngIf="usernameInput.errors.minlength">
             {{usernameInput.value}} username minimum length is 4
           </small>
-          <small class="text-danger" *ngIf="usernameInput.errors.required
-                      && usernameInput.touched">
-            A username is required</small>
+          <small id="usernameError2" class="text-danger"
+                 *ngIf="usernameInput.errors.required
+                      && usernameInput.touched">A username is required</small>
         </div>
       </div>
       <br>
@@ -46,12 +46,11 @@
                placeholder="Email address" required>
         <div *ngIf="emailInput.errors && (emailInput.invalid ||
                         emailInput.touched)">
-          <small class="text-danger" *ngIf="emailInput.errors.pattern">
+          <small id="emailInvalid" class="text-danger" *ngIf="emailInput.errors.pattern">
             {{emailInput.value}} is not a valid email
           </small>
-          <small class="text-danger" *ngIf="emailInput.errors.required
-                      && emailInput.touched">
-            An Email is required</small>
+          <small id="emailRequired" class="text-danger" *ngIf="emailInput.errors.required
+                      && emailInput.touched">An Email is required</small>
         </div>
       </div>
       <br>
@@ -65,7 +64,7 @@
                class="form-control" type="password" id="inputPassword"
                [(ngModel)]="password" name="password"
                placeholder="Password" required>
-        <small class="text-danger" [class.d-none]="passwordInput.valid ||
+        <small id="passwordRequired" class="text-danger" [class.d-none]="passwordInput.valid ||
           passwordInput.untouched">A password is required</small>
       </div>
       <br>
@@ -84,11 +83,10 @@
 
         <div *ngIf="inputConfirmPassword.errors && (inputConfirmPassword.invalid ||
                         inputConfirmPassword.touched)">
-          <small class="text-danger" *ngIf="inputConfirmPassword.errors.pattern">
-            Passwords do not match</small>
-          <small class="text-danger" *ngIf="inputConfirmPassword.errors.required
-                      && inputConfirmPassword.touched">
-            Please confirm your password</small>
+          <small id="passwordMatchError" class="text-danger"
+                 *ngIf="inputConfirmPassword.errors.pattern">Passwords do not match</small>
+          <small id="confirmPasswordError" class="text-danger" *ngIf="inputConfirmPassword.errors.required
+                      && inputConfirmPassword.touched">Please confirm your password</small>
         </div>
       </div>
       <br>
@@ -101,7 +99,7 @@
       <div class="d-flex">
         <div>
           <button [disabled]="signUpForm.form.invalid"
-                  class="btn btn-secondary btn-rounded"
+                  class="btn btn-secondary btn-rounded" id="submitBtn"
                   type="submit">Sign Up
           </button>
         </div>

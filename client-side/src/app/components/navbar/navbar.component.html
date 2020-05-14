@@ -104,7 +104,7 @@
 
       <!-- Profile -->
       <li *ngIf="authService.loggedIn()" class="nav-item ">
-        <a class="nav-link " style="cursor:pointer;" (click)="onSelect()">
+        <a id="profileBtn" class="nav-link " style="cursor:pointer;" (click)="onSelect()">
           <i class="fa fa-user"></i> {{authService.username}}</a>
       </li>
 
