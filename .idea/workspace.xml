@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mochawesome-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mochawesome-report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mochawesome-report/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/mochawesome-report/index.json" afterDir="false" />
-    </list>
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -251,7 +246,7 @@
       <workItem from="1589377670451" duration="34201000" />
       <workItem from="1589444444260" duration="1668000" />
       <workItem from="1589446310778" duration="13566000" />
-      <workItem from="1589489682966" duration="14479000" />
+      <workItem from="1589489682966" duration="14879000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>
