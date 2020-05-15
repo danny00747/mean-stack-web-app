@@ -240,7 +240,7 @@ describe('Users', () => {
         });
 
 
-          it('it should NOT update a user by id',  (done) => {
+        it('it should NOT update a user by id',  (done) => {
 
             const user = {
                 "pseudo": "admin",

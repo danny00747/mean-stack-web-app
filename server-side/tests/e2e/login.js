@@ -77,7 +77,6 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
     });
 
     describe('/login errors', async () => {
-
         it('it should display form validation on all fields', async () => {
 
             const pseudo = await page.$('#pseudo');

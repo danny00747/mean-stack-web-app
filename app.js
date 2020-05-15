@@ -19,18 +19,18 @@ app.use(helmet());
 app.use(addRequestId);
 
 app.use(helmet.hsts({
-  maxAge: 5184000,
-  includeSubDomains: true
-}))
+    maxAge: 5184000,
+    includeSubDomains: true
+}));
 
 app.use(helmet.featurePolicy({
     features: {
         fullscreen: ["'self'"],
         vibrate: ["'none'"],
-        payment:["'none'"],
+        payment: ["'none'"],
         syncXhr: ["'none'"],
         camera: ["'none'"],
-        microphone : ["'none'"],
+        microphone: ["'none'"],
     }
 }));
 
@@ -74,8 +74,10 @@ app.use('/server/api/', users);
 app.use('/server/api/', questions);
 app.use('/server/api/', reviews);
 app.use('/server/api/', logs);
-app.use('/server/api/docs', (req, res) => {
-    res.sendFile(path.join(__dirname + '../../docs/index.html'));
+
+app.use('/server/api/api-documentation', (req, res) => {
+    return res.sendFile(path
+        .join(__dirname + '/docs', 'index.html'));
 });
 
 app.get('*', (req, res) => {
