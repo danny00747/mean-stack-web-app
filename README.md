@@ -17,9 +17,7 @@ The code coverage available [here](https://test-coverage.netlify.app/ "test cove
 
 E2E tests report available [here](https://e2e-report.netlify.app/ "e2e tests")
 
-# End to End Live Demo Report 
+# End to End Live Demo 
 
 E2E tests live demo [here](https://www.youtube.com/watch?v=QICkIxDjVE8 "live demo")
-
-https://www.youtube.com/watch?v=QICkIxDjVE8
 
