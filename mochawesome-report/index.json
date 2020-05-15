@@ -5,9 +5,9 @@
     "passes": 15,
     "pending": 0,
     "failures": 0,
-    "start": "2020-05-15T00:55:23.829Z",
-    "end": "2020-05-15T00:58:11.104Z",
-    "duration": 167275,
+    "start": "2020-05-15T01:41:27.981Z",
+    "end": "2020-05-15T01:44:27.942Z",
+    "duration": 179961,
     "testsRegistered": 15,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "4f669473-c86c-4c2b-a310-be9c110f2459",
+      "uuid": "ce257f65-82eb-41f1-8607-a0b97c00fdcd",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "df8080ff-2d53-4ca5-879f-6b408ffe4264",
+          "uuid": "d72cabf1-4399-42fe-8548-3842df04e5d0",
           "title": "E2E TESTS FOR LOGIN PAGE",
           "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\login.js",
           "file": "\\server-side\\tests\\e2e\\login.js",
@@ -36,7 +36,7 @@
               "title": "\"before each\" hook",
               "fullTitle": "E2E TESTS FOR LOGIN PAGE \"before each\" hook",
               "timedOut": false,
-              "duration": 6688,
+              "duration": 7034,
               "state": null,
               "speed": null,
               "pass": false,
@@ -45,8 +45,8 @@
               "context": null,
               "code": "browser = await puppeteer.launch({\n    headless: false,\n    defaultViewport: null,\n    slowMo: 35,\n    args: [\n        '--window-size=1920,1080',\n    ],\n});\npage = await browser.newPage();\nawait page.goto(\"http://localhost:4200/login\");",
               "err": {},
-              "uuid": "77a8fd52-eb3d-43bc-bdcf-f4d79d5394eb",
-              "parentUUID": "df8080ff-2d53-4ca5-879f-6b408ffe4264",
+              "uuid": "ebe35b89-a570-457e-aa2f-52f54d21e2a6",
+              "parentUUID": "d72cabf1-4399-42fe-8548-3842df04e5d0",
               "isHook": true,
               "skipped": false
             }
@@ -56,7 +56,7 @@
               "title": "\"after each\" hook",
               "fullTitle": "E2E TESTS FOR LOGIN PAGE \"after each\" hook",
               "timedOut": false,
-              "duration": 513,
+              "duration": 813,
               "state": null,
               "speed": null,
               "pass": false,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "await browser.close();",
               "err": {},
-              "uuid": "2f40f60a-a8cb-4dc2-bfcc-0792bd119375",
-              "parentUUID": "df8080ff-2d53-4ca5-879f-6b408ffe4264",
+              "uuid": "d26d2bfe-4abc-4643-8613-aa08c4c40ff3",
+              "parentUUID": "d72cabf1-4399-42fe-8548-3842df04e5d0",
               "isHook": true,
               "skipped": false
             }
@@ -74,7 +74,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "28c3955c-65e7-463e-ac8f-d37c70128e77",
+              "uuid": "903a9c39-ad9e-4c14-aeb1-ae8996131450",
               "title": "/POST Login",
               "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\login.js",
               "file": "\\server-side\\tests\\e2e\\login.js",
@@ -85,7 +85,7 @@
                   "title": "it should login a user",
                   "fullTitle": "E2E TESTS FOR LOGIN PAGE /POST Login it should login a user",
                   "timedOut": false,
-                  "duration": 2901,
+                  "duration": 2782,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -94,8 +94,8 @@
                   "context": null,
                   "code": "//await page.waitFor(3000);\n            expect(await page.$eval('#formTitle', e => e.innerText))\n                .to.eql(\"Log in to your account\");\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);\n            const pseudo = await page.$('#pseudo');\n            const password = await page.$('#password');\n            const submit = await page.$('#submitBtn');\n            await pseudo.click({ clickCount: 3 });\n            await pseudo.type('dan30@gmail.com');\n            await password.click({ clickCount: 3});\n            await password.type('toto');\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(false);\n            await submit.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/dashboard');",
                   "err": {},
-                  "uuid": "2c4f061c-8d66-4461-b41e-f4da0889b50d",
-                  "parentUUID": "28c3955c-65e7-463e-ac8f-d37c70128e77",
+                  "uuid": "dac0eb4f-837d-4c80-82cf-6f3b1e52bf7b",
+                  "parentUUID": "903a9c39-ad9e-4c14-aeb1-ae8996131450",
                   "isHook": false,
                   "skipped": false
                 },
@@ -103,7 +103,7 @@
                   "title": "it should NOT login a user with a wrong password",
                   "fullTitle": "E2E TESTS FOR LOGIN PAGE /POST Login it should NOT login a user with a wrong password",
                   "timedOut": false,
-                  "duration": 3536,
+                  "duration": 3273,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -112,27 +112,27 @@
                   "context": null,
                   "code": "const pseudo = await page.$('#pseudo');\n            const password = await page.$('#password');\n            const submit = await page.$('#submitBtn');\n            await pseudo.click({ clickCount: 3 });\n            await pseudo.type('dan30@gmail.com');\n            await password.click({ clickCount: 3});\n            await password.type('*****');\n            await submit.click();\n            await page.waitFor(1000);\n            expect((await page.$eval('#flashMessages', e => e.innerHTML))\n                .includes('alert')).eql(true);\n            expect(page.url()).eql('http://localhost:4200/login');",
                   "err": {},
-                  "uuid": "f83a15bb-427b-4d68-aae3-ff9f3584d23a",
-                  "parentUUID": "28c3955c-65e7-463e-ac8f-d37c70128e77",
+                  "uuid": "94ad4801-9572-494e-8d71-72bd4870e9c4",
+                  "parentUUID": "903a9c39-ad9e-4c14-aeb1-ae8996131450",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "2c4f061c-8d66-4461-b41e-f4da0889b50d",
-                "f83a15bb-427b-4d68-aae3-ff9f3584d23a"
+                "dac0eb4f-837d-4c80-82cf-6f3b1e52bf7b",
+                "94ad4801-9572-494e-8d71-72bd4870e9c4"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 6437,
+              "duration": 6055,
               "root": false,
               "rootEmpty": false,
               "_timeout": 400000
             },
             {
-              "uuid": "d6a646a1-23a5-42a2-8cdb-15865680f196",
+              "uuid": "a7656579-802c-476d-b245-4cd253fef2bb",
               "title": "/login errors",
               "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\login.js",
               "file": "\\server-side\\tests\\e2e\\login.js",
@@ -143,7 +143,7 @@
                   "title": "it should display form validation on all fields",
                   "fullTitle": "E2E TESTS FOR LOGIN PAGE /login errors it should display form validation on all fields",
                   "timedOut": false,
-                  "duration": 1957,
+                  "duration": 1923,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -152,8 +152,8 @@
                   "context": null,
                   "code": "const pseudo = await page.$('#pseudo');\n            const password = await page.$('#password');\n            await pseudo.click({ clickCount: 3 });\n            await pseudo.type('');\n            await password.click({ clickCount: 3});\n            await password.type('');\n            await pseudo.click({ clickCount: 3 });\n            await page.waitFor(1000);\n            expect((await page.$eval('#pseudo', el => el.className))\n                .includes('is-invalid')).eql(true);\n            expect((await page.$eval('#password', el => el.className))\n                .includes('is-invalid')).eql(true);\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);\n            expect(page.url()).eql('http://localhost:4200/login');",
                   "err": {},
-                  "uuid": "540c0e86-24a7-4110-95cd-b8cee4e3d539",
-                  "parentUUID": "d6a646a1-23a5-42a2-8cdb-15865680f196",
+                  "uuid": "5ec27380-df7f-413b-8390-edf4e17f3099",
+                  "parentUUID": "a7656579-802c-476d-b245-4cd253fef2bb",
                   "isHook": false,
                   "skipped": false
                 },
@@ -161,7 +161,7 @@
                   "title": "it should nagivate to the signup page",
                   "fullTitle": "E2E TESTS FOR LOGIN PAGE /login errors it should nagivate to the signup page",
                   "timedOut": false,
-                  "duration": 462,
+                  "duration": 228,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -170,21 +170,21 @@
                   "context": null,
                   "code": "const singUp = await page.$('#signUpLink');\n            await singUp.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/register');",
                   "err": {},
-                  "uuid": "f60e1a4f-5b83-4eec-8e8e-446407b118de",
-                  "parentUUID": "d6a646a1-23a5-42a2-8cdb-15865680f196",
+                  "uuid": "39622d74-9f87-436c-94ac-843b86b89c91",
+                  "parentUUID": "a7656579-802c-476d-b245-4cd253fef2bb",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "540c0e86-24a7-4110-95cd-b8cee4e3d539",
-                "f60e1a4f-5b83-4eec-8e8e-446407b118de"
+                "5ec27380-df7f-413b-8390-edf4e17f3099",
+                "39622d74-9f87-436c-94ac-843b86b89c91"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2419,
+              "duration": 2151,
               "root": false,
               "rootEmpty": false,
               "_timeout": 400000
@@ -200,7 +200,7 @@
           "_timeout": 400000
         },
         {
-          "uuid": "a99a8dda-5375-4a62-8353-f7607c153b13",
+          "uuid": "89fd39f0-2664-441c-bdde-9f0a7ac572ac",
           "title": "E2E TESTS FOR PROFILE PAGE",
           "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\profile.js",
           "file": "\\server-side\\tests\\e2e\\profile.js",
@@ -209,7 +209,7 @@
               "title": "\"before each\" hook",
               "fullTitle": "E2E TESTS FOR PROFILE PAGE \"before each\" hook",
               "timedOut": false,
-              "duration": 6225,
+              "duration": 7155,
               "state": null,
               "speed": null,
               "pass": false,
@@ -218,8 +218,8 @@
               "context": null,
               "code": "browser = await puppeteer.launch({\n    headless: false,\n    defaultViewport: null,\n    slowMo: 35,\n    args: [\n        '--window-size=1920,1080',\n    ],\n});\npage = await browser.newPage();\nawait page.goto(\"http://localhost:4200/login\");",
               "err": {},
-              "uuid": "4237c4a0-9c24-4cc4-8271-093059108e72",
-              "parentUUID": "a99a8dda-5375-4a62-8353-f7607c153b13",
+              "uuid": "8e39de5f-145c-494e-b79d-0b8f05a70861",
+              "parentUUID": "89fd39f0-2664-441c-bdde-9f0a7ac572ac",
               "isHook": true,
               "skipped": false
             }
@@ -229,7 +229,7 @@
               "title": "\"after each\" hook",
               "fullTitle": "E2E TESTS FOR PROFILE PAGE \"after each\" hook",
               "timedOut": false,
-              "duration": 432,
+              "duration": 619,
               "state": null,
               "speed": null,
               "pass": false,
@@ -238,8 +238,8 @@
               "context": null,
               "code": "await browser.close();",
               "err": {},
-              "uuid": "9c8b3d26-94d7-411a-9999-96eaa7e75190",
-              "parentUUID": "a99a8dda-5375-4a62-8353-f7607c153b13",
+              "uuid": "76d12451-b047-45c9-8496-2e2e9552d696",
+              "parentUUID": "89fd39f0-2664-441c-bdde-9f0a7ac572ac",
               "isHook": true,
               "skipped": false
             }
@@ -247,7 +247,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "7d46a5af-2008-4640-918b-d816b02fb15e",
+              "uuid": "14a01a41-531b-49d4-ab0e-afa1b989451e",
               "title": "/GET User",
               "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\profile.js",
               "file": "\\server-side\\tests\\e2e\\profile.js",
@@ -258,7 +258,7 @@
                   "title": "it should display the user's profile",
                   "fullTitle": "E2E TESTS FOR PROFILE PAGE /GET User it should display the user's profile",
                   "timedOut": false,
-                  "duration": 3511,
+                  "duration": 3315,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -267,26 +267,26 @@
                   "context": null,
                   "code": "expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);\n            const pseudo = await page.$('#pseudo');\n            const password = await page.$('#password');\n            const submit = await page.$('#submitBtn');\n            await pseudo.click({clickCount: 3});\n            await pseudo.type('dan30@gmail.com');\n            await password.click({clickCount: 3});\n            await password.type('toto');\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(false);\n            await submit.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/dashboard');\n            const profile = await page.$('#profileBtn');\n            await profile.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/profile/dan30');",
                   "err": {},
-                  "uuid": "d6100390-e6c6-4908-83dc-5305c698a8d5",
-                  "parentUUID": "7d46a5af-2008-4640-918b-d816b02fb15e",
+                  "uuid": "9bf824c7-0273-4da3-a0f3-4fc7efa11b84",
+                  "parentUUID": "14a01a41-531b-49d4-ab0e-afa1b989451e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d6100390-e6c6-4908-83dc-5305c698a8d5"
+                "9bf824c7-0273-4da3-a0f3-4fc7efa11b84"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3511,
+              "duration": 3315,
               "root": false,
               "rootEmpty": false,
               "_timeout": 400000
             },
             {
-              "uuid": "8c488054-45b9-49e0-806a-db4761d8ead5",
+              "uuid": "2714cd11-98ee-409d-9d03-b23749b98dda",
               "title": "/PATCH User",
               "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\profile.js",
               "file": "\\server-side\\tests\\e2e\\profile.js",
@@ -297,7 +297,7 @@
                   "title": "it should update the user's profile",
                   "fullTitle": "E2E TESTS FOR PROFILE PAGE /PATCH User it should update the user's profile",
                   "timedOut": false,
-                  "duration": 9905,
+                  "duration": 10036,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -306,26 +306,26 @@
                   "context": null,
                   "code": "const pseudo = await page.$('#pseudo');\n            const password = await page.$('#password');\n            const submit = await page.$('#submitBtn');\n            await pseudo.click({clickCount: 3});\n            await pseudo.type('dan30@gmail.com');\n            await password.click({clickCount: 3});\n            await password.type('toto');\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(false);\n            await submit.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/dashboard');\n            const profile = await page.$('#profileBtn');\n            await profile.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/profile/dan30');\n            await page.waitFor(1000);\n            expect(await page.$eval('#submitUpdate', btn => btn.disabled)).eql(true);\n            const updateUser = await page.$('#updateUser');\n            await updateUser.click();\n            const username = await page.$('#username');\n            const email = await page.$('#inputEmail');\n            const passwordUpdate = await page.$('#inputPassword');\n            const confirmPassword = await page.$('#passwordConfirm');\n            const submitUpdate = await page.$('#submitUpdate');\n            await page.waitFor(1000);\n            await username.click({clickCount: 3});\n            await username.type('dan30');\n            await email.click({clickCount: 3});\n            await email.type(`dan30@gmail.com`);\n            await passwordUpdate.click({clickCount: 3});\n            await passwordUpdate.type('toto');\n            await confirmPassword.click({clickCount: 3});\n            await confirmPassword.type('toto');\n            expect(await page.$eval('#submitUpdate', btn => btn.disabled)).eql(false);\n            await submitUpdate.click();\n            await page.waitFor(1000);\n            expect(await page.$eval('#updateSuccess', el => el.innerHTML))\n                .eql(' User info updated successfully ! ');",
                   "err": {},
-                  "uuid": "05639660-5481-4e83-aa44-2a3ed3c33204",
-                  "parentUUID": "8c488054-45b9-49e0-806a-db4761d8ead5",
+                  "uuid": "5844a734-a2a3-4ef0-a49a-092ec45305ad",
+                  "parentUUID": "2714cd11-98ee-409d-9d03-b23749b98dda",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "05639660-5481-4e83-aa44-2a3ed3c33204"
+                "5844a734-a2a3-4ef0-a49a-092ec45305ad"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 9905,
+              "duration": 10036,
               "root": false,
               "rootEmpty": false,
               "_timeout": 400000
             },
             {
-              "uuid": "d9760dd3-1c6d-4745-bafb-0f7acfb945c3",
+              "uuid": "caa1cd77-9879-444c-ab6c-c237f7fa168f",
               "title": "/user profile update errors",
               "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\profile.js",
               "file": "\\server-side\\tests\\e2e\\profile.js",
@@ -336,7 +336,7 @@
                   "title": "it should display an error if the passwords don't match",
                   "fullTitle": "E2E TESTS FOR PROFILE PAGE /user profile update errors it should display an error if the passwords don't match",
                   "timedOut": false,
-                  "duration": 7868,
+                  "duration": 7950,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -345,8 +345,8 @@
                   "context": null,
                   "code": "const pseudo = await page.$('#pseudo');\n            const password = await page.$('#password');\n            const submit = await page.$('#submitBtn');\n            await pseudo.click({clickCount: 3});\n            await pseudo.type('dan30@gmail.com');\n            await password.click({clickCount: 3});\n            await password.type('toto');\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(false);\n            await submit.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/dashboard');\n            const profile = await page.$('#profileBtn');\n            await profile.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/profile/dan30');\n            await page.waitFor(1000);\n            expect(await page.$eval('#submitUpdate', btn => btn.disabled)).eql(true);\n            const updateUser = await page.$('#updateUser');\n            await updateUser.click();\n            const passwordUpdate = await page.$('#inputPassword');\n            const confirmPassword = await page.$('#passwordConfirm');\n            await page.waitFor(1000);\n            await passwordUpdate.click({clickCount: 3});\n            await passwordUpdate.type('toto');\n            await confirmPassword.click({clickCount: 3});\n            await confirmPassword.type('totos');\n            await passwordUpdate.click({clickCount: 3});\n            expect(await page.$eval('#submitUpdate', btn => btn.disabled)).eql(true);\n            await page.waitFor(1000);\n            expect(await page.$eval('#passwordMatchError', el => el.innerHTML))\n                .eql('Passwords do not match');",
                   "err": {},
-                  "uuid": "f918224f-4198-4d00-be89-61345f0ee3ef",
-                  "parentUUID": "d9760dd3-1c6d-4745-bafb-0f7acfb945c3",
+                  "uuid": "fb54a559-f71e-4b55-af1a-69485bb13744",
+                  "parentUUID": "caa1cd77-9879-444c-ab6c-c237f7fa168f",
                   "isHook": false,
                   "skipped": false
                 },
@@ -354,7 +354,7 @@
                   "title": "it should display an error on any form field in an invalid state",
                   "fullTitle": "E2E TESTS FOR PROFILE PAGE /user profile update errors it should display an error on any form field in an invalid state",
                   "timedOut": false,
-                  "duration": 10347,
+                  "duration": 10526,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -363,21 +363,21 @@
                   "context": null,
                   "code": "expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);\n            const pseudo = await page.$('#pseudo');\n            const loginPassword = await page.$('#password');\n            const submit = await page.$('#submitBtn');\n            await pseudo.click({clickCount: 3});\n            await pseudo.type('dan30@gmail.com');\n            await loginPassword.click({clickCount: 3});\n            await loginPassword.type('toto');\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(false);\n            await submit.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/dashboard');\n            const profile = await page.$('#profileBtn');\n            await profile.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/profile/dan30');\n            await page.waitFor(1000);\n            expect(await page.$eval('#submitUpdate', btn => btn.disabled)).eql(true);\n            const updateUser = await page.$('#updateUser');\n            await updateUser.click();\n            await page.waitFor(1000);\n            const username = await page.$('#username');\n            const password = await page.$('#inputPassword');\n            const confirmPassword = await page.$('#passwordConfirm');\n            await page.waitFor(1000);\n            await password.click({clickCount: 3});\n            await password.type('');\n            await confirmPassword.click({clickCount: 3});\n            await confirmPassword.type('');\n            await username.click({clickCount: 1});\n            expect(await page.$eval('#passwordRequired', el => el.innerHTML))\n                .eql('A password is required');\n            expect(await page.$eval('#confirmPasswordError', el => el.innerHTML))\n                .eql('Please confirm your password');\n            expect(await page.$eval('#submitUpdate', btn => btn.disabled)).eql(true);\n            await page.waitFor(3000);",
                   "err": {},
-                  "uuid": "1bcab0f6-25af-477b-9fb8-830f88f206f4",
-                  "parentUUID": "d9760dd3-1c6d-4745-bafb-0f7acfb945c3",
+                  "uuid": "49eb4eae-06d8-46fb-ab47-3f91b73b3e2e",
+                  "parentUUID": "caa1cd77-9879-444c-ab6c-c237f7fa168f",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f918224f-4198-4d00-be89-61345f0ee3ef",
-                "1bcab0f6-25af-477b-9fb8-830f88f206f4"
+                "fb54a559-f71e-4b55-af1a-69485bb13744",
+                "49eb4eae-06d8-46fb-ab47-3f91b73b3e2e"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 18215,
+              "duration": 18476,
               "root": false,
               "rootEmpty": false,
               "_timeout": 400000
@@ -393,7 +393,7 @@
           "_timeout": 400000
         },
         {
-          "uuid": "1fd50254-1897-4eb6-ad9b-40a6e622ffcd",
+          "uuid": "6cd55b2b-b57d-403f-90f9-c5b68e77849c",
           "title": "E2E TESTS FOR SINGUP PAGE",
           "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\register.js",
           "file": "\\server-side\\tests\\e2e\\register.js",
@@ -402,7 +402,7 @@
               "title": "\"before each\" hook",
               "fullTitle": "E2E TESTS FOR SINGUP PAGE \"before each\" hook",
               "timedOut": false,
-              "duration": 5938,
+              "duration": 7292,
               "state": null,
               "speed": null,
               "pass": false,
@@ -411,8 +411,8 @@
               "context": null,
               "code": "browser = await puppeteer.launch({\n    headless: false,\n    defaultViewport: null,\n    slowMo: 35,\n    args: [\n        '--window-size=1920,1080',\n    ],\n});\npage = await browser.newPage();\nawait page.goto(\"http://localhost:4200/register\");",
               "err": {},
-              "uuid": "ecac1307-435d-4471-9f43-38172cca1c94",
-              "parentUUID": "1fd50254-1897-4eb6-ad9b-40a6e622ffcd",
+              "uuid": "4e2c791d-c05c-42c1-bc9b-0a2935aa80fd",
+              "parentUUID": "6cd55b2b-b57d-403f-90f9-c5b68e77849c",
               "isHook": true,
               "skipped": false
             }
@@ -422,7 +422,7 @@
               "title": "\"after each\" hook",
               "fullTitle": "E2E TESTS FOR SINGUP PAGE \"after each\" hook",
               "timedOut": false,
-              "duration": 441,
+              "duration": 561,
               "state": null,
               "speed": null,
               "pass": false,
@@ -431,8 +431,8 @@
               "context": null,
               "code": "await browser.close();",
               "err": {},
-              "uuid": "7fdcb737-6ea8-4738-89b4-ee018aeb4e79",
-              "parentUUID": "1fd50254-1897-4eb6-ad9b-40a6e622ffcd",
+              "uuid": "883d0750-fab3-4fc9-90a5-2f3cbfb0f3ea",
+              "parentUUID": "6cd55b2b-b57d-403f-90f9-c5b68e77849c",
               "isHook": true,
               "skipped": false
             }
@@ -440,7 +440,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "a60b3452-6f63-47c4-83d3-33d5db9c0112",
+              "uuid": "8e629e23-8004-4d4e-bf87-fbe8d83da620",
               "title": "/POST Register",
               "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\register.js",
               "file": "\\server-side\\tests\\e2e\\register.js",
@@ -451,7 +451,7 @@
                   "title": "it should singup a user",
                   "fullTitle": "E2E TESTS FOR SINGUP PAGE /POST Register it should singup a user",
                   "timedOut": false,
-                  "duration": 3882,
+                  "duration": 3930,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -460,26 +460,26 @@
                   "context": null,
                   "code": "expect(await page.$eval('#formTitle', e => e.innerText))\n                .to.eql(\"Create an Account\");\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);\n            const username = await page.$('#username');\n            const email = await page.$('#inputEmail');\n            const password = await page.$('#inputPassword');\n            const confirmPassword = await page.$('#PasswordConfirm');\n            const submit = await page.$('#submitBtn');\n            const user = Math.random().toString(36).substr(2, 4);\n            await username.click({ clickCount: 3 });\n            await username.type(user);\n            await email.click({ clickCount: 3 });\n            await email.type(`${user}@gmail.com`);\n            await password.click({ clickCount: 3});\n            await password.type('toto');\n            await confirmPassword.click({ clickCount: 3});\n            await confirmPassword.type('toto');\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(false);\n            await submit.click();\n            await page.waitForNavigation();\n            expect(page.url()).eql('http://localhost:4200/login');",
                   "err": {},
-                  "uuid": "928539fd-1a94-4326-bf73-2f3e1d02e5ca",
-                  "parentUUID": "a60b3452-6f63-47c4-83d3-33d5db9c0112",
+                  "uuid": "f2743038-a5f0-4ef0-a984-cf18e492ba32",
+                  "parentUUID": "8e629e23-8004-4d4e-bf87-fbe8d83da620",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "928539fd-1a94-4326-bf73-2f3e1d02e5ca"
+                "f2743038-a5f0-4ef0-a984-cf18e492ba32"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3882,
+              "duration": 3930,
               "root": false,
               "rootEmpty": false,
               "_timeout": 400000
             },
             {
-              "uuid": "c29aae04-f79b-4536-b5f8-6c3d557d179a",
+              "uuid": "78b1812e-3030-4d53-a031-3a68452f55ee",
               "title": "/register errors",
               "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\register.js",
               "file": "\\server-side\\tests\\e2e\\register.js",
@@ -490,7 +490,7 @@
                   "title": "it should display an error if the username's length is below 4",
                   "fullTitle": "E2E TESTS FOR SINGUP PAGE /register errors it should display an error if the username's length is below 4",
                   "timedOut": false,
-                  "duration": 1897,
+                  "duration": 1858,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -499,8 +499,8 @@
                   "context": null,
                   "code": "const username = await page.$('#username');\n            const email = await page.$('#inputEmail');\n            await username.click({ clickCount: 3 });\n            await username.type('u');\n            await email.click({ clickCount: 3 });\n            await page.waitFor(1000);\n            expect((await page.$eval('#usernameError1', el => el.innerHTML))\n                .includes('minimum')).eql(true);\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);",
                   "err": {},
-                  "uuid": "3f8d5d05-4899-4ea3-993e-dda302fa9f11",
-                  "parentUUID": "c29aae04-f79b-4536-b5f8-6c3d557d179a",
+                  "uuid": "5b6ccbaf-d9dc-4cf0-ac9f-b5a967954e49",
+                  "parentUUID": "78b1812e-3030-4d53-a031-3a68452f55ee",
                   "isHook": false,
                   "skipped": false
                 },
@@ -508,7 +508,7 @@
                   "title": "it should display an error if the email is invalid",
                   "fullTitle": "E2E TESTS FOR SINGUP PAGE /register errors it should display an error if the email is invalid",
                   "timedOut": false,
-                  "duration": 2664,
+                  "duration": 2846,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -517,8 +517,8 @@
                   "context": null,
                   "code": "const email = await page.$('#inputEmail');\n            await email.click({ clickCount: 3 });\n            await email.type('dan30gmail.com');\n            await page.waitFor(1000);\n            expect((await page.$eval('#emailInvalid', el => el.innerHTML))\n                .includes('is not a valid email')).eql(true);\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);",
                   "err": {},
-                  "uuid": "7f52f87e-1959-4e57-93d2-a022cc91d3cb",
-                  "parentUUID": "c29aae04-f79b-4536-b5f8-6c3d557d179a",
+                  "uuid": "ff1a2877-6bc3-4b4c-9cb1-c2b011061e99",
+                  "parentUUID": "78b1812e-3030-4d53-a031-3a68452f55ee",
                   "isHook": false,
                   "skipped": false
                 },
@@ -526,7 +526,7 @@
                   "title": "it should display an error if the passwords don't match",
                   "fullTitle": "E2E TESTS FOR SINGUP PAGE /register errors it should display an error if the passwords don't match",
                   "timedOut": false,
-                  "duration": 2460,
+                  "duration": 2633,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -535,8 +535,8 @@
                   "context": null,
                   "code": "const password = await page.$('#inputPassword');\n            const confirmPassword = await page.$('#PasswordConfirm');\n            await password.click({ clickCount: 3 });\n            await password.type('toto');\n            await confirmPassword.click({ clickCount: 3 });\n            await confirmPassword.type('totos');\n            await page.waitFor(1000);\n            expect(await page.$eval('#passwordMatchError', el => el.innerHTML))\n                .eql('Passwords do not match');\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);",
                   "err": {},
-                  "uuid": "43567c06-a733-4ee3-9f1c-3f40c3943d55",
-                  "parentUUID": "c29aae04-f79b-4536-b5f8-6c3d557d179a",
+                  "uuid": "04dd3b80-c605-46dc-b3b4-7275a21fd55b",
+                  "parentUUID": "78b1812e-3030-4d53-a031-3a68452f55ee",
                   "isHook": false,
                   "skipped": false
                 },
@@ -544,7 +544,7 @@
                   "title": "it should display an error on any form field in an invalid state",
                   "fullTitle": "E2E TESTS FOR SINGUP PAGE /register errors it should display an error on any form field in an invalid state",
                   "timedOut": false,
-                  "duration": 1678,
+                  "duration": 1722,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -553,8 +553,8 @@
                   "context": null,
                   "code": "expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);\n            const username = await page.$('#username');\n            const email = await page.$('#inputEmail');\n            const password = await page.$('#inputPassword');\n            const confirmPassword = await page.$('#PasswordConfirm');\n            await username.click({ clickCount: 3 });\n            await username.type('');\n            await email.click({ clickCount: 3 });\n            await email.type('');\n            await password.click({ clickCount: 3});\n            await password.type('');\n            await confirmPassword.click({ clickCount: 3});\n            await confirmPassword.type('');\n            await username.click({ clickCount: 3});\n            expect(await page.$eval('#usernameError2', el => el.innerHTML))\n                .eql('A username is required');\n            expect(await page.$eval('#emailRequired', el => el.innerHTML))\n                .eql('An Email is required');\n            expect(await page.$eval('#passwordRequired', el => el.innerHTML))\n                .eql('A password is required');\n            expect(await page.$eval('#confirmPasswordError', el => el.innerHTML))\n                .eql('Please confirm your password');\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);",
                   "err": {},
-                  "uuid": "dfb59351-4bcd-44c6-9442-3a804d5a677c",
-                  "parentUUID": "c29aae04-f79b-4536-b5f8-6c3d557d179a",
+                  "uuid": "43599661-c1ed-4c88-a3c3-f241e6945b43",
+                  "parentUUID": "78b1812e-3030-4d53-a031-3a68452f55ee",
                   "isHook": false,
                   "skipped": false
                 },
@@ -562,7 +562,7 @@
                   "title": "it should display an error if the username or email alreay exists",
                   "fullTitle": "E2E TESTS FOR SINGUP PAGE /register errors it should display an error if the username or email alreay exists",
                   "timedOut": false,
-                  "duration": 4437,
+                  "duration": 4453,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -571,24 +571,24 @@
                   "context": null,
                   "code": "const username = await page.$('#username');\n            const email = await page.$('#inputEmail');\n            const password = await page.$('#inputPassword');\n            const confirmPassword = await page.$('#PasswordConfirm');\n            const submit = await page.$('#submitBtn');\n            await username.click({ clickCount: 3 });\n            await username.type('dan30');\n            await email.click({ clickCount: 3 });\n            await email.type('dan30@gmail.com');\n            await password.click({ clickCount: 3});\n            await password.type('****');\n            await confirmPassword.click({ clickCount: 3});\n            await confirmPassword.type('****');\n            expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(false);\n            await submit.click();\n            await page.waitFor(1000);\n            expect((await page.$eval('#flashMessages', e => e.innerHTML))\n                .includes('alert')).eql(true);\n            expect(page.url()).eql('http://localhost:4200/register');",
                   "err": {},
-                  "uuid": "d9ba9c3d-9f94-4fa8-8716-06d38be366f1",
-                  "parentUUID": "c29aae04-f79b-4536-b5f8-6c3d557d179a",
+                  "uuid": "e7403fba-ed79-4be7-b437-9a304a78b64d",
+                  "parentUUID": "78b1812e-3030-4d53-a031-3a68452f55ee",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "3f8d5d05-4899-4ea3-993e-dda302fa9f11",
-                "7f52f87e-1959-4e57-93d2-a022cc91d3cb",
-                "43567c06-a733-4ee3-9f1c-3f40c3943d55",
-                "dfb59351-4bcd-44c6-9442-3a804d5a677c",
-                "d9ba9c3d-9f94-4fa8-8716-06d38be366f1"
+                "5b6ccbaf-d9dc-4cf0-ac9f-b5a967954e49",
+                "ff1a2877-6bc3-4b4c-9cb1-c2b011061e99",
+                "04dd3b80-c605-46dc-b3b4-7275a21fd55b",
+                "43599661-c1ed-4c88-a3c3-f241e6945b43",
+                "e7403fba-ed79-4be7-b437-9a304a78b64d"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 13136,
+              "duration": 13512,
               "root": false,
               "rootEmpty": false,
               "_timeout": 400000
@@ -604,7 +604,7 @@
           "_timeout": 400000
         },
         {
-          "uuid": "f1a61357-720a-4df1-8cd7-669ba9d2b1c3",
+          "uuid": "d6c1ea69-a712-41e3-9ed3-d0a2dbeac658",
           "title": "E2E TESTS FOR SINGUP PAGE",
           "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\reviews.js",
           "file": "\\server-side\\tests\\e2e\\reviews.js",
@@ -613,7 +613,7 @@
               "title": "\"before each\" hook",
               "fullTitle": "E2E TESTS FOR SINGUP PAGE \"before each\" hook",
               "timedOut": false,
-              "duration": 6077,
+              "duration": 7324,
               "state": null,
               "speed": null,
               "pass": false,
@@ -622,8 +622,8 @@
               "context": null,
               "code": "browser = await puppeteer.launch({\n    headless: false,\n    defaultViewport: null,\n    slowMo: 35,\n    args: [\n        '--window-size=1920,1080',\n    ],\n});\npage = await browser.newPage();\nawait page.goto(\"http://localhost:4200/reviews\");",
               "err": {},
-              "uuid": "a26a303b-6c8c-4dea-9f3f-8e24a8b66e66",
-              "parentUUID": "f1a61357-720a-4df1-8cd7-669ba9d2b1c3",
+              "uuid": "78ab5948-9214-4068-ac06-b048e855d752",
+              "parentUUID": "d6c1ea69-a712-41e3-9ed3-d0a2dbeac658",
               "isHook": true,
               "skipped": false
             }
@@ -633,7 +633,7 @@
               "title": "\"after each\" hook",
               "fullTitle": "E2E TESTS FOR SINGUP PAGE \"after each\" hook",
               "timedOut": false,
-              "duration": 408,
+              "duration": 677,
               "state": null,
               "speed": null,
               "pass": false,
@@ -642,8 +642,8 @@
               "context": null,
               "code": "await browser.close();",
               "err": {},
-              "uuid": "fd474ead-3173-4614-bb74-8db22d6389d5",
-              "parentUUID": "f1a61357-720a-4df1-8cd7-669ba9d2b1c3",
+              "uuid": "d37a9c9d-d0ea-49e0-8eda-0610e4d50c3c",
+              "parentUUID": "d6c1ea69-a712-41e3-9ed3-d0a2dbeac658",
               "isHook": true,
               "skipped": false
             }
@@ -651,7 +651,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "09051b5e-1c59-42d8-9418-b916f50045bf",
+              "uuid": "0ee2c0ef-47ac-4630-98ad-ee52324e2a14",
               "title": "/GET Reviews",
               "fullFile": "C:\\Users\\morga\\Documents\\mean-stack-web-app\\server-side\\tests\\e2e\\reviews.js",
               "file": "\\server-side\\tests\\e2e\\reviews.js",
@@ -662,7 +662,7 @@
                   "title": "it should display all reviews",
                   "fullTitle": "E2E TESTS FOR SINGUP PAGE /GET Reviews it should display all reviews",
                   "timedOut": false,
-                  "duration": 5720,
+                  "duration": 5737,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -671,20 +671,20 @@
                   "context": null,
                   "code": "await page.waitFor(1000);\n            expect((await page.$eval('#comments', e => e.innerText))\n                .includes('comments'))\n                .to.eql(true);\n            const nextBtn = await page.$('.pagination-next');\n            const previousBtn = await page.$('.pagination-previous');\n            let reviewPage = (await page.$eval('.small-screen', e => e.innerText)).split('/');\n            while (Number(reviewPage[0]) !== Number(reviewPage[1])) {\n                await nextBtn.click();\n                reviewPage = (await page.$eval('.small-screen', e => e.innerText)).split('/');\n            }\n            await page.waitFor(1000);\n            while (Number(reviewPage[0]) !== 1) {\n                await previousBtn.click();\n                reviewPage = (await page.$eval('.small-screen', e => e.innerText)).split('/');\n            }\n            await page.waitFor(1000);",
                   "err": {},
-                  "uuid": "48795711-7288-461c-8da1-5126ab46a4b6",
-                  "parentUUID": "09051b5e-1c59-42d8-9418-b916f50045bf",
+                  "uuid": "3fcaec76-3c29-4634-9c5b-65a6f04a608f",
+                  "parentUUID": "0ee2c0ef-47ac-4630-98ad-ee52324e2a14",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "48795711-7288-461c-8da1-5126ab46a4b6"
+                "3fcaec76-3c29-4634-9c5b-65a6f04a608f"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 5720,
+              "duration": 5737,
               "root": false,
               "rootEmpty": false,
               "_timeout": 400000
