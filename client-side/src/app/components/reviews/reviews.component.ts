@@ -68,15 +68,15 @@ export class ReviewsComponent implements OnInit {
 
   onReviewCreate() {
     const review = {
-      rating: this.currentRate,
-      reviewText: this.reviewText
+      "rating": this.currentRate,
+      "reviewText": this.reviewText
     };
 
-    this.reviews.createReview(JSON.stringify(review))
+    this.reviews.createReview(review)
       .toPromise()
-      .then(() => {
+      .then((data : any) => {
         this.showReviews();
-        this.alertMessage = "Review added successfully !";
+        this.alertMessage = data.message;
       })
       .catch(err => {
         this.alertMessage = "Something went wrong !";
@@ -117,15 +117,14 @@ export class ReviewsComponent implements OnInit {
   onUpdateReview() {
 
     const review = {
-      rating: this.currentRate,
-      reviewText: this.reviewText
+      "rating": this.currentRate,
+      "reviewText": this.reviewText
     };
 
     if (!localStorage.getItem('id_token')) {
       this.alertMessage = "Something went wrong !";
     } else {
-      this.reviews.updateReview(this.reviewAuthor, this.updateId,
-        JSON.stringify(review))
+      this.reviews.updateReview(this.reviewAuthor, this.updateId, review)
         .toPromise()
         .then(() => {
           this.showReviews();
@@ -149,6 +148,10 @@ export class ReviewsComponent implements OnInit {
 
   closeAlert() {
     this.alertMessage = "";
+  }
+
+  checkToken(){
+    return !localStorage.getItem('id_token');
   }
 
 }

@@ -27,7 +27,7 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
     describe('/GET User', () => {
 
-        it("it should display the user's profile", async () => {
+        xit("it should display the user's profile", async () => {
 
             expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);
 
@@ -61,7 +61,7 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
     describe('/PATCH User', () => {
 
-        it("it should update the user's profile", async () => {
+        xit("it should update the user's profile", async () => {
 
             const pseudo = await page.$('#pseudo');
             const password = await page.$('#password');
@@ -130,7 +130,7 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
     describe('/user profile update errors', () => {
 
-        it("it should display an error if the passwords don't match", async () => {
+        xit("it should display an error if the passwords don't match", async () => {
 
             const pseudo = await page.$('#pseudo');
             const password = await page.$('#password');
@@ -186,7 +186,7 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
         });
 
-        it("it should display an error on any form field in an invalid state", async () => {
+        xit("it should display an error on any form field in an invalid state", async () => {
 
             expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);
 
@@ -255,23 +255,3 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
     });
 
 });
-
-/*
-await password.click({clickCount: 3});
-            await password.type('');
-
-            await confirmPassword.click({clickCount: 3});
-            await confirmPassword.type('');
-
-            await password.click({clickCount: 3});
-
-            expect(await page.$eval('#passwordRequired', el => el.innerHTML))
-                .eql('A password is required');
-
-            expect(await page.$eval('#confirmPasswordError', el => el.innerHTML))
-                .eql('Please confirm your password');
-
-            expect(await page.$eval('#submitUpdate', btn => btn.disabled)).eql(true);
-
-            await page.waitFor(3000);
- */

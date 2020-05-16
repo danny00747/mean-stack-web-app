@@ -26,7 +26,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
     describe('/POST Register', () => {
 
-        it('it should singup a user', async () => {
+        xit('it should singup a user', async () => {
 
             expect(await page.$eval('#formTitle', e => e.innerText))
                 .to.eql("Create an Account");
@@ -65,7 +65,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
     describe('/register errors', () => {
 
-        it("it should display an error if the username's length is below 4", async () => {
+        xit("it should display an error if the username's length is below 4", async () => {
 
             const username = await page.$('#username');
             const email = await page.$('#inputEmail');
@@ -82,7 +82,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
         });
 
-        it("it should display an error if the email is invalid", async () => {
+        xit("it should display an error if the email is invalid", async () => {
 
             const email = await page.$('#inputEmail');
 
@@ -97,7 +97,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
         });
 
-        it("it should display an error if the passwords don't match", async () => {
+        xit("it should display an error if the passwords don't match", async () => {
 
             const password = await page.$('#inputPassword');
             const confirmPassword = await page.$('#PasswordConfirm');
@@ -117,7 +117,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
         });
 
-        it("it should display an error on any form field in an invalid state", async () => {
+        xit("it should display an error on any form field in an invalid state", async () => {
 
             expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);
 
@@ -156,7 +156,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
         });
 
-        it('it should display an error if the username or email alreay exists', async () => {
+        xit('it should display an error if the username or email alreay exists', async () => {
 
             const username = await page.$('#username');
             const email = await page.$('#inputEmail');

@@ -96,7 +96,6 @@ export class MetricsComponent implements OnInit {
   }
 
   filterDisable(event : any){
-    console.log(event.checked);
     (event.checked) ? this.searchValue = "" : undefined;
     this.totalItems = this.users.length;
   }

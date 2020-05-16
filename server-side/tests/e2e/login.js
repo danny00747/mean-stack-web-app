@@ -26,7 +26,7 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
 
     describe('/POST Login', async () => {
 
-        it('it should login a user', async () => {
+        xit('it should login a user', async () => {
 
             //await page.waitFor(3000);
 
@@ -53,7 +53,7 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
             expect(page.url()).eql('http://localhost:4200/dashboard');
         });
 
-        it('it should NOT login a user with a wrong password', async () => {
+        xit('it should NOT login a user with a wrong password', async () => {
 
             const pseudo = await page.$('#pseudo');
             const password = await page.$('#password');
@@ -77,7 +77,7 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
     });
 
     describe('/login errors', async () => {
-        it('it should display form validation on all fields', async () => {
+        xit('it should display form validation on all fields', async () => {
 
             const pseudo = await page.$('#pseudo');
             const password = await page.$('#password');
@@ -102,7 +102,7 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
             expect(page.url()).eql('http://localhost:4200/login');
         });
 
-        it('it should nagivate to the signup page', async () => {
+        xit('it should nagivate to the signup page', async () => {
 
             const singUp = await page.$('#signUpLink');
 

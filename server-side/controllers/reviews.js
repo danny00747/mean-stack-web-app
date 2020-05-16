@@ -11,7 +11,7 @@ const getAuthor = (req, res, callback) => {
             } else {
                 res
                     .status(404)
-                    .json({message: "No valid entry found for provided ID"});
+                    .json({message: "No user found with the provided ID"});
             }
         })
         .catch(err => {
@@ -42,7 +42,10 @@ const doAddReview = (req, res, user) => {
             .then(review => {
                 res
                     .status(201)
-                    .json(review);
+                    .json({
+                        message: "Review created successfully !",
+                        review: review.reviews[(review.reviews).length - 1],
+                    });
             }).catch(err => {
             res
                 .status(500)
@@ -55,6 +58,7 @@ const doAddReview = (req, res, user) => {
 };
 
 const reviewsCreate = (req, res) => {
+    console.log(res.body);
     getAuthor(req, res,
         (req, res) => {
             const userId = req.params.userId;
@@ -99,14 +103,14 @@ const reviewsUpdateOne = (req, res) => {
             if (!user)
                 return res
                     .status(404)
-                    .json({message: 'No user was found with provided ID'});
+                    .json({message: 'No user was found with provided Email'});
 
             if (user.reviews && user.reviews.length > 0) {
                 const thisReview = user.reviews.id(reviewId);
                 if (!user.reviews.id(reviewId)) {
                     return res
                         .status(404)
-                        .json({message: 'No was review found with provided Email'});
+                        .json({message: 'No was review found with provided ID'});
                 } else {
 
                     if (Object.keys(req.body).length > 2) {
@@ -128,7 +132,10 @@ const reviewsUpdateOne = (req, res) => {
                                     .json({message: "No review was found"});
                             res
                                 .status(200)
-                                .json({message: "Review updated successfully !"});
+                                .json({
+                                    message: "Review updated successfully !",
+                                    review: result.reviews[(result.reviews).length - 1]
+                                });
                         })
                         .catch(err => {
                             res.status(500).json({

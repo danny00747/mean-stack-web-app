@@ -20,8 +20,8 @@ describe('Users', () => {
         it('it should login a user',  (done) => {
 
             const user = {
-                "pseudo": "dan30",
-                "password": "toto"
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
             };
 
             chai.request(server)
@@ -83,7 +83,7 @@ describe('Users', () => {
                 });
         });
 
-        it('it should NOT create a user', (done) => {
+        it('it should NOT create a user if some required field(s) are missing', (done) => {
 
             const user = {
                 "username": "dan330",
@@ -101,6 +101,29 @@ describe('Users', () => {
                     done();
                 });
         });
+
+        it('it should NOT create a user since he/she already exists', (done) => {
+
+            const user = {
+                "username": "admin",
+                "email": "admin10@gmail.com",
+                "password": "***********************"
+            };
+
+            chai.request(server)
+                .post('/server/api/signup')
+                .send(user)
+                .end((err, res) => {
+                    res.should.have.status(409);
+                    res.body.should.have
+                        .property('success')
+                        .eql(false);
+                    res.body.should.have
+                        .property('message')
+                        .eql('Mail or Username already exists !');
+                    done();
+                });
+        });
     });
 
     describe('/GET users',  () => {
@@ -108,8 +131,8 @@ describe('Users', () => {
         it('it should get all users',  (done) => {
 
             const user = {
-                "pseudo": "admin",
-                "password": process.env.ADMIN_PSD
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
             };
 
             chai.request(server)
@@ -127,7 +150,7 @@ describe('Users', () => {
                 });
         });
 
-        it('it should NOT get all users',  (done) => {
+        it('it should NOT get all users if the request is sent by a student',  (done) => {
 
             const user = {
                 "pseudo": "dan30",
@@ -143,6 +166,9 @@ describe('Users', () => {
                         .set('Authorization', res.body.token)
                         .end((err, res) => {
                             res.should.have.status(403);
+                            res.body.should.have
+                                .property('message')
+                                .eql("You don't have enough permission to perform this action");
                             done();
                         });
                 });
@@ -155,8 +181,8 @@ describe('Users', () => {
         it('it should get a user by id',  (done) => {
 
             const user = {
-                "pseudo": "admin",
-                "password": process.env.ADMIN_PSD
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
             };
 
             chai.request(server)
@@ -179,8 +205,8 @@ describe('Users', () => {
         it('it should NOT get a user by id',  (done) => {
 
             const user = {
-                "pseudo": "admin",
-                "password": process.env.ADMIN_PSD
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
             };
 
             chai.request(server)
@@ -208,8 +234,8 @@ describe('Users', () => {
         it('it should update a user by id',  (done) => {
 
             const user = {
-                "pseudo": "admin",
-                "password": process.env.ADMIN_PSD
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
             };
 
             chai.request(server)
@@ -243,8 +269,8 @@ describe('Users', () => {
         it('it should NOT update a user by id',  (done) => {
 
             const user = {
-                "pseudo": "admin",
-                "password": process.env.ADMIN_PSD
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
             };
 
             chai.request(server)
@@ -270,8 +296,6 @@ describe('Users', () => {
                         });
                 });
         });
-
-
 
     });
 });

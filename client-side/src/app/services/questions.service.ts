@@ -13,8 +13,8 @@ export class QuestionsService {
   timeTaken: any;
   qnProgress: number;
   correctAnswerCount: number = 0;
-  //description: any;
 
+  token : string = localStorage.getItem('id_token');
 
   constructor(private _http: HttpClient) {
   }
@@ -26,15 +26,18 @@ export class QuestionsService {
   }
 
   getQuestions() {
-    return this._http.get('/server/api/questions', {headers});
+    const httpAuthHeaders = new HttpHeaders().set('Authorization', this.token);
+    return this._http.get('/server/api/questions', {headers: httpAuthHeaders});
   }
 
   createQuestion(question: any) {
-    return this._http.post('/server/api/questions', question, {headers});
+    const httpAuthHeaders = new HttpHeaders().set('Authorization', this.token);
+    return this._http.post('/server/api/questions', question, {headers: httpAuthHeaders});
   }
 
   deleteQuestion(questionId: any) {
-    return this._http.delete(`/server/api/questions/${questionId}`, {headers});
+    const httpAuthHeaders = new HttpHeaders().set('Authorization', this.token);
+    return this._http.delete(`/server/api/questions/${questionId}`, {headers: httpAuthHeaders});
   }
 
   getAnswer(value) {

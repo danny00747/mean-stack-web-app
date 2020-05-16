@@ -4,10 +4,10 @@
     <div class="container m-5 p-5 border border-bottom">
 
       <!-- Add a review button -->
-      <div *ngIf="authService.loggedIn()" class="row">
+      <div *ngIf="!checkToken()" class="row">
         <div class="col-md-12 text-center">
           <button (click)="chooseModalTitle($event.target)" name="createReview" type="submit"
-                  class="btn btn-primary text-center" data-toggle="modal"
+                  class="btn btn-primary text-center" data-toggle="modal" id="addReviewBtn"
                   data-target="#addReviewModel" data-whatever="@mdo">Add a review
           </button>
         </div>
@@ -65,7 +65,7 @@
 
                     <!-- delete review a tag -->
                     <a class="ml-3" (click)="getDeleteId($event.target)" data-toggle="modal"
-                         data-target="#deleteModel" data-whatever="@mdo">
+                       data-target="#deleteModel" data-whatever="@mdo">
 
                       <!-- delete review icon -->
                       <i title="{{review['_id']}}" id="{{review['author']}}" class="fa fa-trash"
@@ -144,7 +144,7 @@
             <!-- create/update review card -->
             <div class="card-header">
               <p class="font-weight-bold">Rating :
-                <ngb-rating [(rate)]="currentRate"></ngb-rating>
+                <ngb-rating [(rate)]="currentRate" ></ngb-rating>
               </p>
             </div>
 
@@ -153,8 +153,8 @@
               <div class="list-group-item">
                 <label for="inputRating">
                   <input #rateInput="ngModel" [class.is-invalid]="rateInput.invalid &&
-                    rateInput.touched" class="form-control" id="inputRating"
-                         [(ngModel)]="currentRate" type="number" placeholder="0"
+                    rateInput.touched" class="form-control"
+                         [(ngModel)]="currentRate" type="number" id="inputRating"
                          name="currentRate" style="width: 67px; height: 35px" required>
                 </label>
                 out of 10
@@ -177,18 +177,19 @@
             </div>
           </div>
           <br>
-
           <!-- create/update review modal footer -->
           <div class="modal-footer">
 
             <!-- update/create review success submit message -->
             <span *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
-                  style="color: green; margin-right: 50px"> {{alertMessage}}
+                  style="color: green; margin-right: 50px" id="createSuccess">
+              {{alertMessage}}
             </span>
 
             <!-- update/create review failed submit message -->
             <span *ngIf="alertMessage.includes('wrong')"
-                  style="color: red; margin-right: 90px"> {{alertMessage}}
+                  style="color: red; margin-right: 90px" id="createFail">
+              {{alertMessage}}
             </span>
 
             <!-- update/create review close button -->
@@ -197,8 +198,8 @@
             </button>
 
             <!-- update/create review submit button -->
-            <button appAddClass [disabled]="reviewForm.form.invalid"
-                    class="btn btn-primary" type="submit">submit
+            <button appAddClass id="reviewSubmit" class="btn btn-primary" type="submit"
+                    [disabled]="reviewForm.form.invalid">submit
             </button>
           </div>
         </form>

@@ -14,7 +14,8 @@
     "test": "mocha 'server-side/tests/*.js' --timeout 10000",
     "test-watch": "nodemon --exec \"npm test\"",
     "test-coverage": "nyc --reporter=lcov --reporter=text-lcov npm run test-watch",
-    "coverage": "nyc --reporter=lcov --reporter=text npm run test"
+    "coverage": "nyc --reporter=lcov --reporter=text npm run test",
+    "mocha-coverage": "mocha 'server-side/tests/*.js' --timeout 30000 --reporter mochawesome --reporter-options reportDir=report-mocha --reporter-options reportFilename=index"
   },
   "repository": {
     "type": "git",
