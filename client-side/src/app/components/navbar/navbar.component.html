@@ -10,7 +10,7 @@
       </li>
 
       <!-- Register -->
-      <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
+      <li *ngIf="authService.checkToken()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/register']">
           <i class="fa fa-user-plus"></i> Register</a>
@@ -52,7 +52,7 @@
     <ul class="navbar-nav ml-auto">
 
       <!-- Admin -->
-      <li *ngIf="authService.loggedIn() && authService.role === 'admin'"
+      <li *ngIf="!authService.checkToken() && authService.role === 'admin'"
           class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
            data-toggle="dropdown"
@@ -73,7 +73,7 @@
       </li>
 
       <!-- Teacher -->
-      <li *ngIf="authService.loggedIn() && (authService.role === 'teacher' ||
+      <li *ngIf="!authService.checkToken() && (authService.role === 'teacher' ||
         authService.role === 'admin')" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
            aria-haspopup="true" aria-expanded="false">Teacher
@@ -90,34 +90,34 @@
       </li>
 
       <!-- Dashboard -->
-      <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
+      <li *ngIf="!authService.checkToken()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
       </li>
 
       <!-- QCM -->
-      <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
+      <li *ngIf="!authService.checkToken()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/questions']">
           <i class="fa fa-list-ol"></i> QCM</a>
       </li>
 
       <!-- Profile -->
-      <li *ngIf="authService.loggedIn()" class="nav-item ">
+      <li *ngIf="!authService.checkToken()" class="nav-item ">
         <a id="profileBtn" class="nav-link " style="cursor:pointer;" (click)="onSelect()">
           <i class="fa fa-user"></i> {{authService.username}}</a>
       </li>
 
       <!-- Login -->
-      <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']"
+      <li *ngIf="authService.checkToken()" class="nav-item" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
         <a id="loginBtn" class="nav-link" [routerLink]="['/login']">
           <i class="fa fa-sign-in"></i> Login</a>
       </li>
 
       <!-- Logout -->
-      <li *ngIf="authService.loggedIn()" class="nav-item">
-        <a id=`${authService.getId()}` class="nav-link" (click)="onLogOutClick()" href="#">
+      <li *ngIf="!authService.checkToken()" class="nav-item">
+        <a id="logoutBtn" class="nav-link" (click)="onLogOutClick()" href="#">
           <i class="fa fa-sign-out"></i>Logout</a>
       </li>
     </ul>

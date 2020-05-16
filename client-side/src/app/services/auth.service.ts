@@ -116,6 +116,10 @@ export class AuthService {
     // console.log(this.user);
     return !!this.authToken;
   }
+
+  checkToken(){
+    return !localStorage.getItem('id_token');
+  }
 }
 
 /*

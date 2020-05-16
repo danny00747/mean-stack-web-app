@@ -8,7 +8,7 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
     let browser;
     let page;
 
-    beforeEach(async () => {
+    before(async () => {
         browser = await puppeteer.launch({
             headless: false,
             defaultViewport: null,
@@ -17,17 +17,20 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
                 '--window-size=1920,1080',
             ],
         });
+    });
+
+    beforeEach(async () => {
         page = await browser.newPage();
         await page.goto("http://localhost:4200/login");
     });
 
-    afterEach(async () => {
+    after(async () => {
         await browser.close();
     });
 
     describe('/GET User', () => {
 
-        xit("it should display the user's profile", async () => {
+        it("it should display the user's profile", async () => {
 
             expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);
 
@@ -55,13 +58,21 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
             expect(page.url()).eql('http://localhost:4200/profile/dan30');
 
+            await page.waitFor(2000);
+
+            const logoutBtn = await page.$('#logoutBtn');
+            await logoutBtn.click();
+            await page.waitForNavigation();
+
+            expect(page.url()).eql('http://localhost:4200/login');
+
         });
 
     });
 
     describe('/PATCH User', () => {
 
-        xit("it should update the user's profile", async () => {
+        it("it should update the user's profile", async () => {
 
             const pseudo = await page.$('#pseudo');
             const password = await page.$('#password');
@@ -124,13 +135,26 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
             expect(await page.$eval('#updateSuccess', el => el.innerHTML))
                 .eql(' User info updated successfully ! ');
 
+            await page.waitFor(1000);
+
+            const modalClose = await page.$('#modalClose');
+            await modalClose.click();
+
+            await page.waitFor(2000);
+
+            const logoutBtn = await page.$('#logoutBtn');
+            await logoutBtn.click();
+            await page.waitForNavigation();
+
+            expect(page.url()).eql('http://localhost:4200/login');
+
         });
 
     });
 
     describe('/user profile update errors', () => {
 
-        xit("it should display an error if the passwords don't match", async () => {
+        it("it should display an error if the passwords don't match", async () => {
 
             const pseudo = await page.$('#pseudo');
             const password = await page.$('#password');
@@ -184,9 +208,22 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
             expect(await page.$eval('#passwordMatchError', el => el.innerHTML))
                 .eql('Passwords do not match');
 
+            await page.waitFor(1000);
+
+            const modalClose = await page.$('#modalClose');
+            await modalClose.click();
+
+            await page.waitFor(2000);
+
+            const logoutBtn = await page.$('#logoutBtn');
+            await logoutBtn.click();
+            await page.waitForNavigation();
+
+            expect(page.url()).eql('http://localhost:4200/login');
+
         });
 
-        xit("it should display an error on any form field in an invalid state", async () => {
+        it("it should display an error on any form field in an invalid state", async () => {
 
             expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);
 
@@ -246,7 +283,18 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
             expect(await page.$eval('#submitUpdate', btn => btn.disabled)).eql(true);
 
-            await page.waitFor(3000);
+            await page.waitFor(1000);
+
+            const modalClose = await page.$('#modalClose');
+            await modalClose.click();
+
+            await page.waitFor(2000);
+
+            const logoutBtn = await page.$('#logoutBtn');
+            await logoutBtn.click();
+            await page.waitForNavigation();
+
+            expect(page.url()).eql('http://localhost:4200/login');
 
 
 

@@ -4,11 +4,6 @@ const grantAccess = (action, resource) => {
     return async (req, res, next) => {
         try {
             const permission = roles.can(req.user.role)[action](resource);
-            //console.log((req.user._id).toString());
-            //console.log(action);
-            //console.log(resource);
-            //console.log( (req.params.userId).toString());
-            //console.log(permission.attributes);
 
             if (!permission.granted) {
                 return res.status(403).json({

@@ -25,7 +25,7 @@ describe('Questions', () => {
      */
     describe('/GET questions', () => {
 
-        it('it should GET all the question', (done) => {
+        it('it should GET no question since there is none in the database', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -47,6 +47,43 @@ describe('Questions', () => {
                         });
                 });
         });
+
+        it('it should get all questions', (done) => {
+
+            const user = {
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
+            };
+
+            const question = new Question({
+                "type": "boolean", "question": "what's 2000 - 150 ?",
+                "answers": [{"option": "true", "isCorrect": true},
+                    {"option": "false", "isCorrect": false}
+                ]
+            });
+
+            chai.request(server)
+                .post('/server/api/login')
+                .send(user)
+                .end((err, res1) => {
+                    chai.request(server)
+                        .post('/server/api/questions')
+                        .send(question)
+                        .set('Authorization', res1.body.token)
+                        .end(() => {
+                            chai.request(server)
+                                .get('/server/api/questions')
+                                .set('Authorization', res1.body.token)
+                                .end((err, res2) => {
+                                    res2.should.have.status(200);
+                                    res2.body.should.be.a('array');
+                                    res2.body.length.should.be.eql(1);
+
+                                });
+                        });
+                    done();
+                });
+        });
     });
 
     /*
@@ -54,7 +91,7 @@ describe('Questions', () => {
       */
     describe('/POST questions', () => {
 
-        it('it should not POST a question without a type field', (done) => {
+        it('it should NOT POST a question without a type field', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -122,6 +159,7 @@ describe('Questions', () => {
                         });
                 });
         });
+
     });
 
 
@@ -168,7 +206,29 @@ describe('Questions', () => {
                     done();
                 });
         });
-        it('it should not GET a question with a wrong id', (done) => {
+
+        it('it should NOT GET a question with a missing or invalid JWT', (done) => {
+
+            const user = {
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
+            };
+
+            chai.request(server)
+                .post('/server/api/login')
+                .send(user)
+                .end(() => {
+                    chai.request(server)
+                        .get('/server/api/questions/92640se51167daq4c81f4312')
+                        .end((err, res2) => {
+                            res2.should.have.status(401);
+                            Object.keys(res2.body).length.should.be.eql(0);
+                        });
+                    done();
+                });
+        });
+
+        it('it should NOT GET a question with a wrong id', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -199,7 +259,7 @@ describe('Questions', () => {
     */
     describe('/PATCH/:id question', () => {
 
-        it('it should not PATCH a question with a wrong id', (done) => {
+        it('it should NOT PATCH a question with a wrong id', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -273,6 +333,27 @@ describe('Questions', () => {
                         });
                 });
             done();
+        });
+
+        it('it should NOT PATCH a question with a missing or invalid JWT', (done) => {
+
+            const user = {
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
+            };
+
+            chai.request(server)
+                .post('/server/api/login')
+                .send(user)
+                .end(() => {
+                    chai.request(server)
+                        .patch('/server/api/questions/92640se51167daq4c81f4312')
+                        .end((err, res2) => {
+                            res2.should.have.status(401);
+                            Object.keys(res2.body).length.should.be.eql(0);
+                        });
+                    done();
+                });
         });
 
     });

@@ -150,7 +150,7 @@ export class ReviewsComponent implements OnInit {
     this.alertMessage = "";
   }
 
-  checkToken(){
+  checkTokens(){
     return !localStorage.getItem('id_token');
   }
 

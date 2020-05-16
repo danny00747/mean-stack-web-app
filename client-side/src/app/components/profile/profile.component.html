@@ -144,8 +144,10 @@
             <span *ngIf="alertMessage.includes('wrong')"
                   style="color: red; margin-right: 30px" id="updateFail">{{alertMessage}}
           </span>
-            <button (click)="closeAlert()" type="button" class="btn btn-secondary" data-dismiss="modal">
-              Close</button>
+            <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+                    data-dismiss="modal" id="modalClose">Close
+            </button>
+
             <button appAddClass type="submit" class="btn btn-primary" id="submitUpdate"
                     [disabled]="profileForm.form.invalid">Submit</button>
 

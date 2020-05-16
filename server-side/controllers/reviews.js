@@ -58,7 +58,6 @@ const doAddReview = (req, res, user) => {
 };
 
 const reviewsCreate = (req, res) => {
-    console.log(res.body);
     getAuthor(req, res,
         (req, res) => {
             const userId = req.params.userId;

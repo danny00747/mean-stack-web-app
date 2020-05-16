@@ -27,6 +27,14 @@ export class MetricsComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    if (!this.authService.getAllProfiles() ||
+      (JSON.parse(localStorage.getItem('user')).role !== 'admin' &&
+        JSON.parse(localStorage.getItem('user')).role !== 'teacher')) {
+      this.authService.logout();
+      return this._flashMessagesService.show("", {
+        navigate: `${this.router.navigate(['/login'])}`
+      });
+    }
     this.showUsersLogs();
   }
 

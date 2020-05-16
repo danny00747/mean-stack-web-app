@@ -60,7 +60,7 @@ describe('Reviews', () => {
                 });
         });
 
-        it('it should not create a review with a missing or invalid JWT', (done) => {
+        it('it should NOT create a review with a missing or invalid JWT', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -88,7 +88,7 @@ describe('Reviews', () => {
                 });
         });
 
-        it('it should not create a review with a wrong user id', (done) => {
+        it('it should NOT create a review with a wrong user id', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -121,7 +121,7 @@ describe('Reviews', () => {
 
     describe('/PATCH:id review', () => {
 
-        it('it should updated a review with the given email', (done) => {
+        it('it should PATCH a review with the given email', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -161,7 +161,7 @@ describe('Reviews', () => {
                 });
         });
 
-        it('it should not update a review whose user is non-existent', (done) => {
+        it('it should NOT PATCH a review whose user is non-existent', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -193,7 +193,7 @@ describe('Reviews', () => {
                 });
         });
 
-        it('it should not update a review with a wrong id', (done) => {
+        it('it should NOT PATCH a review with a wrong id', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -225,7 +225,7 @@ describe('Reviews', () => {
                 });
         });
 
-        it('it should not update a review with a missing or invalid JWT', (done) => {
+        it('it should NOT PATCH a review with a missing or invalid JWT', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -255,11 +255,93 @@ describe('Reviews', () => {
                 });
         });
 
+        it('it should NOT PATCH a review whose user has none', (done) => {
+
+            const user = Math.random().toString(36).substr(2, 4);
+
+            const user1 = {
+                "username": user,
+                "email": `${user}@gmail.com`,
+                "password": "toto"
+            };
+
+            const review = {
+                "rating": "3",
+                "reviewText": "This is the 3rd review"
+            };
+
+            const reviewId = "1f468dbf5182002118fc8821";
+
+            chai.request(server)
+                .post('/server/api/signup')
+                .send(user1)
+                .end(() => {
+                    chai.request(server)
+                        .post('/server/api/login')
+                        .send({
+                            "pseudo": user,
+                            "password": "toto"
+                        })
+                        .end((err, res1) => {
+                            chai.request(server)
+                                .patch(`/server/api/user/${user1.email}/reviews/${reviewId}`)
+                                .set('Authorization', res1.body.token)
+                                .send(review)
+                                .end((err, res2) => {
+                                    res2.should.have.status(404);
+                                    res2.body.should.have.property('message')
+                                        .eql('No Review to update');
+                                });
+                        });
+                    done();
+                });
+        });
+
+        it("it should NOT PATCH a review if some request body's field(s) are not allowed", (done) => {
+
+            const user = {
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
+            };
+
+            const review = {
+                "rating": "9",
+                "reviewText": "This is mocha",
+                "reviewComment": "This is mocha v2"
+            };
+
+            chai.request(server)
+                .post('/server/api/login')
+                .send(user)
+                .end((err, res1) => {
+                    const userId = res1.body.user.userId;
+                    const userEmail = res1.body.user.userEmail;
+                    chai.request(server)
+                        .post(`/server/api/user/${userId}/reviews`)
+                        .send(review)
+                        .set('Authorization', res1.body.token)
+                        .end((err, res2) => {
+                            const reviewId = res2.body.review._id;
+                            review.rating = "10";
+                            chai.request(server)
+                                .patch(`/server/api/user/${userEmail}/reviews/${reviewId}`)
+                                .send(review)
+                                .set('Authorization', res1.body.token)
+                                .end((err, res3) => {
+                                    res3.should.have.status(405);
+                                    res3.body.should.have.property('message')
+                                        .eql('Some fields are NOT allowed !');
+                                });
+                        });
+                    done();
+                });
+        });
+
     });
 
     describe('/DELETE:id review', () => {
 
-        it('it should delete a review with the given id', (done) => {
+        it('it should DELETE a review with the given id', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -297,7 +379,7 @@ describe('Reviews', () => {
                 });
         });
 
-        it('it should not delete a review whose user is non-existent', (done) => {
+        it('it should NOT DELETE a review whose user is non-existent', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -323,7 +405,7 @@ describe('Reviews', () => {
                 });
         });
 
-        it('it should not delete a review with a wrong id', (done) => {
+        it('it should NOT DELETE a review with a wrong id', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -349,7 +431,7 @@ describe('Reviews', () => {
                 });
         });
 
-        it('it should not delete a review with a missing or invalid JWT', (done) => {
+        it('it should NOT DELETE a review with a missing or invalid JWT', (done) => {
 
             const user = {
                 "pseudo": process.env["ADMIN_PSEUDO"],
@@ -368,6 +450,42 @@ describe('Reviews', () => {
                         .end((err, res2) => {
                             res2.should.have.status(401);
                             Object.keys(res2.body).length.should.be.eql(0);
+                        });
+                    done();
+                });
+        });
+
+        it('it should NOT DELETE a review whose user has none', (done) => {
+
+            const user = Math.random().toString(36).substr(2, 4);
+
+            const user1 = {
+                "username": user,
+                "email": `${user}@gmail.com`,
+                "password": "toto"
+            };
+
+            const reviewId = "1f468dbf5182002118fc8821";
+
+            chai.request(server)
+                .post('/server/api/signup')
+                .send(user1)
+                .end(() => {
+                    chai.request(server)
+                        .post('/server/api/login')
+                        .send({
+                            "pseudo": user,
+                            "password": "toto"
+                        })
+                        .end((err, res1) => {
+                            chai.request(server)
+                                .delete(`/server/api/user/${user1.email}/reviews/${reviewId}`)
+                                .set('Authorization', res1.body.token)
+                                .end((err, res2) => {
+                                    res2.should.have.status(404);
+                                    res2.body.should.have.property('message')
+                                        .eql('No Review to delete');
+                                });
                         });
                     done();
                 });

@@ -4,7 +4,7 @@
     <div class="container m-5 p-5 border border-bottom">
 
       <!-- Add a review button -->
-      <div *ngIf="!checkToken()" class="row">
+      <div *ngIf="!checkTokens()" class="row">
         <div class="col-md-12 text-center">
           <button (click)="chooseModalTitle($event.target)" name="createReview" type="submit"
                   class="btn btn-primary text-center" data-toggle="modal" id="addReviewBtn"
@@ -194,7 +194,7 @@
 
             <!-- update/create review close button -->
             <button (click)="closeAlert()" type="button" class="btn btn-secondary"
-                    data-dismiss="modal">Close
+                    data-dismiss="modal" id="modalClose">Close
             </button>
 
             <!-- update/create review submit button -->

@@ -7,7 +7,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
     let browser;
     let page;
 
-    beforeEach(async () => {
+    before(async () => {
         browser = await puppeteer.launch({
             headless: false,
             defaultViewport: null,
@@ -16,17 +16,20 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
                 '--window-size=1920,1080',
             ],
         });
+    });
+
+    beforeEach(async () => {
         page = await browser.newPage();
         await page.goto("http://localhost:4200/reviews");
     });
 
-    afterEach(async () => {
+    after(async () => {
         await browser.close();
     });
 
     describe('/GET Reviews', () => {
 
-        xit('it should display all reviews', async () => {
+        it('it should display all reviews', async () => {
 
             await page.waitFor(1000);
 
@@ -78,10 +81,10 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
             const password = await page.$('#password');
             const loginSubmit = await page.$('#submitBtn');
 
-            await pseudo.click({ clickCount: 3 });
+            await pseudo.click({clickCount: 3});
             await pseudo.type('dan30@gmail.com');
 
-            await password.click({ clickCount: 3});
+            await password.click({clickCount: 3});
             await password.type('toto');
 
             await loginSubmit.click();
@@ -96,11 +99,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
             expect(page.url()).eql('http://localhost:4200/reviews');
 
-            await page.waitFor(1000);
-
             await page.reload();
-
-            await page.waitFor(1000);
 
             const addReviewBtn = await page.$('#addReviewBtn');
 
@@ -111,11 +110,11 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
             expect(await page.$eval('#reviewSubmit', btn => btn.disabled)).eql(true);
 
             const inputRating = await page.$('#inputRating');
-            await inputRating.click({ clickCount: 3});
+            await inputRating.click({clickCount: 3});
             await inputRating.type('7');
 
             const reviewComment = await page.$('#reviewComment');
-            await reviewComment.click({ clickCount: 3});
+            await reviewComment.click({clickCount: 3});
             await reviewComment.type('This a review added by an automated software !');
 
             expect(await page.$eval('#reviewSubmit', btn => btn.disabled)).eql(false);
@@ -127,6 +126,13 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
             expect(await page.$eval('#createSuccess', el => el.innerText))
                 .eql('Review created successfully !');
+
+            await page.waitFor(1000);
+
+            const modalClose = await page.$('#modalClose');
+            await modalClose.click();
+
+            await page.waitFor(3000);
 
 
         });

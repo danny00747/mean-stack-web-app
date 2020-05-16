@@ -7,7 +7,7 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
     let browser;
     let page;
 
-    beforeEach(async () => {
+    before(async () => {
         browser = await puppeteer.launch({
             headless: false,
             defaultViewport: null,
@@ -16,17 +16,20 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
                 '--window-size=1920,1080',
             ],
         });
+    });
+
+    beforeEach(async () => {
         page = await browser.newPage();
         await page.goto("http://localhost:4200/login");
     });
 
-    afterEach(async () => {
+    after(async () => {
         await browser.close();
     });
 
     describe('/POST Login', async () => {
 
-        xit('it should login a user', async () => {
+        it('it should login a user', async () => {
 
             //await page.waitFor(3000);
 
@@ -35,7 +38,7 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
 
             expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);
 
-            const pseudo = await page.$('#pseudo');
+            const pseudo = await page.$('#pseudo'); //
             const password = await page.$('#password');
             const submit = await page.$('#submitBtn');
 
@@ -51,9 +54,16 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
             await page.waitForNavigation();
 
             expect(page.url()).eql('http://localhost:4200/dashboard');
+
+            const logoutBtn = await page.$('#logoutBtn');
+            await logoutBtn.click();
+            await page.waitForNavigation();
+
+            expect(page.url()).eql('http://localhost:4200/login');
+
         });
 
-        xit('it should NOT login a user with a wrong password', async () => {
+        it('it should NOT login a user with a wrong password', async () => {
 
             const pseudo = await page.$('#pseudo');
             const password = await page.$('#password');
@@ -77,7 +87,8 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
     });
 
     describe('/login errors', async () => {
-        xit('it should display form validation on all fields', async () => {
+
+        it('it should display form validation on all fields', async () => {
 
             const pseudo = await page.$('#pseudo');
             const password = await page.$('#password');
@@ -102,7 +113,7 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
             expect(page.url()).eql('http://localhost:4200/login');
         });
 
-        xit('it should nagivate to the signup page', async () => {
+        it('it should nagivate to the signup page', async () => {
 
             const singUp = await page.$('#signUpLink');
 
