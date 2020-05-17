@@ -17,7 +17,10 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    CreatedOn: {
+    created: {
+        type: String
+    },
+    updated: {
         type: String
     }
 });

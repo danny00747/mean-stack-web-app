@@ -86,9 +86,7 @@ optionsArray: Array<any> = [];
             x.answers.forEach((x, i) =>
               x.option = '(' + ++i + ') ' + x.option));
 
-        data.forEach((x, i) => {
-          x.questionNumber = ++i;
-        });
+        data.forEach((x, i) => {x.questionNumber = ++i;});
 
         this.questions.qns = data;
         this.totalItems = this.questions.qns.length;

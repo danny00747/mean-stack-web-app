@@ -14,7 +14,7 @@ export class AddClassDirective {
     await new Promise(r => setTimeout(r, 1000));
     this.renderer.setAttribute(this.elRef.nativeElement, 'disabled', 'true');
 
-    await new Promise(r => setTimeout(r, 7000));
+    await new Promise(r => setTimeout(r, 3000));
     this.renderer.removeAttribute(this.elRef.nativeElement, 'disabled');
 
   }

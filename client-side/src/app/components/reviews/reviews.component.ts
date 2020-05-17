@@ -42,10 +42,10 @@ export class ReviewsComponent implements OnInit {
   ngOnInit() {
 
     this.loggedInUser = !(JSON.parse(localStorage.getItem('user'))) ?
-        "" : JSON.parse(localStorage.getItem('user')).userEmail;
+      "" : JSON.parse(localStorage.getItem('user')).userEmail;
 
     this.loggedInUserRole = !(localStorage.getItem('role')) ?
-       ""  : localStorage.getItem('role') ;
+      "" : localStorage.getItem('role');
     this.showReviews();
   }
 
@@ -56,10 +56,17 @@ export class ReviewsComponent implements OnInit {
       .then((data: any) => {
         this.reviews.userId = data._id;
         data.forEach(x => x.reviews.forEach(y => tab.push(y)));
+
         tab
-          .sort((a, b) => Date.parse(b.CreatedOn) - Date.parse(a.CreatedOn))
+          .sort((a, b) => Date.parse(b.created) - Date.parse(a.created))
           .forEach(x => {
             x.rating = Number(x.rating);
+            x.imageNumber = Math.round(Math.random() * 15);
+
+            (new Date(x.updated).getTime() > new Date(x.created).getTime()) ?
+              x.date = `Updated ${x.updated}` :
+              x.date = `Created ${x.updated}` ;
+
           });
         this.reviews.rev = tab;
         this.totalItems = this.reviews.rev.length;
@@ -77,7 +84,7 @@ export class ReviewsComponent implements OnInit {
 
     this.reviews.createReview(review)
       .toPromise()
-      .then((data : any) => {
+      .then((data: any) => {
         this.showReviews();
         this.alertMessage = data.message;
       })
@@ -153,7 +160,7 @@ export class ReviewsComponent implements OnInit {
     this.alertMessage = "";
   }
 
-  checkTokens(){
+  checkTokens() {
     return !localStorage.getItem('id_token');
   }
 

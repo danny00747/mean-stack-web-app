@@ -29,9 +29,12 @@
           <div class="media d-block d-md-flex mt-4">
 
             <!-- user image -->
-            <img class="card-img-64 d-flex mx-auto mb-3"
-                 src="../../../assets/img/1.jpg"
-                 style="width: 10%" alt="Generic placeholder image">
+
+              <img *ngIf="i <= 15" src="../../../assets/img/{{review['imageNumber']}}.jpg"
+                   class="card-img-64 d-flex mx-auto mb-3 rounded-circle" style="width: 12%" alt="">
+
+              <img *ngIf="i > 15" src="../../../assets/img/no-profile.png"
+                   class="card-img-64 d-flex mx-auto mb-3" style="width: 10%" alt="">
 
             <!-- user/review info -->
             <div class="media-body text-center text-md-left ml-md-3 ml-0">
@@ -83,7 +86,7 @@
 
               <!-- review date / time -->
               <p class="blockquote-footer my-0">
-                {{review["CreatedOn"] | timeAgo}}
+               {{review["date"] | slice:0:7}} {{review["date"] | timeAgo}}
               </p>
 
               <!-- review text -->

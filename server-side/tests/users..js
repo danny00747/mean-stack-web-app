@@ -602,7 +602,7 @@ describe('Users', () => {
                 });
         });
 
-        it("it should check that a student can't update another student's profile", (done) => {
+        it("it should check that a student can't delete another student's profile", (done) => {
 
             const user = Math.random().toString(36).substr(2, 4);
             const user0 = Math.random().toString(36).substr(2, 4);

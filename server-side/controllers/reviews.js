@@ -35,7 +35,8 @@ const doAddReview = (req, res, user) => {
             author: user.email,
             rating,
             reviewText,
-            CreatedOn: new Date()
+            created: new Date(),
+            updated: new Date(),
         });
         user
             .save()
@@ -122,6 +123,7 @@ const reviewsUpdateOne = (req, res) => {
 
                     thisReview.rating = req.body.rating;
                     thisReview.reviewText = req.body.reviewText;
+                    thisReview.updated = new Date();
                     user
                         .save()
                         .then(result => {
