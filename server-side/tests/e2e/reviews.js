@@ -132,6 +132,76 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
             const modalClose = await page.$('#modalClose');
             await modalClose.click();
 
+            await page.waitFor(2000);
+
+            const logoutBtn = await page.$('#logoutBtn');
+            await logoutBtn.click();
+            await page.waitForNavigation();
+
+            expect(page.url()).eql('http://localhost:4200/login');
+
+
+        });
+
+        it('it should delete a review', async () => {
+
+            await page.waitFor(1000);
+
+            expect((await page.$eval('#comments', e => e.innerText))
+                .includes('comments'))
+                .to.eql(true);
+
+            const loginBtn = await page.$('#loginBtn');
+            await loginBtn.click();
+            await page.waitForNavigation();
+
+            expect(page.url()).eql('http://localhost:4200/login');
+
+            await page.waitFor(1000);
+
+            const pseudo = await page.$('#pseudo');
+            const password = await page.$('#password');
+            const loginSubmit = await page.$('#submitBtn');
+
+            await pseudo.click({clickCount: 3});
+            await pseudo.type('dan30@gmail.com');
+
+            await password.click({clickCount: 3});
+            await password.type('toto');
+
+            await loginSubmit.click();
+            await page.waitForNavigation();
+
+            expect(page.url()).eql('http://localhost:4200/dashboard');
+
+            await page.reload();
+
+            const reviewBtn = await page.$('#reviewsBtn');
+
+            await reviewBtn.click();
+            await page.waitForNavigation();
+
+            expect(page.url()).eql('http://localhost:4200/reviews');
+
+            await page.reload();
+
+            await page.waitFor(1000);
+
+            await page.click('[name="deleteReview"]');
+
+            await page.waitFor(1000);
+
+            await page.click('[id="deleteSubmit"]');
+
+            await page.waitFor(1000);
+
+            expect(await page.$eval('#reviewdeleteAlert', el => el.innerText))
+                .eql('Review deleted successfully !');
+
+            await page.waitFor(1000);
+
+            await page.click('[id="deleteClose"]');
+
             await page.waitFor(3000);
 
 

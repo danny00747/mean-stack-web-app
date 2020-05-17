@@ -41,8 +41,11 @@ export class ReviewsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.loggedInUser = this.authService.userEmail;
-    this.loggedInUserRole = this.authService.role;
+    this.loggedInUser = !(JSON.parse(localStorage.getItem('user'))) ?
+        "" : JSON.parse(localStorage.getItem('user')).userEmail;
+
+    this.loggedInUserRole = !(localStorage.getItem('role')) ?
+       ""  : localStorage.getItem('role') ;
     this.showReviews();
   }
 

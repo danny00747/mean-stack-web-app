@@ -19,7 +19,6 @@
           <span>{{(reviews.rev).length}}</span> comments
         </div>
 
-
         <!-- Loop through all reviews and paginate -->
         <ng-container *ngFor="let review of reviews.rev | paginate:
                                                     { id: 'reviewsPagination',
@@ -46,12 +45,12 @@
                     {{review["author"]}}
                   </div>
 
-                  <span *ngIf="authService.loggedIn()
-                      && review['author'] === loggedInUser || loggedInUserRole === 'admin'
+                  <span *ngIf="review['author'] === loggedInUser || loggedInUserRole === 'admin'
                       || loggedInUserRole === 'teacher'">
 
                     <!-- Select a title for update & create review modal -->
-                     <a class="" (click)="chooseModalTitle($event.target)"
+                     <a *ngIf="!checkTokens()"
+                       class="" (click)="chooseModalTitle($event.target)"
                         data-toggle="modal" data-target="#addReviewModel"
                         data-whatever="@mdo">
 
@@ -64,14 +63,15 @@
                      </a>
 
                     <!-- delete review a tag -->
-                    <a class="ml-3" (click)="getDeleteId($event.target)" data-toggle="modal"
-                       data-target="#deleteModel" data-whatever="@mdo">
+                    <a  *ngIf="!checkTokens()"
+                      class="ml-3" (click)="getDeleteId($event.target)" data-toggle="modal"
+                        data-target="#deleteModel" data-whatever="@mdo">
 
                       <!-- delete review icon -->
                       <i title="{{review['_id']}}" id="{{review['author']}}" class="fa fa-trash"
                          aria-hidden="true" onmousemove="this.style.cursor = 'pointer';
                        this.style.fontSize= '4.7vh'" onmouseout="this.style.fontSize= ''"
-                         style="color: red"></i>
+                         style="color: red" name="deleteReview"></i>
                     </a>
                   </span>
                 </div>
@@ -242,7 +242,7 @@
 
         <!-- delete review success submit message -->
         <span *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
-              style="color: green; margin-right: 70px"> {{alertMessage}}
+              style="color: green; margin-right: 70px" id="reviewdeleteAlert"> {{alertMessage}}
             </span>
 
         <!-- delete review failed submit message -->
@@ -252,11 +252,11 @@
 
         <!-- delete review close button -->
         <button (click)="closeAlert()" type="button" class="btn btn-secondary"
-                data-dismiss="modal">Close
+                data-dismiss="modal" id="deleteClose">Close
         </button>
 
         <!-- delete review submit button -->
-        <button appAddClass (click)="onDeleteReview()" type="button"
+        <button appAddClass (click)="onDeleteReview()" type="button" id="deleteSubmit"
                 class="btn btn-danger">Delete
         </button>
       </div>
