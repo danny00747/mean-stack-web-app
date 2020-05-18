@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/report-mocha/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mochawesome-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mochawesome-report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mochawesome-report/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/mochawesome-report/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-mocha/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/report-mocha/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-mocha/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/report-mocha/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blueprint/input.apib" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blueprint/input.apib" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +260,7 @@
       <workItem from="1589599067455" duration="805000" />
       <workItem from="1589636565414" duration="36640000" />
       <workItem from="1589734137773" duration="23120000" />
-      <workItem from="1589809931110" duration="15387000" />
+      <workItem from="1589809931110" duration="15803000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>
