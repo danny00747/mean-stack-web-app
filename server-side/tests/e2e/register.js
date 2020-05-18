@@ -60,6 +60,8 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
             await page.waitForNavigation();
 
             expect(page.url()).eql('http://localhost:4200/login');
+
+            await page.waitFor(1000);
         });
 
     });

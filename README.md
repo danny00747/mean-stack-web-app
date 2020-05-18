@@ -26,5 +26,5 @@ E2E tests report available [here](https://e2e-report.netlify.app/ "e2e tests")
 
 # End to End Tests Live Demo 
 
-E2E tests live demo [here](https://www.youtube.com/watch?v=QICkIxDjVE8 "live demo")
+E2E tests live demo [here](https://www.youtube.com/watch?v=mJZop5IRazU&feature=youtu.be "live demo")
 

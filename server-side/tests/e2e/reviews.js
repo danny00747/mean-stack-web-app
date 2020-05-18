@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const {expect} = require('chai');
 const scroll = require("./admin");
 
-describe('E2E TESTS FOR SINGUP PAGE', async () => {
+describe('E2E TESTS FOR REVIEWS PAGE', async () => {
 
     //slowMo: 20,
     let browser;

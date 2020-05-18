@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/docs/blueprint/input.apib" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blueprint/input.apib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochawesome-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mochawesome-report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mochawesome-report/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/mochawesome-report/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/reviews.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +266,7 @@
       <workItem from="1589599067455" duration="805000" />
       <workItem from="1589636565414" duration="36640000" />
       <workItem from="1589734137773" duration="23120000" />
-      <workItem from="1589809931110" duration="15803000" />
+      <workItem from="1589809931110" duration="19695000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>
