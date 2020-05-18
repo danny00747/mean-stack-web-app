@@ -77,8 +77,8 @@
             <div class="d-flex">
 
               <!-- update user button -->
-              <button name="{{user['_id']}}" (click)="getUpdateId($event.target)"
-                      type="button" class="btn btn-primary btn-sm"
+              <button  id="updateUser" name="{{user['_id']}}" type="button"
+                       (click)="getUpdateId($event.target)" class="btn btn-primary btn-sm"
                       data-toggle="modal" data-target="#exampleModal">
                 <i class="fa fa-pencil" aria-hidden="true"
                    style="color: white"></i> Update
@@ -138,6 +138,8 @@
       </div>
       <div class="modal-body">
         <form #profileForm="ngForm" (submit)="onUpdateAllUser()">
+
+          {{usernames}}
 
           <!-- Username -->
           <div class="form-group">
@@ -210,8 +212,8 @@
 
           <!-- update modal footer -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-              Close
+            <button type="button" class="btn btn-secondary" id="modalClose"
+                    data-dismiss="modal">Close
             </button>
             <button appAddClass type="submit" class="btn btn-primary"
                     [disabled]="profileForm.form.invalid">Submit

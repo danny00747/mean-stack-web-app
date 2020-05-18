@@ -13,6 +13,7 @@ export class AllUsersComponent implements OnInit {
   users: any[];
   email: string;
   username: string;
+  usernames: string;
   password: string;
 
   confirmPassword: string;
@@ -49,8 +50,8 @@ export class AllUsersComponent implements OnInit {
   }
 
   getUpdateId(event) {
-    // console.log(event.name);
     this.userId = event.name;
+    this.usernames =  this.users.find(x => x._id === event.name).username;
   }
 
   getDeleteId(event) {

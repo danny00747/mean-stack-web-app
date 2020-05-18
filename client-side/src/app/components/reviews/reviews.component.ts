@@ -61,7 +61,7 @@ export class ReviewsComponent implements OnInit {
           .sort((a, b) => Date.parse(b.created) - Date.parse(a.created))
           .forEach(x => {
             x.rating = Number(x.rating);
-            x.imageNumber = Math.round(Math.random() * 15);
+            x.imageNumber = Math.round(Math.random() * 14);
 
             (new Date(x.updated).getTime() > new Date(x.created).getTime()) ?
               x.date = `Updated ${x.updated}` :
