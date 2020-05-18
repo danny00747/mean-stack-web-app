@@ -52,15 +52,164 @@ describe('E2E TESTS FOR ADMIN PAGE', async () => {
             await page.click('[id="adminBtn"]');
             await page.click('[id="allUsersBtn"]');
 
+            await page.waitFor(1000);
+
             await autoScroll(page);
+
+            await page.waitFor(1000);
+
+            const search = await page.$('#search');
+
+            await search.click({clickCount: 3});
+            await search.type('dan30@gmail.com');
 
             await page.waitFor(3000);
 
-            await page.click('[id="updateUser"]');
+            await search.click({clickCount: 3});
+            await search.type('A1');
+
+            await page.waitFor(3000);
+
+            await search.click({clickCount: 3});
+            await search.type('qsz#$?!%');
 
             await page.waitFor(2000);
 
-            await page.click('[id="modalClose"]');
+            await search.click({clickCount: 3});
+            await search.type('10');
+
+            await page.waitFor(3000);
+
+        });
+
+        it("it should display all questions", async () => {
+
+            await page.goto("http://localhost:4200/questions/all");
+
+            expect(page.url()).eql('http://localhost:4200/questions/all');
+
+            await autoScroll(page);
+
+            let reviewPage = (await page.$eval('.small-screen', e => e.innerText)).split('/');
+
+            while (Number(reviewPage[0]) !== Number(reviewPage[1])) {
+                await page.click('[class="pagination-next"]');
+                reviewPage = (await page.$eval('.small-screen', e => e.innerText)).split('/');
+            }
+
+            await page.waitFor(1000);
+
+            while (Number(reviewPage[0]) !== 1) {
+                await page.click('[class="pagination-previous"]');
+                reviewPage = (await page.$eval('.small-screen', e => e.innerText)).split('/');
+            }
+
+            await page.waitFor(1000);
+
+        });
+
+        it("it should create a fill in the blanks question", async () => {
+
+            await page.goto("http://localhost:4200/questions/all");
+
+            expect(page.url()).eql('http://localhost:4200/questions/all');
+
+            await page.waitFor(1000);
+
+            await page.click('[id="createQuestionBtn"]');
+            await page.click('[id="fillInBlanksQuestion"]');
+
+            expect(await page.$eval('#sumbitFillIn', btn => btn.disabled)).eql(true);
+
+            await page.waitFor(1000);
+
+            const fillInQuestion = await page.$('#fillInQuestion');
+
+            await fillInQuestion.type('Albert Einstein {be}[was] born in Germany, ' +
+                'on March 14, 1879. Six weeks later his family {move}[moved] to Munich, ' +
+                'where he later on {begin}[began] his schooling at the Luitpold Gymnasium.');
+
+            expect(await page.$eval('#sumbitFillIn', btn => btn.disabled)).eql(false);
+
+            await page.waitFor(1000);
+
+            await page.click('[id="sumbitFillIn"]');
+
+            await page.waitFor(2000);
+
+            await page.click('[id="closeFillInModal"]');
+
+            let reviewPage = (await page.$eval('.small-screen', e => e.innerText)).split('/');
+
+            while (Number(reviewPage[0]) !== Number(reviewPage[1])) {
+                await page.click('[class="pagination-next"]');
+                reviewPage = (await page.$eval('.small-screen', e => e.innerText)).split('/');
+            }
+
+            await page.waitFor(4000);
+        });
+
+        it("it should display all users results", async () => {
+
+            await page.goto("http://localhost:4200/users/info");
+
+            expect(page.url()).eql('http://localhost:4200/users/info');
+
+            await page.waitFor(3000);
+
+            const search = await page.$('#search');
+
+            await search.click({clickCount: 3});
+            await search.type('dan30@gmail.com');
+
+            await page.waitFor(3000);
+
+            await search.click({clickCount: 3});
+            await search.type('A1');
+
+            await page.waitFor(3000);
+
+            await search.click({clickCount: 3});
+            await search.type('10');
+
+            await page.waitFor(3000);
+
+
+        });
+
+        it("it should display all metrics", async () => {
+
+            await page.goto("http://localhost:4200/users/metrics");
+
+            expect(page.url()).eql('http://localhost:4200/users/metrics');
+
+            await page.waitFor(1000);
+
+            await page.select('select[name="select1"]', 'method');
+
+            await page.select('select[name="select3"]', 'post');
+
+            await page.waitFor(3000);
+
+            await page.select('select[name="select3"]', 'delete');
+
+            await page.waitFor(3000);
+
+            await page.select('select[name="select3"]', 'get');
+
+            await page.waitFor(3000);
+
+            await page.select('select[name="select1"]', 'status');
+
+            await page.select('select[name="select4"]', '201');
+
+            await page.waitFor(3000);
+
+            await page.select('select[name="select4"]', '401');
+
+            await page.waitFor(3000);
+
+            await page.click('[id="customSwitch1"]');
 
             await page.waitFor(2000);
 
@@ -75,7 +224,7 @@ describe('E2E TESTS FOR ADMIN PAGE', async () => {
 });
 
 
-async function autoScroll(page){
+ async function autoScroll(page){
     await page.evaluate(async () => {
         await new Promise((resolve, reject) => {
             let totalHeight = 0,  distance = 100;
@@ -88,7 +237,11 @@ async function autoScroll(page){
                     clearInterval(timer);
                     resolve();
                 }
-            }, 400);
+            }, 200);
         });
     });
 }
+
+module.exports = {
+    autoScroll
+};

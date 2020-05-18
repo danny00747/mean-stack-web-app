@@ -5,7 +5,8 @@
   <div class="ml-auto mr-5">
 
     <div *ngIf="searchValue.length !== 0" class="custom-control custom-switch">
-      <input (click)="filterDisable($event.target)" type="checkbox" class="custom-control-input" id="customSwitch1">
+      <input (click)="filterDisable($event.target)" type="checkbox"
+             class="custom-control-input" id="customSwitch1">
       <label class="custom-control-label text-monospace" for="customSwitch1">
         Disable filter </label>
     </div>
@@ -13,10 +14,11 @@
     <!-- Filter by date, method, status -->
     <div class="form-group">
       <label for="select1"></label>
-      <select (change)="logsFilter($event.target)" class="custom-select" id="select1">
+      <select (change)="logsFilter($event.target)"
+              class="custom-select" id="select1" name="select1">
         <option  disabled selected>Filter by</option>
         <option value="date">Date</option>
-        <option value="method">Method</option>
+        <option id="method" value="method">Method</option>
         <option value="status" >Status</option>
       </select>
     </div>
@@ -37,7 +39,8 @@
     <!-- Filter by HTTP method -->
     <div *ngIf="selectedValue === 'method'" class="form-group">
       <label for="select3"></label>
-      <select (change)="filterMethod($event.target)" class="custom-select" id="select3">
+      <select (change)="filterMethod($event.target)"
+              class="custom-select" id="select3" name="select3">
         <option disabled selected>Filter by</option>
         <option value="get">GET</option>
         <option value="post">POST</option>
@@ -49,7 +52,8 @@
     <!-- Filter HTTP status -->
     <div *ngIf="selectedValue === 'status'" class="form-group">
       <label for="select4"></label>
-      <select (change)="filterStatus($event.target)" class="custom-select" id="select4">
+      <select (change)="filterStatus($event.target)"
+              class="custom-select" id="select4" name="select4">
         <option disabled selected>Filter by</option>
         <option value="200">200</option>
         <option value="201">201</option>
@@ -111,9 +115,24 @@
         <th class="text-monospace font-italic"
             scope="row"> {{ (users) ? user['id'] + 1 : i }} </th>
         <td class="text-monospace font-italic">{{user["host"]}}</td>
-        <td class="text-monospace font-italic">{{user["method"]}}</td>
+
+        <td *ngIf="user['method'] == 'DELETE'" style="color: red"
+            class="text-monospace font-italic">{{user["method"]}}</td>
+
+        <td *ngIf="user['method'] == 'PATCH'" style="color: blue"
+            class="text-monospace font-italic">{{user["method"]}}</td>
+
+        <td *ngIf="user['method'] == 'POST' || user['method'] == 'GET'" style="color: green"
+            class="text-monospace font-italic">{{user["method"]}}</td>
+
         <td class="text-monospace font-italic">{{user["url"] | truncate:[26]}}</td>
-        <td class="text-monospace font-italic">{{user["status"]}}</td>
+
+        <td *ngIf="user['status'] == 200 || user['status'] == 201" style="color: green"
+            class="text-monospace font-italic">{{user["status"]}}</td>
+
+        <td *ngIf="user['status'] != 200 && user['status'] != 201"
+            class="text-monospace font-italic" style="color: red">{{user["status"]}}</td>
+
         <td class="text-monospace font-italic">
           {{(user["date"]).toLocaleString('fr-BE').split(' à')[0]}}
           at {{(user["date"]).toLocaleString('fr-BE').split(' à')[1]}}

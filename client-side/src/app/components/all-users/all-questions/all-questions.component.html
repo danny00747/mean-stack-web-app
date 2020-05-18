@@ -18,16 +18,15 @@
       <div class="btn-group">
 
         <!-- create question  -->
-        <button
-          class="btn btn-success"
-          style="color: white;font-weight: bold;">
+        <button class="btn btn-success" style="color: white;font-weight: bold;">
           <i class="fa fa-plus-circle" aria-hidden="true"></i>
           Create a new question
         </button>
 
-        <!-- delete question -->
-        <button type="button" class="btn btn-success dropdown-toggle
-        dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+        <!-- create question button other half question -->
+        <button  class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                 id="createQuestionBtn" type="button"
+                 data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
           <span class="sr-only">Toggle Dropdown</span>
         </button>
@@ -47,8 +46,8 @@
              (click)="questionTypeChoosen($event.target)">Boolean</a>
 
           <!-- create fill in the blanks question -->
-          <a class="dropdown-item" data-toggle="modal" data-target="#fillInModal"
-             href="#" style="font-weight: bold" id="fillInBlanksQuestion"
+          <a id="fillInBlanksQuestion" class="dropdown-item" data-toggle="modal"
+             data-target="#fillInModal" href="#" style="font-weight: bold"
              (click)="questionTypeChoosen($event.target)">Fill in the blanks</a>
         </div>
       </div>
@@ -527,7 +526,7 @@
             {{alertMessage}}
           </span>
           <button (click)="closeAlert()" type="button" class="btn btn-secondary"
-                  data-dismiss="modal">Close
+                id="closeFillInModal"  data-dismiss="modal">Close
           </button>
           <button appAddClass (click)="onCreateQuestion($event.target)" type="button"
                   class="btn btn-primary" id="sumbitFillIn"

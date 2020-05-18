@@ -5,11 +5,18 @@ The website is available [here](https://devwebapp.herokuapp.com "website")
 
 Documentation available [here](https://danny00747.github.io/mean-stack-web-app/ "api doc")
 
-# Integration Test Coverage 
+# Integration Test Code Coverage 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bdf7e790-329b-4be4-82bc-b620617bd4b3/deploy-status)](https://app.netlify.com/sites/test-coverage/deploys)
 
 The code coverage available [here](https://test-coverage.netlify.app/ "test coverage")
+
+# Integration Test Report 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bdf7e790-329b-4be4-82bc-b620617bd4b3/deploy-status)](https://app.netlify.com/sites/test-coverage/deploys)
+
+Integration tests available [here](https://tests-report.netlify.app/ "integration tests report")
+
 
 # End to End Test Report 
 

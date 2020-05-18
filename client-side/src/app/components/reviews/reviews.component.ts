@@ -65,7 +65,7 @@ export class ReviewsComponent implements OnInit {
 
             (new Date(x.updated).getTime() > new Date(x.created).getTime()) ?
               x.date = `Updated ${x.updated}` :
-              x.date = `Created ${x.updated}` ;
+              x.date = `Created ${x.created}` ;
 
           });
         this.reviews.rev = tab;

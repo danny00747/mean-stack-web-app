@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const {expect} = require('chai');
+const scroll = require("./admin");
 
 describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
@@ -29,13 +30,17 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
     describe('/GET Reviews', () => {
 
-        xit('it should display all reviews', async () => {
+        it('it should display all reviews', async () => {
 
             await page.waitFor(1000);
 
             expect((await page.$eval('#comments', e => e.innerText))
                 .includes('comments'))
                 .to.eql(true);
+
+            await scroll.autoScroll(page);
+
+            await page.waitFor(1000);
 
             const nextBtn = await page.$('.pagination-next');
             const previousBtn = await page.$('.pagination-previous');
@@ -61,7 +66,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
     describe('/POST Review', () => {
 
-        xit('it should create a review', async () => {
+        it('it should create a review', async () => {
 
             await page.waitFor(1000);
 
@@ -137,7 +142,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
         });
 
-        xit('it should update a review', async () => {
+        it('it should update a review', async () => {
 
             expect(page.url()).eql('http://localhost:4200/reviews');
 
@@ -175,7 +180,7 @@ describe('E2E TESTS FOR SINGUP PAGE', async () => {
 
         });
 
-        xit('it should delete a review', async () => {
+        it('it should delete a review', async () => {
 
             expect(page.url()).eql('http://localhost:4200/reviews');
 

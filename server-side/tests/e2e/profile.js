@@ -30,7 +30,7 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
     describe('/GET User', () => {
 
-        xit("it should display the user's profile", async () => {
+        it("it should display the user's profile", async () => {
 
             expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);
 
@@ -68,7 +68,7 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
     describe('/PATCH User', () => {
 
-        xit("it should update the user's profile", async () => {
+        it("it should update the user's profile", async () => {
 
             const pseudo = await page.$('#pseudo');
             const password = await page.$('#password');
@@ -138,7 +138,7 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
     describe('/user profile update errors', () => {
 
-        xit("it should display an error if the passwords don't match", async () => {
+        it("it should display an error if the passwords don't match", async () => {
 
             await page.goto("http://localhost:4200/profile/dan30");
 
@@ -180,7 +180,7 @@ describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
         });
 
-        xit("it should display an error on any form field in an invalid state", async () => {
+        it("it should display an error on any form field in an invalid state", async () => {
 
             await page.goto("http://localhost:4200/profile/dan30");
 
