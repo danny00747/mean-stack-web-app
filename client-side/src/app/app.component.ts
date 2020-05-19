@@ -7,7 +7,7 @@ import {AuthService} from "./services/auth.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'client-side works';
+  title = 'Teacher App';
   showHideSidebar: boolean = false;
 
   constructor(private authService: AuthService) {}
