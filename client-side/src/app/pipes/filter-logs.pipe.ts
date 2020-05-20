@@ -19,7 +19,6 @@ export class FilterLogsPipe implements PipeTransform {
         users.push(x);
       }
     });
-    console.log(users);
     return users;
   }
 

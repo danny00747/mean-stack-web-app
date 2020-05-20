@@ -16,6 +16,7 @@ export class MetricsComponent implements OnInit {
 
   logInfo : Array<any>;
   searchValue : string = "";
+  numberOflogs: number = 19;
 
   users: any;
   totalItems: number;
@@ -64,12 +65,18 @@ export class MetricsComponent implements OnInit {
             x.date = new Date(x.date);
             x.id = i;
           });
-        this.users = tab;
+
+        this.users = tab.filter((x,i) =>  i <= this.numberOflogs);
         this.totalItems = this.users.length;
       })
       .catch(err => {
         console.log(err);
       });
+  }
+
+  getMoreLogs(){
+  this.numberOflogs += 20;
+  this.showUsersLogs();
   }
 
 

@@ -15,7 +15,7 @@ The code coverage available [here](https://test-coverage.netlify.app/ "test cove
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bdf7e790-329b-4be4-82bc-b620617bd4b3/deploy-status)](https://app.netlify.com/sites/test-coverage/deploys)
 
-Integration tests available [here](https://tests-report.netlify.app/ "integration tests report")
+Integration tests report available [here](https://tests-report.netlify.app/ "integration tests report")
 
 
 # End to End Test Report 

@@ -69,7 +69,7 @@
 <!-- User Table -->
 <div class="container text-center my-3">
 
-  <p class="font-weight-bold">The data in the table comes from the API logs</p>
+  <p class="font-weight-bold">The data in the table comes from the first {{numberOflogs+1}} API logs</p>
 
   <!-- Table  -->
   <table
@@ -97,11 +97,11 @@
     <!-- Table head -->
 
     <!-- Table body -->
-    <tbody id="demo">
+    <tbody *ngIf="users" id="demo">
     <ng-container *ngFor="let user of users | filterLogs : searchValue | paginate:
                                                     {
                                                     id: 'allQuestionsPagination',
-                                                        itemsPerPage: 5,
+                                                        itemsPerPage: 10,
                                                         currentPage: page,
                                                         totalItems: totalItems};
                                                         index as i" >
@@ -144,9 +144,8 @@
     <!-- Table body -->
   </table>
   <!-- Table  -->
-
   <!-- all questions pagination controls -->
-  <div class="pagination justify-content-center pagination-lg">
+  <div *ngIf="users" class="pagination justify-content-center pagination-lg">
     <pagination-controls id="allQuestionsPagination"
                          (pageChange)="page = ($event)"
                          maxSize="6"
@@ -156,6 +155,10 @@
                          previousLabel="Previous"
                          nextLabel="Next">
     </pagination-controls>
+    <button (click)="getMoreLogs()" [disabled]="!(numberOflogs <= users.length)"
+            class="btn-outline-success btn-sm ml-auto mr-5 font-weight-bold
+            text-monospace font-italic" style="color: black">
+      Get more...</button>
   </div>
 
 </div>
