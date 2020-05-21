@@ -39,6 +39,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+mean-stack-web-app.wiki/
 
 # TypeScript v1 declaration files
 typings/
