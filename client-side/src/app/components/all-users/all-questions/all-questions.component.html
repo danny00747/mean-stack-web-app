@@ -18,13 +18,14 @@
       <div class="btn-group">
 
         <!-- create question  -->
-        <button class="btn btn-success" style="color: white;font-weight: bold;">
+        <button class="btn btn-success btn-sm
+                text-monospace font-italic font-weight-bolder" style="color: white;font-weight: bold;">
           <i class="fa fa-plus-circle" aria-hidden="true"></i>
           Create a new question
         </button>
 
         <!-- create question button other half question -->
-        <button  class="btn btn-success dropdown-toggle dropdown-toggle-split"
+        <button  class="btn btn-success btn-sm dropdown-toggle dropdown-toggle-split"
                  id="createQuestionBtn" type="button"
                  data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
@@ -35,25 +36,29 @@
         <div class="dropdown-menu" style="background-color: #28A745;">
 
           <!-- create multiple question -->
-          <a class="dropdown-item" data-toggle="modal"
-             data-target=".bd-example-modal-lg"
+          <a class="dropdown-item text-monospace font-italic font-weight-bolder"
+             data-toggle="modal" data-target=".bd-example-modal-lg"
              href="#" style="font-weight: bold" id="multipleQuestion"
              (click)="questionTypeChoosen($event.target)">Multiple choice</a>
 
           <!-- create boolean question -->
-          <a class="dropdown-item" data-toggle="modal" data-target="#booleanModal"
+          <a class="dropdown-item text-monospace font-italic font-weight-bolder"
+             data-toggle="modal" data-target="#booleanModal"
              href="#" style="font-weight: bold" id="booleanQuestion"
              (click)="questionTypeChoosen($event.target)">Boolean</a>
 
           <!-- create fill in the blanks question -->
-          <a id="fillInBlanksQuestion" class="dropdown-item" data-toggle="modal"
-             data-target="#fillInModal" href="#" style="font-weight: bold"
+          <a id="fillInBlanksQuestion"  data-toggle="modal" data-target="#fillInModal"
+             class="dropdown-item text-monospace font-italic font-weight-bolder"
+              href="#" style="font-weight: bold"
              (click)="questionTypeChoosen($event.target)">Fill in the blanks</a>
         </div>
       </div>
 
       <!-- Delete a question button  -->
-      <button (click)="deleteClicked()" class="btn btn-danger ml-2 mr-2"
+      <button (click)="deleteClicked()"
+              class="btn btn-danger btn-sm ml-2 mr-4
+              text-monospace font-italic font-weight-bolder"
               style="color: white;font-weight: bold;">
         <i class="fa fa-trash" aria-hidden="true"></i>
         Delete question(s)
@@ -95,7 +100,9 @@
           <div class="card-content">
 
             <!-- question number -->
-            <p class="card-title ml-3 mt-3" style="color: white">
+            <p class="card-title
+             text-monospace font-italic font-weight-lighter ml-3 mt-3 "
+               style="color: white">
               Question {{qn["questionNumber"]}} :
             </p>
 
@@ -264,11 +271,13 @@
                 style="color: red; margin-right: 350px">
             {{alertMessage}}
           </span>
-          <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+          <button (click)="closeAlert()" type="button"
+                  class="btn btn-secondary text-monospace font-italic font-weight-bolder"
                   data-dismiss="modal">Close
           </button>
           <button appAddClass (click)="onCreateQuestion($event.target)"
-                  type="button" class="btn btn-primary" id="sumbitMultiple"
+                  type="button" id="sumbitMultiple"
+                  class="btn btn-primary text-monospace font-italic font-weight-bolder"
                   [disabled]="getAnswerOptions.invalid ||
                   textArea0.invalid || !submitOneAnswerCheck()">Submit
           </button>
@@ -308,11 +317,12 @@
               style="color: red; margin-right: 80px">
             {{alertMessage}}
           </span>
-        <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+        <button (click)="closeAlert()" type="button"
+                class="btn btn-secondary text-monospace font-italic font-weight-bolder"
                 data-dismiss="modal">Close
         </button>
         <button appAddClass (click)="onDeleteQuestion()" type="button"
-                class="btn btn-danger">Delete
+                class="btn btn-danger text-monospace font-italic font-weight-bolder">Delete
         </button>
       </div>
     </div>
@@ -435,11 +445,13 @@
                 style="color: red; margin-right: 280px">
             {{alertMessage}}
           </span>
-          <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+          <button (click)="closeAlert()" type="button"
+                  class="btn btn-secondary text-monospace font-italic font-weight-bolder"
                   data-dismiss="modal">Close
           </button>
           <button appAddClass (click)="onCreateQuestion($event.target)" type="button"
-                  class="btn btn-primary" id="sumbitBoolean"
+                  class="btn btn-primary text-monospace font-italic font-weight-bolder"
+                  id="sumbitBoolean"
                   [disabled]="textAreaB2.invalid || textAreaB1.invalid ||
                             textAreaB0.invalid || !submitOneAnswerCheck()">Submit
           </button>
@@ -525,11 +537,13 @@
                 style="color: red; margin-right: 280px">
             {{alertMessage}}
           </span>
-          <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+          <button (click)="closeAlert()" type="button"
+                  class="btn btn-secondary text-monospace font-italic font-weight-bolder"
                 id="closeFillInModal"  data-dismiss="modal">Close
           </button>
           <button appAddClass (click)="onCreateQuestion($event.target)" type="button"
-                  class="btn btn-primary" id="sumbitFillIn"
+                  class="btn btn-primary text-monospace font-italic font-weight-bolder"
+                  id="sumbitFillIn"
                   [disabled]="textAreaFillIn.invalid">Submit
           </button>
         </div>

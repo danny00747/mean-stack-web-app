@@ -75,7 +75,9 @@
         <td *ngIf="user['score'] < 5"
           class="text-monospace font-italic" style="color: red">{{user["score"]}}</td>
         <td *ngIf="user['score'] >= 5"
-          class="text-monospace font-italic">{{user["score"]}}</td>
+          class="text-monospace font-italic">{{user["score"]}}
+          <i *ngIf="user['score'] == 10" class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+         </td>
         <td class="text-monospace font-italic">{{user["level"]}}</td>
       </tr>
     </ng-container>

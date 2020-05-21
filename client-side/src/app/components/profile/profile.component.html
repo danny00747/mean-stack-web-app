@@ -35,8 +35,8 @@
     <!--Card-->
     <br>
   </div>
-  <button type="button" class="btn btn-primary" data-toggle="modal"
-          data-target="#exampleModal" id="updateUser"
+  <button type="button" class="btn btn-primary text-monospace font-italic font-weight-bolder"
+          data-toggle="modal" data-target="#exampleModal" id="updateUser"
           style="width:130px; margin-left:40px;">Update
   </button>
   <br>
@@ -144,11 +144,13 @@
             <span *ngIf="alertMessage.includes('wrong')"
                   style="color: red; margin-right: 30px" id="updateFail">{{alertMessage}}
           </span>
-            <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+            <button (click)="closeAlert()" type="button"
+                    class="btn btn-secondary text-monospace font-italic font-weight-bolder"
                     data-dismiss="modal" id="modalClose">Close
             </button>
 
-            <button appAddClass type="submit" class="btn btn-primary" id="submitUpdate"
+            <button appAddClass type="submit" id="submitUpdate"
+                    class="btn btn-primary text-monospace font-italic font-weight-bolder"
                     [disabled]="profileForm.form.invalid">Submit</button>
 
           </div>

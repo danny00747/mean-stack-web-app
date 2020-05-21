@@ -99,13 +99,14 @@
       <div class="d-flex">
         <div>
           <button [disabled]="signUpForm.form.invalid"
-                  class="btn btn-secondary btn-rounded" id="submitBtn"
+                  class="btn btn-secondary btn-rounded
+                  text-monospace font-italic font-weight-bolder" id="submitBtn"
                   type="submit">Sign Up
           </button>
         </div>
         <div class="ml-auto">
           <small class="">
-            <a class="nav-link"
+            <a class="nav-link font-italic"
                style="text-decoration: underline; color: #343A40"
                [routerLink]="['/login']">Already have an account ? Login</a>
           </small>

@@ -18,16 +18,21 @@
           <br>
 
           <!-- username -->
-          <h4>{{authService.username}}</h4>
+          <h4 class="text-monospace font-italic font-weight-bolder">{{authService.username}}</h4>
 
           <!-- user score -->
-          <h4>Your score is : {{questions.correctAnswerCount}}/10</h4>
+          <h4 class="text-monospace font-italic font-weight-bolder">
+            Your score is : {{questions.correctAnswerCount}}/10
+          </h4>
 
           <!-- user level -->
-          <h4>Your is level is : {{description["Level"]}}</h4>
+          <h4 class="text-monospace font-italic font-weight-bolder">
+            Your is level is : {{description["Level"]}}
+          </h4>
 
           <!-- user time taken -->
-          <span class="blockquote-footer" style="font-size: medium">
+          <span class="blockquote-footer text-monospace font-italic font-weight-bolder"
+                style="font-size: medium">
             Time Elapsed : {{questions.timeTaken}}</span>
         </div>
 
@@ -76,7 +81,8 @@
 
       <!-- question number and title -->
       <div class="card-content">
-        <p class="card-title" style="color: white; margin: 20px">Question {{(i + 1)}} :</p>
+        <p class="card-title text-monospace font-italic font-weight-bolder"
+           style="color: white; margin: 20px">Question {{(i + 1)}} :</p>
         <h5>
           <p style="color: white; margin: 20px">
             <strong>{{qn.question}}</strong>

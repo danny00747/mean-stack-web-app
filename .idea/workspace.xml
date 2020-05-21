@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es2015.5589b0b8d0a0cef5bd66.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es5.5589b0b8d0a0cef5bd66.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/filter-logs.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/pipes/filter-logs.pipe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/public/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.ee45c4a491bbc885e3c3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.ee45c4a491bbc885e3c3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.5589b0b8d0a0cef5bd66.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.5589b0b8d0a0cef5bd66.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

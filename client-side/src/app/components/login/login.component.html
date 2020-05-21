@@ -4,7 +4,9 @@
   <div class="form rounded col-12">
 
     <div class="note bg-dark">
-      <h3 id="formTitle" class="font-weight-bolder mb-3">Log in to your account</h3>
+      <h3 id="formTitle"
+          class="font-weight-bolder mb-3">
+        Log in to your account</h3>
       <p class="font-weight-bold">
         To log in, please fill in these fields with your e-mail or username and password.
       </p>
@@ -47,13 +49,14 @@
       <div class="d-flex">
         <div>
           <button [disabled]="signUpForm.form.invalid"
-                  class="btn btn-secondary btn-rounded" id="submitBtn"
-                  type="submit">Sign In
+                  class="btn btn-secondary btn-rounded
+                  text-monospace font-italic font-weight-bolder"
+                  id="submitBtn" type="submit">Sign In
           </button>
         </div>
         <div class="ml-auto">
           <small class="">
-            <a class="nav-link" id="signUpLink"
+            <a class="nav-link font-italic" id="signUpLink"
                style="text-decoration: underline; color: #343A40"
                [routerLink]="['/register']">Don't have an account ? Sign Up</a>
           </small>

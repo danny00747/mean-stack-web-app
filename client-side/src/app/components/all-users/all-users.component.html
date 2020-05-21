@@ -78,7 +78,8 @@
 
               <!-- update user button -->
               <button  id="updateUser" name="{{user['_id']}}" type="button"
-                       (click)="getUpdateId($event.target)" class="btn btn-primary btn-sm"
+                       (click)="getUpdateId($event.target)"
+                       class="btn btn-primary btn-sm text-monospace font-italic font-weight-bolder"
                       data-toggle="modal" data-target="#exampleModal">
                 <i class="fa fa-pencil" aria-hidden="true"
                    style="color: white"></i> Update
@@ -87,7 +88,8 @@
               <!-- delete user button -->
               <button id="{{user['_id']}}" (click)="getDeleteId($event.target)"
                       type="button" data-toggle="modal" data-target="#deleteModel"
-                      class="btn btn-secondary btn btn-danger btn-sm ml-auto">
+                      class="btn btn-secondary btn btn-danger btn-sm ml-auto
+                      text-monospace font-italic font-weight-bolder">
                 <i class="fa fa-trash " aria-hidden="true"
                    style="color: white;"></i> Delete
               </button>
@@ -211,10 +213,12 @@
 
           <!-- update modal footer -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" id="modalClose"
+            <button type="button" id="modalClose"
+                    class="btn btn-secondary text-monospace font-italic font-weight-bolder"
                     data-dismiss="modal">Close
             </button>
-            <button appAddClass type="submit" class="btn btn-primary"
+            <button appAddClass type="submit"
+                    class="btn btn-primary text-monospace font-italic font-weight-bolder"
                     [disabled]="profileForm.form.invalid">Submit
             </button>
           </div>
@@ -268,11 +272,11 @@
 
       <!-- delete modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
+        <button type="button" class="btn btn-secondary text-monospace font-italic font-weight-bolder"
                 data-dismiss="modal">Close
         </button>
         <button appAddClass (click)="onDeleteUser()" type="button"
-                class="btn btn-danger">Delete
+                class="btn btn-danger text-monospace font-italic font-weight-bolder">Delete
         </button>
       </div>
     </div>

@@ -6,7 +6,8 @@
       <div class="row justify-content-center">
         <div class="card ">
           <div class="card-body">
-              <span style="color: green; text-align: center">
+              <span class="text-monospace font-italic font-weight-bolder"
+                style="color: green; text-align: center">
                 <i class="fa fa-clock-o" aria-hidden="true" style="color: #0c1722"></i>
                   Time Elapsed : {{question.displayTimeElapsed()}}</span>
           </div>
@@ -18,10 +19,12 @@
     <div class="col-9 mx-auto">
       <div class="d-flex justify-content-between">
         <div>
-          <h5 class="">Question Progress</h5>
+          <h5 class="text-monospace font-italic font-weight-bolder">Question Progress</h5>
         </div>
         <div>
-          <h5>{{question.qnProgress + 1}}/{{(question.qns).length}}</h5>
+          <h5 class="text-monospace font-italic font-weight-bolder">
+            {{question.qnProgress + 1}}/{{(question.qns).length}}
+          </h5>
         </div>
       </div>
     </div>
@@ -41,7 +44,8 @@
 
         <!-- Question title -->
         <div class="card-content">
-          <p class="card-title ml-3 mt-4" style="color: white">Question
+          <p class="card-title ml-3 mt-4 text-monospace font-italic font-weight-bolder"
+             style="color: white">Question
             {{(question.qnProgress + 1)}} :</p>
           <h5>
             <p class="ml-3" style="color: white">

@@ -7,7 +7,9 @@
       <div *ngIf="!checkTokens()" class="row">
         <div class="col-md-12 text-center">
           <button (click)="chooseModalTitle($event.target)" name="createReview" type="submit"
-                  class="btn btn-primary text-center" data-toggle="modal" id="addReviewBtn"
+                  class="btn btn-outline-success
+                  text-center text-monospace font-italic font-weight-bolder"
+                  data-toggle="modal" id="addReviewBtn"
                   data-target="#addReviewModel" data-whatever="@mdo">Add a review
           </button>
         </div>
@@ -86,7 +88,8 @@
 
               <!-- review date / time -->
               <p class="blockquote-footer my-0">
-               {{review["date"] | slice:0:7}} {{review["date"] | timeAgo}}
+               {{review["date"] | slice:0:7}}
+                {{review["date"] | timeAgo}}
               </p>
 
               <!-- review text -->
@@ -126,7 +129,8 @@
 
       <!-- create/update review modal header -->
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
+        <h5 class="modal-title text-monospace font-italic font-weight-bolder"
+            id="exampleModalLabel">{{title}}</h5>
 
         <!-- create/update review close modal button -->
         <button (click)="closeAlert()" type="button" class="close"
@@ -146,7 +150,8 @@
 
             <!-- create/update review card -->
             <div class="card-header">
-              <p class="font-weight-bold">Rating :
+              <p class="font-weight-bold text-monospace font-italic
+              font-weight-bolder">Rating :
                 <ngb-rating [(rate)]="currentRate" ></ngb-rating>
               </p>
             </div>
@@ -161,12 +166,13 @@
                          name="currentRate" style="width: 67px; height: 35px" required>
                 </label>
                 out of 10
-                <p class="font-weight-bold">
+                <p class="font-weight-bold text-monospace font-italic font-weight-bolder">
                   Rate: <b style="color: lightseagreen"> {{currentRate}}</b>
                 </p>
               </div>
               <div class="list-group-item">
-                <label class="font-weight-bold" for="reviewComment">Your comment</label>
+                <label class="font-weight-bold text-monospace font-italic"
+                       for="reviewComment">Your comment</label>
 
                 <!-- review textarea -->
                 <textarea #textArea="ngModel"
@@ -196,12 +202,14 @@
             </span>
 
             <!-- update/create review close button -->
-            <button (click)="closeAlert()" type="button" class="btn btn-secondary"
+            <button (click)="closeAlert()" type="button"
+                    class="btn btn-secondary text-monospace font-italic font-weight-bolder"
                     data-dismiss="modal" id="modalClose">Close
             </button>
 
             <!-- update/create review submit button -->
-            <button appAddClass id="reviewSubmit" class="btn btn-primary" type="submit"
+            <button appAddClass id="reviewSubmit" type="submit"
+                    class="btn btn-primary text-monospace font-italic font-weight-bolder"
                     [disabled]="reviewForm.form.invalid">submit
             </button>
           </div>
@@ -221,7 +229,7 @@
 
       <!-- delete review modal header -->
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Confirm Delete</h5>
+        <h5 class="modal-title text-monospace font-italic font-weight-bolder" id="exampleModalLongTitle">Confirm Delete</h5>
 
         <!-- delete review close modal button -->
         <button (click)="closeAlert()" type="button" class="close"
@@ -232,12 +240,12 @@
 
       <!-- delete review modal body -->
       <div class="modal-body">
-        <h5 class="modal-title" style="text-align: center">
+        <h5 class="modal-title text-monospace font-italic" style="text-align: center">
           <strong>Are you sure?</strong></h5>
         <br>
-        <p>You are about to delete this comment, this process is <strong>irreversible
+        <p class="text-monospace font-italic">You are about to delete this comment, this process is <strong>irreversible
         </strong></p>
-        <p>Do you want to proceed ?</p>
+        <p class="text-monospace font-italic">Do you want to proceed ?</p>
       </div>
 
       <!-- delete review modal footer -->
@@ -245,22 +253,25 @@
 
         <!-- delete review success submit message -->
         <span *ngIf="alertMessage.length > 1 && !(alertMessage.includes('wrong'))"
+              class="text-monospace font-italic"
               style="color: green; margin-right: 70px" id="reviewdeleteAlert"> {{alertMessage}}
             </span>
 
         <!-- delete review failed submit message -->
         <span *ngIf="alertMessage.includes('wrong')"
+              class="text-monospace font-italic"
               style="color: red; margin-right: 90px"> {{alertMessage}}
             </span>
 
         <!-- delete review close button -->
-        <button (click)="closeAlert()" type="button" class="btn btn-secondary"
-                data-dismiss="modal" id="deleteClose">Close
+        <button (click)="closeAlert()" type="button" id="deleteClose"
+                class="btn btn-secondary text-monospace font-italic font-weight-bolder"
+                data-dismiss="modal">Close
         </button>
 
         <!-- delete review submit button -->
         <button appAddClass (click)="onDeleteReview()" type="button" id="deleteSubmit"
-                class="btn btn-danger">Delete
+                class="btn btn-danger text-monospace font-italic font-weight-bolder">Delete
         </button>
       </div>
     </div>
@@ -271,5 +282,5 @@
      style="margin-bottom: 302px; margin-left: 20px; text-align: center;
      margin-top: 50px">
   <i class="fa fa-exclamation-triangle fa-4x" style="color: red"></i>
-  <h3>There are no reviews</h3>
+  <h3 class="text-monospace font-italic font-weight-bolder">There are no reviews</h3>
 </div>
