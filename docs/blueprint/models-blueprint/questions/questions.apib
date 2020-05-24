@@ -1,34 +1,47 @@
 # Group Questions
-Group description (also with *Markdown*)
-
-## Important Info
-Descriptions may also contain sub-headings and **more Markdown**.
+This the question entity.
 
 ## Question List [/questions]
-Question list description
+Each question has these 3 properties :
 
-+ Even
-+ More
-+ Markdown
++ type
++ question
++ answers
+
+```no-highlight
+A JWT needs to be send in the request header to get all questions
+```
 
 ### Get Questions [GET]
 
 Get a list of questions.
+
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
+
++ Request
+
+  + Headers
+
+            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 
 + Response 200 (application/json)
 
     + Body
 
             <!-- include(get-all-questions-rep.json) -->
-            
-+ Response 404 (application/json)
+
++ Response 204
+
++ Response 401 (application/json)
 
     + Body
 
-            {
-                "message ": "No documents found in the database"
-            }
-            
+              "Unauthorized"
+
 + Response 500 (application/json)
 
     + Body
@@ -39,6 +52,11 @@ Get a list of questions.
 
 ### Create New Question [POST]
 
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
 
 You may create your own question using this action. It takes a JSON
 object containing a question and a list of answers in the
@@ -48,13 +66,15 @@ Create a new question using a question and it's answers content body.
 
 > A body is required in the request sent to create a question
 
-
-
 + Request with a body (application/json)
 
-    + Body
+  + Headers
 
-            <!-- include(post-questions-body.json) -->
+            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
+
+  + Body
+
+           <!-- include(post-questions-body.json) -->
             
 + Response 201
 
@@ -65,6 +85,11 @@ Create a new question using a question and it's answers content body.
                 "message": "Created question successfully"
             }
 
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
 
 + Response 405 (application/json)
 
@@ -73,7 +98,6 @@ Create a new question using a question and it's answers content body.
             {
                 message : "Invalid input"
             }
-
 
 + Response 500 (application/json)
 
@@ -96,9 +120,21 @@ Question description
 
 Get a single question.
 
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
+
 + Parameters
 
     + questionId: `5e6444e51167df04c81f43e4` (string)
+
++ Request
+
+  + Headers
+
+            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 
 + Response 200 (application/json)
 
@@ -106,6 +142,11 @@ Get a single question.
 
             <!-- include(get-one-question.json) -->
 
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
 
 + Response 404 (application/json)
 
@@ -136,7 +177,11 @@ it will **permanently overwrite** the original value.
 
 + Request with a body (application/json)
 
-    + Body
+  + Headers
+
+            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
+
+  + Body
 
             <!-- include(post-questions-body.json) -->
 
@@ -161,6 +206,11 @@ it will **permanently overwrite** the original value.
                 "message": "Please read the API doc to see how to update a question"
             }
 
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
 
 + Response 404 (application/json)
 
@@ -181,6 +231,18 @@ it will **permanently overwrite** the original value.
 ### Delete a Question [DELETE]
 Delete a single note
 
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
+
++ Request
+
+  + Headers
+
+            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
+
 + Response 200 (application/json)
 
     + Body
@@ -188,6 +250,12 @@ Delete a single note
             {
                 message: "Question deleted successfully"
             }
+
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
 
 + Response 404 (application/json)
 

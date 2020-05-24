@@ -1,6 +1,5 @@
-
 # Group Users
-Group description
+This the user entity.
 
 ## Users List [/users/profiles]
 A list of users
@@ -12,12 +11,11 @@ A JWT needs to be send in the request header
 ### Get users [GET]
 Get a list of users.
 
-::: warning
-#### <i class="fa fa-warning"></i> Caution
+::: note
+#### <i class="fa fa-info-circle"></i> Info
 To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
 has `expired`, a 401 status is sent back from the server.
 :::
-
 
 Example:
 
@@ -70,7 +68,7 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdt
 ## Authenticate user [/login]
 Authenticate one user to access protected routes
 
-### Login User [GET]
+### Login User [POST]
 Get one user logged in.
 
 ::: note
@@ -79,13 +77,13 @@ Once the user's authentication has been successfully, a JWT is to be sent in
 `the response body`.
 :::
 
-> The request's body is required and can't be null.
-
 Example:
 
 ```http
 res: "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg"
 ```
+
+> The request's body is required and can't be null.
 
 + Request (application/json)
 
@@ -110,6 +108,14 @@ res: "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdt
                 }
             }
 
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                message: "All fields required"
+            }
+
 + Response 401 (application/json)
 
     + Body
@@ -118,14 +124,6 @@ res: "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdt
                   "success": false,
                   "message": "Authentication failed"
               }
-
-+ Response 400 (application/json)
-
-    + Body
-
-            {
-                message: "All fields required"
-            }
 
 + Response 500 (application/json)
 
@@ -187,9 +185,8 @@ access protected routes.
 
             {
                 success: "false",
-                message: "Mail already exists"
+                message: "The email or username already exists"
             }
-
 
 + Response 500 (application/json)
 
@@ -211,15 +208,33 @@ User description
 
 Get one user.
 
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
+
 + Parameters
 
     + userId: `5e7c0a87e75d0f21c069c0a6` (string)
+
++ Request
+
+    + Headers
+
+                Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 
 + Response 200 (application/json)
 
    + Body
 
             <!-- include(get-one-user-rep.json) -->
+
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
 
 + Response 403 (application/json)
 
@@ -248,11 +263,21 @@ Get one user.
 ### update a user [PATCH]
 Update a user.
 
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
+
 A basic (student) user can only update his own profile. A user with a role of a teacher
 can update his/her profile as well as students's profiles. Only the admin can update his own
 and everyone's else profile.
 
 + Request with a body (application/json)
+
+    + Headers
+
+                Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 
     + Body
 
@@ -270,20 +295,26 @@ and everyone's else profile.
                 message: "User info updated successfully"
             }
 
-+ Response 403 (application/json)
-
-    + Body
-
-            {
-                message: "Can NOT update admin's info !!!"
-            }
-
 + Response 400 (application/json)
 
     + Body
 
             {
                 message: "password field is required"
+            }
+
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                message: "Can NOT update admin's info !!!"
             }
 
 + Response 404 (application/json)
@@ -312,7 +343,19 @@ and everyone's else profile.
 
 
 ### Delete a user [DELETE]
-Delete a user
+Delete a user.
+
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
+
++ Request
+
+    + Headers
+
+                Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 
 + Response 200 (application/json)
 
@@ -321,6 +364,12 @@ Delete a user
             {
                 message: "User deleted successfully"
             }
+
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
 
 + Response 404 (application/json)
 
@@ -338,9 +387,6 @@ Delete a user
                 "message": "Server error"
             }
 
-
-
-
 ## User [/user/{userId}/score]
 
 Update a user'score
@@ -353,7 +399,17 @@ Update a user'score
 
 Update a user'score. `The request's body is required and can't be null.`
 
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
+
 + Request with a body (application/json)
+
+    + Headers
+
+                Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 
     + Body
 
@@ -368,6 +424,12 @@ Update a user'score. `The request's body is required and can't be null.`
             {
                 message: "User's score updated successfully"
             }
+
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
 
 + Response 404 (application/json)
 

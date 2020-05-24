@@ -7,50 +7,17 @@ Reviews are sub-documents of the user document. Which means reviews have a
 A list of a user reviews's
 
 ```no-highlight
-A JWT needs to be send in the request header
+NO JWT needs to be send in the request header
 ```
 
-### Get Reviews [GET]
+### Get all Reviews [GET]
 Get a list of each user reviews.
-
-::: warning
-#### <i class="fa fa-warning"></i> Caution
-To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
-has `expired`, a 401 status is sent back from the server.
-:::
-
-
-Example:
-
-```http
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
-```
-
-+ Request (application/json)
-
-  + Headers
-
-            Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 
 + Response 200 (application/json)
 
    + Body
 
             <!-- include(get-all-reviews-rep.json) -->
-
-+ Response 401 (application/json)
-
-    + Body
-
-            "Unauthorized"
-
-+ Response 403 (application/json)
-
-    + Body
-
-            {
-                message: "You don't have enough permission to perform this action"
-            }
 
 + Response 404 (application/json)
 
@@ -69,22 +36,25 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdt
             }
 
 ## Create a review [/user/{userId}/reviews]
-Allow a user to create a review.
+Allows a user to create a review.
 
 + Parameters
-
     + userId: `5e7fd9d5f35b123cbc246899` (required, string) - The user ID
 
-### Create New Review [POST]
+### Create new review [POST]
 
 ::: note
 #### <i class="fa fa-info"></i> Info
-For a user to create a new review, he/she must login with correct credentials.
+For a user to create a new review, he/she must login with correct credentials. Therefore
+to acces this route a JWT needs to be sent in `the request header` and if the token is invalid
+or has `expired`, a 401 status is sent back from the server.
 :::
 
-> **The request's body is required and can't be null.**
-
 + Request (application/json)
+
+    + Headers
+
+                Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 
     + Body
 
@@ -107,6 +77,12 @@ For a user to create a new review, he/she must login with correct credentials.
                 message: "User not found"
             }
 
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
+
 + Response 500 (application/json)
 
     + Body
@@ -118,27 +94,46 @@ For a user to create a new review, he/she must login with correct credentials.
 
 ## Review [/user/{userEmail}/reviews/{reviewId}]
 
-Review description
+> All CRUD operations possible on one single review, the user's email will be used to identify
+the user so that the review can be updated/deleted/displayed(get)
 
 + Parameters
 
     + userEmail: `dan30@gmail.com` (required, string) - The user Email ID
     + reviewId: `5e7c0a87e75d0f21c069c0a6` (required, string) - The review ID
 
-### Get Review [GET]
+### Get one review [GET]
 
 Get one review.
+
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
 
 + Parameters
 
     + userEmail: `dan30@gmail.com` (required, string)
     + reviewId: `5e7c0a87e75d0f21c069c0a6` (string)
 
++ Request (application/json)
+
+    + Headers
+
+                Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
+
 + Response 200 (application/json)
 
    + Body
 
             <!-- include(get-one-review-rep.json) -->
+
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
 
 + Response 403 (application/json)
 
@@ -168,11 +163,21 @@ Get one review.
 
 Update a review. `The request's body is required and can't be null.`
 
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
+
 A basic (student) user can only update his own review. A user with a role of a teacher
 can update their reviews as well as students's reviews. Only the admin can update his own
 and everyone's else reviews.
 
 + Request with a body (application/json)
+
+    + Headers
+
+                Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 
     + Body
 
@@ -196,6 +201,12 @@ and everyone's else reviews.
             {
                 message: "No user was found with provided ID"
             }
+
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
 
 + Response 404 (application/json)
 
@@ -223,7 +234,19 @@ and everyone's else reviews.
 
 
 ### Delete a review [DELETE]
-Delete a review
+Delete a review.
+
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+To acces this route a JWT needs to be sent in `the request header` and if the token is invalid or
+has `expired`, a 401 status is sent back from the server.
+:::
+
++ Request (application/json)
+
+    + Headers
+
+                Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbjMwQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVlNzgxZmQyZTUwNDY0MzUwY2FlYTBiMSIsImlhdCI6MTU4NTE4MjM1MiwiZXhwIjoxNTg1MTg1OTUyfQ.c9VX-i_v5D2Q8VqHIphJjpQ4R5d46UmR6uKeADsnoPg
 
 + Response 200 (application/json)
 
@@ -232,6 +255,12 @@ Delete a review
             {
                 message: "Review deleted successfully !"
             }
+
++ Response 401 (application/json)
+
+    + Body
+
+              "Unauthorized"
 
 + Response 404 (application/json)
 
