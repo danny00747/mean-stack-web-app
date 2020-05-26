@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/admin.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -262,6 +265,10 @@
       <workItem from="1589895669679" duration="8480000" />
       <workItem from="1589960980021" duration="3042000" />
       <workItem from="1589974139619" duration="5000" />
+      <workItem from="1590079026293" duration="1755000" />
+      <workItem from="1590232956256" duration="3606000" />
+      <workItem from="1590279652869" duration="712000" />
+      <workItem from="1590349185172" duration="7984000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>

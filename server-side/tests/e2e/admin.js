@@ -16,9 +16,6 @@ describe('E2E TESTS FOR ADMIN PAGES', async () => {
                 '--window-size=1920,1080',
             ],
         });
-    });
-
-    beforeEach(async () => {
         page = await browser.newPage();
         await page.goto("http://localhost:4200/login");
     });
@@ -80,6 +77,8 @@ describe('E2E TESTS FOR ADMIN PAGES', async () => {
 
             await page.waitFor(3000);
 
+            page = await browser.newPage();
+
         });
 
         it("it should display all questions", async () => {
@@ -105,6 +104,8 @@ describe('E2E TESTS FOR ADMIN PAGES', async () => {
             }
 
             await page.waitFor(1000);
+
+            page = await browser.newPage();
 
         });
 
@@ -147,6 +148,8 @@ describe('E2E TESTS FOR ADMIN PAGES', async () => {
             }
 
             await page.waitFor(4000);
+
+            page = await browser.newPage();
         });
 
         it("it should display all users results", async () => {
@@ -173,6 +176,8 @@ describe('E2E TESTS FOR ADMIN PAGES', async () => {
             await search.type('10');
 
             await page.waitFor(3000);
+
+            page = await browser.newPage();
 
 
         });
