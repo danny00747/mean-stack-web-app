@@ -3,8 +3,7 @@ const {expect} = require('chai');
 const scroll = require("./admin");
 
 describe('E2E TESTS FOR REVIEWS PAGE', async () => {
-
-    //slowMo: 20,
+    
     let browser;
     let page;
 

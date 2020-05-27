@@ -31,14 +31,13 @@ describe('E2E TESTS FOR LOGIN PAGE', async () => {
 
        it('it should login a user', async () => {
 
-            //await page.waitFor(3000);
 
             expect(await page.$eval('#formTitle', e => e.innerText))
                 .to.eql("Log in to your account");
 
             expect(await page.$eval('#submitBtn', btn => btn.disabled)).eql(true);
 
-            const pseudo = await page.$('#pseudo'); //
+            const pseudo = await page.$('#pseudo'); 
             const password = await page.$('#password');
             const submit = await page.$('#submitBtn');
 

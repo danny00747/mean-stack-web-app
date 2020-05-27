@@ -4,7 +4,6 @@ const Login = require("./login");
 
 describe('E2E TESTS FOR PROFILE PAGE', async () => {
 
-    //slowMo: 20,
     let browser;
     let page;
 

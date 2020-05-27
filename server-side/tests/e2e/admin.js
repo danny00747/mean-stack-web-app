@@ -3,7 +3,6 @@ const {expect} = require('chai');
 
 describe('E2E TESTS FOR ADMIN PAGES', async () => {
 
-    //slowMo: 20,
     let browser;
     let page;
 
