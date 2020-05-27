@@ -28,3 +28,9 @@ E2E tests report available [here](https://e2e-report.netlify.app/ "e2e tests")
 
 E2E tests live demo [here](https://www.youtube.com/watch?v=mJZop5IRazU&feature=youtu.be "live demo")
 
+# Lighthouse Report 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7c121a15-2bf5-42f1-bdc3-b96a9a515bba/deploy-status)](https://app.netlify.com/sites/lighthouse-report/deploys)
+
+Lighthouse Report available [here](https://lighthouse-report.netlify.app/ "lighthouse report")
+
