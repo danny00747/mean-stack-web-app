@@ -18,11 +18,13 @@ app.use(cors());
 app.use(helmet());
 app.use(addRequestId);
 
+// security headers 
 app.use(helmet.hsts({
     maxAge: 5184000,
     includeSubDomains: true
 }));
 
+// security headers 
 app.use(helmet.featurePolicy({
     features: {
         fullscreen: ["'self'"],
@@ -34,12 +36,12 @@ app.use(helmet.featurePolicy({
     }
 }));
 
+// security headers 
 app.use(helmet.permittedCrossDomainPolicies());
 
+// security headers 
 app.use(helmet.referrerPolicy({policy: 'strict-origin-when-cross-origin'}));
 
-
-//console.log(path.join(__dirname, 'server-side', 'public', 'dist', 'index.html'));
 
 // set the static folder
 if (process.env.NODE_ENV === 'production') {
