@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
-import {AuthService} from "../../../services/auth.service";
+import {AuthService} from "../../../core/services/auth.service";
 import {FormBuilder, FormGroup, FormArray, Validators} from '@angular/forms';
 import {Router} from "@angular/router";
-import {QuestionsService} from "../../../services/questions.service";
-import {ReplacePipe} from "../../../pipes/replace.pipe";
+import {QuestionsService} from "../../../core/services/questions.service";
+import {ReplacePipe} from "../../../shared/pipes/replace.pipe";
 
 @Component({
   selector: 'app-all-questions',

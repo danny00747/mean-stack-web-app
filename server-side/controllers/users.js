@@ -322,8 +322,8 @@ const update_user_score = async (req, res) => {
                     message: "User info updated successfully",
                     modifiedDocs: result.nModified,
                     request: {
-                        type: "GET",
-                        url: `http://localhost:5000/api/user/${userId}`
+                        type: "PATCH",
+                        url: `http://localhost:5000/server/api/user/${userId}`
                     }
                 });
             }

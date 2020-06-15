@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from "../../core/services/auth.service";
 import {Router} from "@angular/router";
-import {ValidateService} from "../../services/validate.service";
+import {ValidateService} from "../../core/services/validate.service";
 
 @Component({
   selector: 'app-navbar',

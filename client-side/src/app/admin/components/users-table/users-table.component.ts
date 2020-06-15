@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
-import {AuthService} from "../../../services/auth.service";
+import {AuthService} from "../../../core/services/auth.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -29,7 +29,7 @@ export class UsersTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
     this.colDefs = [
       {headerName : "Usernames", field : "username", width : 150},
       {headerName : "Email", field : "email", width : 160},

@@ -3,7 +3,118 @@
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/admin.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/components/all-questions/all-questions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/all-questions/all-questions.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/components/all-users/all-users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/all-users/all-users.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/components/metrics/metrics.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/metrics/metrics.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/components/users-table/users-table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/users-table/users-table.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-questions/all-questions.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/all-users.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/metrics/metrics.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/all-users/users-table/users-table.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/charts/charts.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/dashboard.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/dashboard.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/dashboard.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/dashboard/dashboard.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/footer/footer.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/page-not-found/page-not-found.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/page-not-found/page-not-found.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/page-not-found/page-not-found.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/home/page-not-found/page-not-found.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/min-nav-bar/min-nav-bar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/navbar/navbar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/profile/profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/questions.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/questions/results/results.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/register/register.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/components/reviews/reviews.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/core.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/core.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/core/core.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/footer/footer.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/footer/footer.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/footer/footer.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/footer/footer.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/directives/add-class.directive.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/directives/add-class.directive.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/directives/valid-input.directive.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/directives/valid-input.directive.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/filter-logs.pipe.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/filter-logs.pipe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/filter.pipe.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/filter.pipe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/replace.pipe.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/replace.pipe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/truncate.pipe.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/pipes/truncate.pipe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/auth.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/auth.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/questions.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/questions.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/reviews.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/reviews.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/validate.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/services/validate.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/navbar/navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/shared/shared.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/CDC.md" beforeDir="false" afterPath="$PROJECT_DIR$/wiki/CDC.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/CDC.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,6 +380,16 @@
       <workItem from="1590232956256" duration="3606000" />
       <workItem from="1590279652869" duration="712000" />
       <workItem from="1590349185172" duration="7984000" />
+      <workItem from="1591290480712" duration="4882000" />
+      <workItem from="1591362272353" duration="2688000" />
+      <workItem from="1591367345376" duration="6249000" />
+      <workItem from="1591376117551" duration="14615000" />
+      <workItem from="1591445309496" duration="9817000" />
+      <workItem from="1591791222943" duration="20341000" />
+      <workItem from="1591876801440" duration="5988000" />
+      <workItem from="1591950327974" duration="2506000" />
+      <workItem from="1592234182736" duration="7078000" />
+      <workItem from="1592249688945" duration="4909000" />
     </task>
     <task id="LOCAL-00121" summary="add pattern in email register ui">
       <created>1586804308536</created>
@@ -670,10 +791,6 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="233" y="3" key="#Notifications/0.0.1280.689@0.0.1280.689" timestamp="1587784190194" />
-    <state x="233" y="4" key="#Usage_Scope" timestamp="1583605282047">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="233" y="4" key="#Usage_Scope/0.0.1280.689@0.0.1280.689" timestamp="1583605282047" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585180175823">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -682,30 +799,14 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="416" y="135" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.689@0.0.1280.689" timestamp="1588297325035" />
-    <state x="308" y="124" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1583604912120">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="308" y="124" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1280.689@0.0.1280.689" timestamp="1583604912120" />
     <state x="446" y="61" key="#com.intellij.ide.util.MemberChooser" timestamp="1583868028634">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="446" y="61" key="#com.intellij.ide.util.MemberChooser/0.0.1280.689@0.0.1280.689" timestamp="1583868028634" />
-    <state x="321" y="74" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583252224155">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="321" y="74" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.689@0.0.1280.689" timestamp="1583252224155" />
     <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588455921079">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1588455921079" />
-    <state width="941" height="519" key="#com.intellij.structuralsearch.plugin.ui.StructuralReplaceDialog" timestamp="1583253654061">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state width="941" height="519" key="#com.intellij.structuralsearch.plugin.ui.StructuralReplaceDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654061" />
-    <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1583253654060">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="170" y="85" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1583253654060" />
     <state x="269" y="0" key="CommitChangelistDialog2" timestamp="1588072649931">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -734,10 +835,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1589594885761" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1587491976495">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1592250168654">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1587491976495" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1592250168654" />
     <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1588072653798">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -762,10 +863,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="367" y="0" key="refactoring.ChangeSignatureDialog/0.0.1280.689@0.0.1280.689" timestamp="1586909152066" />
-    <state x="297" y="153" key="run.anything.popup" timestamp="1589739139307">
+    <state x="297" y="153" width="672" height="677" key="run.anything.popup" timestamp="1592250424959">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1589739139307" />
+    <state x="297" y="153" width="672" height="677" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1592250424959" />
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1589764291474">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

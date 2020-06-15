@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
-import {AuthService} from "../../../services/auth.service";
+import {AuthService} from "../../../core/services/auth.service";
 import {Router} from "@angular/router";
-import {FilterLogsPipe} from "../../../pipes/filter-logs.pipe";
+import {FilterLogsPipe} from "../../../shared/pipes/filter-logs.pipe";
 
 @Component({
   selector: 'app-metrics',
