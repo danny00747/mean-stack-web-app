@@ -25,7 +25,7 @@ const appRoutes : Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forChild(appRoutes),
   ],
   providers: [
     ValidateService,

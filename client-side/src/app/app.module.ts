@@ -14,6 +14,9 @@ import {AppComponent} from './app.component';
 import {SharedModule} from "./shared/shared.module";
 
 const appRoutes: Routes = [
+  { path: 'admin', loadChildren: () => import(`./admin/admin.module`)
+      .then(module => module.AdminModule) },
+  {path: "features", loadChildren : './features/features.module#FeaturesModule'},
   {path: "**", redirectTo: '/home', pathMatch: 'full'}
 ];
 
@@ -24,7 +27,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
   ],
-
   imports: [
     BrowserModule,
     SharedModule,

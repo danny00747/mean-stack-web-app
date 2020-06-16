@@ -13,8 +13,8 @@ import { ReplacePipe } from './pipes/replace.pipe';
 import {TimeAgoPipe} from 'time-ago-pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { FilterLogsPipe } from './pipes/filter-logs.pipe';
-import { MinNavBArComponent } from './navbar/min-nav-bar/min-nav-bar.component';
-import { NavbarComponent } from './navbar/navbar.component';
+
+import { NavbarComponent } from './components/navbar/navbar.component';
 import {RouterModule} from "@angular/router";
 
 
@@ -27,8 +27,7 @@ import {RouterModule} from "@angular/router";
     ValidInputDirective,
     AddClassDirective,
     FilterLogsPipe,
-    NavbarComponent,
-    MinNavBArComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +52,6 @@ import {RouterModule} from "@angular/router";
     HttpClientModule,
     FlashMessagesModule,
     NavbarComponent,
-    MinNavBArComponent,
     NgxPaginationModule,
     NgbModule
   ]

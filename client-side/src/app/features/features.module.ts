@@ -39,7 +39,7 @@ const appRoutes: Routes = [
     CommonModule,
     SharedModule,
     ChartModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forChild(appRoutes),
   ]
 })
 export class FeaturesModule { }
