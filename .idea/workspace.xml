@@ -2,40 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/min-nav-bar/min-nav-bar.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/min-nav-bar/min-nav-bar.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/min-nav-bar/min-nav-bar.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/min-nav-bar/min-nav-bar.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/navbar/navbar.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/navbar/navbar.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/navbar/navbar.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/navbar/navbar.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/5-es2015.5598c209c33fc76216f2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/5-es5.5598c209c33fc76216f2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es2015.6abc03fd44593748bde0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es5.6abc03fd44593748bde0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/runtime-es2015.3a5f197ca9791344c6b6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/runtime-es5.3a5f197ca9791344c6b6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/core/components/page-not-found/page-not-found.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/core/components/page-not-found/page-not-found.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/core/components/page-not-found/page-not-found.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/app/core/components/page-not-found/page-not-found.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-side/src/assets/img/emoji.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/admin.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/components/all-questions/all-questions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/all-questions/all-questions.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/core/core.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/core.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/features.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/features.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/navbar/min-nav-bar/min-nav-bar.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/navbar/min-nav-bar/min-nav-bar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/navbar/min-nav-bar/min-nav-bar.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/navbar/min-nav-bar/min-nav-bar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/navbar/navbar.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/navbar/navbar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/navbar/navbar.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/navbar/navbar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/shared.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/public/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.c03571c7aef6309af245.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.c03571c7aef6309af245.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/runtime-es2015.c5fa8325f89fc516600b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/runtime-es5.c5fa8325f89fc516600b.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,14 +286,7 @@
       <workItem from="1592234182736" duration="7078000" />
       <workItem from="1592249688945" duration="6400000" />
       <workItem from="1592319398800" duration="2444000" />
-      <workItem from="1592321988743" duration="446000" />
-    </task>
-    <task id="LOCAL-00122" summary="added error visual in update profile ui">
-      <created>1586805410994</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1586805410994</updated>
+      <workItem from="1592321988743" duration="5973000" />
     </task>
     <task id="LOCAL-00123" summary="updated all users modal ui">
       <created>1586805755778</created>
@@ -657,7 +624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592254632262</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="added lazy loading v3">
+      <created>1592322480953</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1592322480954</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,7 +652,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added some regex functions in questions service" />
     <MESSAGE value="can display boolean in the list of questions" />
     <MESSAGE value="removed a bug in questions ui" />
     <MESSAGE value="stable fill in question ui" />
@@ -703,7 +676,8 @@
     <MESSAGE value="added better ui for buttons" />
     <MESSAGE value="removed a bug in question ui" />
     <MESSAGE value="added lazy loading v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="added lazy loading v2" />
+    <MESSAGE value="added lazy loading v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="added lazy loading v3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Inspections" timestamp="1584902946150">
@@ -730,10 +704,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1588455921079" />
-    <state x="269" y="0" key="CommitChangelistDialog2" timestamp="1592254631139">
+    <state x="269" y="0" key="CommitChangelistDialog2" timestamp="1592322478345">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="269" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1592254631139" />
+    <state x="269" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1592322478345" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -762,10 +736,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1592250168654" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1592254634199">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1592322483352">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1592254634199" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1592322483352" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

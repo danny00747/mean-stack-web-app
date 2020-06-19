@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   { path: 'admin', loadChildren: () => import(`./admin/admin.module`)
       .then(module => module.AdminModule) },
   {path: "features", loadChildren : './features/features.module#FeaturesModule'},
-  {path: "**", redirectTo: '/home', pathMatch: 'full'}
+  //{path: "**", redirectTo: '/home', pathMatch: 'full'}
 ];
 
 //enableProdMode();
