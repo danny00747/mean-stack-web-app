@@ -1,5 +1,5 @@
 # Website
-The website is available [here](https://devwebapp.herokuapp.com "website")
+The website is available [here](https://devwebapp.herokuapp.com "website").
 
 # API
 
