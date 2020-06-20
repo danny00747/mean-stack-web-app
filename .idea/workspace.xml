@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/core/components/page-not-found/page-not-found.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/core/components/page-not-found/page-not-found.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/core/components/page-not-found/page-not-found.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/core/components/page-not-found/page-not-found.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/assets/img/emoji.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/core.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/core.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,13 +280,7 @@
       <workItem from="1592249688945" duration="6400000" />
       <workItem from="1592319398800" duration="2444000" />
       <workItem from="1592321988743" duration="5973000" />
-    </task>
-    <task id="LOCAL-00123" summary="updated all users modal ui">
-      <created>1586805755778</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1586805755778</updated>
+      <workItem from="1592592710106" duration="466000" />
     </task>
     <task id="LOCAL-00124" summary="updated minimist package to the latest">
       <created>1586805942684</created>
@@ -631,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592322480954</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="added lazy loading v3">
+      <created>1592592883929</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1592592883930</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -696,18 +690,14 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="416" y="135" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.689@0.0.1280.689" timestamp="1588297325035" />
-    <state x="446" y="61" key="#com.intellij.ide.util.MemberChooser" timestamp="1583868028634">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="446" y="61" key="#com.intellij.ide.util.MemberChooser/0.0.1280.689@0.0.1280.689" timestamp="1583868028634" />
     <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588455921079">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1588455921079" />
-    <state x="269" y="0" key="CommitChangelistDialog2" timestamp="1592322478345">
+    <state x="269" y="0" key="CommitChangelistDialog2" timestamp="1592592881739">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="269" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1592322478345" />
+    <state x="269" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1592592881739" />
     <state x="358" y="86" key="FileChooserDialogImpl" timestamp="1586303517356">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -736,10 +726,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.689@0.0.1280.689" timestamp="1592250168654" />
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1592322483352">
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1592592886323">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1592322483352" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1592592886323" />
     <state x="219" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584216893706">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
