@@ -7,7 +7,7 @@ const path = require('path');
 const {success, info, error, debug} = require('consola');
 const helmet = require('helmet');
 require('dotenv').config();
-require('./config/database');
+require('./server-side/data-access/config/database');
 
 
 // Initialize the app
@@ -58,7 +58,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // bring the passport auth strategy
-require('./config/passport')(passport);
+require('./server-side/data-access/config/passport')(passport);
 //require('./config/passport');
 
 app.get('/', (req, res) => {

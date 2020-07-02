@@ -12,6 +12,9 @@ export default function makePostQuestion ({ addQuestion }) {
         source
       });
       return {
+        headers: {
+          'Content-Type': 'application/json'
+        },
         statusCode: 201,
         body: {
           message: "Created question successfully !",

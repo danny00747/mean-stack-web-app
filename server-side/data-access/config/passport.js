@@ -1,6 +1,6 @@
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
-const User = require('../server-side/models/users');
+const User = require('../../models/users');
 
 // to auth the user by JWT Startegy
 module.exports = (passport) => {
