@@ -25,11 +25,18 @@
             throw new Error('These are the types are allowed : boolean, multiple, fill in');
         }
 
+        answers.forEach(x => {
+           if (x.option === undefined) throw new Error('Each answer must have an option');
+           if (x.isCorrect === undefined) throw new Error('Each answer must have the isCorrect field');
+           if (Object.keys(x).length > 2) throw new Error('Some fields are not allowed !');
+        });
+
         return Object.freeze({
             getType: () => typeEnum[Object.keys(typeEnum)
                 .find(x => typeEnum[x] === type)],
             getQuestion: () => question,
-            getAnswers: () => answers,
+            getAnswers: () => answers
         });
+
     }
 }

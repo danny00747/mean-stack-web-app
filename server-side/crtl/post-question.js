@@ -1,15 +1,9 @@
 export default function makePostQuestion ({ addQuestion }) {
   return async function postQuestion (httpRequest) {
     try {
-      const { source = {}, ...questionInfo } = httpRequest.body;
-      source.ip = httpRequest.ip;
-      source.browser = httpRequest.headers['User-Agent'];
-      if (httpRequest.headers['Referer']) {
-        source.referrer = httpRequest.headers['Referer']
-      }
+      const { ...questionInfo } = httpRequest.body;
       const posted = await addQuestion({
         ...questionInfo,
-        source
       });
       return {
         headers: {

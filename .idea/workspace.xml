@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/data-access/config/database.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/data-access/config/passport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/edit-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/get-one-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/remove-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/edit-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/get-one-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/list-questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/remove-question.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/passport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/get-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/get-questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/crtl/post-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/post-question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/data-access/question-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/data-access/question-db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/domain/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/express-callback/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/express-callback/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/routes/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/use-cases/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/use-cases/list-question.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +301,8 @@
       <workItem from="1592835439937" duration="4669000" />
       <workItem from="1593131372557" duration="728000" />
       <workItem from="1593627672352" duration="8347000" />
-      <workItem from="1593650496192" duration="9236000" />
+      <workItem from="1593650496192" duration="9497000" />
+      <workItem from="1593702595946" duration="20679000" />
     </task>
     <task id="LOCAL-00124" summary="updated minimist package to the latest">
       <created>1586805942684</created>
