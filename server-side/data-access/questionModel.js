@@ -1,17 +1,25 @@
+import makeQuestionDb from './question-db'
+//import mongodb from 'mongodb'
+
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
+
+//const MongoClient = mongodb.MongoClient;
+//const url = process.env["DM_COMMENTS_DB_URL"];
+//const dbName = process.env["DM_COMMENTS_DB_NAME"];
+//const client = new MongoClient(url, { useNewUrlParser: true });
 
 const questionSchema = new mongoose.Schema({
 
     type: {
         type: String,
-        required: true,
+        require: true,
         enum: ["multiple", "boolean", "fill in"]
     },
     question: {
-            type: String,
-            required: true,
-        },
+        type: String,
+        required: true,
+    },
     answers: [
         {
             option: {
@@ -28,6 +36,4 @@ const questionSchema = new mongoose.Schema({
 });
 
 questionSchema.plugin(uniqueValidator);
-module.exports = mongoose.model('Questionz', questionSchema, 'questions');
-
-// /^([a-zA-Z0-9\.-_]+)@([a-zA-Z0-9-]+).([a-z]{2,8})(.[a-z]{2,8})?$/
+module.exports = mongoose.model('Question', questionSchema, 'questions');

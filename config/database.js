@@ -21,14 +21,14 @@ if (process.env.NODE_ENV === 'test') {
         error({message: `Mongoose connection error: ${err}`, badge: true});
     });
 } else if (process.env.NODE_ENV === 'production') {
-    mongoose.connect(hostCloud,
+    mongoose.connect(dbURL,
         {
             useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
             useFindAndModify: false
         })
         .then(() => {
             success({
-                message: `Database connected successfully to ${hostCloud}`,
+                message: `Database connected successfully to ${dbURL}`,
                 badge: true
             });
         }).catch(err => {

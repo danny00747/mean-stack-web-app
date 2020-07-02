@@ -4,12 +4,14 @@ const passport = require("passport");
 
 const ctrlQuestions = require('../controllers/questions');
 
+import {postQuestion} from '../crtl'
+
+import makeCallback from '../express-callback'
+
 router
     .route('/questions')
-    .get(passport.authenticate("jwt", {session: false}),
-        ctrlQuestions.question_get_all)
-    .post(passport.authenticate("jwt", {session: false}),
-        ctrlQuestions.questionCreate);
+    .get(ctrlQuestions.question_get_all)
+    .post(makeCallback(postQuestion));
 
 router
     .route('/questions/:questionId')

@@ -2,7 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/get-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/post-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/data-access/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/data-access/question-db.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/data-access/questionModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/domain/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/domain/question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/express-callback/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/add-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/list-question.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/models/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/routes/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/questions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,6 +301,12 @@
       <workItem from="1592319398800" duration="2444000" />
       <workItem from="1592321988743" duration="5973000" />
       <workItem from="1592592710106" duration="466000" />
+      <workItem from="1592680146381" duration="1936000" />
+      <workItem from="1592763621837" duration="9730000" />
+      <workItem from="1592835439937" duration="4669000" />
+      <workItem from="1593131372557" duration="728000" />
+      <workItem from="1593627672352" duration="8347000" />
+      <workItem from="1593650496192" duration="3978000" />
     </task>
     <task id="LOCAL-00124" summary="updated minimist package to the latest">
       <created>1586805942684</created>

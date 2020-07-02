@@ -131,6 +131,7 @@ const questionCreate = async (req, res) => {
     await logs.saveLog('info', req, 'Incoming');
 
     const question = new Question(req.body);
+
     question
         .save()
         .then(result => {
