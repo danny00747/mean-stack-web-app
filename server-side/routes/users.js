@@ -1,4 +1,3 @@
-import {getQuestions} from "../crtl/questions";
 
 const express = require("express");
 const passport = require("passport");
@@ -8,7 +7,7 @@ const router = express.Router();
 const ctrlUsers = require("../controllers/users");
 const ctrlAcess = require("../controllers/grandAccess");
 
-import {postUser} from '../crtl/users'
+import {postUser, loggedInUser, getUsers, getUser} from '../crtl/users'
 import makeCallback from '../express-callback'
 
 /**
@@ -18,17 +17,12 @@ import makeCallback from '../express-callback'
  */
 
 router.post("/signup", makeCallback(postUser));
-router.post("/login", ctrlUsers.user_login);
-router
-    .get("/users/profiles", passport.authenticate("jwt", {session: false}),
-        ctrlAcess.grantAccess('readAny', 'profile'),
-        ctrlUsers.users_get_all);
+router.post("/login", makeCallback(loggedInUser));
+router.get("/users/profiles", makeCallback(getUsers));
 
 router
     .route("/user/:userId")
-    .get(passport.authenticate("jwt", {session: false}),
-        ctrlAcess.grantAccess('readOwn', 'profile'),
-        ctrlUsers.get_user_by_id)
+    .get(makeCallback(getUser))
 
     .delete(passport.authenticate("jwt", {session: false}),
         ctrlAcess.grantAccess('deleteOwn', 'profile'),

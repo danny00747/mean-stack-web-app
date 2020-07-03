@@ -1,5 +1,8 @@
 export default function makePostUser({addUser}) {
     return async function postUser(httpRequest) {
+        const headers = {
+            'Content-Type': 'application/json'
+        };
         try {
             const {...userInfo} = httpRequest.body;
 
@@ -9,20 +12,16 @@ export default function makePostUser({addUser}) {
 
             if (posted.message) {
                 return {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers,
                     statusCode: 409,
                     body: {
                         success: false,
-                        message: posted.message,
+                        ...posted,
                     }
                 }
             }
             return {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers,
                 statusCode: 201,
                 body: {
                     success: true,
@@ -40,9 +39,7 @@ export default function makePostUser({addUser}) {
             console.log(e);
 
             return {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers,
                 statusCode: 400,
                 body: {
                     error: e.message

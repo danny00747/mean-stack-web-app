@@ -38,7 +38,7 @@ export default function buildMakeUser(isValidEmail, hashPassword) {
 
         if (role !== roleEnum.ADMIN && role !== roleEnum.TEACHER &&
             role !== roleEnum.STUDENT) {
-            throw new Error('These are the types are allowed : admin, teacher, student');
+            throw new Error('These are the role are allowed : admin, teacher, student');
         }
 
         return Object.freeze({

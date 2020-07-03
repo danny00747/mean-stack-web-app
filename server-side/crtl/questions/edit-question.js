@@ -1,10 +1,10 @@
 export default function makePatchQuestion({editQuestion}) {
     return async function patchQuestion(httpRequest) {
         try {
-            const {...commentInfo} = httpRequest.body;
+            const {...questionInfo} = httpRequest.body;
             const {questionId: id} = httpRequest.params;
             const toEdit = {
-                ...commentInfo,
+                ...questionInfo,
                 id: httpRequest.params.questionId
             };
             const patched = await editQuestion(toEdit);

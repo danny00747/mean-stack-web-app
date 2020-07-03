@@ -4,6 +4,9 @@ export default function makeEditQuestion ({questionsDb}) {
         if (!id) {
             throw new Error('You must supply an id.')
         }
+        if (!(id.match(/^[0-9a-fA-F]{24}$/))) {
+            throw new Error(`${id} is not a valid ObjectId`);
+        }
         const existing = await questionsDb.findById({id});
 
         const question = makeQuestion({ ...existing, ...changes });
