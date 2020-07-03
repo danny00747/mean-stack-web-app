@@ -4,7 +4,9 @@ const passport = require("passport");
 
 const ctrlQuestions = require('../controllers/questions');
 
-import {postQuestion, getQuestions, getQuestion, patchQuestion, deleteQuestion} from '../crtl'
+import {postQuestion,
+    getQuestions,
+    getQuestion, patchQuestion, deleteQuestion} from '../crtl/questions'
 
 import makeCallback from '../express-callback'
 

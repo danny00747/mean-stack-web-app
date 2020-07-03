@@ -1,13 +1,10 @@
-const Question = require("./questionModel");
-import mongoose from 'mongoose'
-
 export default function makeQuestionDb({Question}) {
     return Object.freeze({
         save, findAll, findById, patch, remove
     });
 
-    async function save({...commentInfo}) {
-        const db = new Question(commentInfo);
+    async function save({...questionInfo}) {
+        const db = new Question(questionInfo);
         return await db.save();
     }
 

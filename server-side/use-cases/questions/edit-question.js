@@ -1,4 +1,4 @@
-import makeQuestion from '../domain'
+import {makeQuestion} from '../../domain'
 export default function makeEditQuestion ({questionsDb}) {
     return async function editQuestion ({ id, ...changes } = {}) {
         if (!id) {

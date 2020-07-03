@@ -2,22 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/crtl/edit-question.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/crtl/get-one-question.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/crtl/remove-question.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/use-cases/edit-question.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/use-cases/get-one-question.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/use-cases/list-questions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/use-cases/remove-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/questions/edit-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/questions/get-one-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/questions/get-questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/questions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/questions/post-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/questions/remove-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/users/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/crtl/users/post-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/data-access/models/questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/data-access/models/users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/data-access/user-db.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/domain/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/questions/add-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/questions/edit-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/questions/get-one-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/questions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/questions/list-questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/questions/remove-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/users/add-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/use-cases/users/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/get-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/get-questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/post-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/post-question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/edit-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/get-one-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/get-questions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/post-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/remove-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/data-access/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/data-access/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/data-access/question-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/data-access/question-db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/domain/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/data-access/questionModel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/domain/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/routes/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/list-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/use-cases/add-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/use-cases/edit-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/use-cases/get-one-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/use-cases/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/use-cases/list-questions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/use-cases/remove-question.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +329,7 @@
       <workItem from="1593131372557" duration="728000" />
       <workItem from="1593627672352" duration="8347000" />
       <workItem from="1593650496192" duration="9497000" />
-      <workItem from="1593702595946" duration="20679000" />
+      <workItem from="1593702595946" duration="38287000" />
     </task>
     <task id="LOCAL-00124" summary="updated minimist package to the latest">
       <created>1586805942684</created>

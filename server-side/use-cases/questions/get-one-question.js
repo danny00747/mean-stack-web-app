@@ -1,4 +1,3 @@
-
 export default function makeGetOneQuestion ({ questionsDb }) {
     return async function GetOneQuestion ({id}) {
         if (!id) {

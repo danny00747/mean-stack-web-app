@@ -1,6 +1,6 @@
 import {
   addQuestion, listQuestions, getOneQuestion, editQuestion, removeQuestion
-} from '../use-cases'
+} from '../../use-cases/questions'
 
 import makePostQuestion from './post-question'
 import makeGetQuestions from './get-questions'

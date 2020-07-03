@@ -1,7 +1,7 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const passport = require('passport');
+import express from 'express'
+import bodyParser from 'body-parser'
+import cors from 'cors'
+import passport from 'passport'
 const addRequestId = require('express-request-id')();
 const path = require('path');
 const {success, info, error, debug} = require('consola');

@@ -3,7 +3,7 @@ import makeListQuestion from './list-questions'
 import makeGetOneQuestion from './get-one-question'
 import makeEditQuestion from './edit-question'
 import makeRemoveQuestion from './remove-question'
-import questionsDb from '../data-access/index'
+import {questionsDb} from '../../data-access/index'
 
 const addQuestion = makeAddQuestion({questionsDb});
 const listQuestions = makeListQuestion({questionsDb});
