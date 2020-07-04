@@ -1,6 +1,6 @@
 export default function makeUserDb({User}) {
     return Object.freeze({
-        save, findByEmailOrUsername, findPseudo, findAll, findById
+        save, findByEmailOrUsername, findPseudo, findAll, findById, patch, remove
     });
 
     async function save({...userInfo}) {
@@ -21,6 +21,10 @@ export default function makeUserDb({User}) {
 
     }
 
+    async function patch({id: _id, ...userInfo}) {
+        return await User.findByIdAndUpdate({_id}, {...userInfo}, {new: true}).exec();
+    }
+
     async function findByEmailOrUsername(email, username) {
         return await User.find({
             $or: [{email: email}, {username: username}]
@@ -35,6 +39,10 @@ export default function makeUserDb({User}) {
             ]
         })
             .exec();
+    }
+
+    async function remove ({ id: _id }) {
+        return await User.findByIdAndRemove({ _id }).exec();
     }
 
 

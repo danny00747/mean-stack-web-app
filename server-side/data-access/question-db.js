@@ -22,7 +22,7 @@ export default function makeQuestionDb({Question}) {
     }
 
     async function patch({id: _id, ...questionInfo}) {
-        return await Question.updateOne({_id}, {$set: {...questionInfo}}).exec();
+        return await Question.findByIdAndUpdate({_id}, {...questionInfo}, {new: true}).exec();
     }
 
     async function remove ({ id: _id }) {

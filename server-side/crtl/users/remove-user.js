@@ -1,10 +1,9 @@
-export default function makeDeleteQuestion ({ removeQuestion }) {
-    return async function deleteQuestion (httpRequest) {
+export default function makeDeleteUser ({ removeUser }) {
+    return async function deleteUser (httpRequest) {
 
         try {
-            const deleted = await removeQuestion({ id: httpRequest.params.questionId });
-            console.log(deleted);
-            if(!deleted){
+            const deleteUser = await removeUser({ id: httpRequest.params.userId });
+            if(!deleteUser){
                 return {
                     statusCode : 404,
                     body: {message: "No valid entry found for provided ID"}
@@ -14,7 +13,10 @@ export default function makeDeleteQuestion ({ removeQuestion }) {
                 statusCode : 200,
                 body: {
                     message: "Question deleted successfully !",
-                    deletedQuestion : deleted.question
+                    removedUser : {
+                        username : deleteUser.username,
+                        email : deleteUser.email
+                    }
                 }
             }
         } catch (e) {

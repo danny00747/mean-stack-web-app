@@ -1,15 +1,12 @@
 export default function makePostQuestion ({ addQuestion }) {
   return async function postQuestion (httpRequest) {
-    const headers = {
-      'Content-Type': 'application/json'
-    };
+
     try {
       const { ...questionInfo } = httpRequest.body;
       const posted = await addQuestion({
         ...questionInfo,
       });
       return {
-        headers,
         statusCode: 201,
         body: {
           message: "Created question successfully !",
@@ -29,7 +26,6 @@ export default function makePostQuestion ({ addQuestion }) {
       console.log(e);
 
       return {
-       headers,
         statusCode: 400,
         body: {
           error: e.message

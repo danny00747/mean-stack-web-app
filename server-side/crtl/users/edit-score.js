@@ -1,31 +1,36 @@
-export default function makePatchQuestion({editQuestion}) {
-    return async function patchQuestion(httpRequest) {
+export default function makePatchScore({editScore}) {
+    return async function patchScore(httpRequest) {
 
         try {
-            const {...questionInfo} = httpRequest.body;
-            const {questionId: id} = httpRequest.params;
+            const {...userInfo} = httpRequest.body;
+            const {userId: id} = httpRequest.params;
             const toEdit = {
-                ...questionInfo,
-                id: httpRequest.params.questionId
+                ...userInfo,
+                id: httpRequest.params.userId
             };
-            const updatedQuestion = await editQuestion(toEdit);
 
-            if (!updatedQuestion) {
+            const updatedUser = await editScore(toEdit);
+
+            if (!updatedUser) {
                 return {
                     statusCode: 404,
                     body: {message: "No valid entry found for provided ID"}
                 }
             }
+
             return {
                 statusCode: 200,
                 body: {
-                    message: "Question updated successfully !",
-                    updatedQuestion : {
-                        question : updatedQuestion.question
+                    message: "User info updated successfully",
+                    updatedUser: {
+                        username: updatedUser.username,
+                        email: updatedUser.email,
+                        score: updatedUser.score,
+                        level: updatedUser.level
                     },
                     request: {
                         type: "GET",
-                        url: `http://localhost:5000/server/api/questions/${id}`
+                        url: `http://localhost:5000/api/user/${id}`
                     }
                 }
             }

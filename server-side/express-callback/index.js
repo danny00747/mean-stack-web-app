@@ -15,11 +15,8 @@ const makeCallback = (controller) => {
         };
         controller(httpRequest)
             .then(httpResponse => {
-                if (httpResponse.headers) {
-                    res.set(httpResponse.headers)
-                }
                 res.type('json');
-                res.status(httpResponse.statusCode).send(httpResponse.body)
+                res.status(httpResponse.statusCode).json(httpResponse.body)
             })
             .catch(err => res.status(500).send(
                 {

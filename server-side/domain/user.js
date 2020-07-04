@@ -10,21 +10,34 @@ export default function buildMakeUser(isValidEmail, hashPassword) {
         if (typeof username !== 'string') {
             throw new Error('A username must be a string.')
         }
-        if (username.length <= 4 || username.length >= 9) {
+        if (username.length < 4 || username.length >= 9) {
             throw new Error('A username minimum length is 4 and max is 9 .')
-        }
-        if (!EmailValidation()) {
-            throw new Error('Invalid email.')
         }
         if (!email) {
             throw new Error('An email is required.')
         }
+        if (!EmailValidation()) {
+            throw new Error('Invalid email.')
+        }
+
         if (typeof email !== 'string') {
             throw new Error('An email must be of type string.')
         }
 
         if (!password) {
             throw new Error('A password field is required.')
+        }
+
+        if (typeof password !== 'string') {
+            throw new Error('The password must be of type string.')
+        }
+
+        if (typeof score !== 'number') {
+            throw new Error('The score must be a number')
+        }
+
+        if (score > 10) {
+            throw new Error('The max score is 10')
         }
 
         const levelEnum = {
@@ -38,7 +51,8 @@ export default function buildMakeUser(isValidEmail, hashPassword) {
 
         if (role !== roleEnum.ADMIN && role !== roleEnum.TEACHER &&
             role !== roleEnum.STUDENT) {
-            throw new Error('These are the role are allowed : admin, teacher, student');
+            throw new Error('These are the role are allowed : ' +
+                'admin, teacher, student');
         }
 
         return Object.freeze({
@@ -47,7 +61,8 @@ export default function buildMakeUser(isValidEmail, hashPassword) {
             getPassword: () => makeHash(),
             getReviews: () => reviews,
             getRole: () => role,
-            getscore: () => score
+            getScore: () => score,
+            getLevel: () => getUserLevel(score)
         });
 
         function makeHash() {
@@ -56,6 +71,22 @@ export default function buildMakeUser(isValidEmail, hashPassword) {
 
         function EmailValidation() {
             return isValidEmail(email);
+        }
+
+        function getUserLevel(UserScore) {
+            if (UserScore <= 0 || UserScore < 2) {
+                return levelEnum.A1
+            } else if (UserScore <= 2 || UserScore < 4) {
+                return levelEnum.A2
+            } else if (UserScore <= 4 || UserScore < 6) {
+                return levelEnum.B1
+            } else if (UserScore <= 6 || UserScore < 8) {
+                return levelEnum.B2
+            } else if (UserScore <= 8 || UserScore <= 9) {
+                return levelEnum.C1
+            } else {
+                return levelEnum.C2
+            }
         }
     }
 }

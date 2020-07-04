@@ -7,7 +7,7 @@ const router = express.Router();
 const ctrlUsers = require("../controllers/users");
 const ctrlAcess = require("../controllers/grandAccess");
 
-import {postUser, loggedInUser, getUsers, getUser} from '../crtl/users'
+import {postUser, loggedInUser, getUsers, getUser, patchUser, deleteUser, patchScore} from '../crtl/users'
 import makeCallback from '../express-callback'
 
 /**
@@ -23,19 +23,10 @@ router.get("/users/profiles", makeCallback(getUsers));
 router
     .route("/user/:userId")
     .get(makeCallback(getUser))
+    .patch(makeCallback(patchUser))
+    .delete(makeCallback(deleteUser));
 
-    .delete(passport.authenticate("jwt", {session: false}),
-        ctrlAcess.grantAccess('deleteOwn', 'profile'),
-        ctrlUsers.user_delete)
-
-    .patch(passport.authenticate("jwt", {session: false}),
-        ctrlAcess.grantAccess('updateOwn', 'profile'),
-        ctrlUsers.update_user);
-
-router.patch("/user/:userId/score",
-    passport.authenticate("jwt", {session: false}),
-    ctrlAcess.grantAccess('updateOwn', 'profile'),
-    ctrlUsers.update_user_score);
+router.patch("/user/:userId/score", makeCallback(patchScore));
 
 
 module.exports = router;
