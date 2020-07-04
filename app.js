@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import passport from 'passport'
+import routes from './server-side/routes'
 const addRequestId = require('express-request-id')();
 const path = require('path');
 const {success, info, error, debug} = require('consola');
@@ -68,12 +69,12 @@ app.get('/', (req, res) => {
 
 // Bring in the user routers
 const reviews = require('./server-side/routes/reviews');
-const users = require('./server-side/routes/users');
-const questions = require('./server-side/routes/questions');
+//const users = require('./server-side/routes/users');
+//const questions = require('./server-side/routes/questions');
 const logs = require('./server-side/routes/logs');
 
-app.use('/server/api/', users);
-app.use('/server/api/', questions);
+app.use('/server/api/', routes.usersRoutes);
+app.use('/server/api/', routes.questionsRoutes);
 app.use('/server/api/', reviews);
 app.use('/server/api/', logs);
 

@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const passport = require("passport");
+import passport from 'passport'
 
 const ctrlQuestions = require('../controllers/questions');
 
@@ -12,14 +12,15 @@ import makeCallback from '../express-callback'
 
 router
     .route('/questions')
-    .get(makeCallback(getQuestions))
+    .get(passport.authenticate("jwt", {session: false}),
+        makeCallback(getQuestions))
     .post(makeCallback(postQuestion));
 
 router
     .route('/questions/:questionId')
-    .get(makeCallback(getQuestion))
+    .get(
+        makeCallback(getQuestion))
     .patch(makeCallback(patchQuestion))
     .delete(makeCallback(deleteQuestion));
 
-
-module.exports = router;
+export {router as questionsRoutes};

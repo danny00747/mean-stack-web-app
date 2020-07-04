@@ -1,8 +1,6 @@
-
-const express = require("express");
-const passport = require("passport");
-
+import express from 'express';
 const router = express.Router();
+import passport from 'passport'
 
 const ctrlUsers = require("../controllers/users");
 const ctrlAcess = require("../controllers/grandAccess");
@@ -29,6 +27,7 @@ router
 router.patch("/user/:userId/score", makeCallback(patchScore));
 
 
-module.exports = router;
+export {router as usersRoutes};
+
 
 
