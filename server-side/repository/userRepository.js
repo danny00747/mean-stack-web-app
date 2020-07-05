@@ -1,4 +1,4 @@
-export default function makeUserDb({User}) {
+export default function makeUserRepository({User}) {
     return Object.freeze({
         save, findByEmailOrUsername, findPseudo, findAll, findById, patch, remove
     });
@@ -41,7 +41,7 @@ export default function makeUserDb({User}) {
             .exec();
     }
 
-    async function remove ({ id: _id }) {
+    async function remove({ id: _id }) {
         return await User.findByIdAndRemove({ _id }).exec();
     }
 

@@ -1,4 +1,4 @@
-export default function makeQuestionDb({Question}) {
+export default function makeQuestionRepository({Question}) {
     return Object.freeze({
         save, findAll, findById, patch, remove
     });
