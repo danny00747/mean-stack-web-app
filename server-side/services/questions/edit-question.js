@@ -1,12 +1,12 @@
 import {makeQuestion} from '../../domain'
-export default function makeEditQuestionService ({questionRepository}) {
-    return async function editQuestionService ({ id, ...changes } = {}) {
+export default function makeEditQuestionService({questionRepository}) {
+    return async function editQuestionService({id, ...changes} = {}) {
 
         if (!id) throw new Error('You must supply an id.')
 
         if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new Error(`${id} is not a valid ObjectId`);
 
-        const question = makeQuestion({ ...changes });
+        const question = makeQuestion({...changes});
 
         return questionRepository.patch({
             id: id,

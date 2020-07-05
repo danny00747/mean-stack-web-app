@@ -1,7 +1,7 @@
 import buildMakeQuestion from './question'
 import buildMakeReview from './reviews'
 import buildMakeUser from './user'
-import * as EmailValidator from 'email-validator';
+import EmailValidator from 'email-validator';
 import bcrypt from 'bcrypt'
 
 const makeQuestion = buildMakeQuestion();

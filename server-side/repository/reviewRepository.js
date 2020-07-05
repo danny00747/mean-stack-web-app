@@ -1,6 +1,6 @@
 export default function makeReviewRepository({User}) {
     return Object.freeze({
-        findById, save, findAll, findByEmail, removeReview
+        findById, save, findAll, findByEmail
     });
 
     async function findById({id: _id}) {
@@ -22,10 +22,6 @@ export default function makeReviewRepository({User}) {
     }
 
     async function save({id: _id, new: bool, ...userInfo}) {
-        return await User.findByIdAndUpdate({_id}, {...userInfo}, {new: bool}).exec();
-    }
-
-    async function removeReview({id: _id, new: bool, ...userInfo}) {
         return await User.findByIdAndUpdate({_id}, {...userInfo}, {new: bool}).exec();
     }
 

@@ -16,8 +16,6 @@ export default function makeRemoveReviewService({reviewRepository}) {
 
         if (index === -1) return {message: "No was review found with provided ID!"};
 
-        existing.reviews.splice();
-
         existing.reviews.id(id).remove();
 
         const ancientDocument = await reviewRepository.save({
