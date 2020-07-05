@@ -1,10 +1,10 @@
-export default function makeSignInUser({logInUser, bcrypt, jwt}) {
-    return async function signInUser(httpRequest) {
+export default function makeSignInUserController({logInUserService, bcrypt, jwt}) {
+    return async function signInUserController(httpRequest) {
 
         try {
             const {...userInfo} = httpRequest.body;
 
-            const existing = await logInUser({
+            const existing = await logInUserService({
                 ...userInfo,
             });
 

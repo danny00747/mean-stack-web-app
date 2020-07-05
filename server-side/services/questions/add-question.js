@@ -1,8 +1,8 @@
 import {makeQuestion} from '../../domain'
-export default function makeAddQuestion ({ questionsDb }) {
-  return async function addQuestion (questionInfo) {
+export default function makeAddQuestionService ({ questionRepository }) {
+  return async function addQuestionService (questionInfo) {
     const question = makeQuestion(questionInfo);
-    return questionsDb.save({
+    return questionRepository.save({
       type: question.getType(),
       question: question.getQuestion(),
       answers: question.getAnswers(),

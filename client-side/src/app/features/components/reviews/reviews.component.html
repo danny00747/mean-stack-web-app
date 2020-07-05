@@ -83,7 +83,8 @@
 
                 <!-- Riview rating -->
                 Rating :
-                <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"></ngb-rating>
+                <ngb-rating [(rate)]='review["rating"]' [readonly]="readonly"
+                            [max]="5"></ngb-rating>
               </div>
 
               <!-- review date / time -->
@@ -152,7 +153,7 @@
             <div class="card-header">
               <p class="font-weight-bold text-monospace font-italic
               font-weight-bolder">Rating :
-                <ngb-rating [(rate)]="currentRate" ></ngb-rating>
+                <ngb-rating [(rate)]="currentRate" [max]="5"></ngb-rating>
               </p>
             </div>
 

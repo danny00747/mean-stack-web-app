@@ -1,19 +1,23 @@
-import makeAddQuestion from './add-question'
-import makeListQuestion from './list-questions'
-import makeGetOneQuestion from './get-one-question'
-import makeEditQuestion from './edit-question'
-import makeRemoveQuestion from './remove-question'
-import {questionsDb} from '../../data-access/index'
+import makeAddQuestionService from './add-question'
+import makeListQuestionService from './list-questions'
+import makeGetOneQuestionService from './get-one-question'
+import makeEditQuestionService from './edit-question'
+import makeRemoveQuestionService from './remove-question'
+import {questionRepository} from '../../repository/index'
 
-const addQuestion = makeAddQuestion({questionsDb});
-const listQuestions = makeListQuestion({questionsDb});
-const getOneQuestion = makeGetOneQuestion({questionsDb});
-const editQuestion = makeEditQuestion({questionsDb});
-const removeQuestion = makeRemoveQuestion({questionsDb});
+const addQuestionService = makeAddQuestionService({questionRepository});
+const listQuestionsService = makeListQuestionService({questionRepository});
+const getOneQuestionService = makeGetOneQuestionService({questionRepository});
+const editQuestionService = makeEditQuestionService({questionRepository});
+const removeQuestionService = makeRemoveQuestionService({questionRepository});
 
 const questionService = Object.freeze({
-  addQuestion, listQuestions, getOneQuestion, editQuestion, removeQuestion
+    addQuestionService, listQuestionsService,
+    getOneQuestionService, editQuestionService, removeQuestionService
 });
 
 export default questionService
-export { addQuestion, listQuestions, getOneQuestion, editQuestion, removeQuestion}
+export {
+    addQuestionService, listQuestionsService,
+    getOneQuestionService, editQuestionService, removeQuestionService
+}

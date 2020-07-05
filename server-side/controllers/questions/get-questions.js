@@ -1,18 +1,20 @@
-export default function makeGetUsers ({ getAllUsers }) {
-    return async function getUsers() {
+import questionController from "./index";
+
+export default function makeGetQuestionsController({listQuestionsService}) {
+    return async function getQuestionsController() {
 
         try {
-            const users = await getAllUsers();
+            const questions = await listQuestionsService();
 
-            if (users.length === 0){
+            if (questions.length === 0) {
                 return {
                     statusCode: 204,
-                    body: {message: "No Users found in the database"}
+                    body: {message: "No documents found in the database"}
                 }
             }
             return {
                 statusCode: 200,
-                body: [...users]
+                body: questions
             }
         } catch (e) {
             // TODO: Error logging

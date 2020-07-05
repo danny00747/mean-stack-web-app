@@ -1,17 +1,17 @@
-import makeAddReview from './add-review'
-import makeListReviews from './list-reviews'
-import makeEditReview from './edit-review'
-import makeRemoveReview from './remove-review'
-import {reviewDb} from '../../data-access/index'
+import makeAddReviewService from './add-review'
+import makeListReviewsService from './list-reviews'
+import makeEditReviewService from './edit-review'
+import makeRemoveReviewService from './remove-review'
+import {reviewRepository} from '../../repository/index'
 
-const addReview = makeAddReview({reviewDb});
-const getAllReviews = makeListReviews({reviewDb});
-const editReview = makeEditReview({reviewDb});
-const removeReview = makeRemoveReview({reviewDb});
+const addReviewService = makeAddReviewService({reviewRepository});
+const getAllReviewsService = makeListReviewsService({reviewRepository});
+const editReviewService = makeEditReviewService({reviewRepository});
+const removeReviewService = makeRemoveReviewService({reviewRepository});
 
 const reviewService = Object.freeze({
-    addReview, getAllReviews, editReview, removeReview
+    addReviewService, getAllReviewsService, editReviewService, removeReviewService
 });
 
 export default reviewService
-export {addReview, getAllReviews, editReview, removeReview}
+export {addReviewService, getAllReviewsService, editReviewService, removeReviewService}

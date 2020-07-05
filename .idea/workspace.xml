@@ -2,57 +2,96 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/questions/edit-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/questions/get-one-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/questions/get-questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/questions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/questions/post-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/questions/remove-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/reviews/edit-review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/reviews/get-reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/reviews/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/reviews/post-review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/reviews/remove-review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/users/edit-score.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/users/edit-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/users/get-one-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/users/get-users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/users/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/users/logIn-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/users/post-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/users/remove-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/old-ctrl/grandAccess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/old-ctrl/logs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/old-ctrl/questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/old-ctrl/reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/old-ctrl/roles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/old-ctrl/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/grandAccess.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/grandAccess.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/logs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/roles.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/roles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/questions/edit-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/questions/edit-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/questions/get-one-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/questions/get-one-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/questions/remove-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/questions/remove-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/edit-score.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/users/edit-score.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/edit-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/users/edit-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/get-one-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/users/get-one-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/get-users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/users/get-users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/users/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/logIn-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/users/logIn-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/remove-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/crtl/users/remove-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/data-access/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/data-access/config/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/data-access/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/data-access/config/passport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/data-access/models/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/data-access/models/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/data-access/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/data-access/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/data-access/user-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/data-access/user-db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/reviews/reviews.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/reviews/reviews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/reviews/reviews.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/grandAccess.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/logs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/roles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/questions/edit-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/questions/get-one-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/questions/get-questions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/questions/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/questions/post-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/questions/remove-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/reviews.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/reviews/edit-review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/reviews/get-reviews.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/reviews/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/reviews/post-review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/reviews/remove-review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/reviews/reviews.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/edit-score.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/edit-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/get-one-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/get-users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/logIn-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/post-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/crtl/users/remove-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/data-access/config/database.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/data-access/config/passport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/data-access/models/questions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/data-access/models/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/domain/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/domain/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/domain/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/reviews.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/domain/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/logs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/models/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/questions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/public/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/routes/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/logs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/routes/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/questions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/routes/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/reviews.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/e2e/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/users..js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/users..js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/questions/edit-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/questions/edit-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/questions/get-one-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/questions/get-one-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/questions/remove-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/questions/remove-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/users/edit-score.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/users/edit-score.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/users/edit-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/users/edit-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/users/get-one-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/users/get-one-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/users/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/users/list-users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/users/list-users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/users/logIn-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/users/logIn-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/use-cases/users/remove-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/use-cases/users/remove-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/security/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/security/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/add-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/questions/add-question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/edit-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/questions/edit-question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/get-one-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/questions/get-one-question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/questions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/list-questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/questions/list-questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/remove-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/questions/remove-question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/add-review.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviews/add-review.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/edit-review.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviews/edit-review.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviews/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/list-reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviews/list-reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/remove-review.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviews/remove-review.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/edit-score.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/edit-score.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/edit-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/edit-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/get-one-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/get-one-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/list-users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/list-users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/logIn-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/logIn-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/register-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/register-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/remove-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/remove-user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,7 +382,7 @@
       <workItem from="1593819358459" duration="15536000" />
       <workItem from="1593875160986" duration="3113000" />
       <workItem from="1593878861257" duration="6000" />
-      <workItem from="1593879349606" duration="880000" />
+      <workItem from="1593879349606" duration="34082000" />
     </task>
     <task id="LOCAL-00124" summary="updated minimist package to the latest">
       <created>1586805942684</created>

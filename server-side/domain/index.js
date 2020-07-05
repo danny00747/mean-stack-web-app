@@ -1,10 +1,12 @@
 import buildMakeQuestion from './question'
+import buildMakeReview from './reviews'
 import buildMakeUser from './user'
 import * as EmailValidator from 'email-validator';
 import bcrypt from 'bcrypt'
 
 const makeQuestion = buildMakeQuestion();
-const makeUser = buildMakeUser(isValidEmail, hashPassword);
+const makeReview = buildMakeReview();
+const makeUser = buildMakeUser(isValidEmail, hashPassword, makeReview);
 
  function hashPassword(password) {
     return bcrypt.hashSync(password, 10);
@@ -19,5 +21,5 @@ const entities = Object.freeze({
 });
 
 export default entities
-export {makeQuestion, makeUser}
+export {makeQuestion, makeUser, makeReview}
 

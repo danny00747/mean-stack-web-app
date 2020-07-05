@@ -1,7 +1,6 @@
 import {makeReview} from '../../domain'
-
-export default function makeEditReview({reviewDb}) {
-    return async function editReview({id, email, ...changes} = {}) {
+export default function makeEditReviewService({reviewRepository}) {
+    return async function editReviewService({id, email, ...changes} = {}) {
 
         if (!id) throw new Error('You must supply an id.');
 
@@ -9,7 +8,7 @@ export default function makeEditReview({reviewDb}) {
 
         if (!email) throw new Error('You must supply the user email.');
 
-        const existing = await reviewDb.findByEmail({email});
+        const existing = await reviewRepository.findByEmail({email});
 
         if (!existing) return {message: "No user was found with provided Email"};
 
@@ -23,7 +22,7 @@ export default function makeEditReview({reviewDb}) {
         existing.reviews[index].reviewText = review.getReviewText();
         existing.reviews[index].updated = new Date();
 
-        const updatedDocument = await reviewDb.save({
+        const updatedDocument = await reviewRepository.save({
             id: existing._id,
             new: true,
             reviews: existing.reviews

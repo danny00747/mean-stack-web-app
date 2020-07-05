@@ -1,8 +1,8 @@
-export default function makeGetOneQuestion({getOneQuestion}) {
-    return async function getQuestion(httpRequest) {
+export default function makeGetOneQuestionController({getOneQuestionService}) {
+    return async function getQuestionController(httpRequest) {
 
         try {
-            const doc = await getOneQuestion({id: httpRequest.params.questionId});
+            const doc = await getOneQuestionService({id: httpRequest.params.questionId});
             if (!doc) {
                 return {
                     statusCode: 404,

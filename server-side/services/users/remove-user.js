@@ -1,5 +1,5 @@
-export default function makeRemoveUser({usersDb}) {
-    return async function removeUser({id} = {}) {
+export default function makeRemoveUserService({userRepository}) {
+    return async function removeUserService({id} = {}) {
         if (!id) {
             throw new Error('You must supply the question id.')
         }
@@ -7,7 +7,7 @@ export default function makeRemoveUser({usersDb}) {
             throw new Error(`${id} is not a valid ObjectId`);
         }
 
-        return usersDb.remove({id : id});
+        return userRepository.remove({id : id});
 
     }
 }

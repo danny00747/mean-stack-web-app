@@ -1,5 +1,5 @@
-export default function makeListReviews({ reviewDb }) {
-    return async function listReviews() {
-        return reviewDb.findAll();
+export default function makeListReviewsService({ reviewRepository }) {
+    return async function listReviewsService() {
+        return reviewRepository.findAll();
     }
 }

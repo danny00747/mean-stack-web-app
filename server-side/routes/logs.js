@@ -3,7 +3,7 @@ const passport = require("passport");
 
 const router = express.Router();
 
-const ctrlLogs = require("../controllers/logs");
+const ctrlLogs = require("../old-ctrl/logs");
 
 router.get("/users/metrics", ctrlLogs.getLogs);
 

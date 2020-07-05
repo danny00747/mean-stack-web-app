@@ -1,16 +1,14 @@
 import {makeUser} from '../../domain'
+export default function makeEditScoreService({userRepository}) {
+    return async function editScoreService({id, ...changes} = {}) {
 
-export default function makeEditScore({usersDb}) {
-    return async function editScore({id, ...changes} = {}) {
+        if (!id) throw new Error('You must supply an id.');
 
-        if (!id) {
-            throw new Error('You must supply an id.')
-        }
-        if (!(id.match(/^[0-9a-fA-F]{24}$/))) {
-            throw new Error(`${id} is not a valid ObjectId`);
-        }
+        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new Error(`${id} is not a valid ObjectId`);
 
-        const existing = await usersDb.findById({id});
+        const existing = await userRepository.findById({id});
+
+        if (!existing) return {message: "No valid entry found for provided ID !"};
 
         const {username, email, password} = existing;
 
@@ -20,13 +18,11 @@ export default function makeEditScore({usersDb}) {
 
         const user = makeUser({...changes});
 
-        return usersDb.patch({
+        return userRepository.patch({
             id: id,
             score: user.getScore(),
             level: user.getLevel()
         });
-
-        //const updatedUser = await usersDb.findById({id});
 
     }
 }

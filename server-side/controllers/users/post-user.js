@@ -1,10 +1,10 @@
-export default function makePostUser({addUser}) {
-    return async function postUser(httpRequest) {
+export default function makePostUserController({addUserService}) {
+    return async function postUserController(httpRequest) {
 
         try {
             const {...userInfo} = httpRequest.body;
 
-            const posted = await addUser({
+            const posted = await addUserService({
                 ...userInfo,
             });
 

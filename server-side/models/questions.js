@@ -1,17 +1,17 @@
-const mongoose = require('mongoose');
-const uniqueValidator = require('mongoose-unique-validator');
+import mongoose from 'mongoose';
+import uniqueValidator from 'mongoose-unique-validator';
 
 const questionSchema = new mongoose.Schema({
 
     type: {
         type: String,
-        required: true,
+        require: true,
         enum: ["multiple", "boolean", "fill in"]
     },
     question: {
-            type: String,
-            required: true,
-        },
+        type: String,
+        required: true,
+    },
     answers: [
         {
             option: {
@@ -28,6 +28,4 @@ const questionSchema = new mongoose.Schema({
 });
 
 questionSchema.plugin(uniqueValidator);
-module.exports = mongoose.model('Questionz', questionSchema, 'questions');
-
-// /^([a-zA-Z0-9\.-_]+)@([a-zA-Z0-9-]+).([a-z]{2,8})(.[a-z]{2,8})?$/
+export default mongoose.model('Question', questionSchema, 'questions');

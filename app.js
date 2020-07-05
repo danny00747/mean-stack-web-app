@@ -2,14 +2,14 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import passport from 'passport'
+import authenticateUser from './server-side/security/passport';
 import routes from './server-side/routes'
 const addRequestId = require('express-request-id')();
-const path = require('path');
+import path from 'path';
 const {success, info, error, debug} = require('consola');
-const helmet = require('helmet');
+import helmet from 'helmet';
 require('dotenv').config();
-require('./server-side/data-access/config/database');
-
+require('./server-side/config/database');
 
 // Initialize the app
 const app = express();
@@ -59,8 +59,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // bring the passport auth strategy
-require('./server-side/data-access/config/passport')(passport);
-//require('./config/passport');
+authenticateUser(passport);
 
 app.get('/', (req, res) => {
     return res.sendFile(path
@@ -68,14 +67,14 @@ app.get('/', (req, res) => {
 });
 
 // Bring in the user routers
-const reviews = require('./server-side/routes/reviews');
+//const reviews = require('./server-side/routes/reviews');
 //const users = require('./server-side/routes/users');
 //const questions = require('./server-side/routes/questions');
 const logs = require('./server-side/routes/logs');
 
 app.use('/server/api/', routes.usersRoutes);
 app.use('/server/api/', routes.questionsRoutes);
-app.use('/server/api/', reviews);
+app.use('/server/api/', routes.reviewsRoutes);
 app.use('/server/api/', logs);
 
 app.use('/server/api/api-documentation', (req, res) => {
@@ -89,7 +88,7 @@ app.get('*', (req, res) => {
 });
 
 app.listen(process.env.PORT, () => {
-    info({message: `Server started on port ${process.env.PORT}`, badge: true});
+    info({message: `Server started on port ${process.env["PORT"]}`, badge: true});
 });
 
 // catch 404 and forward to error handler

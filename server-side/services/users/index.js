@@ -1,24 +1,28 @@
-import makeAdduser from './register-user'
-import makeLogInUser from './logIn-user'
-import makeListUsers from './list-users'
-import makeGetOneUser from './get-one-user'
-import makeEditUser from './edit-user'
-import makeRemoveUser from './remove-user'
-import makeEditScore from './edit-score'
+import makeAdduserService from './register-user'
+import makeLogInUserService from './logIn-user'
+import makeListUsersService from './list-users'
+import makeGetOneUserService from './get-one-user'
+import makeEditUserService from './edit-user'
+import makeRemoveUserService from './remove-user'
+import makeEditScoreService from './edit-score'
 
-import {usersDb} from '../../data-access/index'
+import {userRepository} from '../../repository/index'
 
-const addUser = makeAdduser({usersDb});
-const logInUser = makeLogInUser({usersDb});
-const getAllUsers = makeListUsers({usersDb});
-const getOneUser = makeGetOneUser({usersDb});
-const editUser = makeEditUser({usersDb});
-const removeUser = makeRemoveUser({usersDb});
-const editScore = makeEditScore({usersDb});
+const addUserService = makeAdduserService({userRepository});
+const logInUserService = makeLogInUserService({userRepository});
+const getAllUsersService = makeListUsersService({userRepository});
+const getOneUserService = makeGetOneUserService({userRepository});
+const editUserService = makeEditUserService({userRepository});
+const removeUserService = makeRemoveUserService({userRepository});
+const editScoreService = makeEditScoreService({userRepository});
 
 const userService = Object.freeze({
-    addUser, logInUser, getAllUsers, getOneUser, editUser, removeUser, editScore
+    addUserService, logInUserService, getAllUsersService,
+    getOneUserService, editUserService, removeUserService, editScoreService
 });
 
 export default userService
-export {addUser, logInUser, getAllUsers, getOneUser, editUser, removeUser, editScore}
+export {
+    addUserService, logInUserService, getAllUsersService,
+    getOneUserService, editUserService, removeUserService, editScoreService
+}

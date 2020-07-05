@@ -1,5 +1,5 @@
-export default function makeRemoveReview({reviewDb}) {
-    return async function removeReview({id, email} = {}) {
+export default function makeRemoveReviewService({reviewRepository}) {
+    return async function removeReviewService({id, email} = {}) {
 
         if (!id) throw new Error('You must supply an id.');
 
@@ -7,7 +7,7 @@ export default function makeRemoveReview({reviewDb}) {
 
         if (!email) throw new Error('You must supply the user email.');
 
-        const existing = await reviewDb.findByEmail({email});
+        const existing = await reviewRepository.findByEmail({email});
 
         if (!existing) return {message: "No user was found with provided Email"};
 
@@ -20,15 +20,13 @@ export default function makeRemoveReview({reviewDb}) {
 
         existing.reviews.id(id).remove();
 
-        const ancientDocument = await reviewDb.save({
+        const ancientDocument = await reviewRepository.save({
             id: existing._id,
             new: false,
             reviews: existing.reviews
         });
 
         return {index, ancientDocument}
-
-        //const updatedUser = await usersDb.findById({id});
 
     }
 }

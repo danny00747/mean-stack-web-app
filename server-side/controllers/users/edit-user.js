@@ -1,5 +1,5 @@
-export default function makePatchUser({editUser}) {
-    return async function patchUser(httpRequest) {
+export default function makePatchUserController({editUserService}) {
+    return async function patchUserController(httpRequest) {
 
         try {
             const {...userInfo} = httpRequest.body;
@@ -9,7 +9,7 @@ export default function makePatchUser({editUser}) {
                 id: httpRequest.params.userId
             };
 
-            const updatedUser = await editUser(toEdit);
+            const updatedUser = await editUserService(toEdit);
 
             if (!updatedUser) {
                 return {

@@ -1,28 +1,21 @@
-const express  = require("express");
-const passport = require("passport");
-
+import express from 'express';
 const router = express.Router();
 
 const ctrlReviews = require("../controllers/reviews");
 const ctrlUsers = require("../controllers/users");
 
-
-import {getUsers} from '../crtl/users'
 import makeCallback from '../express-callback'
 
-
+import reviewController from '../controllers/reviews'
 router
     .route('/user/:userId/reviews')
-    .post(passport.authenticate("jwt", {session: false}),
-        ctrlReviews.reviewsCreate);
+    .post(makeCallback(reviewController.postReviewController));
 
-router.get("/reviews/all", makeCallback(getUsers));
+router.get("/reviews/all", makeCallback(reviewController.getReviewsController));
 
 router
     .route('/user/:userEmail/reviews/:reviewId')
-    .patch(passport.authenticate("jwt", {session: false}),
-        ctrlReviews.reviewsUpdateOne)
-    .delete(passport.authenticate("jwt", {session: false}),
-        ctrlReviews.reviewsDeleteOne);
+    .patch(makeCallback(reviewController.patchReviewController))
+    .delete(makeCallback(reviewController.deleteReviewController));
 
-module.exports = router;
+export {router as reviewsRoutes};

@@ -1,8 +1,8 @@
-export default function makeGetOneUser({getOneUser}) {
-    return async function getUser(httpRequest) {
+export default function makeGetOneUserController({getOneUserService}) {
+    return async function getUserController(httpRequest) {
 
         try {
-            const user = await getOneUser({id: httpRequest.params.userId});
+            const user = await getOneUserService({id: httpRequest.params.userId});
             if (!user) {
                 return {
                     statusCode: 404,

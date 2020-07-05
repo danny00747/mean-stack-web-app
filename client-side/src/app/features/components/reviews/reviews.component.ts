@@ -54,10 +54,11 @@ export class ReviewsComponent implements OnInit {
     this.reviews.getAllReviews()
       .toPromise()
       .then((data: any) => {
-        this.reviews.userId = data._id;
-        data.forEach(x => x.reviews.forEach(y => tab.push(y)));
 
-        tab
+        if (data.message) return this.reviews.rev;
+
+        this.reviews.userId = data._id;
+        data
           .sort((a, b) => Date.parse(b.created) - Date.parse(a.created))
           .forEach(x => {
             x.rating = Number(x.rating);
@@ -65,11 +66,12 @@ export class ReviewsComponent implements OnInit {
 
             (new Date(x.updated).getTime() > new Date(x.created).getTime()) ?
               x.date = `Updated ${x.updated}` :
-              x.date = `Created ${x.created}` ;
+              x.date = `Created ${x.created}`;
 
           });
-        this.reviews.rev = tab;
+        this.reviews.rev = data;
         this.totalItems = this.reviews.rev.length;
+
       })
       .catch(err => {
         console.log(err);

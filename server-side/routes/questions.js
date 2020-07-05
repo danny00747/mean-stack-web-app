@@ -1,26 +1,25 @@
 import express from 'express';
+
 const router = express.Router();
 import passport from 'passport'
 
 const ctrlQuestions = require('../controllers/questions');
 
-import {postQuestion,
-    getQuestions,
-    getQuestion, patchQuestion, deleteQuestion} from '../crtl/questions'
+import questionController from '../controllers/questions'
 
 import makeCallback from '../express-callback'
 
 router
     .route('/questions')
     .get(passport.authenticate("jwt", {session: false}),
-        makeCallback(getQuestions))
-    .post(makeCallback(postQuestion));
+        makeCallback(questionController.getQuestionsController))
+    .post(makeCallback(questionController.postQuestionController));
 
 router
     .route('/questions/:questionId')
     .get(
-        makeCallback(getQuestion))
-    .patch(makeCallback(patchQuestion))
-    .delete(makeCallback(deleteQuestion));
+        makeCallback(questionController.getQuestionController))
+    .patch(makeCallback(questionController.patchQuestionController))
+    .delete(makeCallback(questionController.deleteQuestionController));
 
 export {router as questionsRoutes};
