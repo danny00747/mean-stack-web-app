@@ -1,7 +1,8 @@
 export default function buildMakeUser(isValidEmail, hashPassword, requiredParameter) {
     return ({
-                username = requiredParameter('username'), email = requiredParameter('email'),
-                password = requiredParameter('password'), level = 'A1', score = 0,
+                username = requiredParameter('A username'),
+                email = requiredParameter('An email'),
+                password = requiredParameter('A password'), level = 'A1', score = 0,
                 role = 'student', reviews = []
             } = {}) => {
 

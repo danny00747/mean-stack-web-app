@@ -2,6 +2,7 @@ export default function makePatchReviewController({editReviewService}) {
     return async (httpRequest) => {
 
         try {
+            console.log(httpRequest.id, "incoming going ok request for edit review");
             const {...userInfo} = httpRequest.body;
             const {reviewId: id, userEmail: email} = httpRequest.params;
             const toEdit = {...userInfo, id, email};
@@ -16,7 +17,7 @@ export default function makePatchReviewController({editReviewService}) {
                     }
                 }
             }
-
+            console.log(httpRequest.id, "outing going ok request for edit review");
             return {
                 statusCode: 200,
                 body: {

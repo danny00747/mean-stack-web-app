@@ -1,7 +1,7 @@
 export default function buildMakeQuestion(requiredParameter) {
-    return ({type = requiredParameter('type'),
-                question = requiredParameter('question'),
-                answers = requiredParameter('answers')} = {}) => {
+    return ({type = requiredParameter('A type'),
+                question = requiredParameter('A question'),
+                answers = requiredParameter("The question's answer")} = {}) => {
 
         if (typeof type !== 'string') throw new TypeError('The type must be a string.');
 

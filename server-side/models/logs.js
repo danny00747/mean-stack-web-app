@@ -1,49 +1,30 @@
-const mongoose = require('mongoose');
-const uniqueValidator = require('mongoose-unique-validator');
+import mongoose from 'mongoose';
+import uniqueValidator from 'mongoose-unique-validator';
 
 // Logs Schema
 const logSchema = new mongoose.Schema({
 
-    host: {
-        type: String
-    },
-    level: {
-        type: String,
-    },
-    method: {
-        type: String
-    },
-    requestId: {
-        type: String
-    },
-    url: {
-        type: String
-    },
-    status: {
-        type: Number,
-    },
-    type: {
-        type: String,
-        enum: ["Incoming", "Outgoing"]
-    },
-    response: {
-        type: String
-    },
-    message: {
-        type: String
-    },
-    date: {
-        type: String
-    }
+    host: {type: String, required: true},
+
+    level: {type: String, required: true},
+
+    method: {type: String, required: true},
+
+    requestId: {type: String, required: true},
+
+    url: {type: String, required: true},
+
+    status: {type: Number, required: true},
+
+    type: {type: String, enum: ["Incoming", "Outgoing"]},
+
+    message: {type: String, required: true},
+
+    response: {type: String},
+
+    date: {type: String}
 
 });
 
-logSchema.methods.logger = async (loginfo) => {
-
-
-
-};
-
 logSchema.plugin(uniqueValidator);
-
-module.exports = mongoose.model('Logs', logSchema);
+export default mongoose.model('Logs', logSchema, 'logs');

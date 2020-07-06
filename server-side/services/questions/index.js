@@ -3,7 +3,7 @@ import makeListQuestionService from './list-questions'
 import makeGetOneQuestionService from './get-one-question'
 import makeEditQuestionService from './edit-question'
 import makeRemoveQuestionService from './remove-question'
-import {questionRepository} from '../../repository/index'
+import {questionRepository} from '../../repository'
 
 const addQuestionService = makeAddQuestionService({questionRepository});
 const listQuestionsService = makeListQuestionService({questionRepository});

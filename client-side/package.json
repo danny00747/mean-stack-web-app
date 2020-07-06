@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build --prod",
-    "clean": "rm -rfv ./server-side/public/dist/*",
+    "build": "npm run clean && ng build --prod",
+    "clean": "rimraf ../server-side/public/dist",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

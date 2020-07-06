@@ -9,7 +9,12 @@ export default function makeRemoveReviewService({reviewRepository}) {
 
         const existing = await reviewRepository.findByEmail({email});
 
-        if (!existing) return {message: "No user was found with provided Email"};
+        console.log(existing);
+
+        if (!existing) return {message: "No user was found with provided email !"};
+
+        if (existing.reviews.length === 0)
+            return {message: `${existing.username} doesn't have any reviews at the moment !`};
 
         //const reviewToEdit = existing.reviews.id(id);
         const index = existing.reviews.findIndex(i => (i._id).toString() === id);

@@ -2,7 +2,7 @@ import makeAddReviewService from './add-review'
 import makeListReviewsService from './list-reviews'
 import makeEditReviewService from './edit-review'
 import makeRemoveReviewService from './remove-review'
-import {reviewRepository} from '../../repository/index'
+import {reviewRepository} from '../../repository'
 
 const addReviewService = makeAddReviewService({reviewRepository});
 const getAllReviewsService = makeListReviewsService({reviewRepository});

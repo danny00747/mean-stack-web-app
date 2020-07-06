@@ -1,6 +1,6 @@
 export default function buildMakeReview(requiredParameter) {
     return ({
-                rating = 0, reviewText = requiredParameter('reviewText'),
+                rating = 0, reviewText = requiredParameter('The reviewText field'),
                 createdOn = new Date(), modifiedOn = new Date()
             } = {}) => {
 

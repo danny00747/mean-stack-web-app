@@ -5,6 +5,9 @@ const makeCallback = (controller) => {
             query: req.query,
             params: req.params,
             ip: req.ip,
+            id: req.id,
+            host : req.hostname,
+            url : req.originalUrl,
             method: req.method,
             path: req.path,
             headers: {

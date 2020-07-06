@@ -67,9 +67,6 @@ app.get('/', (req, res) => {
 });
 
 // Bring in the user routers
-//const reviews = require('./server-side/routes/reviews');
-//const users = require('./server-side/routes/users');
-//const questions = require('./server-side/routes/questions');
 const logs = require('./server-side/routes/logs');
 
 app.use('/server/api/', routes.usersRoutes);

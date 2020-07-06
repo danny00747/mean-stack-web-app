@@ -6,7 +6,7 @@ import makeEditUserService from './edit-user'
 import makeRemoveUserService from './remove-user'
 import makeEditScoreService from './edit-score'
 
-import {userRepository} from '../../repository/index'
+import {userRepository} from '../../repository'
 
 const addUserService = makeAdduserService({userRepository});
 const logInUserService = makeLogInUserService({userRepository});

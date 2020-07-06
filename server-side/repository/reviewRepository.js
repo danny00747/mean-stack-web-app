@@ -11,7 +11,7 @@ export default function makeReviewRepository({User}) {
 
     async function findByEmail({email: email}) {
         return await User.findOne({email})
-            .select("_id email reviews")
+            .select("_id username email reviews")
             .exec();
     }
 
