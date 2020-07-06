@@ -1,5 +1,5 @@
 export default function makeGetReviewsController({getAllReviewsService}) {
-    return async function getReviewsController() {
+    return async () => {
 
         try {
             const reviews = await getAllReviewsService();

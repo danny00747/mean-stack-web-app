@@ -1,5 +1,5 @@
 export default function makeDeleteReviewController({removeReviewService}) {
-    return async function deleteReviewController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const {reviewId: id, userEmail: email} = httpRequest.params;

@@ -1,5 +1,5 @@
 export default function makeGetOneUserController({getOneUserService}) {
-    return async function getUserController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const user = await getOneUserService({id: httpRequest.params.userId});

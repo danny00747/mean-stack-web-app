@@ -1,5 +1,5 @@
 export default function makePatchQuestionController({editQuestionService}) {
-    return async function patchQuestionController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const {...questionInfo} = httpRequest.body;

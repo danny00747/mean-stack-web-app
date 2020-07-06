@@ -1,18 +1,18 @@
 import {makeReview} from '../../domain'
 
 export default function makeAddReviewService({reviewRepository}) {
-    return async function addReviewService({id, ...changes} = {}) {
+    return async ({id, ...changes} = {}) => {
 
-        if (!id) throw new Error('You must supply an id.')
+        if (!id) throw new Error('You must supply an id.');
 
-        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new Error(`${id} is not a valid ObjectId`);
+        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
 
 
         const existing = await reviewRepository.findById({id});
 
         //  console.log(existing.reviews.id('5f00e562eead540b94458c06'));
 
-        if (!existing) return {message: "No valid entry found for provided ID !"}
+        if (!existing) return {message: "No valid entry found for provided id !"};
 
         const review = makeReview({...changes});
 

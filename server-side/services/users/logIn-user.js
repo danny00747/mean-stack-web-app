@@ -1,5 +1,5 @@
 export default function makeLogInUserService({userRepository}) {
-    return async function logInUserService(userInfo) {
+    return async (userInfo) => {
         return userRepository.findPseudo(userInfo.pseudo);
 
     }

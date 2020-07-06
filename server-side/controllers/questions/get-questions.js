@@ -1,7 +1,5 @@
-import questionController from "./index";
-
 export default function makeGetQuestionsController({listQuestionsService}) {
-    return async function getQuestionsController() {
+    return async () => {
 
         try {
             const questions = await listQuestionsService();

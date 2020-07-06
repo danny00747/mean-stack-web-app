@@ -1,5 +1,5 @@
 export default function makeGetUsersController({getAllUsersService}) {
-    return async function getUsersController() {
+    return async () => {
 
         try {
             const users = await getAllUsersService();

@@ -1,10 +1,10 @@
 import {makeUser} from '../../domain'
 export default function makeEditScoreService({userRepository}) {
-    return async function editScoreService({id, ...changes} = {}) {
+    return async  ({id, ...changes} = {}) => {
 
         if (!id) throw new Error('You must supply an id.');
 
-        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new Error(`${id} is not a valid ObjectId`);
+        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
 
         const existing = await userRepository.findById({id});
 
@@ -23,6 +23,5 @@ export default function makeEditScoreService({userRepository}) {
             score: user.getScore(),
             level: user.getLevel()
         });
-
     }
 }

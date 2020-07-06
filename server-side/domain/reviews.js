@@ -1,16 +1,14 @@
-export default function buildMakeReview() {
-    return function makeReview({
-                                   rating = 0, reviewText, createdOn = new Date(),
-                                   modifiedOn = new Date(),
-                               } = {}) {
+export default function buildMakeReview(requiredParameter) {
+    return ({
+                rating = 0, reviewText = requiredParameter('reviewText'),
+                createdOn = new Date(), modifiedOn = new Date()
+            } = {}) => {
 
-        if (!reviewText) throw new Error('A reviewText is a required.');
+        if (rating < 0 || rating > 5) throw new RangeError('The rating must be between 0 and 5 .');
 
-        if (rating < 0 || rating > 5) throw new Error('The minimum rating is 0 and max is 5 .');
+        if (typeof reviewText !== 'string') throw new TypeError('reviewText must be a string.');
 
-        if (typeof reviewText !== 'string') throw new Error('reviewText must be a string.');
-
-        if (typeof rating !== 'string') throw new Error('rating must be a string.');
+        if (typeof rating !== 'string') throw new TypeError('rating must be a string.');
 
         return Object.freeze({
             getRating: () => rating,

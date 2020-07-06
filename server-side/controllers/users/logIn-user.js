@@ -1,5 +1,5 @@
 export default function makeSignInUserController({logInUserService, bcrypt, jwt}) {
-    return async function signInUserController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const {...userInfo} = httpRequest.body;
@@ -22,7 +22,8 @@ export default function makeSignInUserController({logInUserService, bcrypt, jwt}
                 );
                 return {
                     statusCode: 200,
-                    body: {success: true, token: "JWT " + jwtToken,
+                    body: {
+                        success: true, token: "JWT " + jwtToken,
                         user: {
                             userId: id,
                             username: username,

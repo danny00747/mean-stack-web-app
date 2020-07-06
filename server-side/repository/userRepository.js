@@ -16,7 +16,7 @@ export default function makeUserRepository({User}) {
 
     async function findById({id: _id}) {
         return await User.findById({_id})
-            .select("_id email role username level password")
+            .select("_id email role username level password reviews")
             .exec();
 
     }
@@ -25,7 +25,7 @@ export default function makeUserRepository({User}) {
         return await User.findByIdAndUpdate({_id}, {...userInfo}, {new: true}).exec();
     }
 
-    async function findByEmailOrUsername(email, username) {
+    async function findByEmailOrUsername({email: email, username: username}) {
         return await User.find({
             $or: [{email: email}, {username: username}]
         })
@@ -41,8 +41,8 @@ export default function makeUserRepository({User}) {
             .exec();
     }
 
-    async function remove({ id: _id }) {
-        return await User.findByIdAndRemove({ _id }).exec();
+    async function remove({id: _id}) {
+        return await User.findByIdAndRemove({_id}).exec();
     }
 
 

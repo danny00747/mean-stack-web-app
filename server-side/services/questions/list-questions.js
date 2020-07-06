@@ -1,5 +1,5 @@
-export default function makeListQuestionService({ questionRepository }) {
-  return async function listQuestionsService () {
-    return questionRepository.findAll();
-  }
+export default function makeListQuestionService({questionRepository}) {
+    return async () => {
+        return questionRepository.findAll();
+    }
 }

@@ -1,11 +1,12 @@
 export default function makePostQuestionController({addQuestionService}) {
-    return async function postQuestionController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const {...questionInfo} = httpRequest.body;
             const posted = await addQuestionService({
                 ...questionInfo,
             });
+
             return {
                 statusCode: 201,
                 body: {

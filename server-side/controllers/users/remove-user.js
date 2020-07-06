@@ -1,5 +1,5 @@
 export default function makeDeleteUserController({removeUserService}) {
-    return async function deleteUserController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const deleteUser = await removeUserService({id: httpRequest.params.userId});
@@ -12,7 +12,7 @@ export default function makeDeleteUserController({removeUserService}) {
             return {
                 statusCode: 200,
                 body: {
-                    message: "Question deleted successfully !",
+                    message: "User deleted successfully !",
                     removedUser: {
                         username: deleteUser.username,
                         email: deleteUser.email

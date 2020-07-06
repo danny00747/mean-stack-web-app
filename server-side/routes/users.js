@@ -5,7 +5,7 @@ import passport from 'passport'
 const ctrlUsers = require("../old-ctrl/users");
 const ctrlAcess = require("../old-ctrl/grandAccess");
 
-import makeCallback from '../express-callback'
+import makeCallback from '../helpers/express-callback'
 
 import userController  from '../controllers/users'
 /**

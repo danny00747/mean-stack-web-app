@@ -1,5 +1,5 @@
 export default function makePatchUserController({editUserService}) {
-    return async function patchUserController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const {...userInfo} = httpRequest.body;
@@ -10,6 +10,16 @@ export default function makePatchUserController({editUserService}) {
             };
 
             const updatedUser = await editUserService(toEdit);
+
+            if (updatedUser.message) {
+                return {
+                    statusCode: 404,
+                    body: {
+                        success: false,
+                        ...updatedUser,
+                    }
+                }
+            }
 
             if (!updatedUser) {
                 return {

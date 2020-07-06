@@ -1,5 +1,5 @@
 export default function makeDeleteQuestionController({removeQuestionService}) {
-    return async function deleteQuestionController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const deleted = await removeQuestionService({id: httpRequest.params.questionId});

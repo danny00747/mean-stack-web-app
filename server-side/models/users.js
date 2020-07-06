@@ -5,7 +5,7 @@ import uniqueValidator from 'mongoose-unique-validator';
 const reviewSchema = new mongoose.Schema({
     author: {
         type: String,
-        required: true
+        required: true,
     },
     rating: {
         type: Number,
@@ -29,11 +29,13 @@ const reviewSchema = new mongoose.Schema({
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        require: true
+        require: true,
+        unique: true
     },
     email: {
         type: String,
         required: true,
+        unique: true,
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
     password: {
@@ -61,5 +63,5 @@ const userSchema = new mongoose.Schema({
 
 userSchema.plugin(uniqueValidator);
 
-export default mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema, 'users');
 export { mongoose }

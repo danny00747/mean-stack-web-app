@@ -1,5 +1,5 @@
 export default function makeGetOneQuestionController({getOneQuestionService}) {
-    return async function getQuestionController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const doc = await getOneQuestionService({id: httpRequest.params.questionId});

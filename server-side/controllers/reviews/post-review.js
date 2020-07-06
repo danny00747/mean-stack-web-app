@@ -1,13 +1,10 @@
 export default function makePostReviewController({addReviewService}) {
-    return async function postReviewController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const {...userInfo} = httpRequest.body;
             const {userId: id} = httpRequest.params;
-            const toEdit = {
-                ...userInfo,
-                id: httpRequest.params.userId
-            };
+            const toEdit = {...userInfo, id};
 
             const updatedUser = await addReviewService(toEdit);
 

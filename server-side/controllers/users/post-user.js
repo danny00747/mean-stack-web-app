@@ -1,5 +1,5 @@
 export default function makePostUserController({addUserService}) {
-    return async function postUserController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const {...userInfo} = httpRequest.body;

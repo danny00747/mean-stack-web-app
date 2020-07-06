@@ -1,9 +1,9 @@
 export default function makePatchReviewController({editReviewService}) {
-    return async function patchReviewController(httpRequest) {
+    return async (httpRequest) => {
 
         try {
             const {...userInfo} = httpRequest.body;
-            const {reviewId: id, userEmail : email} = httpRequest.params;
+            const {reviewId: id, userEmail: email} = httpRequest.params;
             const toEdit = {...userInfo, id, email};
 
             const updatedUser = await editReviewService(toEdit);

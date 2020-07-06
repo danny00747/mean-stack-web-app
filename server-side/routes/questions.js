@@ -7,7 +7,7 @@ const ctrlQuestions = require('../controllers/questions');
 
 import questionController from '../controllers/questions'
 
-import makeCallback from '../express-callback'
+import makeCallback from '../helpers/express-callback'
 
 router
     .route('/questions')
