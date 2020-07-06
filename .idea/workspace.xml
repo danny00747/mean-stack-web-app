@@ -2,48 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/3rdpartylicenses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/Mean-Stack-Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/emoji.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/no-profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/assets/img/trophy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/emoji.e7af79dc6a3d598d1835.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/fontawesome-webfont.674f50d287a8c48dc19b.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/fontawesome-webfont.912ec66d7572ff821749.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/fontawesome-webfont.af7ae505a9eed503f8b8.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/fontawesome-webfont.b06871f281fee6b241d6.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/fontawesome-webfont.fee66e712a8a08eef580.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/public/dist/styles.00eef741aecaa1742a2a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/dist/5-es2015.5598c209c33fc76216f2.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/public/dist/5-es2015.5598c209c33fc76216f2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/dist/5-es5.5598c209c33fc76216f2.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/public/dist/5-es5.5598c209c33fc76216f2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/dist/main-es2015.11449631ed942aa8e887.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/public/dist/main-es2015.11449631ed942aa8e887.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/dist/main-es5.11449631ed942aa8e887.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/public/dist/main-es5.11449631ed942aa8e887.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/dist/polyfills-es2015.5b10b8fd823b6392f1fd.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/public/dist/polyfills-es2015.5b10b8fd823b6392f1fd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/dist/polyfills-es5.3e8196928d184a6e5319.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/public/dist/polyfills-es5.3e8196928d184a6e5319.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/dist/runtime-es2015.3a5f197ca9791344c6b6.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/public/dist/runtime-es2015.3a5f197ca9791344c6b6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/dist/runtime-es5.3a5f197ca9791344c6b6.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/public/dist/runtime-es5.3a5f197ca9791344c6b6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/dist/scripts.23aa742c21d8986e2732.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/public/dist/scripts.23aa742c21d8986e2732.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/users..js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/users..js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -350,7 +314,7 @@
       <workItem from="1593875160986" duration="3113000" />
       <workItem from="1593878861257" duration="6000" />
       <workItem from="1593879349606" duration="35736000" />
-      <workItem from="1593957446854" duration="26664000" />
+      <workItem from="1593957446854" duration="28334000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>

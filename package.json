@@ -10,7 +10,7 @@
     "heroku-postbuild": "npm run install",
     "start": "babel-node app.js",
     "db": "babel-node ./db/index.js",
-    "dev": "nodemon --exec \"npm start\"",
+    "dev": "nodemon -r dotenv/config --exec \"npm start\"",
     "e2e": "mocha 'server-side/tests/e2e/*.js' --timeout 400000 --reporter mochawesome --reporter-options reportFilename=index",
     "test-report": "mocha 'server-side/tests/*.js' --timeout 10000 --reporter mochawesome",
     "test": "mocha --require @babel/register 'server-side/tests/*.js' --timeout 10000 ",

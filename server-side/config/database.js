@@ -4,9 +4,9 @@ const host = process.env.DB_HOST;
 const hostCloud = process.env.MONGODB_URI;
 const dbURL = `mongodb://${host}/web_app`;
 
-//connect with the database
+//connect with the database NODE_ENV=test
 
-if (process.env.NODE_ENV === 'test') {
+if (process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'dev') {
     mongoose.connect(dbURL,
         {
             useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
@@ -21,14 +21,14 @@ if (process.env.NODE_ENV === 'test') {
         error({message: `Mongoose connection error: ${err}`, badge: true});
     });
 } else if (process.env.NODE_ENV === 'production') {
-    mongoose.connect(dbURL,
+    mongoose.connect(hostCloud,
         {
             useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
             useFindAndModify: false
         })
         .then(() => {
             success({
-                message: `Database connected successfully to ${dbURL}`,
+                message: `Database connected successfully to ${hostCloud}`,
                 badge: true
             });
         }).catch(err => {
