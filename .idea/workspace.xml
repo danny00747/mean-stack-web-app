@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -312,14 +307,7 @@
       <workItem from="1593875160986" duration="3113000" />
       <workItem from="1593878861257" duration="6000" />
       <workItem from="1593879349606" duration="35736000" />
-      <workItem from="1593957446854" duration="22874000" />
-    </task>
-    <task id="LOCAL-00124" summary="updated minimist package to the latest">
-      <created>1586805942684</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1586805942684</updated>
+      <workItem from="1593957446854" duration="23176000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
@@ -657,7 +645,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592592883930</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="switching to master branch">
+      <created>1594000183206</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1594000183207</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,7 +673,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="can display boolean in the list of questions" />
     <MESSAGE value="removed a bug in questions ui" />
     <MESSAGE value="stable fill in question ui" />
     <MESSAGE value="pre final fill in question ui" />
@@ -703,7 +697,8 @@
     <MESSAGE value="removed a bug in question ui" />
     <MESSAGE value="added lazy loading v2" />
     <MESSAGE value="added lazy loading v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="added lazy loading v3" />
+    <MESSAGE value="switching to master branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="switching to master branch" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="3" key="#Notifications" timestamp="1587784190194">
