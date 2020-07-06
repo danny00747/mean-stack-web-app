@@ -1,7 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/config/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/questions/edit-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/questions/get-one-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/questions/get-questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/questions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/questions/post-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/questions/remove-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/reviews/edit-review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/reviews/get-reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/reviews/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/reviews/post-review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/reviews/remove-review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/users/edit-score.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/users/edit-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/users/get-one-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/users/get-users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/users/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/users/logIn-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/users/post-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controllers/users/remove-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/domain/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/domain/question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/domain/reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/domain/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/helpers/errors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/helpers/express-callback.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/helpers/required-parameter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/helpers/responseTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/models/logs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/models/questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/models/users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/old-ctrl/grandAccess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/old-ctrl/logs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/old-ctrl/questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/old-ctrl/reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/old-ctrl/roles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/old-ctrl/users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/public/dist/5-es2015.5598c209c33fc76216f2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/public/dist/5-es5.5598c209c33fc76216f2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/public/dist/main-es2015.11449631ed942aa8e887.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/public/dist/main-es5.11449631ed942aa8e887.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/public/dist/polyfills-es2015.5b10b8fd823b6392f1fd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/public/dist/polyfills-es5.3e8196928d184a6e5319.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/public/dist/runtime-es2015.3a5f197ca9791344c6b6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/public/dist/runtime-es5.3a5f197ca9791344c6b6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/public/dist/scripts.23aa742c21d8986e2732.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/repository/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/repository/questionRepository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/repository/reviewRepository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/repository/userRepository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/routes/logs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/routes/questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/routes/reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/routes/users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/security/passport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/questions/add-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/questions/edit-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/questions/get-one-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/questions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/questions/list-questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/questions/remove-question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/reviews/add-review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/reviews/edit-review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/reviews/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/reviews/list-reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/reviews/remove-review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/users/edit-score.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/users/edit-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/users/get-one-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/users/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/users/list-users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/users/logIn-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/users/register-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/users/remove-user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/tests/e2e/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/tests/e2e/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/tests/e2e/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/tests/e2e/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/tests/e2e/reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/tests/questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/tests/reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/tests/users..js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/users..js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/users..js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -307,7 +399,7 @@
       <workItem from="1593875160986" duration="3113000" />
       <workItem from="1593878861257" duration="6000" />
       <workItem from="1593879349606" duration="35736000" />
-      <workItem from="1593957446854" duration="23176000" />
+      <workItem from="1593957446854" duration="24884000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
