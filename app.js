@@ -93,7 +93,7 @@ app.listen(process.env.PORT, () => {
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-    const error = new Error("Page Not found !");
+    const error = new URIError("Page Not found !");
     error.status = 404;
     next(error.message);
 });
