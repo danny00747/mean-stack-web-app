@@ -8,7 +8,8 @@ export default function makeLogRepository({Logs}) {
         return await db.save();
     }
 
-    async function findById({requestId: requestId}) {
+    async function findById({reqId: requestId}) {
+        console.log({requestId});
         return await Logs.findOne({requestId})
             .exec();
 

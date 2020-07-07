@@ -11,16 +11,18 @@ import makePatchUserController from './edit-user'
 import makeDeleteUserController from './remove-user'
 import makePatchScoreController from './edit-score'
 
+import {addLogService} from '../../services/logs'
+
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
-const postUserController = makePostUserController({addUserService});
-const loggedInUserController = makeSignInUserController({logInUserService, bcrypt, jwt});
-const getUsersController = makeGetUsersController({getAllUsersService});
-const getUserController = makeGetOneUserController({getOneUserService});
-const patchUserController = makePatchUserController({editUserService});
-const deleteUserController = makeDeleteUserController({removeUserService});
-const patchScoreController = makePatchScoreController({editScoreService});
+const postUserController = makePostUserController({addUserService, addLogService});
+const loggedInUserController = makeSignInUserController({logInUserService, bcrypt, jwt, addLogService});
+const getUsersController = makeGetUsersController({getAllUsersService, addLogService});
+const getUserController = makeGetOneUserController({getOneUserService, addLogService});
+const patchUserController = makePatchUserController({editUserService, addLogService});
+const deleteUserController = makeDeleteUserController({removeUserService, addLogService});
+const patchScoreController = makePatchScoreController({editScoreService, addLogService});
 
 const userController = Object.freeze({
     postUserController, loggedInUserController, getUsersController,

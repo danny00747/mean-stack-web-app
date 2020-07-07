@@ -1,5 +1,10 @@
-export default function makePostUserController({addUserService}) {
+export default function makePostUserController({addUserService, addLogService}) {
     return async (httpRequest) => {
+
+        const logInfo = {
+            level: 'info', requestId: httpRequest.id, ip: httpRequest.ip,
+            url: httpRequest.url, host: httpRequest.host, method: httpRequest.method
+        };
 
         try {
             const {...userInfo} = httpRequest.body;
@@ -9,6 +14,12 @@ export default function makePostUserController({addUserService}) {
             });
 
             if (posted.message) {
+
+                logInfo.status = 409;
+                logInfo.message = `${posted.message}`;
+                logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+                await addLogService(logInfo);
+
                 return {
                     statusCode: 409,
                     body: {
@@ -17,6 +28,12 @@ export default function makePostUserController({addUserService}) {
                     }
                 }
             }
+
+            logInfo.status = 201;
+            logInfo.message = `User created successfully !`;
+            logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+            await addLogService(logInfo);
+
             return {
                 statusCode: 201,
                 body: {
@@ -32,6 +49,13 @@ export default function makePostUserController({addUserService}) {
             }
         } catch (e) {
             // TODO: Error logging
+
+            logInfo.status = 400;
+            logInfo.level = "error";
+            logInfo.message = `${e}`;
+            logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+            await addLogService(logInfo);
+
             console.log(e);
 
             return {

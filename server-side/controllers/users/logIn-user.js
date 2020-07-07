@@ -1,5 +1,10 @@
-export default function makeSignInUserController({logInUserService, bcrypt, jwt}) {
+export default function makeSignInUserController({logInUserService, bcrypt, jwt, addLogService}) {
     return async (httpRequest) => {
+
+        const logInfo = {
+            level: 'info', requestId: httpRequest.id, ip: httpRequest.ip,
+            url: httpRequest.url, host: httpRequest.host, method: httpRequest.method
+        };
 
         try {
             const {...userInfo} = httpRequest.body;
@@ -8,10 +13,19 @@ export default function makeSignInUserController({logInUserService, bcrypt, jwt}
                 ...userInfo,
             });
 
-            if (existing.length === 0) return {
-                statusCode: 401,
-                body: {success: false, message: "Auth failed !"}
-            };
+            if (existing.length === 0) {
+
+                logInfo.status = 401;
+                logInfo.message = 'Authentication failed !';
+                logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+                await addLogService(logInfo);
+
+                return {
+                    statusCode: 401,
+                    body: {success: false, message: "Authentication failed !"}
+                };
+            }
+
 
             const [{username, role, email, score, password, _id: id}] = existing;
 
@@ -20,6 +34,12 @@ export default function makeSignInUserController({logInUserService, bcrypt, jwt}
                 const jwtToken = jwt.sign({email: email, userId: id},
                     process.env["JWT_KEY"], {expiresIn: "1h"}
                 );
+
+                logInfo.status = 200;
+                logInfo.message = 'Authentication successful !';
+                logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+                await addLogService(logInfo);
+
                 return {
                     statusCode: 200,
                     body: {
@@ -34,14 +54,27 @@ export default function makeSignInUserController({logInUserService, bcrypt, jwt}
                     },
                 }
             } else {
+
+                logInfo.status = 401;
+                logInfo.message = 'Authentication failed !';
+                logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+                await addLogService(logInfo);
+
                 return {
                     statusCode: 401,
-                    body: {success: false, message: "Auth failed !"}
+                    body: {success: false, message: "Authentication failed !"}
                 }
             }
 
         } catch (e) {
             // TODO: Error logging
+
+            logInfo.status = 400;
+            logInfo.level = "error";
+            logInfo.message = `${e}`;
+            logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+            await addLogService(logInfo);
+
             console.log(e);
 
             return {

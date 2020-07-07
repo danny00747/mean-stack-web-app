@@ -11,7 +11,7 @@ export default function makeEditUserService({userRepository}) {
 
         const findUser = await userRepository.findById({id});
 
-        if (!findUser) return {message: "No valid entry found for provided id ."};
+        if (!findUser) return {message: "No valid entry found with provided id ."};
 
         const existing = await userRepository.findByEmailOrUsername({...changes});
 

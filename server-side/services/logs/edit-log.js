@@ -1,9 +1,9 @@
 import {makeLog} from '../../domain'
 
 export default function makeEditLogService({logsRepository}) {
-    return async ({requestId, ...logInfo} = {}) => {
+    return async ({reqId, ...logInfo} = {}) => {
 
-        const existing = await logsRepository.findById({requestId});
+        const existing = await logsRepository.findById({reqId});
         
         const log = makeLog({...logInfo});
 

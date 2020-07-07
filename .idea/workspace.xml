@@ -2,29 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/domain/logs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/repository/logRepository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews/edit-review.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/reviews/edit-review.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews/get-reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/reviews/get-reviews.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/reviews/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/domain/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/domain/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/domain/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/domain/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/helpers/express-callback.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/helpers/express-callback.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/edit-score.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/edit-score.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/edit-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/edit-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/get-one-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/get-one-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/get-users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/get-users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/logIn-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/logIn-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/post-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/post-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/remove-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/remove-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/domain/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/logs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/models/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/logs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/repository/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/repository/reviewRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/reviewRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/repository/logRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/logRepository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/repository/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/userRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/questions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/questions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviews/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/remove-review.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviews/remove-review.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/logs/create-log.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/logs/create-log.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/logs/edit-log.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/logs/edit-log.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/edit-score.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/edit-score.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,7 +327,7 @@
       <workItem from="1593878861257" duration="6000" />
       <workItem from="1593879349606" duration="35736000" />
       <workItem from="1593957446854" duration="29804000" />
-      <workItem from="1594063939488" duration="12156000" />
+      <workItem from="1594063939488" duration="24419000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>

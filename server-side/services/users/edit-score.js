@@ -8,7 +8,7 @@ export default function makeEditScoreService({userRepository}) {
 
         const existing = await userRepository.findById({id});
 
-        if (!existing) return {message: "No valid entry found for provided ID !"};
+        if (!existing) return {message: "No valid entry found with provided id !"};
 
         const {username, email, password} = existing;
 

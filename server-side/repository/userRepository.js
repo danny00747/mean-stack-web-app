@@ -16,7 +16,7 @@ export default function makeUserRepository({User}) {
 
     async function findById({id: _id}) {
         return await User.findById({_id})
-            .select("_id email role username level reviews")
+            .select("_id email role username level password reviews")
             .exec();
 
     }

@@ -1,14 +1,31 @@
-export default function makeGetOneUserController({getOneUserService}) {
+export default function makeGetOneUserController({getOneUserService, addLogService}) {
     return async (httpRequest) => {
+
+        const logInfo = {
+            level: 'info', requestId: httpRequest.id, ip: httpRequest.ip,
+            url: httpRequest.url, host: httpRequest.host, method: httpRequest.method
+        };
 
         try {
             const user = await getOneUserService({id: httpRequest.params.userId});
             if (!user) {
+
+                logInfo.status = 404;
+                logInfo.message = `No valid entry found with provided id`;
+                logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+                await addLogService(logInfo);
+
                 return {
                     statusCode: 404,
-                    body: {message: "No valid entry found for provided ID"}
+                    body: {message: "No valid entry found with provided id"}
                 }
             }
+
+            logInfo.status = 200;
+            logInfo.message = `Request successful !`;
+            logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+            await addLogService(logInfo);
+
             return {
                 statusCode: 200,
                 body: {
@@ -28,6 +45,13 @@ export default function makeGetOneUserController({getOneUserService}) {
             }
         } catch (e) {
             // TODO: Error logging
+
+            logInfo.status = 400;
+            logInfo.level = "error";
+            logInfo.message = `${e}`;
+            logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+            await addLogService(logInfo);
+
             console.log(e);
             return {
                 statusCode: 400,

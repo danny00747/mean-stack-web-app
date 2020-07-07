@@ -16,9 +16,9 @@ const logSchema = new mongoose.Schema({
 
     status: {type: Number, required: true},
 
-    type: {type: String, enum: ["Incoming", "Outgoing"]},
+    ip: {type: String},
 
-    message: {type: String, required: true},
+    message: {type: String},
 
     response: {type: String},
 
