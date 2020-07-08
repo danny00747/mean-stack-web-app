@@ -1,12 +1,8 @@
 import express from 'express';
-
-const router = express.Router();
 import passport from 'passport'
-
-const ctrlQuestions = require('../controllers/questions');
+const router = express.Router();
 
 import questionController from '../controllers/questions'
-
 import makeCallback from '../helpers/express-callback'
 
 router

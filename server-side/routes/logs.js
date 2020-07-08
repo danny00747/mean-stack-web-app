@@ -1,10 +1,10 @@
-const express = require("express");
-const passport = require("passport");
-
+import express from 'express';
+import passport from 'passport'
 const router = express.Router();
 
-const ctrlLogs = require("../old-ctrl/logs");
+import logsController from '../controllers/logs'
+import makeCallback from '../helpers/express-callback'
 
-router.get("/users/metrics", ctrlLogs.getLogs);
+router.get("/users/metrics/max/:limit", makeCallback(logsController.getLogsController));
 
-module.exports = router;
+export {router as logsRoutes};

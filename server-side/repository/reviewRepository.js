@@ -16,6 +16,9 @@ export default function makeReviewRepository({User}) {
     }
 
     async function findAll() {
+
+       // const t = await User.aggregate([{$project: {count: {$size: "$reviews"}}}]);
+
         return await User.find()
             .select("reviews -_id")
             .exec();

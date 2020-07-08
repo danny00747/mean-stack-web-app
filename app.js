@@ -67,12 +67,10 @@ app.get('/', (req, res) => {
 });
 
 // Bring in the user routers
-const logs = require('./server-side/routes/logs');
-
 app.use('/server/api/', routes.usersRoutes);
 app.use('/server/api/', routes.questionsRoutes);
 app.use('/server/api/', routes.reviewsRoutes);
-app.use('/server/api/', logs);
+app.use('/server/api/', routes.logsRoutes);
 
 app.use('/server/api/api-documentation', (req, res) => {
     return res.sendFile(path
