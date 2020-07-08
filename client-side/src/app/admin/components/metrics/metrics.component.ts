@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../../core/services/auth.service";
 import {Router} from "@angular/router";
@@ -12,11 +12,11 @@ import {FilterLogsPipe} from "../../../shared/pipes/filter-logs.pipe";
 export class MetricsComponent implements OnInit {
 
 
-  selectedValue : string = '';
+  selectedValue: string = '';
 
-  logInfo : Array<any>;
-  searchValue : string = "";
-  numberOflogs: number = 19;
+  logInfo: Array<any>;
+  searchValue: string = "";
+  numberOflogs: number = 30;
 
   users: any;
   totalItems: number;
@@ -24,8 +24,9 @@ export class MetricsComponent implements OnInit {
 
   constructor(private _flashMessagesService: FlashMessagesService,
               private authService: AuthService,
-              private filterLogs : FilterLogsPipe,
-              private router: Router) { }
+              private filterLogs: FilterLogsPipe,
+              private router: Router) {
+  }
 
   ngOnInit() {
     if (!this.authService.getAllProfiles() ||
@@ -41,76 +42,67 @@ export class MetricsComponent implements OnInit {
 
   showUsersLogs() {
 
-    let tab: Array<any> = [];
-    let t1: Array<any> = [];
-    let t2: Array<any> = [];
+    if(this.numberOflogs > this.totalItems){
+      this.numberOflogs = this.totalItems;
+    }
 
-    this.authService.getLogs()
+    this.authService.getLogs(
+      (this.numberOflogs > this.totalItems) ?
+        this.totalItems : this.numberOflogs)
       .toPromise()
-      .then((data: any) => {
+      .then((data: Array<any>) => {
 
-        t2 = data.filter(x => x.type === 'Incoming');
-        t1 = data.filter(x => x.type === 'Outgoing');
+        console.log(this.numberOflogs, "eeeeeeee");
 
-        t2.filter((x,i) => x.requestId === t1[i].requestId)
-          .forEach((x, i) =>
-            tab.push(
-              {"host" : x.host, "level" : x.level, "response" : t1[i].response,
-                "status" : t1[i].status, "method" : x.method, "url" : x.url,
-                "date" : x.date, "message": x.message}));
+        this.totalItems = data.shift().totalLogs;
 
-        tab
-          .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
-          .forEach((x,i) => {
-            x.date = new Date(x.date);
-            x.id = i;
-          });
+        data[0].forEach((x, i) => {
+          x.date = new Date(x.date);
+          x.logId = ++i;
+        });
 
-        this.users = tab.filter((x,i) =>  i <= this.numberOflogs);
-        this.totalItems = this.users.length;
+        this.users = [...data[0]];
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(err => console.log(err));
   }
 
-  getMoreLogs(){
-  this.numberOflogs += 20;
-  this.showUsersLogs();
+  getMoreLogs() {
+      this.numberOflogs += 10;
+      this.showUsersLogs();
   }
 
 
-  logDetails(event: any){
-   this.logInfo = this.users.find(x => x.id === (Number(event.id) -1));
+  logDetails(event: any) {
+    this.logInfo = this.users.find(x => x.requestId === event.id);
   }
 
-  logsFilter(event: any){
+  logsFilter(event: any) {
     this.selectedValue = event.value;
   }
 
-  filterMethod(event: any){
+  filterMethod(event: any) {
     (event.value === 'get') ? this.searchValue = 'GET' :
       (event.value === 'post') ? this.searchValue = 'POST' :
         (event.value === 'patch') ? this.searchValue = 'PATCH' :
           (event.value === 'delete') ? this.searchValue = 'DELETE' :
-              undefined;
-
-    this.totalItems = this.filterLogs.transform(this.users, event.value).length;
-  }
-
-  filterStatus(event : any){
-    (event.value === '200') ? this.searchValue = '200' :
-      (event.value === '201') ? this.searchValue = '201' :
-        (event.value === '400') ? this.searchValue = '400' :
-          (event.value === '401') ? this.searchValue = '401' :
-          (event.value === '404') ? this.searchValue = '404' :
-          (event.value === '500') ? this.searchValue = '500' :
             undefined;
 
     this.totalItems = this.filterLogs.transform(this.users, event.value).length;
   }
 
-  filterDisable(event : any){
+  filterStatus(event: any) {
+    (event.value === '200') ? this.searchValue = '200' :
+      (event.value === '201') ? this.searchValue = '201' :
+        (event.value === '400') ? this.searchValue = '400' :
+          (event.value === '401') ? this.searchValue = '401' :
+            (event.value === '404') ? this.searchValue = '404' :
+              (event.value === '500') ? this.searchValue = '500' :
+                undefined;
+
+    this.totalItems = this.filterLogs.transform(this.users, event.value).length;
+  }
+
+  filterDisable(event: any) {
     (event.checked) ? this.searchValue = "" : undefined;
     this.totalItems = this.users.length;
   }

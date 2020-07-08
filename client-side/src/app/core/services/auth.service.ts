@@ -39,8 +39,8 @@ export class AuthService {
     }
   }
 
-  getLogs(){
-    return this._http.get('/server/api/users/metrics', {headers});
+  getLogs(limit : number){
+    return this._http.get(`/server/api/users/metrics/max/${limit}`, {headers});
   }
 
 

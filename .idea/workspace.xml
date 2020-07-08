@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/components/metrics/metrics.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/metrics/metrics.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/components/metrics/metrics.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/metrics/metrics.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/logs/create-log.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/logs/create-log.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -310,7 +316,8 @@
       <workItem from="1593957446854" duration="29804000" />
       <workItem from="1594063939488" duration="24876000" />
       <workItem from="1594135600279" duration="11231000" />
-      <workItem from="1594172777984" duration="2465000" />
+      <workItem from="1594172777984" duration="3152000" />
+      <workItem from="1594229654728" duration="10028000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
