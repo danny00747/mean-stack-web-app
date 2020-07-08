@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/controllers/logs/get-logs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/controllers/logs/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/services/logs/list-logs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/repository/logRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/logRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/repository/reviewRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/reviewRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/repository/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/userRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/routes/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/logs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/routes/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/routes/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/logs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/logs/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -325,7 +310,7 @@
       <workItem from="1593957446854" duration="29804000" />
       <workItem from="1594063939488" duration="24876000" />
       <workItem from="1594135600279" duration="11231000" />
-      <workItem from="1594172777984" duration="1990000" />
+      <workItem from="1594172777984" duration="2465000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>

@@ -10,7 +10,6 @@ export default function makeUserRepository({User}) {
 
     async function findAll() {
         return await User.find()
-            .limit(1)
             .select("-__v")
             .exec();
     }
