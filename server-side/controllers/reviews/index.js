@@ -9,10 +9,10 @@ import makeGetReviewsController from './get-reviews'
 import makePatchReviewController from './edit-review'
 import makeDeleteReviewController from './remove-review'
 
-const postReviewController = makePostReviewController({addReviewService});
+const postReviewController = makePostReviewController({addReviewService, addLogService});
 const getReviewsController = makeGetReviewsController({getAllReviewsService, addLogService});
-const patchReviewController = makePatchReviewController({editReviewService});
-const deleteReviewController = makeDeleteReviewController({removeReviewService});
+const patchReviewController = makePatchReviewController({editReviewService, addLogService});
+const deleteReviewController = makeDeleteReviewController({removeReviewService, addLogService});
 
 const reviewController = Object.freeze({
     postReviewController, getReviewsController, patchReviewController, deleteReviewController

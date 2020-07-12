@@ -1,5 +1,10 @@
-export default function makePatchQuestionController({editQuestionService}) {
+export default function makePatchQuestionController({editQuestionService, addLogService}) {
     return async (httpRequest) => {
+
+        const logInfo = {
+            level: 'info', requestId: httpRequest.id, ip: httpRequest.ip,
+            url: httpRequest.url, host: httpRequest.host, method: httpRequest.method
+        };
 
         try {
             const {...questionInfo} = httpRequest.body;
@@ -11,12 +16,25 @@ export default function makePatchQuestionController({editQuestionService}) {
             const updatedQuestion = await editQuestionService(toEdit);
 
             if (!updatedQuestion) {
+
+                logInfo.status = 404;
+                logInfo.message = 'No valid entry found for provided id';
+                logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+                await addLogService(logInfo);
+
                 return {
                     statusCode: 404,
-                    body: {message: "No valid entry found for provided ID"}
+                    body: {message: "No valid entry found for provided id"}
                 }
             }
+
+            logInfo.status = 200;
+            logInfo.message = 'Question updated successfully !';
+            logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+            await addLogService(logInfo);
+
             return {
+
                 statusCode: 200,
                 body: {
                     message: "Question updated successfully !",
@@ -31,15 +49,14 @@ export default function makePatchQuestionController({editQuestionService}) {
             }
         } catch (e) {
             // TODO: Error logging
+
+            logInfo.status = 400;
+            logInfo.level = "error";
+            logInfo.message = `${e}`;
+            logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+            await addLogService(logInfo);
+
             console.log(e);
-            if (e.name === 'RangeError') {
-                return {
-                    statusCode: 404,
-                    body: {
-                        error: e.message
-                    }
-                }
-            }
             return {
                 statusCode: 400,
                 body: {

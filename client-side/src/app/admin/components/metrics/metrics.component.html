@@ -114,7 +114,7 @@
 
         <th class="text-monospace font-italic"
             scope="row">  {{user['logId']}} </th>
-        <td class="text-monospace font-italic">{{user["host"]}}</td>
+        <td class="text-monospace font-italic">{{user["host"] | truncate:[9]}}</td>
 
         <td *ngIf="user['method'] == 'DELETE'" style="color: red"
             class="text-monospace font-italic">{{user["method"]}}</td>
@@ -125,7 +125,7 @@
         <td *ngIf="user['method'] == 'POST' || user['method'] == 'GET'" style="color: green"
             class="text-monospace font-italic">{{user["method"]}}</td>
 
-        <td class="text-monospace font-italic">{{user["url"] | truncate:[26]}}</td>
+        <td class="text-monospace font-italic">{{user["url"] | truncate:[20]}}</td>
 
         <td *ngIf="user['status'] == 200 || user['status'] == 201" style="color: green"
             class="text-monospace font-italic">{{user["status"]}}</td>

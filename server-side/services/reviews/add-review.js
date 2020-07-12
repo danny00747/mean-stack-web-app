@@ -7,7 +7,6 @@ export default function makeAddReviewService({reviewRepository}) {
 
         if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
 
-
         const existing = await reviewRepository.findById({id});
 
         //  console.log(existing.reviews.id('5f00e562eead540b94458c06'));

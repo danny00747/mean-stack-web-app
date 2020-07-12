@@ -9,11 +9,13 @@ import makeGetOneQuestionController from './get-one-question'
 import makePatchQuestionController from './edit-question'
 import makeDeleteQuestionController from './remove-question'
 
-const postQuestionController = makePostQuestionController({addQuestionService});
-const getQuestionsController = makeGetQuestionsController({listQuestionsService});
-const getQuestionController = makeGetOneQuestionController({getOneQuestionService});
-const patchQuestionController = makePatchQuestionController({editQuestionService});
-const deleteQuestionController = makeDeleteQuestionController({removeQuestionService});
+import {addLogService} from '../../services/logs'
+
+const postQuestionController = makePostQuestionController({addQuestionService, addLogService});
+const getQuestionsController = makeGetQuestionsController({listQuestionsService, addLogService});
+const getQuestionController = makeGetOneQuestionController({getOneQuestionService, addLogService});
+const patchQuestionController = makePatchQuestionController({editQuestionService,addLogService});
+const deleteQuestionController = makeDeleteQuestionController({removeQuestionService,addLogService});
 
 const questionController = Object.freeze({
     postQuestionController, getQuestionsController, getQuestionController,

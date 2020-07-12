@@ -16,7 +16,8 @@ export class MetricsComponent implements OnInit {
 
   logInfo: Array<any>;
   searchValue: string = "";
-  numberOflogs: number = 30;
+  logsError: string = "";
+  numberOflogs: number = 10;
 
   users: any;
   totalItems: number;
@@ -42,7 +43,7 @@ export class MetricsComponent implements OnInit {
 
   showUsersLogs() {
 
-    if(this.numberOflogs > this.totalItems){
+    if(this.numberOflogs > this.totalItems || this.numberOflogs < 10){
       this.numberOflogs = this.totalItems;
     }
 
@@ -51,8 +52,6 @@ export class MetricsComponent implements OnInit {
         this.totalItems : this.numberOflogs)
       .toPromise()
       .then((data: Array<any>) => {
-
-        console.log(this.numberOflogs, "eeeeeeee");
 
         this.totalItems = data.shift().totalLogs;
 
@@ -63,7 +62,7 @@ export class MetricsComponent implements OnInit {
 
         this.users = [...data[0]];
       })
-      .catch(err => console.log(err));
+      .catch(err => this.logsError = err.error.error);
   }
 
   getMoreLogs() {

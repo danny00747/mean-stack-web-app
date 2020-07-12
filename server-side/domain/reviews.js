@@ -8,8 +8,6 @@ export default function buildMakeReview(requiredParameter) {
 
         if (typeof reviewText !== 'string') throw new TypeError('reviewText must be a string.');
 
-        if (typeof rating !== 'string') throw new TypeError('rating must be a string.');
-
         return Object.freeze({
             getRating: () => rating,
             getReviewText: () => reviewText,

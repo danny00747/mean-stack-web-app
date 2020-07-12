@@ -1,5 +1,10 @@
-export default function makePostReviewController({addReviewService}) {
+export default function makePostReviewController({addReviewService, addLogService}) {
     return async (httpRequest) => {
+
+        const logInfo = {
+            level: 'info', requestId: httpRequest.id, ip: httpRequest.ip,
+            url: httpRequest.url, host: httpRequest.host, method: httpRequest.method
+        };
 
         try {
             const {...userInfo} = httpRequest.body;
@@ -9,6 +14,12 @@ export default function makePostReviewController({addReviewService}) {
             const updatedUser = await addReviewService(toEdit);
 
             if (updatedUser.message) {
+
+                logInfo.status = 404;
+                logInfo.message = 'No valid entry found for provided id !';
+                logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+                await addLogService(logInfo);
+
                 return {
                     statusCode: 404,
                     body: {
@@ -16,6 +27,11 @@ export default function makePostReviewController({addReviewService}) {
                     }
                 }
             }
+
+            logInfo.status = 201;
+            logInfo.message = "Review created successfully !";
+            logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+            await addLogService(logInfo);
 
             return {
                 statusCode: 201,
@@ -30,15 +46,14 @@ export default function makePostReviewController({addReviewService}) {
             }
         } catch (e) {
             // TODO: Error logging
+
+            logInfo.status = 400;
+            logInfo.level = "error";
+            logInfo.message = `${e}`;
+            logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+            await addLogService(logInfo);
+
             console.log(e);
-            if (e.name === 'RangeError') {
-                return {
-                    statusCode: 404,
-                    body: {
-                        error: e.message
-                    }
-                }
-            }
             return {
                 statusCode: 400,
                 body: {

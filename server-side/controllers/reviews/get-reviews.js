@@ -41,6 +41,7 @@ export default function makeGetReviewsController({getAllReviewsService, addLogSe
             }
 
             logInfo.status = 200;
+            logInfo.host = "devwebapp.herokuapp.com";
             logInfo.message = 'Request successful ! ';
             logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
 
