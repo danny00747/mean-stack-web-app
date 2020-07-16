@@ -1,14 +1,14 @@
 const sgMail = require('@sendgrid/mail');
+import toto from './temp'
 export default function makeGetLogsController({getAllLogService}) {
     return async (httpRequest) => {
 
         sgMail.setApiKey(process.env["SENDGRID_API_KEY"]);
         const msg = {
-            to: 'danbarca955@gmail.com',
-            from: 'shepalau007@gmail.com',
-            subject: 'Sending with Twilio SendGrid is Fun',
-            text: 'and easy to do anywhere, even with Node.js',
-            html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+            to: 'shepalau007@gmail.com',
+            from: 'HE201718@students.ephec.be',
+            subject: 'Welcome to TeacherApp! Confirm Your Email',
+            html: toto.replace("xxx@xxxx", "HE201718@students.ephec.be")
         };
 
         (async () => {

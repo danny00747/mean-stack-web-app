@@ -1,4 +1,7 @@
-export default function makePostUserController({addUserService, addLogService}) {
+import {addUserService} from '../../services/users'
+import {addLogService} from '../../services/logs'
+
+export default function makePostUserController() {
     return async (httpRequest) => {
 
         const logInfo = {
@@ -9,9 +12,9 @@ export default function makePostUserController({addUserService, addLogService}) 
         try {
             const {...userInfo} = httpRequest.body;
 
-            const posted = await addUserService({
-                ...userInfo,
-            });
+            const posted = await addUserService({...userInfo});
+
+           // console.log(posted.key);
 
             if (posted.message) {
 
@@ -40,10 +43,10 @@ export default function makePostUserController({addUserService, addLogService}) 
                     success: true,
                     message: "User created successfully",
                     user: {
-                        userId: posted._id,
-                        username: posted.username,
-                        userEmail: posted.email,
-                        role: posted.role
+                        userId: posted.createdUser._id,
+                        username: posted.createdUser.username,
+                        userEmail: posted.createdUser.email,
+                        role: posted.createdUser.role
                     }
                 }
             }

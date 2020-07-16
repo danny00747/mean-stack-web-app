@@ -6,9 +6,11 @@ import makeEditUserService from './edit-user'
 import makeRemoveUserService from './remove-user'
 import makeEditScoreService from './edit-score'
 
-import {userRepository} from '../../repository'
+import {userRepository, tokenRepository} from '../../repository'
 
-const addUserService = makeAdduserService({userRepository});
+import crypto from 'crypto'
+
+const addUserService = makeAdduserService({userRepository, tokenRepository, crypto});
 const logInUserService = makeLogInUserService({userRepository});
 const getAllUsersService = makeListUsersService({userRepository});
 const getOneUserService = makeGetOneUserService({userRepository});

@@ -3,7 +3,7 @@ export default function buildMakeUser(isValidEmail, hashPassword, requiredParame
                 username = requiredParameter('A username'),
                 email = requiredParameter('An email'),
                 password = requiredParameter('A password'), level = 'A1', score = 0,
-                role = 'student', reviews = []
+                role = 'student', isVerified = false, createdOn = new Date(), reviews = []
             } = {}) => {
 
         if (typeof username !== 'string') throw new TypeError('A username must be a string.');
@@ -42,6 +42,8 @@ export default function buildMakeUser(isValidEmail, hashPassword, requiredParame
             getReviews: () => reviews,
             getRole: () => role,
             getScore: () => score,
+            getVerifiedStatus: () => isVerified,
+            getcreatedOn: () => createdOn,
             getLevel: () => getUserLevel(score)
         });
 

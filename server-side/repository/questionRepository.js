@@ -4,8 +4,8 @@ export default function makeQuestionRepository({Question}) {
     });
 
     async function save({...questionInfo}) {
-        const db = new Question(questionInfo);
-        return await db.save();
+        const question = new Question(questionInfo);
+        return await question.save();
     }
 
     async function findAll() {

@@ -4,8 +4,8 @@ export default function makeUserRepository({User}) {
     });
 
     async function save({...userInfo}) {
-        const db = new User(userInfo);
-        return await db.save();
+        const user = new User(userInfo);
+        return await user.save();
     }
 
     async function findAll() {

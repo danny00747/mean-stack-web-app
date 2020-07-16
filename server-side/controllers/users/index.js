@@ -16,7 +16,7 @@ import {addLogService} from '../../services/logs'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
-const postUserController = makePostUserController({addUserService, addLogService});
+const postUserController = makePostUserController();
 const loggedInUserController = makeSignInUserController({logInUserService, bcrypt, jwt, addLogService});
 const getUsersController = makeGetUsersController({getAllUsersService, addLogService});
 const getUserController = makeGetOneUserController({getOneUserService, addLogService});

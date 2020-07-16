@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/logs/temp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/logs/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/repository/tokenRepository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/controllers/logs/get-logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/logs/get-logs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/post-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/post-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/domain/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/repository/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/repository/questionRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/questionRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/repository/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/userRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/register-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/register-user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +53,7 @@
       <list>
         <option value="TypeScript File" />
         <option value="package.json" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -73,6 +85,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -319,7 +332,8 @@
       <workItem from="1594229654728" duration="12287000" />
       <workItem from="1594421483002" duration="1840000" />
       <workItem from="1594507477007" duration="5045000" />
-      <workItem from="1594831092288" duration="2084000" />
+      <workItem from="1594831092288" duration="19047000" />
+      <workItem from="1594858981620" duration="9106000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
