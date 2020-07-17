@@ -25,7 +25,8 @@ const userSchema = new mongoose.Schema({
 
     username: {type: String, require: true, unique: true},
 
-    email: {type: String, required: true, unique: true,
+    email: {
+        type: String, required: true, unique: true,
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
 
@@ -33,16 +34,18 @@ const userSchema = new mongoose.Schema({
 
     score: {type: Number, default: 0, min: 0, max: 10},
 
-    isVerified: { type: Boolean, default: false },
-
-    createdOn: {type: Date, required: true, default: Date.now,
-        expireAfterSeconds: '2m', partialFilterExpression : {isVerified: false}},
+    isVerified: {type: Boolean, default: false},
 
     level: {type: String, default: "A1", enum: ["A1", "A2", "B1", "B2", "C1", "C2"]},
 
     role: {type: String, default: 'student', enum: ["student", "teacher", "admin"]},
+
     reviews: [reviewSchema]
 });
+
+
+//userSchema.index({createdAt: 1}, {expireAfterSeconds: 120,
+ // partialFilterExpression: {isVerified: { $eq:false}}});
 
 userSchema.plugin(uniqueValidator);
 
@@ -52,4 +55,4 @@ export {User, Token}
 
 
 // userSchema.index({},{expireAfterSeconds: 120, partialFilterExpression: {isVerified: false}});
-// createdOn: {type: Date, required: true, default: Date.now, expireAfterSeconds: '2m', partialFilterExpression : {isVerified: false}},
+// createdOn: {type: Date, required: true, default: Date.now, expires: '2m', partialFilterExpression : {isVerified: false}},

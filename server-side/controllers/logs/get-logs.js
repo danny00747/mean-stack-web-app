@@ -1,14 +1,16 @@
 const sgMail = require('@sendgrid/mail');
-import toto from './temp'
+import mailTemplate from '../../helpers/sendMailTemplate'
+
 export default function makeGetLogsController({getAllLogService}) {
     return async (httpRequest) => {
 
         sgMail.setApiKey(process.env["SENDGRID_API_KEY"]);
+
         const msg = {
-            to: 'shepalau007@gmail.com',
-            from: 'HE201718@students.ephec.be',
+            to: 'HE201718@students.ephec.be',
+            from: 'shepalau007@gmail.com',
             subject: 'Welcome to TeacherApp! Confirm Your Email',
-            html: toto.replace("xxx@xxxx", "HE201718@students.ephec.be")
+            html: mailTemplate.replace("xxx@xxxx", "HE201718@students.ephec.be")
         };
 
         (async () => {

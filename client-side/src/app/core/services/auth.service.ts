@@ -44,6 +44,10 @@ export class AuthService {
   }
 
 
+  confirmEmail(key : string){
+    return this._http.get(`/server/api/user/verify/${key}`, {headers});
+  }
+
   updateScore(user: any) {
     this.getToken();
     if (this.authToken) {

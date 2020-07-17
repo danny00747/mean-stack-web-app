@@ -62,14 +62,6 @@ export default function makePatchScoreController({editScoreService, addLogServic
             await addLogService(logInfo);
 
             console.log(e);
-            if (e.name === 'RangeError') {
-                return {
-                    statusCode: 404,
-                    body: {
-                        error: e.message
-                    }
-                }
-            }
             return {
                 statusCode: 400,
                 body: {

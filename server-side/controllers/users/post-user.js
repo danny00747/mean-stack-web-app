@@ -1,5 +1,6 @@
 import {addUserService} from '../../services/users'
 import {addLogService} from '../../services/logs'
+import sendMail from '../../helpers/sendMail'
 
 export default function makePostUserController() {
     return async (httpRequest) => {
@@ -37,11 +38,15 @@ export default function makePostUserController() {
             logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
             await addLogService(logInfo);
 
+            sendMail(posted.createdUser.email, posted.key.randomKey);
+
             return {
                 statusCode: 201,
                 body: {
                     success: true,
-                    message: "User created successfully",
+                    key: posted.key.randomKey,
+                    message: "A verification email has been sent to "
+                        + posted.createdUser.email,
                     user: {
                         userId: posted.createdUser._id,
                         username: posted.createdUser.username,

@@ -15,6 +15,7 @@ import userController  from '../controllers/users'
 router.post("/signup", makeCallback(userController.postUserController));
 router.post("/login", makeCallback(userController.loggedInUserController));
 router.get("/users/profiles", makeCallback(userController.getUsersController));
+router.get("/user/verify/:key", makeCallback(userController.verifyUserController));
 
 router
     .route("/user/:userId")

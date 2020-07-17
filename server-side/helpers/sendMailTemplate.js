@@ -1,4 +1,4 @@
-const toto = '<!DOCTYPE html>\n' +
+const mailTemplate = '<!DOCTYPE html>\n' +
     '<html>\n' +
     '<head>\n' +
     '    <title>Please confirm your e-mail</title>\n' +
@@ -155,9 +155,11 @@ const toto = '<!DOCTYPE html>\n' +
     '                                        <p style="margin:0;margin-top:20px;line-height:0;"></p>\n' +
     '                                        <p style="margin:0;color:#585858;font-size:14px;font-weight:400;line-height:170%;">\n' +
     '                                            Please confirm that <b>xxx@xxxx</b> is your e-mail address by\n' +
-    '                                            clicking on the button below or use this link <a\n' +
-    '                                                style=\'color: #00bc87;text-decoration: underline;\' target=\'_blank\'\n' +
-    '                                                href=\'https://devwebapp.herokuapp.com/register/\'>https://devwebapp.herokuapp.com/confirm-email/SMLSDVS/6500005000500000</a>\n' +
+    '                                            clicking on the button below or use this link\n' +
+    '                                            <a style=\'color: #00bc87;text-decoration: underline;\'\n' +
+    '                                               target=\'_blank\' href=\'link@link1\'>\n' +
+    '                                                link@link2\n' +
+    '                                            </a>\n' +
     '                                            within 48&nbsp;hours.</p>\n' +
     '                                    </td>\n' +
     '                                </tr>\n' +
@@ -169,7 +171,7 @@ const toto = '<!DOCTYPE html>\n' +
     '                                                    <table border="0" cellspacing="0" cellpadding="0" width="100%">\n' +
     '                                                        <tr>\n' +
     '                                                            <td align="center" style="border-radius: 4px;"\n' +
-    '                                                                bgcolor="#00bc87"><a href="https://devwebapp.herokuapp.com"\n' +
+    '                                                                bgcolor="#00bc87"><a href="link@link3"\n' +
     '                                                                                     style="text-transform:uppercase;background:#00bc87;font-size: 13px; font-weight: 700; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none !important; padding: 20px 25px; border-radius: 4px; border: 1px solid #00bc87; display: block;-webkit-font-smoothing:antialiased;"\n' +
     '                                                                                     target="_blank"><span\n' +
     '                                                                    style="color: #ffffff;text-decoration: none;">Verify</span></a>\n' +
@@ -239,4 +241,4 @@ const toto = '<!DOCTYPE html>\n' +
     '</body>\n' +
     '</html>\n';
 
-export default toto;
+export default mailTemplate;

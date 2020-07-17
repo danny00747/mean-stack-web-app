@@ -1,6 +1,4 @@
 import {makeUser} from '../../domain'
-import {tokenRepository} from "../../repository";
-import crypto from "crypto";
 
 export default function makeAdduserService({userRepository, tokenRepository, crypto}) {
 

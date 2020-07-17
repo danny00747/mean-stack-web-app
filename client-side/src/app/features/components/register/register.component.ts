@@ -46,16 +46,13 @@ export class RegisterComponent implements OnInit {
     // register
     this.authService.registerUser(JSON.stringify(user))
       .toPromise()
-      .then(() => {
+      .then((data : any) => {
           // console.log(data.success);
-          this._flashMessagesService.show("You are now registered", {
-            cssClass: "alert-success w-25",
-            timeout: 3000,
-          });
-          this.router.navigate(['/login']).then(nav => {
-            //console.log(nav); // true if navigation is successful
-          }, err => {
-            //console.log(err) // when there's an error
+          this._flashMessagesService.show(
+            `A verification email has been sent to ${data.user.userEmail}`, {
+            cssClass: "alert-success w-50",
+            timeout: 15000,
+            navigate: `${this.router.navigate(['/login'])}`
           });
         }
       )

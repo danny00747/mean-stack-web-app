@@ -13,15 +13,17 @@ import {ProfileComponent} from './components/profile/profile.component';
 import {ChartsComponent} from './components/dashboard/charts/charts.component';
 import {QuestionsComponent} from './components/questions/questions.component';
 import {ResultsComponent} from './components/questions/results/results.component';
+import { VerifyEmailComponent } from './components/register/verify-email/verify-email.component';
 
 const appRoutes: Routes = [
   {path: "register", component: RegisterComponent},
+  {path: "verify-email/:key", component: VerifyEmailComponent},
   {path: "login", component: LoginComponent},
   {path: "dashboard", component: DashboardComponent},
   {path: "questions", component: QuestionsComponent},
   {path: "results", component: ResultsComponent},
   {path: "reviews", component: ReviewsComponent},
-  {path: "profile/:id", component: ProfileComponent},
+  {path: "profile/:id", component: ProfileComponent}
 ];
 
 @NgModule({
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
     QuestionsComponent,
     ResultsComponent,
     ReviewsComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     CommonModule,

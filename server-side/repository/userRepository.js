@@ -22,7 +22,9 @@ export default function makeUserRepository({User}) {
     }
 
     async function patch({id: _id, ...userInfo}) {
-        return await User.findByIdAndUpdate({_id}, {...userInfo}, {new: true}).exec();
+        return await User.findByIdAndUpdate({_id}, {...userInfo}, {new: true})
+            .select("-__v")
+            .exec();
     }
 
     async function findByEmailOrUsername({email: email, username: username}) {
@@ -44,7 +46,6 @@ export default function makeUserRepository({User}) {
     async function remove({id: _id}) {
         return await User.findByIdAndRemove({_id}).exec();
     }
-
 
 }
 
