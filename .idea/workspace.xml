@@ -2,51 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/features/components/register/verify-email/verify-email.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/features/components/register/verify-email/verify-email.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/features/components/register/verify-email/verify-email.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/app/features/components/register/verify-email/verify-email.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/assets/img/email.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/assets/img/invalid-key.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/controllers/users/verify-user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/helpers/sendMail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/helpers/sendMailTemplate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/helpers/sendMailTemplate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/5-es2015.61a1d0bcb229df04b212.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/5-es5.61a1d0bcb229df04b212.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/email.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/assets/img/invalid-key.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es2015.a0be0b99f4424ef27dee.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es5.a0be0b99f4424ef27dee.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/runtime-es2015.be0a0fc985feb5bcd808.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/public/dist/runtime-es5.be0a0fc985feb5bcd808.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/services/users/verify-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/profile/profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/features.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/features.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/logs/get-logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/logs/get-logs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/logs/temp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/logs/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/edit-score.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/edit-score.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/edit-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/edit-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/post-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/post-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/5-es2015.5598c209c33fc76216f2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/5-es5.5598c209c33fc76216f2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/public/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.faa5b85928f907e7ab4d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.faa5b85928f907e7ab4d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/runtime-es2015.3a5f197ca9791344c6b6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/public/dist/runtime-es5.3a5f197ca9791344c6b6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/repository/tokenRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/tokenRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/repository/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/userRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/users/edit-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/edit-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/users/register-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/register-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/helpers/sendMail.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/helpers/sendMail.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +320,7 @@
       <workItem from="1594507477007" duration="5045000" />
       <workItem from="1594831092288" duration="19047000" />
       <workItem from="1594858981620" duration="10394000" />
-      <workItem from="1594907731351" duration="37084000" />
+      <workItem from="1594907731351" duration="37356000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>

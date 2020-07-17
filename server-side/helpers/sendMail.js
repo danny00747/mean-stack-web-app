@@ -12,11 +12,11 @@ export default function sendMail(mail, key) {
             html: mailTemplate
                 .replace("xxx@xxxx", `${mail}`)
                 .replace("link@link1",
-                    `https://devwebapp.herokuapp.com/confirm-email/${key}`)
+                    `https://devwebapp.herokuapp.com/verify-email/${key}`)
                 .replace("link@link2",
-                    `https://devwebapp.herokuapp.com/confirm-email/${key}`)
+                    `https://devwebapp.herokuapp.com/verify-email/${key}`)
                 .replace("link@link3",
-                    `https://devwebapp.herokuapp.com/confirm-email/${key}`)
+                    `https://devwebapp.herokuapp.com/verify-email/${key}`)
         };
 
         (async () => {
