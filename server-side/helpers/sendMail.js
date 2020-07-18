@@ -6,7 +6,7 @@ export default function sendMail(mail, key) {
     sgMail.setApiKey(process.env["SENDGRID_API_KEY"]);
 
         const msg = {
-            to: 'shepalau007@gmail.com',
+            to: `${mail}`,
             from: 'he201718@students.ephec.be',
             subject: 'Welcome to TeacherApp! Confirm Your Email',
             html: mailTemplate
