@@ -1,5 +1,8 @@
-export default function makePatchScoreController({editScoreService, addLogService}) {
-    return async function patchScoreController(httpRequest) {
+import {editScoreService} from '../../services/users'
+import {addLogService} from '../../services/logs'
+
+export default function makePatchScoreController() {
+    return async (httpRequest) => {
 
         const logInfo = {
             level: 'info', requestId: httpRequest.id, ip: httpRequest.ip,
@@ -9,12 +12,8 @@ export default function makePatchScoreController({editScoreService, addLogServic
         try {
             const {...userInfo} = httpRequest.body;
             const {userId: id} = httpRequest.params;
-            const toEdit = {
-                ...userInfo,
-                id: httpRequest.params.userId
-            };
 
-            const updatedUser = await editScoreService(toEdit);
+            const updatedUser = await editScoreService({id, ...userInfo});
 
             if (updatedUser.message) {
 

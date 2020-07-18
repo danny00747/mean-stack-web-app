@@ -1,4 +1,7 @@
-export default function makeGetQuestionsController({listQuestionsService, addLogService}) {
+import {listQuestionsService} from '../../services/questions'
+import {addLogService} from '../../services/logs'
+
+export default function makeGetQuestionsController() {
     return async (httpRequest) => {
 
         const logInfo = {

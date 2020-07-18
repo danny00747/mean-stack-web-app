@@ -1,4 +1,7 @@
-export default function makePatchReviewController({editReviewService, addLogService}) {
+import {editReviewService} from '../../services/reviews'
+import {addLogService} from '../../services/logs'
+
+export default function makePatchReviewController() {
     return async (httpRequest) => {
 
         const logInfo = {
@@ -9,9 +12,8 @@ export default function makePatchReviewController({editReviewService, addLogServ
         try {
             const {...userInfo} = httpRequest.body;
             const {reviewId: id, userEmail: email} = httpRequest.params;
-            const toEdit = {...userInfo, id, email};
 
-            const updatedUser = await editReviewService(toEdit);
+            const updatedUser = await editReviewService({id, email,...userInfo});
 
             if (updatedUser.message) {
 

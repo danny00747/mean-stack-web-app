@@ -48,6 +48,10 @@ export class AuthService {
     return this._http.get(`/server/api/user/verify/${key}`, {headers});
   }
 
+  resendEmail(email : string){
+    return this._http.get(`/server/api/user/resend/${email}`, {headers});
+  }
+
   updateScore(user: any) {
     this.getToken();
     if (this.authToken) {

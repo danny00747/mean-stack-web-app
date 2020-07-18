@@ -1,4 +1,7 @@
-export default function makeSignInUserController({logInUserService, bcrypt, jwt, addLogService}) {
+import {logInUserService} from '../../services/users'
+import {addLogService} from '../../services/logs'
+
+export default function makeSignInUserController({bcrypt, jwt}) {
     return async (httpRequest) => {
 
         const logInfo = {

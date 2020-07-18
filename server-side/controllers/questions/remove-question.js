@@ -1,4 +1,7 @@
-export default function makeDeleteQuestionController({removeQuestionService, addLogService}) {
+import {removeQuestionService} from '../../services/questions'
+import {addLogService} from '../../services/logs'
+
+export default function makeDeleteQuestionController() {
     return async (httpRequest) => {
 
         const logInfo = {

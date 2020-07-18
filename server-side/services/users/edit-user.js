@@ -26,8 +26,7 @@ export default function makeEditUserService({userRepository}) {
             username: user.getUsername(),
             email: user.getEmail(),
             password: user.getPassword(),
-            reviews: findUser.reviews,
-            isVerified: true,
+            reviews: findUser.reviews
         });
     }
 }

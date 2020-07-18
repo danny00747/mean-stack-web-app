@@ -6,6 +6,7 @@ import makeEditUserService from './edit-user'
 import makeRemoveUserService from './remove-user'
 import makeEditScoreService from './edit-score'
 import makeVerifyUserService from './verify-user'
+import makeResendEmailService from './resend-email'
 
 import {userRepository, tokenRepository} from '../../repository'
 
@@ -19,14 +20,17 @@ const getOneUserService = makeGetOneUserService({userRepository});
 const editUserService = makeEditUserService({userRepository});
 const removeUserService = makeRemoveUserService({userRepository});
 const editScoreService = makeEditScoreService({userRepository});
+const resendEmailService = makeResendEmailService({userRepository, tokenRepository, crypto});
 
 const userService = Object.freeze({
     addUserService, logInUserService, getAllUsersService, verifyUserService,
-    getOneUserService, editUserService, removeUserService, editScoreService
+    getOneUserService, editUserService, removeUserService, editScoreService,
+    resendEmailService
 });
 
 export default userService
 export {
     addUserService, logInUserService, getAllUsersService, verifyUserService,
-    getOneUserService, editUserService, removeUserService, editScoreService
+    getOneUserService, editUserService, removeUserService, editScoreService,
+    resendEmailService
 }

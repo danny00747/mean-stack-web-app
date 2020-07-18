@@ -15,8 +15,6 @@ export default function makePostUserController() {
 
             const posted = await addUserService({...userInfo});
 
-           // console.log(posted.key);
-
             if (posted.message) {
 
                 logInfo.status = 409;

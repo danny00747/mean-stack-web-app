@@ -1,4 +1,7 @@
-export default function makePatchQuestionController({editQuestionService, addLogService}) {
+import {editQuestionService} from '../../services/questions'
+import {addLogService} from '../../services/logs'
+
+export default function makePatchQuestionController() {
     return async (httpRequest) => {
 
         const logInfo = {
@@ -9,11 +12,8 @@ export default function makePatchQuestionController({editQuestionService, addLog
         try {
             const {...questionInfo} = httpRequest.body;
             const {questionId: id} = httpRequest.params;
-            const toEdit = {
-                ...questionInfo,
-                id: httpRequest.params.questionId
-            };
-            const updatedQuestion = await editQuestionService(toEdit);
+
+            const updatedQuestion = await editQuestionService({id,...questionInfo});
 
             if (!updatedQuestion) {
 

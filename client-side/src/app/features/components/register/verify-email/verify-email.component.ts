@@ -12,6 +12,8 @@ export class VerifyEmailComponent implements OnInit {
 
   key: string = "";
   message: string = "";
+  resendmessage: string = "";
+  resendEmail: string = "";
   isVerified: boolean;
 
   constructor(private route: ActivatedRoute,
@@ -28,13 +30,27 @@ export class VerifyEmailComponent implements OnInit {
       .then((data: any) => {
         this.isVerified = data.success;
         this.message = data.message;
-        console.log(this.isVerified)
       })
       .catch(err => {
         this.isVerified = err.error.success;
         this.message = err.error.message;
         console.log(err)
       });
+  }
+
+  resend(){
+
+    this.authService.resendEmail(this.resendEmail)
+      .toPromise()
+      .then((data: any) => {
+        console.log(data);
+        this.resendmessage = data.message;
+      })
+      .catch(err => {
+        this.resendmessage = err.error.message;
+        console.log(err)
+      });
+
   }
 
 }

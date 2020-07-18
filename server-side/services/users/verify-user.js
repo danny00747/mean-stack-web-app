@@ -1,13 +1,11 @@
-import {makeUser} from '../../domain';
-
 export default function makeVerifyUserService({userRepository, tokenRepository}) {
     return async ({key} = {}) => {
 
-        if (key.length !== 64) throw new Error('Invalid key .');
+        if (!key) throw new Error('You must supply the key.');
 
         const findTheKey = await tokenRepository.findKey({key});
 
-       if (!findTheKey) return {message: "The key has expired !"};
+       if (!findTheKey) return {message: "the key has expired."};
 
         return userRepository.patch({
             id: findTheKey.userId,

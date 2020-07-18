@@ -1,4 +1,7 @@
-export default function makeGetReviewsController({getAllReviewsService, addLogService}) {
+import {getAllReviewsService} from '../../services/reviews'
+import {addLogService} from '../../services/logs'
+
+export default function makeGetReviewsController() {
     return async (httpRequest) => {
 
         const logInfo = {

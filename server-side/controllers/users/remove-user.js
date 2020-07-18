@@ -1,4 +1,7 @@
-export default function makeDeleteUserController({removeUserService, addLogService}) {
+import {removeUserService} from '../../services/users'
+import {addLogService} from '../../services/logs'
+
+export default function makeDeleteUserController() {
     return async (httpRequest) => {
 
         const logInfo = {
@@ -7,7 +10,9 @@ export default function makeDeleteUserController({removeUserService, addLogServi
         };
 
         try {
-            const deleteUser = await removeUserService({id: httpRequest.params.userId});
+            const deleteUser =
+                await removeUserService({id: httpRequest.params.userId});
+
             if (!deleteUser) {
 
                 logInfo.status = 404;

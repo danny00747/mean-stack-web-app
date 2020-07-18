@@ -1,4 +1,7 @@
-export default function makePostReviewController({addReviewService, addLogService}) {
+import {addReviewService} from '../../services/reviews'
+import {addLogService} from '../../services/logs'
+
+export default function makePostReviewController() {
     return async (httpRequest) => {
 
         const logInfo = {
@@ -9,9 +12,8 @@ export default function makePostReviewController({addReviewService, addLogServic
         try {
             const {...userInfo} = httpRequest.body;
             const {userId: id} = httpRequest.params;
-            const toEdit = {...userInfo, id};
 
-            const updatedUser = await addReviewService(toEdit);
+            const updatedUser = await addReviewService({id, ...userInfo});
 
             if (updatedUser.message) {
 

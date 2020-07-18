@@ -1,4 +1,7 @@
-export default function makeDeleteReviewController({removeReviewService, addLogService}) {
+import {removeReviewService} from '../../services/reviews'
+import {addLogService} from '../../services/logs'
+
+export default function makeDeleteReviewController() {
     return async (httpRequest) => {
 
         const logInfo = {

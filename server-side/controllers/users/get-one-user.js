@@ -1,4 +1,7 @@
-export default function makeGetOneUserController({getOneUserService, addLogService}) {
+import {getOneUserService} from '../../services/users'
+import {addLogService} from '../../services/logs'
+
+export default function makeGetOneUserController() {
     return async (httpRequest) => {
 
         const logInfo = {

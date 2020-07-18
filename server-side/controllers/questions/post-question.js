@@ -1,4 +1,7 @@
-export default function makePostQuestionController({addQuestionService, addLogService}) {
+import {addQuestionService} from '../../services/questions'
+import {addLogService} from '../../services/logs'
+
+export default function makePostQuestionController() {
     return async (httpRequest) => {
 
         const logInfo = {
@@ -8,9 +11,7 @@ export default function makePostQuestionController({addQuestionService, addLogSe
 
         try {
             const {...questionInfo} = httpRequest.body;
-            const posted = await addQuestionService({
-                ...questionInfo,
-            });
+            const posted = await addQuestionService({...questionInfo});
 
             logInfo.status = 201;
             logInfo.message = 'Created question successfully !';

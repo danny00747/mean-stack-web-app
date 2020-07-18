@@ -1,4 +1,7 @@
-export default function makePatchUserController({editUserService, addLogService}) {
+import {editUserService} from '../../services/users'
+import {addLogService} from '../../services/logs'
+
+export default function makePatchUserController() {
     return async (httpRequest) => {
 
         const logInfo = {
@@ -9,12 +12,8 @@ export default function makePatchUserController({editUserService, addLogService}
         try {
             const {...userInfo} = httpRequest.body;
             const {userId: id} = httpRequest.params;
-            const toEdit = {
-                ...userInfo,
-                id: httpRequest.params.userId
-            };
 
-            const updatedUser = await editUserService(toEdit);
+            const updatedUser = await editUserService({id, ...userInfo});
 
             if (updatedUser.message) {
 

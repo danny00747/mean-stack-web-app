@@ -16,6 +16,7 @@ router.post("/signup", makeCallback(userController.postUserController));
 router.post("/login", makeCallback(userController.loggedInUserController));
 router.get("/users/profiles", makeCallback(userController.getUsersController));
 router.get("/user/verify/:key", makeCallback(userController.verifyUserController));
+router.get("/user/resend/:userEmail", makeCallback(userController.resendEmailController));
 
 router
     .route("/user/:userId")
@@ -23,7 +24,8 @@ router
     .patch(makeCallback(userController.patchUserController))
     .delete(makeCallback(userController.deleteUserController));
 
-router.patch("/user/:userId/score", makeCallback(userController.patchScoreController));
+router.patch("/user/:userId/score",
+    makeCallback(userController.patchScoreController));
 
 export {router as usersRoutes};
 

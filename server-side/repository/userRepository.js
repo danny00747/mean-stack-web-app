@@ -1,6 +1,7 @@
 export default function makeUserRepository({User}) {
     return Object.freeze({
-        save, findByEmailOrUsername, findPseudo, findAll, findById, patch, remove
+        save, findByEmailOrUsername, findPseudo,
+        findAll, findById, patch, remove, findByEmail
     });
 
     async function save({...userInfo}) {
@@ -19,6 +20,12 @@ export default function makeUserRepository({User}) {
             .select("_id email role username level password reviews")
             .exec();
 
+    }
+
+    async function findByEmail({email: email}) {
+        return await User.findOne({email})
+            .select("_id username email isVerified")
+            .exec();
     }
 
     async function patch({id: _id, ...userInfo}) {
