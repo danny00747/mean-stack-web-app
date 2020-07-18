@@ -9,6 +9,8 @@ export default function makeSignInUserController({bcrypt, jwt}) {
             url: httpRequest.url, host: httpRequest.host, method: httpRequest.method
         };
 
+        // TODO: Check the request body
+
         try {
             const {...userInfo} = httpRequest.body;
 
@@ -27,7 +29,10 @@ export default function makeSignInUserController({bcrypt, jwt}) {
                 };
             }
 
-            if (!existing.isVerified) {
+            const {username, role, email, score, password, _id: id} = existing;
+
+            if (await bcrypt.compare(userInfo.password, password) &&
+                !existing.isVerified) {
 
                 logInfo.status = 401;
                 logInfo.message = 'Your account has not been verified.';
@@ -39,14 +44,13 @@ export default function makeSignInUserController({bcrypt, jwt}) {
                     body: {
                         success: false,
                         message: "Your account has not been verified.",
-                        isVerified : false
+                        isVerified: false
                     }
                 };
             }
 
-            const {username, role, email, score, password, _id: id} = existing;
-
-            if (await bcrypt.compare(userInfo.password, password)) {
+            if (await bcrypt.compare(userInfo.password, password)
+                && existing.isVerified) {
 
                 const jwtToken = jwt.sign({email: email, userId: id},
                     process.env["JWT_KEY"], {expiresIn: "1h"});

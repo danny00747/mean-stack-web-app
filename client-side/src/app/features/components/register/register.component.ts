@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
           this._flashMessagesService.show(
             `A verification email has been sent to ${data.user.userEmail}`, {
             cssClass: "alert-success w-50",
-            timeout: 15000,
+            timeout: 10000,
             navigate: `${this.router.navigate(['/login'])}`
           });
         }
@@ -61,7 +61,7 @@ export class RegisterComponent implements OnInit {
         console.log(err);
         this._flashMessagesService.show("Something went wrong", {
           cssClass: "alert-danger w-25",
-          timeout: 2000,
+          timeout: 3000,
           navigate: `${this.router.navigate(['/register'])}`
         });
       });
