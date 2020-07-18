@@ -12,11 +12,9 @@ export default function makeSignInUserController({bcrypt, jwt}) {
         try {
             const {...userInfo} = httpRequest.body;
 
-            const existing = await logInUserService({
-                ...userInfo,
-            });
+            const existing = await logInUserService({...userInfo});
 
-            if (existing.length === 0) {
+            if (!existing) {
 
                 logInfo.status = 401;
                 logInfo.message = 'Authentication failed !';
@@ -29,14 +27,29 @@ export default function makeSignInUserController({bcrypt, jwt}) {
                 };
             }
 
+            if (!existing.isVerified) {
 
-            const [{username, role, email, score, password, _id: id}] = existing;
+                logInfo.status = 401;
+                logInfo.message = 'Your account has not been verified.';
+                logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+                await addLogService(logInfo);
+
+                return {
+                    statusCode: 401,
+                    body: {
+                        success: false,
+                        message: "Your account has not been verified.",
+                        isVerified : false
+                    }
+                };
+            }
+
+            const {username, role, email, score, password, _id: id} = existing;
 
             if (await bcrypt.compare(userInfo.password, password)) {
 
                 const jwtToken = jwt.sign({email: email, userId: id},
-                    process.env["JWT_KEY"], {expiresIn: "1h"}
-                );
+                    process.env["JWT_KEY"], {expiresIn: "1h"});
 
                 logInfo.status = 200;
                 logInfo.message = 'Authentication successful !';
@@ -46,7 +59,8 @@ export default function makeSignInUserController({bcrypt, jwt}) {
                 return {
                     statusCode: 200,
                     body: {
-                        success: true, token: "JWT " + jwtToken,
+                        success: true,
+                        token: "JWT " + jwtToken,
                         user: {
                             userId: id,
                             username: username,

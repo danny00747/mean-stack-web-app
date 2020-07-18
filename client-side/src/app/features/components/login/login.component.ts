@@ -15,14 +15,16 @@ export class LoginComponent implements OnInit {
 
   pseudo: String;
   password: String;
-  timeLoggedIn : number;
+  timeLoggedIn: number;
+  isVerified: boolean;
 
   //@ViewChild('loginform', { static: false }) loginForm : ElementRef;
 
   constructor(private validateService: ValidateService,
               private _flashMessagesService: FlashMessagesService,
               private authService: AuthService,
-              private router: Router) {}
+              private router: Router) {
+  }
 
   ngOnInit() {
   }
@@ -47,13 +49,16 @@ export class LoginComponent implements OnInit {
     this.authService.loginUser(JSON.stringify(user))
       .toPromise()
       .then((data: any) => {
-        this.timeLoggedIn = new Date().getTime();
-        this.sessionExpired(data.token);
-         this.authService.storeUserData(data);
-         this.authService.role = data.user.role;
-         this.authService.username = data.user.username;
-         this.authService.userId = data.user.userId;
-         this.authService.userEmail = data.user.userEmail;
+
+          console.log(data);
+
+          this.timeLoggedIn = new Date().getTime();
+          this.sessionExpired(data.token);
+          this.authService.storeUserData(data);
+          this.authService.role = data.user.role;
+          this.authService.username = data.user.username;
+          this.authService.userId = data.user.userId;
+          this.authService.userEmail = data.user.userEmail;
           this._flashMessagesService.show("You are now logged in ...", {
             cssClass: "alert-success w-25",
             timeout: 2000,
@@ -62,17 +67,25 @@ export class LoginComponent implements OnInit {
         }
       )
       .catch(err => {
-        //console.log(err.error);
+        this.isVerified = err.error.isVerified;
         console.log(err);
-        this._flashMessagesService.show("Something went wrong", {
-          cssClass: "alert-danger w-25",
-          timeout: 3000
-        });
+        if (Object.keys(err.error).includes("isVerified")) {
+          this._flashMessagesService.grayOut(true);
+          this._flashMessagesService.show(`${err.error.message}`, {
+            cssClass: "alert-danger w-25",
+            timeout: 10000
+          });
+        } else {
+          this._flashMessagesService.show("Something went wrong", {
+            cssClass: "alert-danger w-25",
+            timeout: 3000
+          });
+        }
       });
 
   }
 
-  sessionExpired(token : string) {
+  sessionExpired(token: string) {
     const expirationDate = new JwtHelperService().getTokenExpirationDate(token).getTime();
     const sessionExpired = expirationDate - this.timeLoggedIn;
     setTimeout(() => {
@@ -88,7 +101,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  isAdmins(){
+  isAdmins() {
     return this.authService.role === 'admin';
   }
 
