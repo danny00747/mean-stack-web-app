@@ -12,11 +12,22 @@
 </div>
 
 <!-- resend key alert -->
-<div *ngIf="resendmessage.length !== 0 && !resendmessage.includes('No')">
+<div *ngIf="resendmessage.length !== 0 && resendmessage.includes('resent')">
   <div class="row justify-content-center">
     <div class="alert alert-dismissible alert-primary">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
       <strong>Sent!</strong> {{resendmessage}}
+    </div>
+  </div>
+</div>
+
+
+<!-- Account already verified alert -->
+<div *ngIf="resendmessage.length !== 0 && resendmessage.includes('log')">
+  <div class="row justify-content-center">
+    <div class="alert alert-dismissible alert-secondary">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Oh snap!</strong> This account has already been verified.
     </div>
   </div>
 </div>
@@ -94,7 +105,8 @@
       </div>
 
       <!-- resend email card body -->
-      <div *ngIf="isVerified === false || resendmessage.length !== 0"
+      <div *ngIf="(isVerified === false || resendmessage.length !== 0)
+            && !resendmessage.includes('log')"
            class="card-body">
         <p class="card-text text-monospace font-italic font-weight-bold">
           To resend the key, enter your email address below.
@@ -136,9 +148,14 @@
       </div>
 
       <!-- valid key card body -->
-      <div *ngIf="isVerified" class="card-body">
-        <p class="card-text text-monospace font-italic font-weight-bold">
+      <div *ngIf="isVerified || resendmessage.includes('log')" class="card-body">
+        <p *ngIf="!resendmessage.includes('log')"
+          class="card-text text-monospace font-italic font-weight-bold">
           Your email has been verified, you may now login...
+        </p>
+
+        <p class="card-text text-monospace font-italic font-weight-bold">
+         {{resendmessage}}
         </p>
 
         <div class="row justify-content-center">

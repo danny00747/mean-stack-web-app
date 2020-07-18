@@ -10,6 +10,9 @@ export default function makeResendEmailService({userRepository, tokenRepository 
 
         if (!findUser) return {message: "No user was found with provided email"};
 
+        if (findUser.isVerified)
+            return {message: "This account has already been verified. Please log in."};
+
         const key = await tokenRepository.save({
             userId: findUser._id,
             randomKey: crypto.randomBytes(32).toString('hex')

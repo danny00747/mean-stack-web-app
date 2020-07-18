@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es2015.fbf412fd9c97d1f1c405.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/public/dist/main-es5.fbf412fd9c97d1f1c405.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/logIn-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/logIn-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/register/verify-email/verify-email.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/register/verify-email/verify-email.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/public/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.3304e906bc1e86c14cf5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.3304e906bc1e86c14cf5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/resend-email.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/resend-email.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,7 +331,7 @@
       <workItem from="1594907731351" duration="37856000" />
       <workItem from="1595004634326" duration="7918000" />
       <workItem from="1595029134525" duration="10842000" />
-      <workItem from="1595097943933" duration="6028000" />
+      <workItem from="1595097943933" duration="7925000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
