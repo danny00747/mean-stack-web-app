@@ -19,7 +19,7 @@ export default function makeResendEmailController() {
                 }
             }
 
-           // sendMail(updatedUser.findUser.email, updatedUser.key.randomKey);
+            sendMail(updatedUser.findUser.email, updatedUser.key.randomKey);
 
             return {
                 statusCode: 200,
