@@ -36,7 +36,7 @@ export default function makePostUserController() {
             logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
             await addLogService(logInfo);
 
-          sendMail(posted.createdUser.email, posted.key.randomKey);
+          //sendMail(posted.createdUser.email, posted.key.randomKey);
 
             return {
                 statusCode: 201,
