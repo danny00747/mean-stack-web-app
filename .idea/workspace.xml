@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/config/environment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/database.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/controllers/users/post-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/post-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/resend-email.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/resend-email.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/helpers/sendMail.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/helpers/sendMail.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -340,7 +342,7 @@
       <workItem from="1595097943933" duration="9277000" />
       <workItem from="1595445526815" duration="31000" />
       <workItem from="1595450673365" duration="4850000" />
-      <workItem from="1595611636039" duration="799000" />
+      <workItem from="1595611636039" duration="5429000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>

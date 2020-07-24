@@ -6,9 +6,9 @@ import authenticateUser from './server-side/security/passport';
 import routes from './server-side/routes'
 const addRequestId = require('express-request-id')();
 import path from 'path';
-const {success, info, error, debug} = require('consola');
+import consola from 'consola';
 import helmet from 'helmet';
-require('dotenv').config();
+import env from './server-side/config/environment'
 require('./server-side/config/database');
 
 // Initialize the app
@@ -82,8 +82,8 @@ app.get('*', (req, res) => {
         .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
 });
 
-app.listen(process.env.PORT, () => {
-    info({message: `Server started on port ${process.env["PORT"]}`, badge: true});
+app.listen(env.PORT, () => {
+    consola.info({message: `Server started on port ${env.PORT}`, badge: true});
 });
 
 // catch 404 and forward to error handler
@@ -93,13 +93,17 @@ app.use((req, res, next) => {
     next(error.message);
 });
 
-// Error Handler
+/** @ErrorHandler
+ * Method to handle erros of type 500
+ * @param {error, req, res}
+ * @returns {message}  return error messae with code
+ */
+
 app.use((error, req, res) => {
-    //console.log(res.locals.error);
     res.status(error.status || 500);
     res.json({
         message: error.message
     });
 });
 
-module.exports = app;
+export default app;

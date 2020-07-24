@@ -1,9 +1,10 @@
 import sgMail from '@sendgrid/mail';
 import mailTemplate from './sendMailTemplate'
+import env from '../config/environment'
 
 export default function sendMail(mail, key) {
 
-    sgMail.setApiKey(process.env["SENDGRID_API_KEY"]);
+    sgMail.setApiKey(env.SENDGRID_API_KEY);
 
         const msg = {
             to: `${mail}`,

@@ -1,12 +1,13 @@
-const mongoose = require('mongoose');
-const {success, info, error, debug} = require('consola');
-const host = process.env.DB_HOST;
-const hostCloud = process.env.MONGODB_URI;
-const dbURL = `mongodb://${host}/web_app`;
+import mongoose from 'mongoose';
+import {success, info, error, debug} from 'consola';
+
+import env from './environment'
+
+const dbURL = `mongodb://${env.DB_HOST}/web_app`;
 
 //connect with the database NODE_ENV=test
 
-if (process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'dev') {
+if (env.NODE_ENV === 'test' || env.NODE_ENV === 'dev') {
     mongoose.connect(dbURL,
         {
             useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
@@ -21,14 +22,14 @@ if (process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'dev') {
         error({message: `Mongoose connection error: ${err}`, badge: true});
     });
 } else if (process.env.NODE_ENV === 'production') {
-    mongoose.connect(hostCloud,
+    mongoose.connect(env.MONGODB_URI,
         {
             useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
             useFindAndModify: false
         })
         .then(() => {
             success({
-                message: `Database connected successfully to ${hostCloud}`,
+                message: `Database connected successfully to ${env.MONGODB_URI}`,
                 badge: true
             });
         }).catch(err => {
