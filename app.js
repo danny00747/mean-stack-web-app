@@ -96,7 +96,7 @@ app.use((req, res, next) => {
 /** @ErrorHandler
  * Method to handle erros of type 500
  * @param {error, req, res}
- * @returns {message}  return error messae with code
+ * @returns {message}  return an error message with an http code
  */
 
 app.use((error, req, res) => {

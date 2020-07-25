@@ -39,6 +39,7 @@ export default function makePatchQuestionController() {
                 body: {
                     message: "Question updated successfully !",
                     updatedQuestion: {
+                        type: updatedQuestion.type,
                         question: updatedQuestion.question
                     },
                     request: {

@@ -10,7 +10,7 @@ let server = require('../../app');
 let should = chai.should();
 
 
-describe('Users', () => {
+describe.skip('Users', () => {
 
     /*
      * Test the /login route

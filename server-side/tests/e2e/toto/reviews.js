@@ -9,7 +9,7 @@ let chaiHttp = require('chai-http');
 let server = require('../../app');
 let should = chai.should();
 
-describe('Reviews', () => {
+describe.skip('Reviews', () => {
 
     describe('/GET reviews', () => {
 
