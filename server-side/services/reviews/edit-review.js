@@ -9,11 +9,18 @@ export default function makeEditReviewService({reviewRepository}) {
 
         if (!email) throw new Error('You must supply the user email.');
 
+        if (!(email.match(/^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$/)))
+            throw new SyntaxError(`${email} is not a valid email`);
+
+        const review = makeReview({...changes});
+
         const existing = await reviewRepository.findByEmail({email});
 
         if (!existing) return {message: "No user was found with provided email"};
 
-        const review = makeReview({...changes});
+        if (existing.reviews.length === 0) return {
+            message: `${existing.username} doesn't have any reviews at the moment !`};
+
         //const reviewToEdit = existing.reviews.id(id);
         const index = existing.reviews.findIndex(i => (i._id).toString() === id);
 

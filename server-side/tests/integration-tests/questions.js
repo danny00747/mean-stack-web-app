@@ -2,7 +2,7 @@
 
 process.env.NODE_ENV = 'test';
 
-import Question from '../models/questions'
+import Question from '../../models/questions'
 
 //bring in dev-dependencies
 import chai from 'chai';
@@ -12,8 +12,8 @@ import chaiHttp from 'chai-http';
 chai.should();
 chai.expect;
 
-import server from '../../app';
-import env from '../config/environment';
+import server from '../../../app';
+import env from '../../config/environment';
 
 chai.use(chaiHttp);
 
@@ -29,7 +29,7 @@ describe('Questions', () => {
             {"option": "false", "isCorrect": false}]
     };
 
-    const users = {
+    const user = {
         "pseudo": env.ADMIN_PSEUDO,
         "password": env.ADMIN_PSD,
     };
@@ -38,7 +38,7 @@ describe('Questions', () => {
 
         loginUser = await chai.request(server)
             .post('/server/api/login')
-            .send(users);
+            .send(user);
 
         postedQuestion = await chai.request(server)
             .post('/server/api/questions')
@@ -50,7 +50,6 @@ describe('Questions', () => {
     after(async () => {
         await Question.deleteMany({});
     });
-
 
     /*
      * Test the /GET route
@@ -190,7 +189,6 @@ describe('Questions', () => {
         });
 
     });
-
 
     /*
 * Test the /DELETE/:id route

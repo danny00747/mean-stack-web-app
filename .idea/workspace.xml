@@ -2,21 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/tests/e2e/toto/reviews.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/tests/e2e/toto/users..js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/fixtures/fakeQuestion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/fixtures/fakeReview.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/fixtures/fakeUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/integration-tests/questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/integration-tests/reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/integration-tests/users..js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/register-user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-mocha/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/report-mocha/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-mocha/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/report-mocha/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/config/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/environment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions/edit-question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/questions/edit-question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/reviews.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/users..js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/edit-review.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviews/edit-review.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/remove-review.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviews/remove-review.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/logIn-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/logIn-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/resend-email.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/resend-email.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/toto/reviews.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/e2e/toto/users..js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/questions.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +48,9 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../mean-stack-web-app\exportToHTML" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="mean-stack-web-app" />
@@ -97,7 +104,7 @@
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/client-side/node_modules/protractor" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="ts.external.directory.path" value="C:\Users\morga\Documents\mean-stack-web-app\client-side\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -352,6 +359,7 @@
       <workItem from="1595445526815" duration="31000" />
       <workItem from="1595450673365" duration="4850000" />
       <workItem from="1595611636039" duration="26290000" />
+      <workItem from="1595688538085" duration="21795000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
@@ -765,6 +773,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="93" y="93" width="1095" height="504" key="DiffContextDialog/0.0.1280.689@0.0.1280.689" timestamp="1595458180656" />
+    <state x="421" y="67" key="FileChooserDialogImpl" timestamp="1595689075802">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="421" y="67" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1595689075802" />
     <state width="1237" height="498" key="GridCell.Tab.0.bottom" timestamp="1595621863992">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -829,10 +841,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="498" key="GridCell.Tab.3.right/0.0.1280.689@0.0.1280.689" timestamp="1595621863993" />
-    <state x="79" y="0" key="SettingsEditor" timestamp="1589594885761">
+    <state x="79" y="0" key="SettingsEditor" timestamp="1595688976269">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1589594885761" />
+    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1595688976269" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1592250168654">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -849,9 +861,9 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="297" y="153" width="672" height="677" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1592250424959" />
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1589764291474">
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1595688810601">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1589764291474" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1595688810601" />
   </component>
 </project>

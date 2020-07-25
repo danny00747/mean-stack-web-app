@@ -4,7 +4,7 @@ export default function makeResendEmailService({userRepository, tokenRepository 
         if (!email) throw new Error('You must supply the user email.');
 
         if (!(email.match(/^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$/)))
-            throw new TypeError(`${email} is not a valid email`);
+            throw new SyntaxError(`${email} is not a valid email`);
 
         const findUser = await userRepository.findByEmail({email});
 

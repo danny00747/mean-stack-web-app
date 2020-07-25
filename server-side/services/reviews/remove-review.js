@@ -7,6 +7,9 @@ export default function makeRemoveReviewService({reviewRepository}) {
 
         if (!email) throw new Error('You must supply the user email.');
 
+        if (!(email.match(/^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$/)))
+            throw new SyntaxError(`${email} is not a valid email`);
+
         const existing = await reviewRepository.findByEmail({email});
 
         if (!existing) return {message: "No user was found with provided email !"};
@@ -17,7 +20,7 @@ export default function makeRemoveReviewService({reviewRepository}) {
         //const reviewToEdit = existing.reviews.id(id);
         const index = existing.reviews.findIndex(i => (i._id).toString() === id);
 
-        if (index === -1) return {message: "No was review found with provided id!"};
+        if (index === -1) return {message: "No was review found with provided id !"};
 
         existing.reviews.id(id).remove();
 
