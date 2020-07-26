@@ -8,17 +8,22 @@ export default function buildMakeUser(isValidEmail, hashPassword, requiredParame
 
         if (typeof username !== 'string') throw new TypeError('A username must be a string.');
 
-        if (username.length < 4 || username.length >= 9) throw new RangeError('A username minimum length is 4 and max is 9 .');
+        if (username.length < 4 || username.length >= 12)
+            throw new RangeError('A username length must be between 4 and 12 .');
+
+        if (typeof email !== 'string') throw new SyntaxError('An email must be of type string.');
 
         if (!EmailValidation()) throw new SyntaxError('Invalid email.');
-
-        if (typeof email !== 'string') throw new TypeError('An email must be of type string.');
 
         if (typeof password !== 'string') throw new TypeError('The password must be of type string.');
 
         if (typeof score !== 'number') throw new TypeError('The score must be a number');
 
         if (score < 0 || score > 10) throw new RangeError('The score must be between 0 and 10.');
+
+        if (typeof reviews !== 'object') throw new TypeError('Reviews must be an array');
+
+      //  if (!makeHash().match(/^\$2[aby]?\$\d{1,2}\$[.\/A-Za-z0-9]{53}$/)) throw new Error('Password not hashed !');
 
         const levelEnum = {
             A1: "A1", A2: "A2", B1: "B1",
@@ -31,8 +36,7 @@ export default function buildMakeUser(isValidEmail, hashPassword, requiredParame
 
         if (role !== roleEnum.ADMIN && role !== roleEnum.TEACHER &&
             role !== roleEnum.STUDENT) {
-            throw new Error('These are the role are allowed : ' +
-                'admin, teacher, student');
+            throw new RangeError('These are the role are allowed : admin, teacher, student');
         }
 
         return Object.freeze({
