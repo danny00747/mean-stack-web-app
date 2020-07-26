@@ -20,7 +20,7 @@
     "mocha-coverage": "mocha --require @babel/register 'server-side/tests/integration-tests/*.js' --timeout 30000 --reporter mochawesome --reporter-options reportDir=report-mocha --reporter-options reportFilename=index",
     "build": "npm run clean && babel server-side -d dist",
     "now-build": "npm run build",
-    "test:unit": "mocha --require @babel/register 'server-side/tests/unit-tests/entities/*.js' --timeout 10000 ",
+    "test:unit": "mocha --require @babel/register 'server-side/tests/unit-tests/**/*.js' --timeout 10000 ",
     "test:unit:watch": "nodemon --exec \"npm run test:unit\"",
     "testing": "nyc mocha 'server-side/tests/*.js'",
     "clean": "rimraf dist",

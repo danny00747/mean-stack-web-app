@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/questionService/add-question.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/reviewService/add-review.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/domain/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/fixtures/fakeUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/fixtures/fakeUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/register-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/register-user.js" afterDir="false" />
     </list>
@@ -348,7 +344,8 @@
       <workItem from="1595445526815" duration="31000" />
       <workItem from="1595450673365" duration="4850000" />
       <workItem from="1595611636039" duration="26290000" />
-      <workItem from="1595688538085" duration="29839000" />
+      <workItem from="1595688538085" duration="30118000" />
+      <workItem from="1595773878811" duration="9273000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
