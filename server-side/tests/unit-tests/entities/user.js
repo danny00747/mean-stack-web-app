@@ -82,10 +82,10 @@ describe.skip('USER ENTITY', () => {
                 .to.throw(RequiredParameterError, 'A password is a required.');
         });
 
-        it("can hash pawword",  () => {
+        it("can hash password",  () => {
             const user = makeFakeUser();
-            const paswoord = makeUser(user).getPassword();
-            expect(paswoord.match(/^\$2[aby]?\$\d{1,2}\$[.\/A-Za-z0-9]{53}$/)).to.not.be.null;
+            const password = makeUser(user).getPassword();
+            expect(password.match(/^\$2[aby]?\$\d{1,2}\$[.\/A-Za-z0-9]{53}$/)).to.not.be.null;
         });
 
         it("a password can't be a null", () => {
