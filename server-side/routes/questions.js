@@ -9,7 +9,8 @@ import makeCallback from '../helpers/express-callback'
 
 router
     .route('/questions')
-    .get(makeCallback(questionController.getQuestionsController))
+    .get(passport.authenticate("jwt", {session: false}),
+        makeCallback(questionController.getQuestionsController))
     .post(makeCallback(questionController.postQuestionController));
 
 router

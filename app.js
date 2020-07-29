@@ -2,7 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import passport from 'passport'
-import authenticateUser from './server-side/security/passport';
+import {authenticateUser} from './server-side/security';
 import routes from './server-side/routes'
 const addRequestId = require('express-request-id')();
 import path from 'path';

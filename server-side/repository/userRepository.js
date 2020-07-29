@@ -41,7 +41,7 @@ export default function makeUserRepository({User}) {
             .exec();
     }
 
-    async function findPseudo(pseudo) {
+    async function findPseudo({pseudo}) {
         return await User.findOne({
             $or: [
                 {email: pseudo}, {username: pseudo}

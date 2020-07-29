@@ -18,7 +18,6 @@ export default function makeResendEmailService({userRepository, tokenRepository 
             randomKey: crypto.randomBytes(32).toString('hex')
         });
 
-
         return {findUser, key};
     }
 }

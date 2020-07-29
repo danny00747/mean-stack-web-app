@@ -12,7 +12,7 @@ import env from '../../../config/environment'
 import {RequiredParameterError} from "../../../helpers/errors"
 
 
-describe.skip('USER ENTITY', () => {
+describe('USER ENTITY', () => {
 
     describe('#username', () => {
 

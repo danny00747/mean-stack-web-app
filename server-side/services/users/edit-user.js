@@ -3,9 +3,10 @@ import {makeUser} from '../../domain'
 export default function makeEditUserService({userRepository}) {
     return async ({id, ...changes} = {}) => {
 
-        if (!id) throw new Error('You must supply an id.');
+        if (!id) return {message: 'You must supply an id.'};
 
-        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
+        if (!(id.match(/^[0-9a-fA-F]{24}$/)))
+            return {message: `${id} is not a valid ObjectId`};
 
         const user = makeUser({...changes});
 

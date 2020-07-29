@@ -2,9 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server-side/helpers/validate-email.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/security/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/security/jwt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/security/password.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/user-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/directives/add-class.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/directives/add-class.directive.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/directives/valid-input.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/directives/valid-input.directive.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/logIn-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/logIn-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/domain/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/domain/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/repository/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/userRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/routes/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/security/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/security/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/edit-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/edit-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/logIn-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/logIn-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/resend-email.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/resend-email.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/integration-tests/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/integration-tests/questions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/register-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/register-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/register-user.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -344,7 +364,11 @@
       <workItem from="1595450673365" duration="4850000" />
       <workItem from="1595611636039" duration="26290000" />
       <workItem from="1595688538085" duration="30118000" />
-      <workItem from="1595773878811" duration="13480000" />
+      <workItem from="1595773878811" duration="13501000" />
+      <workItem from="1595881387430" duration="5327000" />
+      <workItem from="1595947028044" duration="18048000" />
+      <workItem from="1595974552766" duration="5376000" />
+      <workItem from="1595980278758" duration="3392000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>

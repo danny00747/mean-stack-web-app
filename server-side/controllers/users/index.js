@@ -8,13 +8,10 @@ import makePatchScoreController from './edit-score'
 import makeVerifyUserController from './verify-user'
 import makeResendEmailController from './resend-email'
 
-import bcrypt from 'bcrypt'
-import jwt from 'jsonwebtoken'
-
 const postUserController = makePostUserController();
 const verifyUserController = makeVerifyUserController();
 const resendEmailController = makeResendEmailController();
-const loggedInUserController = makeSignInUserController({bcrypt, jwt});
+const loggedInUserController = makeSignInUserController();
 const getUsersController = makeGetUsersController();
 const getUserController = makeGetOneUserController();
 const patchUserController = makePatchUserController();

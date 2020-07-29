@@ -1,6 +1,6 @@
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
-import User from '../models/users';
+import {User} from '../models/users';
 
 // to auth the user by JWT Startegy
 const authenticateUser = (passport) => {

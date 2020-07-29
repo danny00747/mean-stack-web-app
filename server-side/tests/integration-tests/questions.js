@@ -67,6 +67,9 @@ describe('Questions', () => {
         });
     });
 
+    /*
+     * Test the /POST route
+    */
     describe('/POST questions', () => {
 
         it('it should POST a question ', async () => {
@@ -79,120 +82,119 @@ describe('Questions', () => {
                 .eql('Created question successfully !');
         });
 
+    });
 
-        /*
-* Test the /GET/:id route
-*/
-        describe('/GET/:id question', () => {
+    /*
+    *  Test the /GET/:id route
+    */
+    describe('/GET/:id question', () => {
 
-            it('it should GET a question by the given id', async () => {
+        it('it should GET a question by the given id', async () => {
 
-                const qst = await chai.request(server)
-                    .get(`/server/api/questions/${postedQuestion.body.createdQuestion.id}`);
+            const qst = await chai.request(server)
+                .get(`/server/api/questions/${postedQuestion.body.createdQuestion.id}`);
 
-                qst.status.should.be.eql(200);
-                qst.body[0].should.have
-                    .property('question')
-                    .eql("what's 22 - 150 ?");
-
-            });
-
-            xit('it should NOT GET a question with a missing or invalid JWT', (done) => {
-
-                const user = {
-                    "pseudo": process.env["ADMIN_PSEUDO"],
-                    "password": process.env["ADMIN_PSD"]
-                };
-
-                chai.request(server)
-                    .post('/server/api/login')
-                    .send(user)
-                    .end(() => {
-                        chai.request(server)
-                            .get('/server/api/questions/92640se51167daq4c81f4312')
-                            .end((err, res2) => {
-                                res2.should.have.status(401);
-                                Object.keys(res2.body).length.should.be.eql(0);
-                            });
-                        done();
-                    });
-            });
-
-            it('it should NOT GET a question with a wrong id', async () => {
-
-                const qst = await chai.request(server)
-                    .get(`/server/api/questions/1f468dbf5082002118fc8821`);
-
-                qst.status.should.be.eql(404);
-                qst.body.should.have
-                    .property('message')
-                    .eql('No valid entry found for provided id');
-            });
+            qst.status.should.be.eql(200);
+            qst.body[0].should.have
+                .property('question')
+                .eql("what's 22 - 150 ?");
 
         });
 
-        /*
-  * Test the /PATCH/:id route
-  */
-        describe('/PATCH/:id question', () => {
+        xit('it should NOT GET a question with a missing or invalid JWT', (done) => {
 
-            it('it should NOT PATCH a question with a wrong id', async () => {
+            const user = {
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
+            };
 
-                const qst = await chai.request(server)
-                    .patch(`/server/api/questions/5e97314f7cb39f58e4e21ed6`)
-                    .send(question)
-                    .set('Authorization', loginUser.body.token);
+            chai.request(server)
+                .post('/server/api/login')
+                .send(user)
+                .end(() => {
+                    chai.request(server)
+                        .get('/server/api/questions/92640se51167daq4c81f4312')
+                        .end((err, res2) => {
+                            res2.should.have.status(401);
+                            Object.keys(res2.body).length.should.be.eql(0);
+                        });
+                    done();
+                });
+        });
 
-                qst.status.should.be.eql(404);
-                qst.body.should.be.a('object');
-                qst.body.should.have
-                    .property('message')
-                    .eql('No valid entry found for provided id');
-            });
+        it('it should NOT GET a question with a wrong id', async () => {
 
-            it('it should PATCH a question by the given id', async () => {
+            const qst = await chai.request(server)
+                .get(`/server/api/questions/1f468dbf5082002118fc8821`);
 
-                question.type = "boolean";
-
-                const qst = await chai.request(server)
-                    .patch(`/server/api/questions/${postedQuestion.body.createdQuestion.id}`)
-                    .set('Authorization', loginUser.body.token)
-                    .send(question);
-
-                qst.status.should.be.eql(200);
-                qst.body.should.have.property('updatedQuestion');
-                qst.body.updatedQuestion.should.have.property('type').eql('boolean');
-
-            });
-
-            xit('it should NOT PATCH a question with a missing or invalid JWT', (done) => {
-
-                const user = {
-                    "pseudo": process.env["ADMIN_PSEUDO"],
-                    "password": process.env["ADMIN_PSD"]
-                };
-
-                chai.request(server)
-                    .post('/server/api/login')
-                    .send(user)
-                    .end(() => {
-                        chai.request(server)
-                            .patch('/server/api/questions/92640se51167daq4c81f4312')
-                            .end((err, res2) => {
-                                res2.should.have.status(401);
-                                Object.keys(res2.body).length.should.be.eql(0);
-                            });
-                        done();
-                    });
-            });
-
+            qst.status.should.be.eql(404);
+            qst.body.should.have
+                .property('message')
+                .eql('No valid entry found for provided id');
         });
 
     });
 
     /*
-* Test the /DELETE/:id route
-*/
+    * Test the /PATCH/:id route
+    */
+    describe('/PATCH/:id question', () => {
+
+        it('it should NOT PATCH a question with a wrong id', async () => {
+
+            const qst = await chai.request(server)
+                .patch(`/server/api/questions/5e97314f7cb39f58e4e21ed6`)
+                .send(question)
+                .set('Authorization', loginUser.body.token);
+
+            qst.status.should.be.eql(404);
+            qst.body.should.be.a('object');
+            qst.body.should.have
+                .property('message')
+                .eql('No valid entry found for provided id');
+        });
+
+        it('it should PATCH a question by the given id', async () => {
+
+            question.type = "boolean";
+
+            const qst = await chai.request(server)
+                .patch(`/server/api/questions/${postedQuestion.body.createdQuestion.id}`)
+                .set('Authorization', loginUser.body.token)
+                .send(question);
+
+            qst.status.should.be.eql(200);
+            qst.body.should.have.property('updatedQuestion');
+            qst.body.updatedQuestion.should.have.property('type').eql('boolean');
+
+        });
+
+        xit('it should NOT PATCH a question with a missing or invalid JWT', (done) => {
+
+            const user = {
+                "pseudo": process.env["ADMIN_PSEUDO"],
+                "password": process.env["ADMIN_PSD"]
+            };
+
+            chai.request(server)
+                .post('/server/api/login')
+                .send(user)
+                .end(() => {
+                    chai.request(server)
+                        .patch('/server/api/questions/92640se51167daq4c81f4312')
+                        .end((err, res2) => {
+                            res2.should.have.status(401);
+                            Object.keys(res2.body).length.should.be.eql(0);
+                        });
+                    done();
+                });
+        });
+
+    });
+
+    /*
+    * Test the /DELETE/:id route
+    */
     describe('/DELETE/:id question', () => {
 
         it('it should DELETE a question by the given id', async () => {

@@ -1,4 +1,4 @@
-export default function buildMakeUser(isValidEmail, hashPassword, requiredParameter) {
+export default function buildMakeUser(isValidEmail, hashedPassword, requiredParameter) {
     return ({
                 username = requiredParameter('A username'),
                 email = requiredParameter('An email'),
@@ -42,7 +42,7 @@ export default function buildMakeUser(isValidEmail, hashPassword, requiredParame
         return Object.freeze({
             getUsername: () => username,
             getEmail: () => email,
-            getPassword: () => makeHash(),
+            getPassword: () => hashedPassword(password),
             getReviews: () => reviews,
             getRole: () => role,
             getScore: () => score,
@@ -50,10 +50,6 @@ export default function buildMakeUser(isValidEmail, hashPassword, requiredParame
             getcreatedOn: () => createdOn,
             getLevel: () => getUserLevel(score)
         });
-
-        function makeHash() {
-            return hashPassword(password)
-        }
 
         function EmailValidation() {
             return isValidEmail(email);

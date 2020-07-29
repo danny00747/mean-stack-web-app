@@ -1,7 +1,7 @@
 import {logInUserService} from '../../services/users'
 import {addLogService} from '../../services/logs'
 
-export default function makeSignInUserController({bcrypt, jwt}) {
+export default function makeSignInUserController() {
     return async (httpRequest) => {
 
         const logInfo = {
@@ -12,11 +12,11 @@ export default function makeSignInUserController({bcrypt, jwt}) {
         // TODO: Check the request body
 
         try {
-            const {...userInfo} = httpRequest.body;
+            const {pseudo, password} = httpRequest.body;
 
-            const existing = await logInUserService({...userInfo});
+            const user = await logInUserService({pseudo, password});
 
-            if (!existing) {
+            if (user.message) {
 
                 logInfo.status = 401;
                 logInfo.message = 'Authentication failed !';
@@ -25,14 +25,11 @@ export default function makeSignInUserController({bcrypt, jwt}) {
 
                 return {
                     statusCode: 401,
-                    body: {success: false, message: "Authentication failed !"}
+                    body: {success: false, ...user}
                 };
             }
 
-            const {username, role, email, score, password, _id: id} = existing;
-
-            if (await bcrypt.compare(userInfo.password, password) &&
-                !existing.isVerified) {
+            if (user.isVerified === false) {
 
                 logInfo.status = 401;
                 logInfo.message = 'Your account has not been verified.';
@@ -41,54 +38,33 @@ export default function makeSignInUserController({bcrypt, jwt}) {
 
                 return {
                     statusCode: 401,
-                    body: {
-                        success: false,
-                        message: "Your account has not been verified.",
-                        isVerified: false
-                    }
+                    body: {success: false, ...user,
+                        message: "Your account has not been verified."}
                 };
             }
 
-            if (await bcrypt.compare(userInfo.password, password)
-                && existing.isVerified) {
+            const {username, role, email, score, _id: id} = user.existing;
 
-                const jwtToken = jwt.sign({email: email, userId: id},
-                    process.env["JWT_KEY"], {expiresIn: "1h"});
+            logInfo.status = 200;
+            logInfo.message = 'Authentication successful !';
+            logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
+            await addLogService(logInfo);
 
-                logInfo.status = 200;
-                logInfo.message = 'Authentication successful !';
-                logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
-                await addLogService(logInfo);
-
-                return {
-                    statusCode: 200,
-                    body: {
-                        success: true,
-                        token: "JWT " + jwtToken,
-                        user: {
-                            userId: id,
-                            username: username,
-                            userEmail: email,
-                            role: role,
-                            score: score
-                        }
-                    },
-                }
-            } else {
-
-                logInfo.status = 401;
-                logInfo.message = 'Authentication failed !';
-                logInfo.response = `Outgoing ${logInfo.method} request to ${logInfo.url}`;
-                await addLogService(logInfo);
-
-                return {
-                    statusCode: 401,
-                    body: {success: false, message: "Authentication failed !"}
+            return {
+                statusCode: 200,
+                body: {
+                    success: true, token: user.token,
+                    user: {
+                        userId: id,
+                        username: username,
+                        userEmail: email,
+                        role: role,
+                        score: score
+                    }
                 }
             }
 
         } catch (e) {
-            // TODO: Error logging
 
             logInfo.status = 400;
             logInfo.level = "error";
