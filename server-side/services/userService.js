@@ -93,9 +93,10 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
 
     async function removeUser({id} = {}) {
 
-        if (!id) throw new Error('You must supply the user id.');
+        if (!id) return {message: 'You must supply an id.'};
 
-        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
+        if (!(id.match(/^[0-9a-fA-F]{24}$/)))
+            return {message: `${id} is not a valid ObjectId`};
 
         return userRepository.remove({id});
     }
@@ -112,11 +113,12 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
 
     async function editScore({id, ...changes} = {}) {
 
-        if (!id) throw new Error('You must supply an id.');
+        if (!id) return {message: 'You must supply an id.'};
 
-        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
+        if (!(id.match(/^[0-9a-fA-F]{24}$/)))
+            return {message: `${id} is not a valid ObjectId`};
 
-        if (!changes.score) throw new Error('You must supply a score.');
+        if (!changes.score) return {message: 'You must supply a score.'};
 
         const existing = await userRepository.findById({id});
 
@@ -139,10 +141,10 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
 
     async function resendEmail({email} = {}) {
 
-        if (!email) throw new Error('You must supply the user email.');
+        if (!email) return {message: 'You must supply the user email.'};
 
         if (!(email.match(/^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$/)))
-            throw new SyntaxError(`${email} is not a valid email`);
+            return {message: `${email} is not a valid email`};
 
         const findUser = await userRepository.findByEmail({email});
 

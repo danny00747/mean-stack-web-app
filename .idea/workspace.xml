@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="" />
+    <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/services/user-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/logsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/logsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/integration-tests/users..js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/integration-tests/users..js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/questionService/add-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/reviewService/add-review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/user-service.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -347,7 +357,9 @@
       <workItem from="1595980278758" duration="3983000" />
       <workItem from="1596129408887" duration="12969000" />
       <workItem from="1596153129732" duration="1669000" />
-      <workItem from="1596155208846" duration="11248000" />
+      <workItem from="1596155208846" duration="11673000" />
+      <workItem from="1596223722617" duration="2118000" />
+      <workItem from="1596227205022" duration="7469000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>

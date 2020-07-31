@@ -3,10 +3,10 @@ import reviewServiceFactory from './reviewService'
 import questionServiceFactory from './questionService'
 import logServiceFactory from './logService'
 
-import {userRepository, tokenRepository} from '../repository'
-import {reviewRepository} from '../repository'
-import {questionRepository} from '../repository'
-import {logsRepository} from '../repository'
+import {
+    userRepository, tokenRepository, reviewRepository,
+    questionRepository, logsRepository
+} from '../repository'
 
 const userService = userServiceFactory({userRepository, tokenRepository});
 const reviewService = reviewServiceFactory({reviewRepository});

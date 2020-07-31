@@ -26,7 +26,7 @@ describe('Users', () => {
 
     const admin = {
         "username": env.ADMIN_PSEUDO,
-        "email": `${env.ADMIN_PSEUDO}@gmail.com`,
+        "email": env.ADMIN_EMAIL,
         "password": env.ADMIN_PSD,
     };
 
