@@ -1,6 +1,14 @@
 # Website
 The website is available [here](https://devwebapp.herokuapp.com "website").
 
+# Backend
+
+Uncle Bob's clean architecture implementation in nodejs/express/mongoose
+
+# Frontend
+
+Angular 8 application built in the lazy loading architecture
+
 # API
 
 Documentation available [here](https://danny00747.github.io/mean-stack-web-app/ "api doc")

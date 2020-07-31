@@ -2,29 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/helpers/validate-email.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/security/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/security/jwt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/security/password.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/user-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/logsController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/questionController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/reviewController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/controllers/userController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/security/email-key.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/services/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/services/logService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/services/questionService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/services/reviewService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/services/userService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/directives/add-class.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/directives/add-class.directive.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/directives/valid-input.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/directives/valid-input.directive.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/logIn-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/controllers/users/logIn-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/domain/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/domain/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/repository/userRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/userRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions/edit-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions/get-one-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions/get-questions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions/post-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/questions/remove-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews/edit-review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews/get-reviews.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews/post-review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/reviews/remove-review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/edit-score.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/edit-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/get-one-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/get-users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/logIn-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/post-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/remove-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/resend-email.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/controllers/users/verify-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/repository/logRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/repository/logRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/routes/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/logs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/routes/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/routes/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/security/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/security/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/security/jwt.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/security/jwt.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/security/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/security/passport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/users/edit-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/edit-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/users/logIn-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/logIn-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/users/resend-email.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/users/resend-email.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/add-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/edit-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/get-one-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/list-questions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/questions/remove-question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/add-review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/edit-review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/list-reviews.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviews/remove-review.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/edit-score.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/edit-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/get-one-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/list-users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/logIn-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/register-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/remove-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/resend-email.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/users/verify-user.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/tests/integration-tests/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/integration-tests/questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/register-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/user-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/userService/user-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +151,7 @@
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/client-side/node_modules/protractor" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Users\morga\Documents\mean-stack-web-app\client-side\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -368,7 +411,10 @@
       <workItem from="1595881387430" duration="5327000" />
       <workItem from="1595947028044" duration="18048000" />
       <workItem from="1595974552766" duration="5376000" />
-      <workItem from="1595980278758" duration="3392000" />
+      <workItem from="1595980278758" duration="3983000" />
+      <workItem from="1596129408887" duration="12969000" />
+      <workItem from="1596153129732" duration="1669000" />
+      <workItem from="1596155208846" duration="11002000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
@@ -850,10 +896,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="498" key="GridCell.Tab.3.right/0.0.1280.689@0.0.1280.689" timestamp="1595621863993" />
-    <state x="79" y="0" key="SettingsEditor" timestamp="1595688976269">
+    <state x="79" y="0" key="SettingsEditor" timestamp="1596153423152">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1595688976269" />
+    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1596153423152" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1592250168654">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -866,13 +912,13 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="389" y="0" key="git4idea.branch.GitSmartOperationDialog/0.0.1280.689@0.0.1280.689" timestamp="1594000057103" />
-    <state x="297" y="153" width="672" height="677" key="run.anything.popup" timestamp="1592250424959">
+    <state x="297" y="153" width="672" height="677" key="run.anything.popup" timestamp="1596159390204">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="297" y="153" width="672" height="677" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1592250424959" />
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1595688810601">
+    <state x="297" y="153" width="672" height="677" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1596159390204" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1596162675175">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1595688810601" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1596162675175" />
   </component>
 </project>

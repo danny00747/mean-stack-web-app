@@ -3,7 +3,8 @@ const router = express.Router();
 import passport from 'passport'
 
 import makeCallback from '../helpers/express-callback'
-import userController  from '../controllers/users'
+import controllers  from '../controllers'
+import {userController}  from '../controllers'
 
 
 /**
@@ -12,20 +13,20 @@ import userController  from '../controllers/users'
  * implement a session
  */
 
-router.post("/signup", makeCallback(userController.postUserController));
-router.post("/login", makeCallback(userController.loggedInUserController));
-router.get("/users/profiles", makeCallback(userController.getUsersController));
-router.get("/user/verify/:key", makeCallback(userController.verifyUserController));
-router.get("/user/resend/:userEmail", makeCallback(userController.resendEmailController));
+router.post("/signup", makeCallback(userController.registerUser));
+router.post("/login", makeCallback(userController.logInUser));
+router.get("/users/profiles", makeCallback(userController.getAllUsers));
+router.get("/user/verify/:key", makeCallback(userController.verifyUser));
+router.get("/user/resend/:userEmail", makeCallback(userController.resendEmail));
 
 router
     .route("/user/:userId")
-    .get(makeCallback(userController.getUserController))
-    .patch(makeCallback(userController.patchUserController))
-    .delete(makeCallback(userController.deleteUserController));
+    .get(makeCallback(controllers.userController.getUser))
+    .patch(makeCallback(controllers.userController.patchUser))
+    .delete(makeCallback(controllers.userController.deleteUser));
 
 router.patch("/user/:userId/score",
-    makeCallback(userController.patchScoreController));
+    makeCallback(userController.patchScore));
 
 export {router as usersRoutes};
 

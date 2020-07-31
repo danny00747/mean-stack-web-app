@@ -4,11 +4,11 @@ import cors from 'cors'
 import passport from 'passport'
 import {authenticateUser} from './server-side/security';
 import routes from './server-side/routes'
-const addRequestId = require('express-request-id')();
 import path from 'path';
 import consola from 'consola';
 import helmet from 'helmet';
 import env from './server-side/config/environment'
+const addRequestId = require('express-request-id')();
 require('./server-side/config/database');
 
 // Initialize the app
@@ -43,9 +43,8 @@ app.use(helmet.permittedCrossDomainPolicies());
 // security headers
 app.use(helmet.referrerPolicy({policy: 'strict-origin-when-cross-origin'}));
 
-
 // set the static folder
-if (process.env.NODE_ENV === 'production') {
+if (env.NODE_ENV === 'production') {
     app.use(express.static(path
         .join(__dirname, 'server-side', 'public', 'dist')));
 }

@@ -1,6 +1,6 @@
 export default function makeLogRepository({Logs}) {
     return Object.freeze({
-        save, findById, patch, findAll, findMax
+        save, findById, patch, findLogs, findNumberOfLogs
     });
 
     async function save({...logInfo}) {
@@ -14,15 +14,15 @@ export default function makeLogRepository({Logs}) {
 
     }
 
-    async function findAll(max) {
+    async function findLogs(limit) {
         return await Logs.find()
             .sort({date: -1})
-            .limit(Number(max))
+            .limit(Number(limit))
             .select("-__v")
             .exec();
     }
 
-    async function findMax() {
+    async function findNumberOfLogs() {
         return Logs.estimatedDocumentCount({});
     }
 

@@ -2,9 +2,9 @@ import express from 'express';
 import passport from 'passport'
 const router = express.Router();
 
-import logsController from '../controllers/logs'
+import {logController} from '../controllers'
 import makeCallback from '../helpers/express-callback'
 
-router.get("/users/metrics/max/:limit", makeCallback(logsController.getLogsController));
+router.get("/users/metrics/max/:limit", makeCallback(logController.getLogs));
 
 export {router as logsRoutes};

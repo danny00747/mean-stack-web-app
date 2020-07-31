@@ -4,20 +4,19 @@ const router = express.Router();
 
 //passport.authenticate("jwt", {session: false}),
 
-import questionController from '../controllers/questions'
+import {questionController} from '../controllers'
 import makeCallback from '../helpers/express-callback'
 
 router
     .route('/questions')
     .get(passport.authenticate("jwt", {session: false}),
-        makeCallback(questionController.getQuestionsController))
-    .post(makeCallback(questionController.postQuestionController));
+        makeCallback(questionController.getAllQuestions))
+    .post(makeCallback(questionController.postQuestion));
 
 router
     .route('/questions/:questionId')
-    .get(
-        makeCallback(questionController.getQuestionController))
-    .patch(makeCallback(questionController.patchQuestionController))
-    .delete(makeCallback(questionController.deleteQuestionController));
+    .get(makeCallback(questionController.getQuestion))
+    .patch(makeCallback(questionController.patchQuestion))
+    .delete(makeCallback(questionController.deleteQuestion));
 
 export {router as questionsRoutes};

@@ -77,8 +77,7 @@ describe('Questions', () => {
             postedQuestion.status.should.be.eql(201);
             postedQuestion.body.should.be.a('object');
             postedQuestion.body.createdQuestion.should.be.a('object');
-            postedQuestion.body.should.have
-                .property('message')
+            postedQuestion.body.should.have.property('message')
                 .eql('Created question successfully !');
         });
 
