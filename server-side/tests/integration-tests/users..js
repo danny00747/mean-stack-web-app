@@ -11,6 +11,7 @@ import chaiHttp from 'chai-http';
 import server from '../../../app';
 import {User} from '../../models/users';
 import env from '../../config/environment';
+import {userRepository} from '../../repository'
 
 chai.use(chaiHttp);
 
@@ -76,7 +77,7 @@ describe('Users', () => {
 
         it('it should create a new user', async () => {
 
-            const randomUser = Math.random().toString(36).substr(2, 6);
+            const randomUser = Math.random().toString(36).substr(2, 9);
 
             const newUser = {
                 "username": randomUser,
@@ -93,7 +94,7 @@ describe('Users', () => {
                 .eql(`A verification email has been sent to ${newUser.email}`);
             expect(createdUser.body.success).to.be.true;
 
-            await User.findByIdAndRemove({_id: createdUser.body.user.userId}).exec();
+           await userRepository.remove({id : createdUser.body.user.userId });
 
         });
 
@@ -121,7 +122,7 @@ describe('Users', () => {
     });
 
     /*
-     * Test the /Get route
+     * Test the /Get all users route
      */
     describe('/GET users', () => {
 
@@ -136,51 +137,53 @@ describe('Users', () => {
 
         });
 
-        xit('it should NOT GET all user with a missing or invalid JWT', async () => {
+        it('it should NOT GET all user with a missing or invalid JWT', async () => {
 
-            const user = {
-                "pseudo": process.env["ADMIN_PSEUDO"],
-                "password": process.env["ADMIN_PSD"]
-            };
+            const users = await chai.request(server)
+                .get('/server/api/users/profiles');
 
-            chai.request(server)
-                .post('/server/api/login')
-                .send(user)
-                .end(() => {
-                    chai.request(server)
-                        .get('/server/api/users/profiles')
-                        .end((err, res2) => {
-                            res2.should.have.status(401);
-                            Object.keys(res2.body).length.should.be.eql(0);
-                        });
-                    done();
-                });
+            const users1 = await chai.request(server)
+                .get('/server/api/users/profiles')
+                .set('Authorization', "abc");
+
+            users.status.should.be.eql(401);
+            users1.status.should.be.eql(401);
+            users.body.should.be.empty;
+            users1.body.should.be.empty;
+
         });
 
-        xit('it should NOT GET all users if the request is sent by a student', async () => {
+        it('it should NOT GET all users if the request is sent by a student', async () => {
 
-            const user = {
-                "pseudo": "dan30",
-                "password": "toto"
-            };
+            const randomUser = Math.random().toString(36).substr(2, 9);
 
-            chai.request(server)
+            const newUser = {"username": randomUser, "email": `${randomUser}@gmail.com`,
+                "password": randomUser};
+
+            const createdUser = await chai.request(server)
+                .post('/server/api/signup')
+                .send(newUser);
+
+           await userRepository.patch({
+                id: createdUser.body.user.userId,
+                isVerified: true
+            });
+
+           const logInUser = await chai.request(server)
                 .post('/server/api/login')
-                .send(user)
-                .end((err, res) => {
-                    chai.request(server)
-                        .get('/server/api/users/profiles')
-                        .set('Authorization', res.body.token)
-                        .end((err, res) => {
-                            res.should.have.status(403);
-                            res.body.should.have
-                                .property('message')
-                                .eql("You don't have enough permission to perform this action");
-                            done();
-                        });
-                });
-        });
+                .send({"pseudo": randomUser, "password": randomUser});
 
+            const getUsers = await chai.request(server)
+                .get('/server/api/users/profiles')
+                .set('Authorization', logInUser.body.token);
+
+            getUsers.status.should.be.eql(403);
+            getUsers.body.should.have.property('message')
+                .eql(`You don't have enough permission to perform this action`);
+
+            await userRepository.remove({id : createdUser.body.user.userId });
+
+        });
     });
 
     /*
@@ -214,72 +217,65 @@ describe('Users', () => {
 
         });
 
-        xit('it should NOT GET a user with a missing or invalid JWT', (done) => {
+        it('it should NOT GET a user with a missing or invalid JWT', async () => {
 
-            const user = {
-                "pseudo": process.env["ADMIN_PSEUDO"],
-                "password": process.env["ADMIN_PSD"]
-            };
+            const users = await chai.request(server)
+                .get('/server/api/user/1f468dbf5182002118fc8821');
 
-            chai.request(server)
-                .post('/server/api/login')
-                .send(user)
-                .end(() => {
-                    chai.request(server)
-                        .get('/server/api/user/1f468dbf5182002118fc8821')
-                        .end((err, res2) => {
-                            res2.should.have.status(401);
-                            Object.keys(res2.body).length.should.be.eql(0);
-                        });
-                    done();
-                });
+            const users1 = await chai.request(server)
+                .get('/server/api/user/1f468dbf5182002118fc8821')
+                .set('Authorization', "abc");
+
+            users.status.should.be.eql(401);
+            users1.status.should.be.eql(401);
+            users.body.should.be.empty;
         });
 
-        xit("it should check that a student can't get/see another student's profile", (done) => {
+        it("it should check that a student can't get/see another student's profile", async () => {
 
-            const user = Math.random().toString(36).substr(2, 4);
-            const user0 = Math.random().toString(36).substr(2, 4);
+            const randomUser1 = Math.random().toString(36).substr(2, 9);
+            const randomUser2 = Math.random().toString(36).substr(2, 9);
 
             const user1 = {
-                "username": user,
-                "email": `${user}@gmail.com`,
-                "password": "toto"
+                "username": randomUser1,
+                "email": `${randomUser1}@gmail.com`,
+                "password": randomUser1
             };
 
             const user2 = {
-                "username": user0,
-                "email": `${user0}@gmail.com`,
-                "password": "toto"
+                "username": randomUser2,
+                "email": `${randomUser2}@gmail.com`,
+                "password": randomUser2
             };
 
-            chai.request(server)
+            const createdUser1 = await chai.request(server)
                 .post('/server/api/signup')
-                .send(user1)
-                .end(() => {
-                    chai.request(server)
-                        .post('/server/api/signup')
-                        .send(user2)
-                        .end((err, res2) => {
-                            chai.request(server)
-                                .post('/server/api/login')
-                                .send({
-                                    "pseudo": user,
-                                    "password": "toto"
-                                })
-                                .end((err, res3) => {
-                                    chai.request(server)
-                                        .get(`/server/api/user/${res2.body.user.userId}`)
-                                        .set('Authorization', res3.body.token)
-                                        .end((err, res3) => {
-                                            res3.should.have.status(403);
-                                            res3.body.should.have
-                                                .property('message')
-                                                .eql("You don't have enough permission to perform this action !");
-                                            done();
-                                        });
-                                });
-                        });
-                });
+                .send(user1);
+
+            const createdUser2 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user2);
+
+            await userRepository.patch({
+                id: createdUser1.body.user.userId,
+                isVerified: true
+            });
+
+            const logInUser1 = await chai.request(server)
+                .post('/server/api/login')
+                .send({"pseudo": randomUser1, "password": randomUser1});
+
+            const getProfile = await chai.request(server)
+                .get(`/server/api/user/${createdUser2.body.user.userId}`)
+                .set('Authorization', logInUser1.body.token);
+
+            getProfile.status.should.be.eql(403);
+            getProfile.body.should.have.property('message')
+                .eql(`You don't have enough permission to perform this action !`);
+
+            await userRepository.remove({id : createdUser1.body.user.userId });
+            await userRepository.remove({id : createdUser2.body.user.userId });
+
         });
 
     });
@@ -315,73 +311,65 @@ describe('Users', () => {
                 .eql('No valid entry found with provided id .');
         });
 
-        xit('it should NOT PATCH a user with a missing or invalid JWT', async () => {
+        it('it should NOT PATCH a user with a missing or invalid JWT', async () => {
 
-            const user = {
-                "pseudo": process.env["ADMIN_PSEUDO"],
-                "password": process.env["ADMIN_PSD"]
-            };
+            const users = await chai.request(server)
+                .patch('/server/api/user/1f468dbf5182002118fc8821');
 
-            chai.request(server)
-                .post('/server/api/login')
-                .send(user)
-                .end(() => {
-                    chai.request(server)
-                        .patch('/server/api/user/1f468dbf5182002118fc8821')
-                        .send(user)
-                        .end((err, res2) => {
-                            res2.should.have.status(401);
-                            Object.keys(res2.body).length.should.be.eql(0);
-                        });
-                    done();
-                });
+            const users1 = await chai.request(server)
+                .patch('/server/api/user/1f468dbf5182002118fc8821')
+                .set('Authorization', "abc");
+
+            users.status.should.be.eql(401);
+            users1.status.should.be.eql(401);
+            users.body.should.be.empty;
         });
 
-        xit("it should check that a student can't update another student's profile", async () => {
+        it("it should check that a student can't update another student's profile", async () => {
 
-            const user = Math.random().toString(36).substr(2, 4);
-            const user0 = Math.random().toString(36).substr(2, 4);
+            const randomUser1 = Math.random().toString(36).substr(2, 9);
+            const randomUser2 = Math.random().toString(36).substr(2, 9);
 
             const user1 = {
-                "username": user,
-                "email": `${user}@gmail.com`,
-                "password": "toto"
+                "username": randomUser1,
+                "email": `${randomUser1}@gmail.com`,
+                "password": randomUser1
             };
 
             const user2 = {
-                "username": user0,
-                "email": `${user0}@gmail.com`,
-                "password": "toto"
+                "username": randomUser2,
+                "email": `${randomUser2}@gmail.com`,
+                "password": randomUser2
             };
 
-            chai.request(server)
+            const createdUser1 = await chai.request(server)
                 .post('/server/api/signup')
-                .send(user1)
-                .end(() => {
-                    chai.request(server)
-                        .post('/server/api/signup')
-                        .send(user2)
-                        .end((err, res2) => {
-                            chai.request(server)
-                                .post('/server/api/login')
-                                .send({
-                                    "pseudo": user,
-                                    "password": "toto"
-                                })
-                                .end((err, res3) => {
-                                    chai.request(server)
-                                        .patch(`/server/api/user/${res2.body.user.userId}`)
-                                        .set('Authorization', res3.body.token)
-                                        .end((err, res3) => {
-                                            res3.should.have.status(403);
-                                            res3.body.should.have
-                                                .property('message')
-                                                .eql("You don't have enough permission to perform this action !");
-                                            done();
-                                        });
-                                });
-                        });
-                });
+                .send(user1);
+
+            const createdUser2 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user2);
+
+            await userRepository.patch({
+                id: createdUser1.body.user.userId,
+                isVerified: true
+            });
+
+            const logInUser1 = await chai.request(server)
+                .post('/server/api/login')
+                .send({"pseudo": randomUser1, "password": randomUser1});
+
+            const updateProfile = await chai.request(server)
+                .patch(`/server/api/user/${createdUser2.body.user.userId}`)
+                .set('Authorization', logInUser1.body.token)
+                .send({"username" : "abc"});
+
+            updateProfile.status.should.be.eql(403);
+            updateProfile.body.should.have.property('message')
+                .eql(`You don't have enough permission to perform this action !`);
+
+            await userRepository.remove({id : createdUser1.body.user.userId });
+            await userRepository.remove({id : createdUser2.body.user.userId });
         });
 
     });
@@ -428,75 +416,64 @@ describe('Users', () => {
 
         });
 
-        xit('it should NOT DELETE a user with a missing or invalid JWT', (done) => {
+        it('it should NOT DELETE a user with a missing or invalid JWT', async () => {
 
-            const user = {
-                "pseudo": process.env["ADMIN_PSEUDO"],
-                "password": process.env["ADMIN_PSD"]
-            };
+            const users = await chai.request(server)
+                .patch('/server/api/user/1f468dbf5182002118fc8821');
 
-            chai.request(server)
-                .post('/server/api/login')
-                .send(user)
-                .end(() => {
-                    chai.request(server)
-                        .delete('/server/api/user/1f468dbf5182002118fc8821')
-                        .end((err, res2) => {
-                            res2.should.have.status(401);
-                            Object.keys(res2.body).length.should.be.eql(0);
-                        });
-                    done();
-                });
+            const users1 = await chai.request(server)
+                .patch('/server/api/user/1f468dbf5182002118fc8821')
+                .set('Authorization', "abc");
+
+            users.status.should.be.eql(401);
+            users1.status.should.be.eql(401);
         });
 
-        xit("it should check that a student can't delete another student's profile", (done) => {
+        it("it should check that a student can't delete another student's profile", async () => {
 
-            const user = Math.random().toString(36).substr(2, 4);
-            const user0 = Math.random().toString(36).substr(2, 4);
+            const randomUser1 = Math.random().toString(36).substr(2, 9);
+            const randomUser2 = Math.random().toString(36).substr(2, 9);
 
             const user1 = {
-                "username": user,
-                "email": `${user}@gmail.com`,
-                "password": "toto"
+                "username": randomUser1,
+                "email": `${randomUser1}@gmail.com`,
+                "password": randomUser1
             };
 
             const user2 = {
-                "username": user0,
-                "email": `${user0}@gmail.com`,
-                "password": "toto"
+                "username": randomUser2,
+                "email": `${randomUser2}@gmail.com`,
+                "password": randomUser2
             };
 
-            chai.request(server)
+            const createdUser1 = await chai.request(server)
                 .post('/server/api/signup')
-                .send(user1)
-                .end(() => {
-                    chai.request(server)
-                        .post('/server/api/signup')
-                        .send(user2)
-                        .end((err, res2) => {
-                            chai.request(server)
-                                .post('/server/api/login')
-                                .send({
-                                    "pseudo": user,
-                                    "password": "toto"
-                                })
-                                .end((err, res3) => {
-                                    chai.request(server)
-                                        .delete(`/server/api/user/${res2.body.user.userId}`)
-                                        .set('Authorization', res3.body.token)
-                                        .end((err, res3) => {
-                                            res3.should.have.status(403);
-                                            res3.body.should.have
-                                                .property('message')
-                                                .eql("You don't have enough permission to perform this action !");
-                                        });
-                                });
-                        });
-                    done();
-                });
+                .send(user1);
+
+            const createdUser2 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user2);
+
+            await userRepository.patch({
+                id: createdUser1.body.user.userId,
+                isVerified: true
+            });
+
+            const logInUser1 = await chai.request(server)
+                .post('/server/api/login')
+                .send({"pseudo": randomUser1, "password": randomUser1});
+
+            const deleteProfile = await chai.request(server)
+                .delete(`/server/api/user/${createdUser2.body.user.userId}`)
+                .set('Authorization', logInUser1.body.token);
+
+            deleteProfile.status.should.be.eql(403);
+            deleteProfile.body.should.have.property('message')
+                .eql(`You don't have enough permission to perform this action !`);
+
+            await userRepository.remove({id : createdUser1.body.user.userId });
+            await userRepository.remove({id : createdUser2.body.user.userId });
         });
-
-
     });
 
     /*
@@ -504,7 +481,7 @@ describe('Users', () => {
      */
     describe('/PATCH/:id/score', () => {
 
-        it("it should PATCH the user's score ", async () => {
+        it("it should PATCH the user's score", async () => {
 
             const adminScore = await chai.request(server)
                 .patch(`/server/api/user/${env.ADMIN_ID}/score`)
@@ -519,6 +496,52 @@ describe('Users', () => {
 
         });
 
+        it("it should check that a student can't update another student's score", async () => {
+
+            const randomUser1 = Math.random().toString(36).substr(2, 9);
+            const randomUser2 = Math.random().toString(36).substr(2, 9);
+
+            const user1 = {
+                "username": randomUser1,
+                "email": `${randomUser1}@gmail.com`,
+                "password": randomUser1
+            };
+
+            const user2 = {
+                "username": randomUser2,
+                "email": `${randomUser2}@gmail.com`,
+                "password": randomUser2
+            };
+
+            const createdUser1 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user1);
+
+            const createdUser2 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user2);
+
+            await userRepository.patch({
+                id: createdUser1.body.user.userId,
+                isVerified: true
+            });
+
+            const logInUser1 = await chai.request(server)
+                .post('/server/api/login')
+                .send({"pseudo": randomUser1, "password": randomUser1});
+
+            const updateScore = await chai.request(server)
+                .patch(`/server/api/user/${createdUser2.body.user.userId}/score`)
+                .set('Authorization', logInUser1.body.token)
+                .send( {"score" : 8});
+
+            updateScore.status.should.be.eql(403);
+            updateScore.body.should.have.property('message')
+                .eql(`You don't have enough permission to perform this action !`);
+
+            await userRepository.remove({id : createdUser1.body.user.userId });
+            await userRepository.remove({id : createdUser2.body.user.userId });
+        });
     });
 
 });

@@ -1,15 +1,18 @@
 //During the test the env variable is set to test
+import Question from "../../models/questions";
+
 process.env.NODE_ENV = 'test';
 
 //bring in dev-dependencies
 import chai from 'chai';
 import {assert, should, expect} from 'chai';
-import {describe, before, it} from 'mocha';
+import {describe, before, it, after} from 'mocha';
 import chaiHttp from 'chai-http';
 
 import server from '../../../app';
 import {User} from '../../models/users';
 import env from '../../config/environment';
+import {reviewRepository} from '../../repository'
 
 chai.use(chaiHttp);
 
@@ -23,7 +26,6 @@ describe('Reviews', () => {
         "password": env.ADMIN_PSD,
     };
 
-
     before(async () => {
 
         loginUser = await chai.request(server)
@@ -32,8 +34,15 @@ describe('Reviews', () => {
 
         createReview = await chai.request(server)
             .post(`/server/api/user/${env.ADMIN_ID}/reviews`)
-            .send({"rating": "3", "reviewText": "This is the 3rd review"})
+            .send({"rating": 3, "reviewText": "This is the 3rd review"})
             .set('Authorization', loginUser.body.token);
+    });
+
+    after(async () => {
+        await reviewRepository.save({
+            id: env.ADMIN_ID, new: true, reviews: [
+                {"rating": 3, "reviewText": "This is the 3rd review !!!"}]
+        });
     });
 
     /*
@@ -59,17 +68,12 @@ describe('Reviews', () => {
 
         it('it should create a review', async () => {
 
-            const review = await chai.request(server)
-                .post(`/server/api/user/${env.ADMIN_ID}/reviews`)
-                .send({"rating": "3", "reviewText": "This is the 3rd review"})
-                .set('Authorization', loginUser.body.token);
-
-            review.status.should.be.eql(201);
-            review.body.should.have.property('message')
+            createReview.status.should.be.eql(201);
+            createReview.body.should.have.property('message')
                 .eql('Review created successfully !');
-            review.body.should.be.a('object');
-            expect(review.body.updatedUser.reviews.rating).to.equal(3);
-            expect(review.body.updatedUser
+            createReview.body.should.be.a('object');
+            expect(createReview.body.updatedUser.reviews.rating).to.equal(3);
+            expect(createReview.body.updatedUser
                 .reviews.reviewText).to.equal("This is the 3rd review");
 
         });
@@ -107,7 +111,7 @@ describe('Reviews', () => {
 
             const review = await chai.request(server)
                 .post(`/server/api/user/1f468dbf5082002118fc8821/reviews`)
-                .send({"rating": "3", "reviewText": "This is the 3rd review"})
+                .send({"rating": 3, "reviewText": "This is the 3rd review"})
                 .set('Authorization', loginUser.body.token);
 
             review.status.should.be.eql(404);
@@ -129,7 +133,7 @@ describe('Reviews', () => {
 
             const updateReview = await chai.request(server)
                 .patch(`/server/api/user/${userEmail}/reviews/${reviewId}`)
-                .send({"rating": "2", "reviewText": "This is the 1st review"})
+                .send({"rating": 2, "reviewText": "This is the 1st review"})
                 .set('Authorization', loginUser.body.token);
 
             updateReview.status.should.be.eql(200);
@@ -143,13 +147,13 @@ describe('Reviews', () => {
 
         });
 
-        it('it should NOT PATCH a review whose user is non-existent', async () => {
+        it('it should NOT PATCH a review for unregistered user', async () => {
 
             const email = Math.random().toString(36).substr(2, 9);
 
             const updatedReview = await chai.request(server)
                 .patch(`/server/api/user/${email}@gmail.com/reviews/7e7fd1d5f71b123cbc246700`)
-                .send({"rating": "2", "reviewText": "This is the 1st review"})
+                .send({"rating": 2, "reviewText": "This is the 1st review"})
                 .set('Authorization', loginUser.body.token);
 
             updatedReview.status.should.be.eql(404);
@@ -162,7 +166,7 @@ describe('Reviews', () => {
 
             const updateReview = await chai.request(server)
                 .patch(`/server/api/user/${env.ADMIN_PSEUDO}@gmail.com/reviews/7e7fd1d5f71b123cbc246700`)
-                .send({"rating": "2", "reviewText": "This is the 1st review"})
+                .send({"rating": 3, "reviewText": "This is the 1st review"})
                 .set('Authorization', loginUser.body.token);
 
             updateReview.status.should.be.eql(404);
@@ -179,7 +183,7 @@ describe('Reviews', () => {
             };
 
             const review = {
-                "rating": "3",
+                "rating": 3,
                 "reviewText": "This is the 3rd review"
             };
 
@@ -220,7 +224,7 @@ describe('Reviews', () => {
             const updateReview = await chai.request(server)
                 .patch(`/server/api/user/${userEmail}/reviews/7e7fd1d5f71b123cbc246700`)
                 .set('Authorization', loginUser.body.token)
-                .send({"rating": "3", "reviewText": "This is the 3rd review"});
+                .send({"rating": 3, "reviewText": "This is the 3rd review"});
 
             updateReview.status.should.be.eql(404);
             updateReview.body.should.have.property('message')
@@ -254,7 +258,7 @@ describe('Reviews', () => {
 
         });
 
-        it('it should NOT DELETE a review whose user is non-existent', async () => {
+        it('it should NOT DELETE a review for unregistered user', async () => {
 
             const email = Math.random().toString(36).substr(2, 9);
 

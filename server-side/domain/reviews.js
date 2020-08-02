@@ -4,6 +4,8 @@ export default function buildMakeReview(requiredParameter) {
                 createdOn = new Date(), modifiedOn = new Date()
             } = {}) => {
 
+        if (typeof rating !== 'number') throw new TypeError('rating must be a number.');
+
         if (rating < 0 || rating > 5) throw new RangeError('The rating must be between 0 and 5 .');
 
         if (typeof reviewText !== 'string') throw new TypeError('reviewText must be a string.');

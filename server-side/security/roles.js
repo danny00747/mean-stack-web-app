@@ -1,9 +1,8 @@
-
-const AccessControl = require('accesscontrol');
+import {AccessControl} from 'accesscontrol';
 
 const ac = new AccessControl();
 
-exports.roles = (() => {
+export const roles = (() => {
     ac.grant("student")
         .readOwn("profile")
         .updateOwn("profile")

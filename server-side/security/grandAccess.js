@@ -1,7 +1,8 @@
-const {roles} = require('./roles');
+import {roles} from './roles';
 
 const grantAccess = (action, resource) => {
     return async (req, res, next) => {
+
         try {
             const permission = roles.can(req.user.role)[action](resource);
 
@@ -27,6 +28,4 @@ const grantAccess = (action, resource) => {
     }
 };
 
-module.exports = {
-    grantAccess
-};
+export default grantAccess
