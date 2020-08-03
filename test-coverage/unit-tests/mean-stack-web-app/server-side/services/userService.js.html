@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.08% </span>
+                <span class="strong">77.65% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>59/83</span>
+                <span class='fraction'>66/85</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.31% </span>
+                <span class="strong">58.21% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>34/65</span>
+                <span class='fraction'>39/67</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.82% </span>
+                <span class="strong">90.91% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/11</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">81.54% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>48/64</span>
+                <span class='fraction'>53/65</span>
             </div>
         
             
@@ -237,7 +237,8 @@
 <a name='L178'></a><a href='#L178'>178</a>
 <a name='L179'></a><a href='#L179'>179</a>
 <a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -269,13 +270,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -286,12 +287,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -403,13 +404,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -494,7 +496,7 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
         const user = makeUser({...changes});
 &nbsp;
         <span class="missing-if-branch" title="else path not taken" >E</span>if (findUser.reviews.length !== 0)
-            findUser.reviews.forEach(x =&gt; x["author"] = user.getEmail());
+            findUser.reviews.forEach(x =&gt; x["author"] = user.getUsername());
 &nbsp;
         return userRepository.patch({
             id: id,
@@ -581,15 +583,16 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
 &nbsp;
     }
 &nbsp;
-    async function <span class="fstat-no" title="function not covered" >verifyUser({</span>key} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
+    async function verifyUser({key} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!key) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew Error('You must supply the key.');
+        if (!key) return {message: 'You must supply the key.'};
+        if (key.length !== 64) return {message: 'Invalid key'};
 &nbsp;
-        const findTheKey = <span class="cstat-no" title="statement not covered" >await tokenRepository.</span>findKey({key});
+        const findTheKey = await tokenRepository.findKey({key});
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!findTheKey) <span class="cstat-no" title="statement not covered" >return {</span></span>message: "the key has expired."};
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!findTheKey) <span class="cstat-no" title="statement not covered" >return {</span>message: "the key has expired."};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        return u</span>serRepository.patch({
+        return userRepository.patch({
             id: findTheKey.userId,
             isVerified: true,
         });
@@ -604,7 +607,7 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Aug 02 2020 05:51:50 GMT+0200 (Central European Summer Time)
+                at Mon Aug 03 2020 23:30:09 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

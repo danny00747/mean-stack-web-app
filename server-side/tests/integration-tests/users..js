@@ -13,6 +13,7 @@ import {User} from '../../models/users';
 import env from '../../config/environment';
 import {userRepository} from '../../repository'
 import makeTwoUsers from "../fixtures/make2users";
+import usersRbac from "../fixtures/rbacTestWith2users";
 
 chai.use(chaiHttp);
 
@@ -89,7 +90,7 @@ describe('Users', () => {
                 .eql(`A verification email has been sent to ${newUser.email}`);
             expect(createdUser.body.success).to.be.true;
 
-           await userRepository.remove({id : createdUser.body.user.userId });
+            await userRepository.remove({id: createdUser.body.user.userId});
 
         });
 
@@ -148,31 +149,18 @@ describe('Users', () => {
 
         it('it should NOT GET all users if the request is sent by a student', async () => {
 
-            const newUser = makeTwoUsers().user1;
-
-            const createdUser = await chai.request(server)
-                .post('/server/api/signup')
-                .send(newUser);
-
-           await userRepository.patch({
-                id: createdUser.body.user.userId,
-                isVerified: true
-            });
-
-           const logInUser = await chai.request(server)
-                .post('/server/api/login')
-                .send({"pseudo": newUser.username, "password": newUser.password});
+            const rbac = await usersRbac();
 
             const getUsers = await chai.request(server)
                 .get('/server/api/users/profiles')
-                .set('Authorization', logInUser.body.token);
+                .set('Authorization', rbac.logInUser1.token);
 
             getUsers.status.should.be.eql(403);
             getUsers.body.should.have.property('message')
                 .eql(`You don't have enough permission to perform this action`);
 
-            await userRepository.remove({id : createdUser.body.user.userId });
-
+            await userRepository.remove({id: rbac.createdUser1.createdUser._id});
+            await userRepository.remove({id: rbac.createdUser2.createdUser._id});
         });
     });
 
@@ -223,37 +211,18 @@ describe('Users', () => {
 
         it("it should check that a student can't get/see another student's profile", async () => {
 
-            const user1 = makeTwoUsers().user1;
-            const user2 = makeTwoUsers().user2;
-
-            const createdUser1 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user1);
-
-            const createdUser2 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user2);
-
-            await userRepository.patch({
-                id: createdUser1.body.user.userId,
-                isVerified: true
-            });
-
-            const logInUser1 = await chai.request(server)
-                .post('/server/api/login')
-                .send({"pseudo": user1.username, "password": user1.password});
+            const rbac = await usersRbac();
 
             const getProfile = await chai.request(server)
-                .get(`/server/api/user/${createdUser2.body.user.userId}`)
-                .set('Authorization', logInUser1.body.token);
+                .get(`/server/api/user/${rbac.createdUser2.createdUser._id}`)
+                .set('Authorization', rbac.logInUser1.token);
 
             getProfile.status.should.be.eql(403);
             getProfile.body.should.have.property('message')
                 .eql(`You don't have enough permission to perform this action !`);
 
-            await userRepository.remove({id : createdUser1.body.user.userId });
-            await userRepository.remove({id : createdUser2.body.user.userId });
-
+            await userRepository.remove({id: rbac.createdUser1.createdUser._id});
+            await userRepository.remove({id: rbac.createdUser2.createdUser._id});
         });
 
     });
@@ -305,37 +274,19 @@ describe('Users', () => {
 
         it("it should check that a student can't update another student's profile", async () => {
 
-            const user1 = makeTwoUsers().user1;
-            const user2 = makeTwoUsers().user2;
-
-            const createdUser1 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user1);
-
-            const createdUser2 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user2);
-
-            await userRepository.patch({
-                id: createdUser1.body.user.userId,
-                isVerified: true
-            });
-
-            const logInUser1 = await chai.request(server)
-                .post('/server/api/login')
-                .send({"pseudo": user1.username, "password": user1.password});
+            const rbac = await usersRbac();
 
             const updateProfile = await chai.request(server)
-                .patch(`/server/api/user/${createdUser2.body.user.userId}`)
-                .set('Authorization', logInUser1.body.token)
-                .send({"username" : "abc"});
+                .patch(`/server/api/user/${rbac.createdUser2.createdUser._id}`)
+                .set('Authorization', rbac.logInUser1.token)
+                .send({"username": "abc"});
 
             updateProfile.status.should.be.eql(403);
             updateProfile.body.should.have.property('message')
                 .eql(`You don't have enough permission to perform this action !`);
 
-            await userRepository.remove({id : createdUser1.body.user.userId });
-            await userRepository.remove({id : createdUser2.body.user.userId });
+            await userRepository.remove({id: rbac.createdUser1.createdUser._id});
+            await userRepository.remove({id: rbac.createdUser2.createdUser._id});
         });
 
     });
@@ -391,36 +342,18 @@ describe('Users', () => {
 
         it("it should check that a student can't delete another student's profile", async () => {
 
-            const user1 = makeTwoUsers().user1;
-            const user2 = makeTwoUsers().user2;
-
-            const createdUser1 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user1);
-
-            const createdUser2 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user2);
-
-            await userRepository.patch({
-                id: createdUser1.body.user.userId,
-                isVerified: true
-            });
-
-            const logInUser1 = await chai.request(server)
-                .post('/server/api/login')
-                .send({"pseudo": user1.username, "password": user1.password});
+            const rbac = await usersRbac();
 
             const deleteProfile = await chai.request(server)
-                .delete(`/server/api/user/${createdUser2.body.user.userId}`)
-                .set('Authorization', logInUser1.body.token);
+                .delete(`/server/api/user/${rbac.createdUser2.createdUser._id}`)
+                .set('Authorization', rbac.logInUser1.token);
 
             deleteProfile.status.should.be.eql(403);
             deleteProfile.body.should.have.property('message')
                 .eql(`You don't have enough permission to perform this action !`);
 
-            await userRepository.remove({id : createdUser1.body.user.userId });
-            await userRepository.remove({id : createdUser2.body.user.userId });
+            await userRepository.remove({id: rbac.createdUser1.createdUser._id});
+            await userRepository.remove({id: rbac.createdUser2.createdUser._id});
         });
     });
 
@@ -433,7 +366,7 @@ describe('Users', () => {
 
             const adminScore = await chai.request(server)
                 .patch(`/server/api/user/${env.ADMIN_ID}/score`)
-                .send({ "score" : 10})
+                .send({"score": 10})
                 .set('Authorization', loginUser.body.token);
 
             adminScore.status.should.be.eql(200);
@@ -446,37 +379,19 @@ describe('Users', () => {
 
         it("it should check that a student can't update another student's score", async () => {
 
-            const user1 = makeTwoUsers().user1;
-            const user2 = makeTwoUsers().user2;
-
-            const createdUser1 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user1);
-
-            const createdUser2 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user2);
-
-            await userRepository.patch({
-                id: createdUser1.body.user.userId,
-                isVerified: true
-            });
-
-            const logInUser1 = await chai.request(server)
-                .post('/server/api/login')
-                .send({"pseudo": user1.username, "password": user1.password});
+            const rbac = await usersRbac();
 
             const updateScore = await chai.request(server)
-                .patch(`/server/api/user/${createdUser2.body.user.userId}/score`)
-                .set('Authorization', logInUser1.body.token)
-                .send( {"score" : 8});
+                .patch(`/server/api/user/${rbac.createdUser2.createdUser._id}/score`)
+                .set('Authorization', rbac.logInUser1.token)
+                .send({"score": 8});
 
             updateScore.status.should.be.eql(403);
             updateScore.body.should.have.property('message')
                 .eql(`You don't have enough permission to perform this action !`);
 
-            await userRepository.remove({id : createdUser1.body.user.userId });
-            await userRepository.remove({id : createdUser2.body.user.userId });
+            await userRepository.remove({id: rbac.createdUser1.createdUser._id});
+            await userRepository.remove({id: rbac.createdUser2.createdUser._id});
         });
     });
 

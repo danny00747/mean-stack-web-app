@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/37</span>
+                <span class='fraction'>0/41</span>
             </div>
         
             
@@ -305,7 +305,7 @@ export default function reviewServiceFactory({reviewRepository}) {
         const review = <span class="cstat-no" title="statement not covered" >makeReview({</span>...changes});
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        existing.</span>reviews.push({
-            author: existing.email,
+            author: existing.username,
             rating: review.getRating(),
             reviewText: review.getReviewText(),
             created: review.getCreatedOn(),
@@ -319,18 +319,18 @@ export default function reviewServiceFactory({reviewRepository}) {
         })
     }
 &nbsp;
-    async function <span class="fstat-no" title="function not covered" >editReview({</span>id, email, ...changes} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
+    async function <span class="fstat-no" title="function not covered" >editReview({</span>id, username, ...changes} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (!id) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew Error('You must supply an id.');
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (!(id.match(/^[0-9a-fA-F]{24}$/))) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew TypeError(`${id} is not a valid ObjectId`);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!email) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew Error('You must supply the user email.');
+<span class="cstat-no" title="statement not covered" >        if (!username) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew Error('You must supply the username.');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!(email.match(/^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$/)))</span>
-<span class="cstat-no" title="statement not covered" >            throw n</span>ew SyntaxError(`${email} is not a valid email`);
+<span class="cstat-no" title="statement not covered" >        if (username.length &lt; 4 || username.length &gt; 12)</span>
+<span class="cstat-no" title="statement not covered" >            throw n</span>ew RangeError('A username length must be between 4 and 12 .');
 &nbsp;
-        const existing = <span class="cstat-no" title="statement not covered" >await reviewRepository.</span>findByEmail({email});
+        const existing = <span class="cstat-no" title="statement not covered" >await reviewRepository.</span>findByUsername({username});
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (!existing) <span class="cstat-no" title="statement not covered" >return {</span></span>message: "No user was found with provided email"};
 &nbsp;
@@ -361,18 +361,18 @@ export default function reviewServiceFactory({reviewRepository}) {
 <span class="cstat-no" title="statement not covered" >        return r</span>eviewRepository.findAll();
     }
 &nbsp;
-    async function <span class="fstat-no" title="function not covered" >removeReview({</span>id, email} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
+    async function <span class="fstat-no" title="function not covered" >removeReview({</span>id, username} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (!id) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew Error('You must supply an id.');
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (!(id.match(/^[0-9a-fA-F]{24}$/))) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew TypeError(`${id} is not a valid ObjectId`);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!email) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew Error('You must supply the user email.');
+<span class="cstat-no" title="statement not covered" >        if (!username) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew Error('You must supply the username.');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!(email.match(/^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$/)))</span>
-<span class="cstat-no" title="statement not covered" >            throw n</span>ew SyntaxError(`${email} is not a valid email`);
+<span class="cstat-no" title="statement not covered" >        if (username.length &lt; 4 || username.length &gt;= 12)</span>
+<span class="cstat-no" title="statement not covered" >            throw n</span>ew RangeError('A username length must be between 4 and 12 .');
 &nbsp;
-        const existing = <span class="cstat-no" title="statement not covered" >await reviewRepository.</span>findByEmail({email});
+        const existing = <span class="cstat-no" title="statement not covered" >await reviewRepository.</span>findByUsername({username});
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (!existing) <span class="cstat-no" title="statement not covered" >return {</span></span>message: "No user was found with provided email !"};
 &nbsp;
@@ -403,7 +403,7 @@ export default function reviewServiceFactory({reviewRepository}) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Aug 02 2020 05:51:50 GMT+0200 (Central European Summer Time)
+                at Mon Aug 03 2020 23:30:09 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

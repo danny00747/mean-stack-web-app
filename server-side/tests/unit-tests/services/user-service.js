@@ -228,4 +228,33 @@ describe('USER SERVICE', () => {
         });
 
     });
+
+    describe('#verify-user', () => {
+
+        it("must include an key", async () => {
+
+            const editUser = await userService.verifyUser({key :undefined});
+
+            expect(editUser.message).to.equal("You must supply the key.");
+        });
+
+        it("must have a valid key", async () => {
+
+            const sendEmail = await userService.verifyUser({key :'abc'});
+
+            expect(sendEmail.message).to.equal("Invalid key");
+        });
+
+        it("can verify a user", async () => {
+
+            const userToVerify = await userService.addUser({...makeFakeUser()});
+
+            const verifiedUser = await userService.verifyUser({key : userToVerify.key.randomKey});
+
+            expect(verifiedUser).to.have.property('isVerified').that.eqls(true);
+
+            await userRepository.remove({id : userToVerify.createdUser._id});
+        });
+
+    });
 });

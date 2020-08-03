@@ -164,7 +164,8 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
 
     async function verifyUser({key} = {}) {
 
-        if (!key) throw new Error('You must supply the key.');
+        if (!key) return {message: 'You must supply the key.'};
+        if (key.length !== 64) return {message: 'Invalid key'};
 
         const findTheKey = await tokenRepository.findKey({key});
 

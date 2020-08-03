@@ -12,8 +12,10 @@ import chaiHttp from 'chai-http';
 import server from '../../../app';
 import {User} from '../../models/users';
 import makeTwoUsers from '../fixtures/make2users'
+import usersRbac from '../fixtures/rbacTestWith2users'
 import env from '../../config/environment';
 import {reviewRepository, userRepository} from '../../repository'
+import {userService} from '../../services'
 
 chai.use(chaiHttp);
 
@@ -111,37 +113,19 @@ describe('Reviews', () => {
 
         it("it should make sure a student can't create a review for others", async () => {
 
-            const user1 = makeTwoUsers().user1;
-            const user2 = makeTwoUsers().user2;
-
-            const createdUser1 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user1);
-
-            const createdUser2 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user2);
-
-            await userRepository.patch({
-                id: createdUser1.body.user.userId,
-                isVerified: true
-            });
-
-            const logInUser1 = await chai.request(server)
-                .post('/server/api/login')
-                .send({"pseudo": user1.username, "password": user1.password});
+            const rbac = await usersRbac();
 
             const createdReview = await chai.request(server)
-                .post(`/server/api/user/${createdUser2.body.user.userId}/reviews`)
+                .post(`/server/api/user/${rbac.createdUser2.createdUser._id}/reviews`)
                 .send({"rating": 3, "reviewText": "This is the 3rd review"})
-                .set('Authorization', logInUser1.body.token);
+                .set('Authorization', rbac.logInUser1.token);
 
             createdReview.status.should.be.eql(403);
             createdReview.body.should.have.property('message')
                 .eql(`You don't have enough permission to perform this action !`);
 
-            await userRepository.remove({id : createdUser1.body.user.userId });
-            await userRepository.remove({id : createdUser2.body.user.userId });
+            await userRepository.remove({id: rbac.createdUser1.createdUser._id});
+            await userRepository.remove({id: rbac.createdUser2.createdUser._id});
         });
 
     });
@@ -187,31 +171,19 @@ describe('Reviews', () => {
 
         it('it should NOT PATCH a review whose user has none', async () => {
 
-            const randomUser = Math.random().toString(36).substr(2, 6);
-
-            const newUser = {
-                "username": randomUser,
-                "email": `${randomUser}@gmail.com`,
-                "password": randomUser
-            };
-
-            const createdUser = await chai.request(server)
-                .post('/server/api/signup')
-                .send(newUser);
-
-            const username = createdUser.body.user.username;
+            const rbac = await usersRbac();
 
             const updateReview = await chai.request(server)
-                .patch(`/server/api/user/${username}/reviews/7e7fd1d5f71b123cbc246700`)
-                .set('Authorization', loginUser.body.token)
+                .patch(`/server/api/user/${rbac.username1}/reviews/7e7fd1d5f71b123cbc246700`)
+                .set('Authorization', rbac.logInUser1.token)
                 .send({"rating": 3, "reviewText": "This is the 3rd review"});
 
             updateReview.status.should.be.eql(404);
             updateReview.body.should.have.property('message')
-                .eql(`${createdUser.body.user.username} doesn't have any reviews at the moment !`);
+                .eql(`${rbac.username1} doesn't have any reviews at the moment !`);
 
-            await User.findByIdAndRemove({_id: createdUser.body.user.userId}).exec();
-
+            await userRepository.remove({id: rbac.createdUser1.createdUser._id});
+            await userRepository.remove({id: rbac.createdUser2.createdUser._id});
         });
 
         it('it should NOT PATCH a review for unregistered user', async () => {
@@ -246,57 +218,26 @@ describe('Reviews', () => {
 
         it("it should make sure a student can't update a review for others", async () => {
 
-            const user1 = makeTwoUsers().user1;
-            const user2 = makeTwoUsers().user2;
-
-            const createdUser1 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user1);
-
-            const createdUser2 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user2);
-
-            await userRepository.patch({
-                id: createdUser1.body.user.userId,
-                isVerified: true
-            });
-
-            await userRepository.patch({
-                id: createdUser2.body.user.userId,
-                isVerified: true
-            });
-
-            const logInUser1 = await chai.request(server)
-                .post('/server/api/login')
-                .send({"pseudo": user1.username, "password": user1.password});
-
-            const logInUser2 = await chai.request(server)
-                .post('/server/api/login')
-                .send({"pseudo": user2.username, "password": user2.password});
-
-            const firstUserId = createdUser1.body.user.userId;
-            const username1 = createdUser1.body.user.username;
+            const rbac = await usersRbac();
 
             const user1Review = await chai.request(server)
-                .post(`/server/api/user/${firstUserId}/reviews`)
+                .post(`/server/api/user/${rbac.firstUserId}/reviews`)
                 .send({"rating": 3, "reviewText": "This is the 3rd review"})
-                .set('Authorization', logInUser1.body.token);
+                .set('Authorization', rbac.logInUser1.token);
 
             const user1ReviewId = user1Review.body.updatedUser.reviews._id;
 
             const updateReview = await chai.request(server)
-                .patch(`/server/api/user/${username1}/reviews/${user1ReviewId}`)
+                .patch(`/server/api/user/${rbac.username1}/reviews/${user1ReviewId}`)
                 .send({"rating": 3, "reviewText": "This is the 3rd review"})
-                .set('Authorization', logInUser2.body.token);
+                .set('Authorization', rbac.logInUser2.token);
 
             updateReview.status.should.be.eql(403);
             updateReview.body.should.have.property('message')
                 .eql(`You don't have enough permission to perform this action !`);
 
-            await userRepository.remove({id : createdUser1.body.user.userId });
-            await userRepository.remove({id : createdUser2.body.user.userId });
-
+            await userRepository.remove({id: rbac.createdUser1.createdUser._id});
+            await userRepository.remove({id: rbac.createdUser2.createdUser._id});
         });
 
     });
@@ -337,19 +278,11 @@ describe('Reviews', () => {
 
         it('it should NOT DELETE a review whose user has none', async () => {
 
-            const randomUser = Math.random().toString(36).substr(2, 6);
+            const newUser = makeTwoUsers().user1;
 
-            const newUser = {
-                "username": randomUser,
-                "email": `${randomUser}@gmail.com`,
-                "password": randomUser
-            };
+            const postUser = await userService.addUser({...newUser});
 
-            const createdUser = await chai.request(server)
-                .post('/server/api/signup')
-                .send(newUser);
-
-            const username = createdUser.body.user.username;
+            const username = postUser.createdUser.username;
 
             const deletedReview = await chai.request(server)
                 .delete(`/server/api/user/${username}/reviews/7e7fd1d5f71b123cbc246700`)
@@ -357,10 +290,9 @@ describe('Reviews', () => {
 
             deletedReview.status.should.be.eql(404);
             deletedReview.body.should.have.property('message')
-                .eql(`${createdUser.body.user.username} doesn't have any reviews at the moment !`);
+                .eql(`${username} doesn't have any reviews at the moment !`);
 
-            await User.findByIdAndRemove({_id: createdUser.body.user.userId}).exec();
-
+            await userRepository.remove({id: postUser.createdUser._id});
         });
 
         it('it should NOT DELETE a review for unregistered user', async () => {
@@ -392,55 +324,25 @@ describe('Reviews', () => {
 
         it("it should make sure a student can't delete a review for others", async () => {
 
-            const user1 = makeTwoUsers().user1;
-            const user2 = makeTwoUsers().user2;
-
-            const createdUser1 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user1);
-
-            const createdUser2 = await chai.request(server)
-                .post('/server/api/signup')
-                .send(user2);
-
-            await userRepository.patch({
-                id: createdUser1.body.user.userId,
-                isVerified: true
-            });
-
-            await userRepository.patch({
-                id: createdUser2.body.user.userId,
-                isVerified: true
-            });
-
-            const logInUser1 = await chai.request(server)
-                .post('/server/api/login')
-                .send({"pseudo": user1.username, "password": user1.password});
-
-            const logInUser2 = await chai.request(server)
-                .post('/server/api/login')
-                .send({"pseudo": user2.username, "password": user2.password});
-
-            const firstUserId = createdUser1.body.user.userId;
-            const username1 = createdUser1.body.user.username;
+            const rbac = await usersRbac();
 
             const user1Review = await chai.request(server)
-                .post(`/server/api/user/${firstUserId}/reviews`)
+                .post(`/server/api/user/${rbac.firstUserId}/reviews`)
                 .send({"rating": 3, "reviewText": "This is the 3rd review"})
-                .set('Authorization', logInUser1.body.token);
+                .set('Authorization', rbac.logInUser1.token);
 
             const user1ReviewId = user1Review.body.updatedUser.reviews._id;
 
-            const updateReview = await chai.request(server)
-                .delete(`/server/api/user/${username1}/reviews/${user1ReviewId}`)
-                .set('Authorization', logInUser2.body.token);
+            const deleteReview = await chai.request(server)
+                .delete(`/server/api/user/${rbac.username1}/reviews/${user1ReviewId}`)
+                .set('Authorization', rbac.logInUser2.token);
 
-            updateReview.status.should.be.eql(403);
-            updateReview.body.should.have.property('message')
+            deleteReview.status.should.be.eql(403);
+            deleteReview.body.should.have.property('message')
                 .eql(`You don't have enough permission to perform this action !`);
 
-            await userRepository.remove({id : createdUser1.body.user.userId });
-            await userRepository.remove({id : createdUser2.body.user.userId });
+            await userRepository.remove({id: rbac.createdUser1.createdUser._id});
+            await userRepository.remove({id: rbac.createdUser2.createdUser._id,});
 
         });
     });

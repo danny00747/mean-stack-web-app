@@ -3,7 +3,7 @@ process.env.NODE_ENV = 'test';
 
 //bring in dev-dependencies
 import {assert, should, expect} from 'chai';
-import {describe, before, it} from 'mocha';
+import {describe, it} from 'mocha';
 
 
 import makeFakeUser from '../../fixtures/fakeUser'
@@ -11,8 +11,21 @@ import {makeUser} from '../../../domain'
 import env from '../../../config/environment'
 import {RequiredParameterError} from "../../../helpers/errors"
 
-
 describe('USER ENTITY', () => {
+
+    describe('#user', () => {
+
+        it('it should make a user', () => {
+            const user = makeFakeUser();
+            const buildUser = makeUser({...user});
+            expect(buildUser.getScore()).to.be.eql(0);
+            expect(buildUser.getLevel()).to.be.eql('A1');
+            expect(buildUser.getUsername()).to.be.eql(user.username);
+            expect(buildUser.getEmail()).to.be.eql(user.email);
+            expect(buildUser.getPassword()).not.to.be.eql(user.password);
+            expect(buildUser.getReviews()).to.be.empty;
+        });
+    });
 
     describe('#username', () => {
 
@@ -82,7 +95,7 @@ describe('USER ENTITY', () => {
                 .to.throw(RequiredParameterError, 'A password is a required.');
         });
 
-        it("can hash password",  () => {
+        it("can hash password", () => {
             const user = makeFakeUser();
             const password = makeUser(user).getPassword();
             expect(password.match(/^\$2[aby]?\$\d{1,2}\$[.\/A-Za-z0-9]{53}$/)).to.not.be.null;
