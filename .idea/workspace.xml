@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/.env.sample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blueprint/models-blueprint/users/users.apib" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blueprint/models-blueprint/users/users.apib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -376,7 +379,8 @@
       <workItem from="1596325100689" duration="8910000" />
       <workItem from="1596334494509" duration="6808000" />
       <workItem from="1596372325977" duration="28173000" />
-      <workItem from="1596416625700" duration="6627000" />
+      <workItem from="1596416625700" duration="7731000" />
+      <workItem from="1596464406002" duration="4487000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
@@ -770,10 +774,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="switching to master branch" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="233" y="3" key="#Notifications" timestamp="1587784190194">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="233" y="3" key="#Notifications/0.0.1280.689@0.0.1280.689" timestamp="1587784190194" />
     <state x="416" y="135" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595649809899">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -878,9 +878,9 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="297" y="153" width="672" height="677" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1596159390204" />
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1596301984355">
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1596471883914">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1596301984355" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1596471883914" />
   </component>
 </project>
