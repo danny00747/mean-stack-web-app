@@ -65,7 +65,8 @@ npm run prod
 ## Useful Commands
 
 - `npm run test:e2e` - runs e2e test and opens chrome to run tests
-- `npm run cover:unit:nyc` - runs unit tests and uses as a Istanbul coverage reporter
+- `npm run cover:unit:nyc` - runs unit tests and uses Istanbul as a code coverage reporter
+- `npm run cover:unit:mocha` - runs unit tests and uses mochawesome as a custom reporter
 - `npm run test:integration` - runs integration tests for the backend
 - `npm run test:integration:watch` - runs integration tests in watch mode
 

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/.env.sample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -377,7 +376,7 @@
       <workItem from="1596325100689" duration="8910000" />
       <workItem from="1596334494509" duration="6808000" />
       <workItem from="1596372325977" duration="28173000" />
-      <workItem from="1596416625700" duration="5238000" />
+      <workItem from="1596416625700" duration="5883000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
