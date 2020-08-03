@@ -397,7 +397,7 @@ Update a user'score
 
 ### Update user's score [PATCH]
 
-Update a user'score. `The request's body is required and can't be null.`
+Update a user'score, `the request's body is required and can't be null.`
 
 ::: note
 #### <i class="fa fa-info-circle"></i> Info
@@ -447,3 +447,107 @@ has `expired`, a 401 status is sent back from the server.
                 "message": "Server error"
             }
 
+## User [/user/verify/{key}]
+
+Verify a user.
+
++ Parameters
+
+    + key: `24fb0b9ada7d9a32cca4929fbc8147631d190c496c79f7ff9048d7a854f6998d` (required, string) - The key
+
+### Verify a user [GET]
+
+To verify a user signed up with a valid email.
+
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+Every new user needs to be verified before he/she is allowed to log in. A key is sent to
+their email once he/she has registered. That same key expires in 24h.
+:::
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                success: true,
+                message: "toto@gmail.com has been verified !"
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                message: "the key has expired."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                message: "You must supply the key."
+            }
+
++ Response 500 (application/json)
+
+    + Body
+
+            {
+                "message": "Server error"
+            }
+
+## User [/user/resend/{email}]
+
+Resend the key.
+
++ Parameters
+
+    + email: `toto@gmail.com` (required, string) - The email
+
+### Resend the key [GET]
+
+To resend the key, an email is required.
+
+::: note
+#### <i class="fa fa-info-circle"></i> Info
+The key will be sent only if the user has signed up but their account is
+yet to be verified.
+:::
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                message: "A verification email has been resent to toto@gmail.com"
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                message: "This account has already been verified. Please log in."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                message: "No user was found with provided email"
+            }
+
++ Response 500 (application/json)
+
+    + Body
+
+            {
+                "message": "Server error"
+            }
