@@ -32,10 +32,10 @@
 
             <!-- user image -->
 
-              <img *ngIf="i <= 15" src="../../../assets/img/{{review['imageNumber']}}.jpg"
+              <img *ngIf="i <= 15" src="../../../../assets/img/{{review['imageNumber']}}.jpg"
                    class="card-img-64 d-flex mx-auto mb-3 rounded-circle" style="width: 12%" alt="">
 
-              <img *ngIf="i > 15" src="../../../assets/img/no-profile.png"
+              <img *ngIf="i > 15" src="../../../../assets/img/no-profile.png"
                    class="card-img-64 d-flex mx-auto mb-3" style="width: 10%" alt="">
 
             <!-- user/review info -->
@@ -48,6 +48,8 @@
                 <div class="d-flex justify-content-between">
                   <div>
                     {{review["author"]}}
+                    <i class="fa fa-check-circle" style="color: dodgerblue"
+                    title="Verified Account"></i>
                   </div>
 
                   <span *ngIf="review['author'] === loggedInUser || loggedInUserRole === 'admin'

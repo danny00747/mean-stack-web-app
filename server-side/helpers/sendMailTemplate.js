@@ -160,7 +160,7 @@ const mailTemplate = '<!DOCTYPE html>\n' +
     '                                               target=\'_blank\' href=\'link@link1\'>\n' +
     '                                                link@link2\n' +
     '                                            </a>\n' +
-    '                                            within 48&nbsp;hours.</p>\n' +
+    '                                            within 3&nbsp;hours.</p>\n' +
     '                                    </td>\n' +
     '                                </tr>\n' +
     '                                <tr>\n' +

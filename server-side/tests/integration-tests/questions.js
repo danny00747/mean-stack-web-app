@@ -56,7 +56,7 @@ describe('Questions', () => {
      */
     describe('/GET questions', () => {
 
-        it('it should get all questions', async () => {
+        it('it should GET all questions', async () => {
 
             const getQuestion = await chai.request(server)
                 .get('/server/api/questions')
@@ -64,6 +64,20 @@ describe('Questions', () => {
 
             getQuestion.status.should.be.eql(200);
             getQuestion.body.should.be.a('array');
+        });
+
+        it('it should NOT GET all question with a missing or invalid JWT', async () => {
+
+            const getQuestions = await chai.request(server)
+                .get('/server/api/questions');
+
+            const getQuestions2 = await chai.request(server)
+                .get('/server/api/questions')
+                .set('Authorization', "abc");
+
+            getQuestions.status.should.be.eql(401);
+            getQuestions2.status.should.be.eql(401);
+
         });
     });
 
@@ -81,6 +95,23 @@ describe('Questions', () => {
                 .eql('Created question successfully !');
         });
 
+        it('it should NOT POST a question with a missing or invalid JWT', async () => {
+
+            const createdQuestion = await chai.request(server)
+                .post('/server/api/questions')
+                .set('Authorization', "abc")
+                .send(question);
+
+            const createdQuestion2 = await chai.request(server)
+                .post('/server/api/questions')
+                .set('Authorization', "abc")
+                .send(question);
+
+            createdQuestion.status.should.be.eql(401);
+            createdQuestion2.status.should.be.eql(401);
+
+        });
+
     });
 
     /*
@@ -91,7 +122,8 @@ describe('Questions', () => {
         it('it should GET a question by the given id', async () => {
 
             const qst = await chai.request(server)
-                .get(`/server/api/questions/${postedQuestion.body.createdQuestion.id}`);
+                .get(`/server/api/questions/${postedQuestion.body.createdQuestion.id}`)
+                .set('Authorization', loginUser.body.token);
 
             qst.status.should.be.eql(200);
             qst.body[0].should.have
@@ -100,31 +132,25 @@ describe('Questions', () => {
 
         });
 
-        xit('it should NOT GET a question with a missing or invalid JWT', (done) => {
+        it('it should NOT GET a question with a missing or invalid JWT', async () => {
 
-            const user = {
-                "pseudo": process.env["ADMIN_PSEUDO"],
-                "password": process.env["ADMIN_PSD"]
-            };
+            const qst = await chai.request(server)
+                .get(`/server/api/questions/123`)
+                .set('Authorization', "abc");
 
-            chai.request(server)
-                .post('/server/api/login')
-                .send(user)
-                .end(() => {
-                    chai.request(server)
-                        .get('/server/api/questions/92640se51167daq4c81f4312')
-                        .end((err, res2) => {
-                            res2.should.have.status(401);
-                            Object.keys(res2.body).length.should.be.eql(0);
-                        });
-                    done();
-                });
+            const qst2 = await chai.request(server)
+                .get('/server/api/questions/123');
+
+            qst.status.should.be.eql(401);
+            qst2.status.should.be.eql(401);
+
         });
 
         it('it should NOT GET a question with a wrong id', async () => {
 
             const qst = await chai.request(server)
-                .get(`/server/api/questions/1f468dbf5082002118fc8821`);
+                .get(`/server/api/questions/1f468dbf5082002118fc8821`)
+                .set('Authorization', loginUser.body.token);
 
             qst.status.should.be.eql(404);
             qst.body.should.have
@@ -168,25 +194,20 @@ describe('Questions', () => {
 
         });
 
-        xit('it should NOT PATCH a question with a missing or invalid JWT', (done) => {
+        it('it should NOT PATCH a question with a missing or invalid JWT', async () => {
 
-            const user = {
-                "pseudo": process.env["ADMIN_PSEUDO"],
-                "password": process.env["ADMIN_PSD"]
-            };
+            const qst = await chai.request(server)
+                .patch('/server/api/questions/123')
+                .send(question);
 
-            chai.request(server)
-                .post('/server/api/login')
-                .send(user)
-                .end(() => {
-                    chai.request(server)
-                        .patch('/server/api/questions/92640se51167daq4c81f4312')
-                        .end((err, res2) => {
-                            res2.should.have.status(401);
-                            Object.keys(res2.body).length.should.be.eql(0);
-                        });
-                    done();
-                });
+            const qst2 = await chai.request(server)
+                .patch('/server/api/questions/123')
+                .set('Authorization', "abc")
+                .send(question);
+
+            qst.status.should.be.eql(401);
+            qst2.status.should.be.eql(401);
+
         });
 
     });
@@ -219,6 +240,20 @@ describe('Questions', () => {
             deletedUser.status.should.be.equal(404);
             deletedUser.body.should.have.property('message')
                 .eql('No valid entry found for provided id .');
+
+        });
+
+        it('it should NOT DELETE a question with a missing or invalid JWT', async () => {
+
+            const qst = await chai.request(server)
+                .delete('/server/api/questions/123');
+
+            const qst2 = await chai.request(server)
+                .delete('/server/api/questions/123')
+                .set('Authorization', "abc");
+
+            qst.status.should.be.eql(401);
+            qst2.status.should.be.eql(401);
 
         });
     });

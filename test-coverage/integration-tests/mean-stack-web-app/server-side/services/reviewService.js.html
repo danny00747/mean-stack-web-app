@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.86% </span>
+                <span class="strong">68.29% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>24/37</span>
+                <span class='fraction'>28/41</span>
             </div>
         
             
@@ -179,27 +179,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -305,7 +305,7 @@ export default function reviewServiceFactory({reviewRepository}) {
         const review = makeReview({...changes});
 &nbsp;
         existing.reviews.push({
-            author: existing.email,
+            author: existing.username,
             rating: review.getRating(),
             reviewText: review.getReviewText(),
             created: review.getCreatedOn(),
@@ -319,18 +319,18 @@ export default function reviewServiceFactory({reviewRepository}) {
         })
     }
 &nbsp;
-    async function editReview({id, email, ...changes} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
+    async function editReview({id, username, ...changes} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
 &nbsp;
         <span class="missing-if-branch" title="if path not taken" >I</span>if (!id) <span class="cstat-no" title="statement not covered" >throw n</span>ew Error('You must supply an id.');
 &nbsp;
         <span class="missing-if-branch" title="if path not taken" >I</span>if (!(id.match(/^[0-9a-fA-F]{24}$/))) <span class="cstat-no" title="statement not covered" >throw n</span>ew TypeError(`${id} is not a valid ObjectId`);
 &nbsp;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!email) <span class="cstat-no" title="statement not covered" >throw n</span>ew Error('You must supply the user email.');
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!username) <span class="cstat-no" title="statement not covered" >throw n</span>ew Error('You must supply the username.');
 &nbsp;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!(email.match(/^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$/)))
-<span class="cstat-no" title="statement not covered" >            throw n</span>ew SyntaxError(`${email} is not a valid email`);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (username.length &lt; 4 || username.length &gt; 12)
+<span class="cstat-no" title="statement not covered" >            throw n</span>ew RangeError('A username length must be between 4 and 12 .');
 &nbsp;
-        const existing = await reviewRepository.findByEmail({email});
+        const existing = await reviewRepository.findByUsername({username});
 &nbsp;
         if (!existing) return {message: "No user was found with provided email"};
 &nbsp;
@@ -361,18 +361,18 @@ export default function reviewServiceFactory({reviewRepository}) {
         return reviewRepository.findAll();
     }
 &nbsp;
-    async function removeReview({id, email} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
+    async function removeReview({id, username} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
 &nbsp;
         <span class="missing-if-branch" title="if path not taken" >I</span>if (!id) <span class="cstat-no" title="statement not covered" >throw n</span>ew Error('You must supply an id.');
 &nbsp;
         <span class="missing-if-branch" title="if path not taken" >I</span>if (!(id.match(/^[0-9a-fA-F]{24}$/))) <span class="cstat-no" title="statement not covered" >throw n</span>ew TypeError(`${id} is not a valid ObjectId`);
 &nbsp;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!email) <span class="cstat-no" title="statement not covered" >throw n</span>ew Error('You must supply the user email.');
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!username) <span class="cstat-no" title="statement not covered" >throw n</span>ew Error('You must supply the username.');
 &nbsp;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!(email.match(/^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$/)))
-<span class="cstat-no" title="statement not covered" >            throw n</span>ew SyntaxError(`${email} is not a valid email`);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (username.length &lt; 4 || username.length &gt;= 12)
+<span class="cstat-no" title="statement not covered" >            throw n</span>ew RangeError('A username length must be between 4 and 12 .');
 &nbsp;
-        const existing = await reviewRepository.findByEmail({email});
+        const existing = await reviewRepository.findByUsername({username});
 &nbsp;
         if (!existing) return {message: "No user was found with provided email !"};
 &nbsp;
@@ -403,7 +403,7 @@ export default function reviewServiceFactory({reviewRepository}) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Aug 02 2020 05:51:03 GMT+0200 (Central European Summer Time)
+                at Mon Aug 03 2020 00:20:05 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

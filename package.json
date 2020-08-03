@@ -54,6 +54,8 @@
     "helmet": "^3.22.0",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^7.1.2",
+    "bcrypt": "^5.0.0",
+    "email-validator": "^2.0.4",
     "mochawesome": "^6.1.1",
     "mongodb": "^3.1.13",
     "mongoose": "^5.9.3",
@@ -74,8 +76,6 @@
     "@types/express": "^4.17.1",
     "@types/mocha": "^8.0.0",
     "@types/mongoose": "^5.7.3",
-    "bcrypt": "^5.0.0",
-    "email-validator": "^2.0.4",
     "istanbul": "^0.4.5",
     "nyc": "^15.0.1"
   }

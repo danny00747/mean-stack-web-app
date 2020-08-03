@@ -50,8 +50,6 @@ export class LoginComponent implements OnInit {
       .toPromise()
       .then((data: any) => {
 
-          console.log(data);
-
           this.timeLoggedIn = new Date().getTime();
           this.sessionExpired(data.token);
           this.authService.storeUserData(data);

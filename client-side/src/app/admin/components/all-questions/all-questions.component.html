@@ -1,9 +1,8 @@
 <app-min-nav-bar></app-min-nav-bar>
 
 <!-- All questions text -->
-<div *ngIf="questions.qns">
+<div *ngIf="questions.qns; else noquestions">
   <br>
-
 
   <div class="d-flex">
 
@@ -25,9 +24,9 @@
         </button>
 
         <!-- create question button other half question -->
-        <button  class="btn btn-success btn-sm dropdown-toggle dropdown-toggle-split"
-                 id="createQuestionBtn" type="button"
-                 data-toggle="dropdown" aria-haspopup="true"
+        <button class="btn btn-success btn-sm dropdown-toggle dropdown-toggle-split"
+                id="createQuestionBtn" type="button"
+                data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
           <span class="sr-only">Toggle Dropdown</span>
         </button>
@@ -48,9 +47,9 @@
              (click)="questionTypeChoosen($event.target)">Boolean</a>
 
           <!-- create fill in the blanks question -->
-          <a id="fillInBlanksQuestion"  data-toggle="modal" data-target="#fillInModal"
+          <a id="fillInBlanksQuestion" data-toggle="modal" data-target="#fillInModal"
              class="dropdown-item text-monospace font-italic font-weight-bolder"
-              href="#" style="font-weight: bold"
+             href="#" style="font-weight: bold"
              (click)="questionTypeChoosen($event.target)">Fill in the blanks</a>
         </div>
       </div>
@@ -92,47 +91,47 @@
 
     <!-- Question & it's answer card -->
 
-      <div class="col-10 justify-content-center mx-auto">
-        <div class="card"
-             style="background-color: #31373e">
+    <div class="col-10 justify-content-center mx-auto">
+      <div class="card"
+           style="background-color: #31373e">
 
-          <!-- question number and title div -->
-          <div class="card-content">
+        <!-- question number and title div -->
+        <div class="card-content">
 
-            <!-- question number -->
-            <p class="card-title
+          <!-- question number -->
+          <p class="card-title
              text-monospace font-italic font-weight-lighter ml-3 mt-3 "
-               style="color: white">
-              Question {{qn["questionNumber"]}} :
+             style="color: white">
+            Question {{qn["questionNumber"]}} :
+          </p>
+
+          <!-- question title -->
+          <h5>
+            <p class="ml-3" style="color: white">
+              <strong>{{qn.question}}</strong>
             </p>
+          </h5>
+        </div>
 
-            <!-- question title -->
-            <h5>
-              <p class="ml-3" style="color: white">
-                <strong>{{qn.question}}</strong>
-              </p>
-            </h5>
-          </div>
+        <!-- question's answers div -->
+        <div class="card ml-3 mb-3 mr-3">
 
-          <!-- question's answers div -->
-          <div class="card ml-3 mb-3 mr-3">
+          <p class="list-group list-group-flush">
 
-            <p class="list-group list-group-flush">
-
-              <!-- loop through all answers to the question -->
-              <ng-container *ngFor="let option of qn['answers'];let j = index">
-                <a class="list-group-item list-group-item-action">
-                  {{option.option}}
-                  <span *ngIf="(option['isCorrect']) === 'true'">
+            <!-- loop through all answers to the question -->
+            <ng-container *ngFor="let option of qn['answers'];let j = index">
+              <a class="list-group-item list-group-item-action">
+                {{option.option}}
+                <span *ngIf="(option['isCorrect']) === 'true'">
                  <i class="fa fa-check-circle right-align float-right mr-5"
                     style="color: green"> correct answer</i>
               </span>
-                </a>
-              </ng-container>
-            </p>
-          </div>
+              </a>
+            </ng-container>
+          </p>
         </div>
       </div>
+    </div>
 
     <br>
   </ng-container>
@@ -150,6 +149,13 @@
     </pagination-controls>
   </div>
 </div>
+
+<ng-template #noquestions>
+  <div class="row justify-content-center">
+    <i class="fa fa-exclamation-circle fa-2x" style="color: red"></i>
+    <h3 class="text-monospace font-italic font-weight-bolder">There are no questions !</h3>
+  </div>
+</ng-template>
 
 <!-- Multiple choice question modal -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
@@ -539,7 +545,7 @@
           </span>
           <button (click)="closeAlert()" type="button"
                   class="btn btn-secondary text-monospace font-italic font-weight-bolder"
-                id="closeFillInModal"  data-dismiss="modal">Close
+                  id="closeFillInModal" data-dismiss="modal">Close
           </button>
           <button appAddClass (click)="onCreateQuestion($event.target)" type="button"
                   class="btn btn-primary text-monospace font-italic font-weight-bolder"

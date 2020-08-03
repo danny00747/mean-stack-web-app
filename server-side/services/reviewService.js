@@ -20,7 +20,7 @@ export default function reviewServiceFactory({reviewRepository}) {
         const review = makeReview({...changes});
 
         existing.reviews.push({
-            author: existing.email,
+            author: existing.username,
             rating: review.getRating(),
             reviewText: review.getReviewText(),
             created: review.getCreatedOn(),
@@ -34,18 +34,18 @@ export default function reviewServiceFactory({reviewRepository}) {
         })
     }
 
-    async function editReview({id, email, ...changes} = {}) {
+    async function editReview({id, username, ...changes} = {}) {
 
         if (!id) throw new Error('You must supply an id.');
 
         if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
 
-        if (!email) throw new Error('You must supply the user email.');
+        if (!username) throw new Error('You must supply the username.');
 
-        if (!(email.match(/^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$/)))
-            throw new SyntaxError(`${email} is not a valid email`);
+        if (username.length < 4 || username.length > 12)
+            throw new RangeError('A username length must be between 4 and 12 .');
 
-        const existing = await reviewRepository.findByEmail({email});
+        const existing = await reviewRepository.findByUsername({username});
 
         if (!existing) return {message: "No user was found with provided email"};
 
@@ -76,18 +76,18 @@ export default function reviewServiceFactory({reviewRepository}) {
         return reviewRepository.findAll();
     }
 
-    async function removeReview({id, email} = {}) {
+    async function removeReview({id, username} = {}) {
 
         if (!id) throw new Error('You must supply an id.');
 
         if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
 
-        if (!email) throw new Error('You must supply the user email.');
+        if (!username) throw new Error('You must supply the username.');
 
-        if (!(email.match(/^[aA-zZ0-9._%+-]+@[a-z0-9.-]+\.[aA-zZ]{2,4}$/)))
-            throw new SyntaxError(`${email} is not a valid email`);
+        if (username.length < 4 || username.length >= 12)
+            throw new RangeError('A username length must be between 4 and 12 .');
 
-        const existing = await reviewRepository.findByEmail({email});
+        const existing = await reviewRepository.findByUsername({username});
 
         if (!existing) return {message: "No user was found with provided email !"};
 

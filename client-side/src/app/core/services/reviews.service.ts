@@ -27,20 +27,20 @@ export class ReviewsService {
 
   }
 
-  updateReview(userEmail: any, reviewId: any, review: any) {
+  updateReview(username: string, reviewId: any, review: object) {
     // /user/5e7fd9d5f35b123cbc246899/reviews/5e862f463f21584038c3d362
     const httpAuthHeaders = new HttpHeaders().set('Authorization', this.token);
     return this._http
-      .patch(`/server/api/user/${userEmail}/reviews/${reviewId}`, review,
+      .patch(`/server/api/user/${username}/reviews/${reviewId}`, review,
         {headers: httpAuthHeaders});
   }
 
-  deleteReview(userEmail: any, reviewId: any) {
+  deleteReview(username: string, reviewId: string) {
     // /user/5e7fd9d5f35b123cbc246899/reviews/5e862f463f21584038c3d362
     //const userId = JSON.parse(localStorage.getItem('user')).userId;
     const httpAuthHeaders = new HttpHeaders().set('Authorization', this.token);
     return this._http
-      .delete(`/server/api/user/${userEmail}/reviews/${reviewId}`,
+      .delete(`/server/api/user/${username}/reviews/${reviewId}`,
         {headers: httpAuthHeaders});
   }
 

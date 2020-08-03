@@ -12,6 +12,7 @@ import server from '../../../app';
 import {User} from '../../models/users';
 import env from '../../config/environment';
 import {userRepository} from '../../repository'
+import makeTwoUsers from "../fixtures/make2users";
 
 chai.use(chaiHttp);
 
@@ -77,13 +78,7 @@ describe('Users', () => {
 
         it('it should create a new user', async () => {
 
-            const randomUser = Math.random().toString(36).substr(2, 9);
-
-            const newUser = {
-                "username": randomUser,
-                "email": `${randomUser}@gmail.com`,
-                "password": randomUser
-            };
+            const newUser = makeTwoUsers().user1;
 
             const createdUser = await chai.request(server)
                 .post('/server/api/signup')
@@ -100,12 +95,10 @@ describe('Users', () => {
 
         it('it should NOT create a user if he/she already exists', async () => {
 
-            const randomUser = Math.random().toString(36).substr(2, 6);
-
             const newUser = {
                 "username": env.ADMIN_PSEUDO,
-                "email": `${randomUser}@gmail.com`,
-                "password": randomUser
+                "email": `abc@gmail.com`,
+                "password": 'abc'
             };
 
             const createdUser = await chai.request(server)
@@ -155,10 +148,7 @@ describe('Users', () => {
 
         it('it should NOT GET all users if the request is sent by a student', async () => {
 
-            const randomUser = Math.random().toString(36).substr(2, 9);
-
-            const newUser = {"username": randomUser, "email": `${randomUser}@gmail.com`,
-                "password": randomUser};
+            const newUser = makeTwoUsers().user1;
 
             const createdUser = await chai.request(server)
                 .post('/server/api/signup')
@@ -171,7 +161,7 @@ describe('Users', () => {
 
            const logInUser = await chai.request(server)
                 .post('/server/api/login')
-                .send({"pseudo": randomUser, "password": randomUser});
+                .send({"pseudo": newUser.username, "password": newUser.password});
 
             const getUsers = await chai.request(server)
                 .get('/server/api/users/profiles')
@@ -233,20 +223,8 @@ describe('Users', () => {
 
         it("it should check that a student can't get/see another student's profile", async () => {
 
-            const randomUser1 = Math.random().toString(36).substr(2, 9);
-            const randomUser2 = Math.random().toString(36).substr(2, 9);
-
-            const user1 = {
-                "username": randomUser1,
-                "email": `${randomUser1}@gmail.com`,
-                "password": randomUser1
-            };
-
-            const user2 = {
-                "username": randomUser2,
-                "email": `${randomUser2}@gmail.com`,
-                "password": randomUser2
-            };
+            const user1 = makeTwoUsers().user1;
+            const user2 = makeTwoUsers().user2;
 
             const createdUser1 = await chai.request(server)
                 .post('/server/api/signup')
@@ -263,7 +241,7 @@ describe('Users', () => {
 
             const logInUser1 = await chai.request(server)
                 .post('/server/api/login')
-                .send({"pseudo": randomUser1, "password": randomUser1});
+                .send({"pseudo": user1.username, "password": user1.password});
 
             const getProfile = await chai.request(server)
                 .get(`/server/api/user/${createdUser2.body.user.userId}`)
@@ -327,20 +305,8 @@ describe('Users', () => {
 
         it("it should check that a student can't update another student's profile", async () => {
 
-            const randomUser1 = Math.random().toString(36).substr(2, 9);
-            const randomUser2 = Math.random().toString(36).substr(2, 9);
-
-            const user1 = {
-                "username": randomUser1,
-                "email": `${randomUser1}@gmail.com`,
-                "password": randomUser1
-            };
-
-            const user2 = {
-                "username": randomUser2,
-                "email": `${randomUser2}@gmail.com`,
-                "password": randomUser2
-            };
+            const user1 = makeTwoUsers().user1;
+            const user2 = makeTwoUsers().user2;
 
             const createdUser1 = await chai.request(server)
                 .post('/server/api/signup')
@@ -357,7 +323,7 @@ describe('Users', () => {
 
             const logInUser1 = await chai.request(server)
                 .post('/server/api/login')
-                .send({"pseudo": randomUser1, "password": randomUser1});
+                .send({"pseudo": user1.username, "password": user1.password});
 
             const updateProfile = await chai.request(server)
                 .patch(`/server/api/user/${createdUser2.body.user.userId}`)
@@ -381,13 +347,7 @@ describe('Users', () => {
 
         it('it should DELETE a user by id', async () => {
 
-            const randomUser = Math.random().toString(36).substr(2, 6);
-
-            const newUser = {
-                "username": randomUser,
-                "email": `${randomUser}@gmail.com`,
-                "password": randomUser
-            };
+            const newUser = makeTwoUsers().user1;
 
             const createdUser = await chai.request(server)
                 .post('/server/api/signup')
@@ -431,20 +391,8 @@ describe('Users', () => {
 
         it("it should check that a student can't delete another student's profile", async () => {
 
-            const randomUser1 = Math.random().toString(36).substr(2, 9);
-            const randomUser2 = Math.random().toString(36).substr(2, 9);
-
-            const user1 = {
-                "username": randomUser1,
-                "email": `${randomUser1}@gmail.com`,
-                "password": randomUser1
-            };
-
-            const user2 = {
-                "username": randomUser2,
-                "email": `${randomUser2}@gmail.com`,
-                "password": randomUser2
-            };
+            const user1 = makeTwoUsers().user1;
+            const user2 = makeTwoUsers().user2;
 
             const createdUser1 = await chai.request(server)
                 .post('/server/api/signup')
@@ -461,7 +409,7 @@ describe('Users', () => {
 
             const logInUser1 = await chai.request(server)
                 .post('/server/api/login')
-                .send({"pseudo": randomUser1, "password": randomUser1});
+                .send({"pseudo": user1.username, "password": user1.password});
 
             const deleteProfile = await chai.request(server)
                 .delete(`/server/api/user/${createdUser2.body.user.userId}`)
@@ -498,20 +446,8 @@ describe('Users', () => {
 
         it("it should check that a student can't update another student's score", async () => {
 
-            const randomUser1 = Math.random().toString(36).substr(2, 9);
-            const randomUser2 = Math.random().toString(36).substr(2, 9);
-
-            const user1 = {
-                "username": randomUser1,
-                "email": `${randomUser1}@gmail.com`,
-                "password": randomUser1
-            };
-
-            const user2 = {
-                "username": randomUser2,
-                "email": `${randomUser2}@gmail.com`,
-                "password": randomUser2
-            };
+            const user1 = makeTwoUsers().user1;
+            const user2 = makeTwoUsers().user2;
 
             const createdUser1 = await chai.request(server)
                 .post('/server/api/signup')
@@ -528,7 +464,7 @@ describe('Users', () => {
 
             const logInUser1 = await chai.request(server)
                 .post('/server/api/login')
-                .send({"pseudo": randomUser1, "password": randomUser1});
+                .send({"pseudo": user1.username, "password": user1.password});
 
             const updateScore = await chai.request(server)
                 .patch(`/server/api/user/${createdUser2.body.user.userId}/score`)

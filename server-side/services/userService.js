@@ -75,7 +75,7 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
         const user = makeUser({...changes});
 
         if (findUser.reviews.length !== 0)
-            findUser.reviews.forEach(x => x["author"] = user.getEmail());
+            findUser.reviews.forEach(x => x["author"] = user.getUsername());
 
         return userRepository.patch({
             id: id,

@@ -4,19 +4,20 @@ const ac = new AccessControl();
 
 export const roles = (() => {
     ac.grant("student")
+        .createOwn("review")
         .readOwn("profile")
-        .updateOwn("profile")
-        .deleteOwn("profile");
+        .updateOwn(["profile", "review"])
+        .deleteOwn(["profile", "review"]);
 
     ac.grant("teacher")
         .extend("student")
-        .readAny("profile");
+        .readAny(["profile", "review"]);
 
     ac.grant("admin")
         .extend("student")
         .extend("teacher")
-        .updateAny("profile")
-        .deleteAny("profile");
+        .updateAny(["profile", "review"])
+        .deleteAny(["profile", "review"]);
 
     return ac;
 })();

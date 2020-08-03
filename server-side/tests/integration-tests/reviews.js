@@ -11,8 +11,9 @@ import chaiHttp from 'chai-http';
 
 import server from '../../../app';
 import {User} from '../../models/users';
+import makeTwoUsers from '../fixtures/make2users'
 import env from '../../config/environment';
-import {reviewRepository} from '../../repository'
+import {reviewRepository, userRepository} from '../../repository'
 
 chai.use(chaiHttp);
 
@@ -78,34 +79,6 @@ describe('Reviews', () => {
 
         });
 
-        xit('it should NOT create a review with a missing or invalid JWT', (done) => {
-
-            const user = {
-                "pseudo": process.env["ADMIN_PSEUDO"],
-                "password": process.env["ADMIN_PSD"]
-            };
-
-            const review = {
-                "rating": "3",
-                "reviewText": "This is the 3rd review"
-            };
-
-            chai.request(server)
-                .post('/server/api/login')
-                .send(user)
-                .end((err, res1) => {
-                    const userId = res1.body.user.userId;
-                    chai.request(server)
-                        .post(`/server/api/user/${userId}/reviews`)
-                        .send(review)
-                        .end((err, res2) => {
-                            res2.should.have.status(401);
-                            Object.keys(res2.body).length.should.be.eql(0);
-                        });
-                    done();
-                });
-        });
-
         it('it should NOT create a review with a wrong user id', async () => {
 
 
@@ -119,6 +92,58 @@ describe('Reviews', () => {
                 .eql('No valid entry found for provided id !');
         });
 
+        it('it should NOT create a review with a missing or invalid JWT', async () => {
+
+            const createdReview = await chai.request(server)
+                .post(`/server/api/user/${env.ADMIN_ID}/reviews`)
+                .send({"rating": 3, "reviewText": "This is the 3rd review"})
+                .set('Authorization', "abc");
+
+            const createdReview2 = await chai.request(server)
+                .post(`/server/api/user/${env.ADMIN_ID}/reviews`)
+                .send({"rating": 3, "reviewText": "This is the 3rd review"})
+                .set('Authorization', "abc");
+
+            createdReview.status.should.be.eql(401);
+            createdReview2.status.should.be.eql(401);
+
+        });
+
+        it("it should make sure a student can't create a review for others", async () => {
+
+            const user1 = makeTwoUsers().user1;
+            const user2 = makeTwoUsers().user2;
+
+            const createdUser1 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user1);
+
+            const createdUser2 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user2);
+
+            await userRepository.patch({
+                id: createdUser1.body.user.userId,
+                isVerified: true
+            });
+
+            const logInUser1 = await chai.request(server)
+                .post('/server/api/login')
+                .send({"pseudo": user1.username, "password": user1.password});
+
+            const createdReview = await chai.request(server)
+                .post(`/server/api/user/${createdUser2.body.user.userId}/reviews`)
+                .send({"rating": 3, "reviewText": "This is the 3rd review"})
+                .set('Authorization', logInUser1.body.token);
+
+            createdReview.status.should.be.eql(403);
+            createdReview.body.should.have.property('message')
+                .eql(`You don't have enough permission to perform this action !`);
+
+            await userRepository.remove({id : createdUser1.body.user.userId });
+            await userRepository.remove({id : createdUser2.body.user.userId });
+        });
+
     });
 
     /*
@@ -128,11 +153,11 @@ describe('Reviews', () => {
 
         it('it should PATCH a review with the given id', async () => {
 
-            const userEmail = createReview.body.updatedUser.reviews.author;
+            const username = createReview.body.updatedUser.reviews.author;
             const reviewId = createReview.body.updatedUser.reviews._id;
 
             const updateReview = await chai.request(server)
-                .patch(`/server/api/user/${userEmail}/reviews/${reviewId}`)
+                .patch(`/server/api/user/${username}/reviews/${reviewId}`)
                 .send({"rating": 2, "reviewText": "This is the 1st review"})
                 .set('Authorization', loginUser.body.token);
 
@@ -147,25 +172,10 @@ describe('Reviews', () => {
 
         });
 
-        it('it should NOT PATCH a review for unregistered user', async () => {
-
-            const email = Math.random().toString(36).substr(2, 9);
-
-            const updatedReview = await chai.request(server)
-                .patch(`/server/api/user/${email}@gmail.com/reviews/7e7fd1d5f71b123cbc246700`)
-                .send({"rating": 2, "reviewText": "This is the 1st review"})
-                .set('Authorization', loginUser.body.token);
-
-            updatedReview.status.should.be.eql(404);
-            updatedReview.body.should.have.property('message')
-                .eql('No user was found with provided email');
-
-        });
-
         it('it should NOT PATCH a review with a wrong id', async () => {
 
             const updateReview = await chai.request(server)
-                .patch(`/server/api/user/${env.ADMIN_PSEUDO}@gmail.com/reviews/7e7fd1d5f71b123cbc246700`)
+                .patch(`/server/api/user/${env.ADMIN_PSEUDO}/reviews/7e7fd1d5f71b123cbc246700`)
                 .send({"rating": 3, "reviewText": "This is the 1st review"})
                 .set('Authorization', loginUser.body.token);
 
@@ -173,36 +183,6 @@ describe('Reviews', () => {
             updateReview.body.should.have.property('message')
                 .eql('No was review found with provided id !');
 
-        });
-
-        xit('it should NOT PATCH a review with a missing or invalid JWT', async () => {
-
-            const user = {
-                "pseudo": process.env["ADMIN_PSEUDO"],
-                "password": process.env["ADMIN_PSD"]
-            };
-
-            const review = {
-                "rating": 3,
-                "reviewText": "This is the 3rd review"
-            };
-
-            const userEmail = "dan30@gmail.com";
-            const reviewId = "1f468dbf5182002118fc8821";
-
-            chai.request(server)
-                .post('/server/api/login')
-                .send(user)
-                .end(() => {
-                    chai.request(server)
-                        .patch(`/server/api/user/${userEmail}/reviews/${reviewId}`)
-                        .send(review)
-                        .end((err, res2) => {
-                            res2.should.have.status(401);
-                            Object.keys(res2.body).length.should.be.eql(0);
-                        });
-                    done();
-                });
         });
 
         it('it should NOT PATCH a review whose user has none', async () => {
@@ -219,10 +199,10 @@ describe('Reviews', () => {
                 .post('/server/api/signup')
                 .send(newUser);
 
-            const userEmail = createdUser.body.user.userEmail;
+            const username = createdUser.body.user.username;
 
             const updateReview = await chai.request(server)
-                .patch(`/server/api/user/${userEmail}/reviews/7e7fd1d5f71b123cbc246700`)
+                .patch(`/server/api/user/${username}/reviews/7e7fd1d5f71b123cbc246700`)
                 .set('Authorization', loginUser.body.token)
                 .send({"rating": 3, "reviewText": "This is the 3rd review"});
 
@@ -231,6 +211,91 @@ describe('Reviews', () => {
                 .eql(`${createdUser.body.user.username} doesn't have any reviews at the moment !`);
 
             await User.findByIdAndRemove({_id: createdUser.body.user.userId}).exec();
+
+        });
+
+        it('it should NOT PATCH a review for unregistered user', async () => {
+
+            const username = Math.random().toString(36).substr(2, 9);
+
+            const updatedReview = await chai.request(server)
+                .patch(`/server/api/user/${username}/reviews/7e7fd1d5f71b123cbc246700`)
+                .send({"rating": 2, "reviewText": "This is the 1st review"})
+                .set('Authorization', loginUser.body.token);
+
+            updatedReview.status.should.be.eql(404);
+            updatedReview.body.should.have.property('message')
+                .eql('No user was found with provided email');
+
+        });
+
+        it('it should NOT PATCH a review with a missing or invalid JWT', async () => {
+
+            const createdReview = await chai.request(server)
+                .patch(`/server/api/user/abc/reviews/123`)
+                .send({"rating": 3, "reviewText": "This is the 3rd review"})
+                .set('Authorization', "abc");
+
+            const createdReview2 = await chai.request(server)
+                .patch(`/server/api/user/abc/reviews/123`)
+                .send({"rating": 3, "reviewText": "This is the 3rd review"});
+
+            createdReview.status.should.be.eql(401);
+            createdReview2.status.should.be.eql(401);
+        });
+
+        it("it should make sure a student can't update a review for others", async () => {
+
+            const user1 = makeTwoUsers().user1;
+            const user2 = makeTwoUsers().user2;
+
+            const createdUser1 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user1);
+
+            const createdUser2 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user2);
+
+            await userRepository.patch({
+                id: createdUser1.body.user.userId,
+                isVerified: true
+            });
+
+            await userRepository.patch({
+                id: createdUser2.body.user.userId,
+                isVerified: true
+            });
+
+            const logInUser1 = await chai.request(server)
+                .post('/server/api/login')
+                .send({"pseudo": user1.username, "password": user1.password});
+
+            const logInUser2 = await chai.request(server)
+                .post('/server/api/login')
+                .send({"pseudo": user2.username, "password": user2.password});
+
+            const firstUserId = createdUser1.body.user.userId;
+            const username1 = createdUser1.body.user.username;
+
+            const user1Review = await chai.request(server)
+                .post(`/server/api/user/${firstUserId}/reviews`)
+                .send({"rating": 3, "reviewText": "This is the 3rd review"})
+                .set('Authorization', logInUser1.body.token);
+
+            const user1ReviewId = user1Review.body.updatedUser.reviews._id;
+
+            const updateReview = await chai.request(server)
+                .patch(`/server/api/user/${username1}/reviews/${user1ReviewId}`)
+                .send({"rating": 3, "reviewText": "This is the 3rd review"})
+                .set('Authorization', logInUser2.body.token);
+
+            updateReview.status.should.be.eql(403);
+            updateReview.body.should.have.property('message')
+                .eql(`You don't have enough permission to perform this action !`);
+
+            await userRepository.remove({id : createdUser1.body.user.userId });
+            await userRepository.remove({id : createdUser2.body.user.userId });
 
         });
 
@@ -243,11 +308,11 @@ describe('Reviews', () => {
 
         it('it should DELETE a review with the given id', async () => {
 
-            const userEmail = createReview.body.updatedUser.reviews.author;
+            const username = createReview.body.updatedUser.reviews.author;
             const reviewId = createReview.body.updatedUser.reviews._id;
 
             const deletedReview = await chai.request(server)
-                .delete(`/server/api/user/${userEmail}/reviews/${reviewId}`)
+                .delete(`/server/api/user/${username}/reviews/${reviewId}`)
                 .set('Authorization', loginUser.body.token);
 
             deletedReview.status.should.be.eql(200);
@@ -258,54 +323,16 @@ describe('Reviews', () => {
 
         });
 
-        it('it should NOT DELETE a review for unregistered user', async () => {
-
-            const email = Math.random().toString(36).substr(2, 9);
-
-            const deletedReview = await chai.request(server)
-                .delete(`/server/api/user/${email}@gmail.com/reviews/7e7fd1d5f71b123cbc246700`)
-                .set('Authorization', loginUser.body.token);
-
-            deletedReview.status.should.be.eql(404);
-            deletedReview.body.should.have.property('message')
-                .eql('No user was found with provided email !');
-
-        });
-
         it('it should NOT DELETE a review with a wrong id', async () => {
 
             const deletedReview = await chai.request(server)
-                .delete(`/server/api/user/${env.ADMIN_PSEUDO}@gmail.com/reviews/7e7fd1d5f71b123cbc246700`)
+                .delete(`/server/api/user/${env.ADMIN_PSEUDO}/reviews/7e7fd1d5f71b123cbc246700`)
                 .set('Authorization', loginUser.body.token);
 
             deletedReview.status.should.be.eql(404);
             deletedReview.body.should.have.property('message')
                 .eql('No was review found with provided id !');
 
-        });
-
-        xit('it should NOT DELETE a review with a missing or invalid JWT', async () => {
-
-            const user = {
-                "pseudo": process.env["ADMIN_PSEUDO"],
-                "password": process.env["ADMIN_PSD"]
-            };
-
-            const userEmail = "dan30@gmail.com";
-            const reviewId = "1f468dbf5182002118fc8821";
-
-            chai.request(server)
-                .post('/server/api/login')
-                .send(user)
-                .end(() => {
-                    chai.request(server)
-                        .delete(`/server/api/user/${userEmail}/reviews/${reviewId}`)
-                        .end((err, res2) => {
-                            res2.should.have.status(401);
-                            Object.keys(res2.body).length.should.be.eql(0);
-                        });
-                    done();
-                });
         });
 
         it('it should NOT DELETE a review whose user has none', async () => {
@@ -322,10 +349,10 @@ describe('Reviews', () => {
                 .post('/server/api/signup')
                 .send(newUser);
 
-            const userEmail = createdUser.body.user.userEmail;
+            const username = createdUser.body.user.username;
 
             const deletedReview = await chai.request(server)
-                .delete(`/server/api/user/${userEmail}/reviews/7e7fd1d5f71b123cbc246700`)
+                .delete(`/server/api/user/${username}/reviews/7e7fd1d5f71b123cbc246700`)
                 .set('Authorization', loginUser.body.token);
 
             deletedReview.status.should.be.eql(404);
@@ -336,6 +363,85 @@ describe('Reviews', () => {
 
         });
 
-    });
+        it('it should NOT DELETE a review for unregistered user', async () => {
 
+            const username = Math.random().toString(36).substr(2, 9);
+
+            const deletedReview = await chai.request(server)
+                .delete(`/server/api/user/${username}/reviews/7e7fd1d5f71b123cbc246700`)
+                .set('Authorization', loginUser.body.token);
+
+            deletedReview.status.should.be.eql(404);
+            deletedReview.body.should.have.property('message')
+                .eql('No user was found with provided email !');
+
+        });
+
+        it('it should NOT DELETE a review with a missing or invalid JWT', async () => {
+
+            const createdReview = await chai.request(server)
+                .delete(`/server/api/user/abc/reviews/123`)
+                .set('Authorization', "abc");
+
+            const createdReview2 = await chai.request(server)
+                .delete(`/server/api/user/abc/reviews/123`);
+
+            createdReview.status.should.be.eql(401);
+            createdReview2.status.should.be.eql(401);
+        });
+
+        it("it should make sure a student can't delete a review for others", async () => {
+
+            const user1 = makeTwoUsers().user1;
+            const user2 = makeTwoUsers().user2;
+
+            const createdUser1 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user1);
+
+            const createdUser2 = await chai.request(server)
+                .post('/server/api/signup')
+                .send(user2);
+
+            await userRepository.patch({
+                id: createdUser1.body.user.userId,
+                isVerified: true
+            });
+
+            await userRepository.patch({
+                id: createdUser2.body.user.userId,
+                isVerified: true
+            });
+
+            const logInUser1 = await chai.request(server)
+                .post('/server/api/login')
+                .send({"pseudo": user1.username, "password": user1.password});
+
+            const logInUser2 = await chai.request(server)
+                .post('/server/api/login')
+                .send({"pseudo": user2.username, "password": user2.password});
+
+            const firstUserId = createdUser1.body.user.userId;
+            const username1 = createdUser1.body.user.username;
+
+            const user1Review = await chai.request(server)
+                .post(`/server/api/user/${firstUserId}/reviews`)
+                .send({"rating": 3, "reviewText": "This is the 3rd review"})
+                .set('Authorization', logInUser1.body.token);
+
+            const user1ReviewId = user1Review.body.updatedUser.reviews._id;
+
+            const updateReview = await chai.request(server)
+                .delete(`/server/api/user/${username1}/reviews/${user1ReviewId}`)
+                .set('Authorization', logInUser2.body.token);
+
+            updateReview.status.should.be.eql(403);
+            updateReview.body.should.have.property('message')
+                .eql(`You don't have enough permission to perform this action !`);
+
+            await userRepository.remove({id : createdUser1.body.user.userId });
+            await userRepository.remove({id : createdUser2.body.user.userId });
+
+        });
+    });
 });

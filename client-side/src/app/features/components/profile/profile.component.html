@@ -14,7 +14,12 @@
       </div>
       <div class="card-body">
         <!--Name-->
-        <h4 class="font-weight-bold mb-4">{{user["username"]}}</h4>
+        <h4 class="font-weight-bold mb-4">{{user["username"]}}
+          <i *ngIf="user['isVerified']" class="fa fa-check-circle"
+             style="color: dodgerblue" title="Verified Account"></i>
+          <i *ngIf="!user['isVerified']" class="fa fa-times-circle"
+             style="color: indianred" title="Unverified Account"></i>
+        </h4>
         <hr>
         <!--Quotation-->
         <p class="dark-grey-text mt-4"><i class="fa fa-quote-left pr-2"></i>
@@ -35,7 +40,7 @@
     <!--Card-->
     <br>
   </div>
-  <button type="button" class="btn btn-primary text-monospace font-italic font-weight-bolder"
+  <button type="button" class="btn btn-info text-monospace font-italic font-weight-bolder"
           data-toggle="modal" data-target="#exampleModal" id="updateUser"
           style="width:130px; margin-left:40px;">Update
   </button>

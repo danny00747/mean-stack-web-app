@@ -38,9 +38,9 @@
 
           <!--Avatar-->
           <div class="avatar mx-auto white" style="margin-top: 8px">
-            <img *ngIf="i <= 15" src="../../../assets/img/{{i + 1}}.jpg" class="rounded-circle img-fluid"
+            <img *ngIf="i <= 15" src="../../../../assets/img/{{i + 1}}.jpg" class="rounded-circle img-fluid"
                  style="height: 150px" alt="">
-            <img *ngIf="i > 15" src="../../../assets/img/no-profile.png" class="rounded-circle img-fluid"
+            <img *ngIf="i > 15" src="../../../../assets/img/no-profile.png" class="rounded-circle img-fluid"
                  style="height: 150px" alt="">
           </div>
 
@@ -48,7 +48,12 @@
           <div class="card-body">
 
             <!-- user -->
-            <h4 class="font-weight-bold mb-4">{{user["username"]}}</h4>
+            <h4 class="font-weight-bold mb-4">{{user["username"]}}
+              <i *ngIf="user['isVerified']" class="fa fa-check-circle"
+                 style="color: dodgerblue" title="Verified Account"></i>
+              <i *ngIf="!user['isVerified']" class="fa fa-times-circle"
+                 style="color: indianred" title="Unverified Account"></i>
+            </h4>
             <hr>
 
             <!--user id-->
@@ -70,7 +75,6 @@
 
               <!-- user role -->
               <strong style="margin-right: 44px"> Role : </strong> {{user["role"]}}
-              <i style="margin-left: 80px" class="fa fa-quote-right pr-2"></i>
             </p>
             <hr>
 
@@ -79,7 +83,7 @@
               <!-- update user button -->
               <button  id="updateUser" name="{{user['_id']}}" type="button"
                        (click)="getUpdateId($event.target)"
-                       class="btn btn-primary btn-sm text-monospace font-italic font-weight-bolder"
+                       class="btn btn-info btn-sm text-monospace font-italic font-weight-bolder"
                       data-toggle="modal" data-target="#exampleModal">
                 <i class="fa fa-pencil" aria-hidden="true"
                    style="color: white"></i> Update

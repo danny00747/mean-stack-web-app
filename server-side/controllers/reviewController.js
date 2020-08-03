@@ -68,9 +68,10 @@ export default function reviewControllerFactory() {
 
         try {
             const {...userInfo} = httpRequest.body;
-            const {reviewId: id, userEmail: email} = httpRequest.params;
+            const {reviewId: id, username} = httpRequest.params;
 
-            const updatedUser = await reviewService.editReview({id, email,...userInfo});
+            const updatedUser = await reviewService.editReview(
+                {id, username,...userInfo});
 
             if (updatedUser.message) {
 
@@ -92,7 +93,7 @@ export default function reviewControllerFactory() {
                 body: {
                     message: "Review updated successfully !",
                     updatedUser: {
-                        email: email,
+                        username: username,
                         updatedReview: updatedUser.updatedDocument.reviews[updatedUser.index]
                     }
                 }
@@ -177,9 +178,10 @@ export default function reviewControllerFactory() {
         const logInfo = logging(httpRequest);
 
         try {
-            const {reviewId: id, userEmail: email} = httpRequest.params;
+            const {reviewId: id, username} = httpRequest.params;
 
-            const updatedUser = await reviewService.removeReview({id, email});
+            const updatedUser = await reviewService.removeReview(
+                {id, username});
 
             if (updatedUser.message) {
 
@@ -201,7 +203,7 @@ export default function reviewControllerFactory() {
                 body: {
                     message: "Review deleted successfully !",
                     updatedUser: {
-                        email: email,
+                        username: username,
                         removedReview: updatedUser.ancientDocument.reviews[updatedUser.index]
                     }
                 }

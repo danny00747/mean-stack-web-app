@@ -2,8 +2,6 @@ import express from 'express';
 import passport from 'passport'
 const router = express.Router();
 
-//passport.authenticate("jwt", {session: false}),
-
 import {questionController} from '../controllers'
 import makeCallback from '../helpers/express-callback'
 
@@ -11,12 +9,18 @@ router
     .route('/questions')
     .get(passport.authenticate("jwt", {session: false}),
         makeCallback(questionController.getAllQuestions))
-    .post(makeCallback(questionController.postQuestion));
+    .post(passport.authenticate("jwt", {session: false}),
+        makeCallback(questionController.postQuestion));
 
 router
     .route('/questions/:questionId')
-    .get(makeCallback(questionController.getQuestion))
-    .patch(makeCallback(questionController.patchQuestion))
-    .delete(makeCallback(questionController.deleteQuestion));
+    .get(passport.authenticate("jwt", {session: false}),
+        makeCallback(questionController.getQuestion))
+
+    .patch(passport.authenticate("jwt", {session: false}),
+        makeCallback(questionController.patchQuestion))
+
+    .delete(passport.authenticate("jwt", {session: false}),
+        makeCallback(questionController.deleteQuestion));
 
 export {router as questionsRoutes};

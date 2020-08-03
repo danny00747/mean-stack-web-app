@@ -264,7 +264,7 @@ export default function userControllerFactory() {
                 body: {
                     user: {
                         userId: user._id, email: user.email, username: user.username,
-                        role: user.role, level: user.level, password: user.password
+                        role: user.role, level: user.level, isVerified : user.isVerified
                     }
                 }
             }
