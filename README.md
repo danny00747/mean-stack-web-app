@@ -21,7 +21,8 @@ Angular 8 application built in the lazy loading architecture
 **Stack**
 
 - Angular
-- ngrx (or try [ngx-model](https://github.com/tomastrajan/ngx-model) if you prefer less boilerplate)
+- NgRx 
+- RxJS  
 - Angular Material
 - Bootstrap 4
 
