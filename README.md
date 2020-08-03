@@ -9,6 +9,92 @@ Uncle Bob's clean architecture implementation in nodejs/express/mongoose
 
 Angular 8 application built in the lazy loading architecture
 
+**Features**
+
+- lazy-loading of admin and feature modules
+- lazy reducers
+- localStorage ui state persistence
+- `@ngrx/effects` for API requests
+- fully responsive design
+- angular-material and custom components in `SharedModule`
+
+**Stack**
+
+- Angular
+- ngrx (or try [ngx-model](https://github.com/tomastrajan/ngx-model) if you prefer less boilerplate)
+- Angular Material
+- Bootstrap 4
+
+# Usage
+
+#### Prerequisites
+* [Git](https://git-scm.com/downloads)
+* [Node JS](https://nodejs.org/en/)
+* [Mongo DB](https://www.mongodb.com) (As a MongoDB interface, you can install MongoDB Compass)
+* [Angular](https://angular.io/guide/setup-local)
+
+## Running Locally
+
+> The backend 
+#### 1. Clone the repo and install dependencies
+
+```bash
+git clone 
+cd mean-stack-web-app
+npm i
+```
+#### 2. Modify the .env file
+Save `.env.sample` as `.env` and then add your database and other variables
+
+#### 3. Startup your MongoDB
+Usually this is just: `mongod` on the command line. Or use MongoDB Compass
+
+#### 4. Start the server
+To run in development mode where code is run 
+by [babel-node](https://babeljs.io/docs/en/babel-node) via [nodemon](https://nodemon.io) 
+and re-transpiled any time there is a change:
+```bash
+npm run dev
+```
+
+To run in production mode where code is transpiled by Babel into a `dist` folder and run directly in `node`:
+```bash
+npm run prod
+```
+
+## Useful Commands
+
+- `npm run test:e2e` - runs e2e test and opens chrome to run tests
+- `npm run cover:unit:nyc` - runs unit tests and uses as a Istanbul coverage reporter
+- `npm run test:integration` - runs integration tests for the backend
+- `npm run test:integration:watch` - runs integration tests in watch mode
+
+> The frontend
+
+#### 1. install dependencies
+
+```bash
+git clone 
+cd client-side
+npm i
+```
+
+#### 2. Start the application
+
+```bash
+npm run start
+```
+
+#### 2. Build the application for production use
+
+```bash
+npm run build
+```
+
+# Built With
+
+> [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/) 
+
 # API
 
 Documentation available [here](https://danny00747.github.io/mean-stack-web-app/ "api doc")
