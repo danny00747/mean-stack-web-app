@@ -14,5 +14,5 @@ export default function makeTwoUsers() {
         "password": randomUser2
     };
 
-    return {user1, user2}
+    return Object.freeze({user1, user2});
 }

@@ -7,11 +7,11 @@ export default function buildMakeQuestion(requiredParameter) {
 
         if (typeof question !== 'string') throw new TypeError('A question must be a string required.');
 
-        const typeEnum = {MULTIPLE: "multiple", BOOLEAN: "boolean", FILLIN: "fill in"};
-        Object.freeze(typeEnum);
+        if (typeof answers !== 'object') throw new TypeError("The question's answer must be an array");
 
-        if (type !== typeEnum.BOOLEAN && type !== typeEnum.MULTIPLE &&
-            type !== typeEnum.FILLIN) {
+        const typeEnum = Object.freeze({MULTIPLE: "multiple", BOOLEAN: "boolean", FILLIN: "fill in"});
+
+        if (type !== typeEnum.BOOLEAN && type !== typeEnum.MULTIPLE && type !== typeEnum.FILLIN) {
             throw new RangeError('These are the types are allowed : boolean, multiple, fill in');
         }
 

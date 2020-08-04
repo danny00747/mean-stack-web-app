@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>10/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">84.62% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>11/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.67% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/6</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">77.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/9</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -83,35 +83,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default function buildMakeReview(requiredParameter) {
-    return <span class="fstat-no" title="function not covered" >({</span>
-                rating = <span class="branch-0 cbranch-no" title="branch not covered" >0, r</span>eviewText = <span class="branch-0 cbranch-no" title="branch not covered" >requiredParameter('</span>The reviewText field'),
-                createdOn = <span class="branch-0 cbranch-no" title="branch not covered" >new D</span>ate(), modifiedOn = <span class="branch-0 cbranch-no" title="branch not covered" >new D</span>ate()
+    return ({
+                rating = <span class="branch-0 cbranch-no" title="branch not covered" >0, r</span>eviewText = requiredParameter('The reviewText field'),
+                createdOn = new Date(), modifiedOn = new Date()
             } = <span class="branch-0 cbranch-no" title="branch not covered" >{}) =&gt; {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (typeof rating !== 'number') <span class="cstat-no" title="statement not covered" >throw n</span></span>ew TypeError('rating must be a number.');
+        if (typeof rating !== 'number') throw new TypeError('rating must be a number.');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (rating &lt; 0 || rating &gt; 5) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew RangeError('The rating must be between 0 and 5 .');
+        if (rating &lt; 0 || rating &gt; 5) throw new RangeError('The rating must be between 0 and 5 .');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (typeof reviewText !== 'string') <span class="cstat-no" title="statement not covered" >throw n</span></span>ew TypeError('reviewText must be a string.');
+        if (typeof reviewText !== 'string') throw new TypeError('reviewText must be a string.');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        return O</span>bject.freeze({
-            getRating: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >r</span>ating,</span>
-            getReviewText: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >r</span>eviewText,</span>
+        return Object.freeze({
+            getRating: () =&gt; rating,
+            getReviewText: () =&gt; reviewText,
             getCreatedOn: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >c</span>reatedOn,</span>
             getModifiedOn: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >m</span>odifiedOn</span>
         });
@@ -124,7 +124,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Aug 03 2020 23:30:09 GMT+0200 (Central European Summer Time)
+                at Tue Aug 04 2020 05:36:45 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

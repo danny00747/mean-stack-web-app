@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.76% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/21</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">95.24% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/19</span>
+                <span class='fraction'>20/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.29% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,60 +93,60 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default function buildMakeQuestion(requiredParameter) {
-    return <span class="fstat-no" title="function not covered" >({</span>type = <span class="branch-0 cbranch-no" title="branch not covered" >requiredParameter('</span>A type'),
-                question = <span class="branch-0 cbranch-no" title="branch not covered" >requiredParameter('</span>A question'),
-                answers = <span class="branch-0 cbranch-no" title="branch not covered" >requiredParameter("</span>The question's answer")} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) =&gt; {</span>
+    return ({type = requiredParameter('A type'),
+                question = requiredParameter('A question'),
+                answers = requiredParameter("The question's answer")} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) =&gt; {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (typeof type !== 'string') <span class="cstat-no" title="statement not covered" >throw n</span></span>ew TypeError('The type must be a string.');
+        if (typeof type !== 'string') throw new TypeError('The type must be a string.');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (typeof question !== 'string') <span class="cstat-no" title="statement not covered" >throw n</span></span>ew TypeError('A question must be a string required.');
+        if (typeof question !== 'string') throw new TypeError('A question must be a string required.');
 &nbsp;
-        const typeEnum = <span class="cstat-no" title="statement not covered" >{M</span>ULTIPLE: "multiple", BOOLEAN: "boolean", FILLIN: "fill in"};
-<span class="cstat-no" title="statement not covered" >        Object.</span>freeze(typeEnum);
+        if (typeof answers !== 'object') throw new TypeError("The question's answer must be an array");
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (type !== typeEnum.BOOLEAN &amp;&amp; type !== typeEnum.MULTIPLE &amp;&amp;</span>
-            type !== typeEnum.FILLIN) {
-<span class="cstat-no" title="statement not covered" >            throw n</span>ew RangeError('These are the types are allowed : boolean, multiple, fill in');
+        const typeEnum = Object.freeze({MULTIPLE: "multiple", BOOLEAN: "boolean", FILLIN: "fill in"});
+&nbsp;
+        if (type !== typeEnum.BOOLEAN &amp;&amp; type !== typeEnum.MULTIPLE &amp;&amp; type !== typeEnum.FILLIN) {
+            throw new RangeError('These are the types are allowed : boolean, multiple, fill in');
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        answers.</span>forEach(<span class="fstat-no" title="function not covered" >x </span>=&gt; {
-<span class="cstat-no" title="statement not covered" >            if (x.option === undefined) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew Error('Each answer must have an option');
-<span class="cstat-no" title="statement not covered" >            if (x.isCorrect === undefined) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew Error('Each answer must have the isCorrect field');
-<span class="cstat-no" title="statement not covered" >            if (Object.keys(x).length &gt; 2) <span class="cstat-no" title="statement not covered" >throw n</span></span>ew Error('Some fields are not allowed !');
+        answers.forEach(x =&gt; {
+            if (x.option === undefined) throw new Error('Each answer must have an option');
+            if (x.isCorrect === undefined) throw new Error('Each answer must have the isCorrect field');
+            if (Object.keys(x).length &gt; 2) throw new Error('Some fields are not allowed !');
         });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        return O</span>bject.freeze({
-            getType: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >t</span>ypeEnum[O</span>bject.keys(typeEnum)
-                .find(<span class="fstat-no" title="function not covered" >x </span>=&gt; <span class="cstat-no" title="statement not covered" >typeEnum[x] === type)],</span>
-            getQuestion: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >q</span>uestion,</span>
-            getAnswers: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >a</span>nswers</span>
+        return Object.freeze({
+            getType: () =&gt; typeEnum[Object.keys(typeEnum)
+                .find(x =&gt; typeEnum[x] === type)],
+            getQuestion: () =&gt; question,
+            getAnswers: () =&gt; answers
         });
     }
 }
@@ -157,7 +157,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Aug 03 2020 23:30:09 GMT+0200 (Central European Summer Time)
+                at Tue Aug 04 2020 05:36:45 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

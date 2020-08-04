@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>96/96</span>
+                <span class='fraction'>95/95</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>79/79</span>
+                <span class='fraction'>78/78</span>
             </div>
         
             
@@ -212,8 +212,7 @@
 <a name='L153'></a><a href='#L153'>153</a>
 <a name='L154'></a><a href='#L154'>154</a>
 <a name='L155'></a><a href='#L155'>155</a>
-<a name='L156'></a><a href='#L156'>156</a>
-<a name='L157'></a><a href='#L157'>157</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L156'></a><a href='#L156'>156</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -221,7 +220,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -373,13 +371,12 @@
 process.env.NODE_ENV = 'test';
 &nbsp;
 //bring in dev-dependencies
-import {assert, should, expect} from 'chai';
+import {expect} from 'chai';
 import {describe, it} from 'mocha';
 &nbsp;
 &nbsp;
 import makeFakeUser from '../../fixtures/fakeUser'
 import {makeUser} from '../../../domain'
-import env from '../../../config/environment'
 import {RequiredParameterError} from "../../../helpers/errors"
 &nbsp;
 describe('USER ENTITY', () =&gt; {
@@ -402,31 +399,31 @@ describe('USER ENTITY', () =&gt; {
 &nbsp;
         it('a user must have a username', () =&gt; {
             const user = makeFakeUser({username: undefined});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(RequiredParameterError, 'A username is a required.');
         });
 &nbsp;
         it("a username can't be null", () =&gt; {
             const user = makeFakeUser({username: null});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(TypeError, 'A username must be a string.');
         });
 &nbsp;
         it("a username can't be a number", () =&gt; {
             const user = makeFakeUser({username: 123});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(TypeError, 'A username must be a string.');
         });
 &nbsp;
         it("a username max length must be 12", () =&gt; {
             const user = makeFakeUser({username: "abcdefjkhlmnpo"});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(RangeError, 'A username length must be between 4 and 12 .');
         });
 &nbsp;
         it("a username min length must be 4", () =&gt; {
             const user = makeFakeUser({username: "ab"});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(RangeError, 'A username length must be between 4 and 12 .');
         });
     });
@@ -435,25 +432,25 @@ describe('USER ENTITY', () =&gt; {
 &nbsp;
         it('a user must have an email', () =&gt; {
             const user = makeFakeUser({email: undefined});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(RequiredParameterError, 'An email is a required.');
         });
 &nbsp;
         it("an email must be a valid email", () =&gt; {
             const user = makeFakeUser({email: "dangamil.com"});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(SyntaxError, 'Invalid email.');
         });
 &nbsp;
         it("an email can't be null", () =&gt; {
             const user = makeFakeUser({email: null});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(SyntaxError, 'An email must be of type string.');
         });
 &nbsp;
         it("an email can't be a number", () =&gt; {
             const user = makeFakeUser({email: 123});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(SyntaxError, 'An email must be of type string.');
         });
     });
@@ -462,25 +459,25 @@ describe('USER ENTITY', () =&gt; {
 &nbsp;
         it("a user must a have password", () =&gt; {
             const user = makeFakeUser({password: undefined});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(RequiredParameterError, 'A password is a required.');
         });
 &nbsp;
         it("can hash password", () =&gt; {
             const user = makeFakeUser();
-            const password = makeUser(user).getPassword();
+            const password = makeUser({...user}).getPassword();
             expect(password.match(/^\$2[aby]?\$\d{1,2}\$[.\/A-Za-z0-9]{53}$/)).to.not.be.null;
         });
 &nbsp;
         it("a password can't be a null", () =&gt; {
             const user = makeFakeUser({password: null});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(TypeError, 'The password must be of type string.');
         });
 &nbsp;
         it("a password can't be a number", () =&gt; {
             const user = makeFakeUser({password: 123});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(TypeError, 'The password must be of type string.');
         });
     });
@@ -489,7 +486,7 @@ describe('USER ENTITY', () =&gt; {
 &nbsp;
         it("can only accept allowed roles", () =&gt; {
             const user = makeFakeUser({role: "abc"});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(RangeError, 'These are the role are allowed : ' +
                 'admin, teacher, student');
         });
@@ -499,19 +496,19 @@ describe('USER ENTITY', () =&gt; {
 &nbsp;
         it("max score must be 10", () =&gt; {
             const user = makeFakeUser({score: 26});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(RangeError, 'The score must be between 0 and 10.');
         });
 &nbsp;
         it("min score must be 0", () =&gt; {
             const user = makeFakeUser({score: -22});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(RangeError, 'The score must be between 0 and 10.');
         });
 &nbsp;
         it("score must a number", () =&gt; {
             const user = makeFakeUser({score: "abc"});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(TypeError, 'The score must be a number');
         });
     });
@@ -520,7 +517,7 @@ describe('USER ENTITY', () =&gt; {
 &nbsp;
         it("Reviews must be an array", () =&gt; {
             const user = makeFakeUser({reviews: "abc"});
-            expect(() =&gt; makeUser(user))
+            expect(() =&gt; makeUser({...user}))
                 .to.throw(TypeError, 'Reviews must be an array');
         });
     });
@@ -532,7 +529,7 @@ describe('USER ENTITY', () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Aug 03 2020 23:30:09 GMT+0200 (Central European Summer Time)
+                at Tue Aug 04 2020 05:36:45 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../../../prettify.js"></script>

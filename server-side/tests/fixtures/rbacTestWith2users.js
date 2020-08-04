@@ -29,7 +29,8 @@ const usersRbac = async () => {
     const firstUserId = createdUser1.createdUser._id;
     const username1 = createdUser1.createdUser.username;
 
-    return {createdUser1, createdUser2, logInUser1, logInUser2, firstUserId, username1}
+    return Object.freeze(
+        {createdUser1, createdUser2, logInUser1, logInUser2, firstUserId, username1});
 
 };
 
