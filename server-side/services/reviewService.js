@@ -5,11 +5,14 @@ export default function reviewServiceFactory({reviewRepository}) {
         addReview, editReview, listReviews, removeReview
     });
 
+    //TODO add review author to the review domain
+
     async function addReview({id, ...changes} = {}) {
 
-        if (!id) throw new Error('You must supply an id.');
+        if (!id) return {message: 'You must supply an id.'};
 
-        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
+        if (!(id.match(/^[0-9a-fA-F]{24}$/)))
+            return {message: `${id} is not a valid ObjectId`};
 
         const existing = await reviewRepository.findById({id});
 
@@ -36,21 +39,23 @@ export default function reviewServiceFactory({reviewRepository}) {
 
     async function editReview({id, username, ...changes} = {}) {
 
-        if (!id) throw new Error('You must supply an id.');
+        if (!id) return {message: 'You must supply an id.'};
 
-        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
+        if (!(id.match(/^[0-9a-fA-F]{24}$/)))
+            return {message: `${id} is not a valid ObjectId`};
 
-        if (!username) throw new Error('You must supply the username.');
+        if (!username) return {message: 'You must supply the username.'};
 
         if (username.length < 4 || username.length > 12)
-            throw new RangeError('A username length must be between 4 and 12 .');
+            return {message:'A username length must be between 4 and 12 .'};
 
         const existing = await reviewRepository.findByUsername({username});
 
-        if (!existing) return {message: "No user was found with provided email"};
+        if (!existing) return {message: "No user was found with provided username"};
 
         if (existing.reviews.length === 0) return {
-            message: `${existing.username} doesn't have any reviews at the moment !`};
+            message: `${existing.username} doesn't have any reviews at the moment !`
+        };
 
         //const reviewToEdit = existing.reviews.id(id);
         const index = existing.reviews.findIndex(i => (i._id).toString() === id);

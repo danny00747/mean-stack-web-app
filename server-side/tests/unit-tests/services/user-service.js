@@ -1,7 +1,8 @@
 //During the test the env variable is set to test
-import server from "../../../../app";
-
 process.env.NODE_ENV = 'test';
+
+//import server to bring in everything together
+import server from "../../../../app";
 
 //bring in dev-dependencies
 import chai, {assert, should, expect} from 'chai';

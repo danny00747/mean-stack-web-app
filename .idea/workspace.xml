@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeQuestion.js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeReview.js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/question.js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/review.js.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/services/review-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/review-service.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/domain/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/fixtures/fakeQuestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/fixtures/fakeQuestion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/fixtures/fakeReview.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/fixtures/fakeReview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/fixtures/make2users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/fixtures/make2users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/fixtures/rbacTestWith2users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/fixtures/rbacTestWith2users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/review.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/review.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/entities/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/services/reviewService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviewService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/integration-tests/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/integration-tests/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/services/user-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/services/user-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/app.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/app.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/index.html" afterDir="false" />
@@ -134,9 +127,13 @@
       <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/questionService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/questionService.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/reviewService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/reviewService.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/userService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/userService.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeQuestion.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeQuestion.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeReview.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeReview.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeUser.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeUser.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/question.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/question.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/review.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/review.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/user.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/user.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/user-service.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/user-service.js.html" afterDir="false" />
@@ -242,7 +239,7 @@
       <command value="y" />
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.USER ENTITY.#email.a user must have an email">
+  <component name="RunManager" selected="npm.cover:unit:mocha">
     <configuration name="E2E Tests (client-side)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/client-side/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -263,6 +260,16 @@
       <command value="run" />
       <scripts>
         <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="cover:unit:mocha" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="cover:unit:mocha" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -334,6 +341,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.cover:unit:mocha" />
         <item itemvalue="Mocha.USER ENTITY.#email.a user must have an email" />
         <item itemvalue="Mocha.Users./PATCH/:id/score.it should PATCH the user's score " />
         <item itemvalue="npm.start" />
@@ -535,7 +543,10 @@
       <workItem from="1596334494509" duration="6808000" />
       <workItem from="1596372325977" duration="28173000" />
       <workItem from="1596416625700" duration="7731000" />
-      <workItem from="1596464406002" duration="25201000" />
+      <workItem from="1596464406002" duration="25542000" />
+      <workItem from="1596561699467" duration="1920000" />
+      <workItem from="1596650251123" duration="5406000" />
+      <workItem from="1596678761281" duration="4492000" />
     </task>
     <task id="LOCAL-00125" summary="removed mat css from package.json">
       <created>1586806095799</created>
@@ -949,70 +960,70 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="421" y="67" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1595689075802" />
-    <state width="1237" height="279" key="GridCell.Tab.0.bottom" timestamp="1596488467198">
+    <state width="1237" height="498" key="GridCell.Tab.0.bottom" timestamp="1596650353524">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="279" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1596488467198" />
-    <state width="1237" height="279" key="GridCell.Tab.0.center" timestamp="1596488467198">
+    <state width="1237" height="498" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1596650353524" />
+    <state width="1237" height="498" key="GridCell.Tab.0.center" timestamp="1596650353524">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="279" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1596488467198" />
-    <state width="1237" height="279" key="GridCell.Tab.0.left" timestamp="1596488467198">
+    <state width="1237" height="498" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1596650353524" />
+    <state width="1237" height="498" key="GridCell.Tab.0.left" timestamp="1596650353524">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="279" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1596488467198" />
-    <state width="1237" height="279" key="GridCell.Tab.0.right" timestamp="1596488467198">
+    <state width="1237" height="498" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1596650353524" />
+    <state width="1237" height="498" key="GridCell.Tab.0.right" timestamp="1596650353524">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="279" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1596488467198" />
-    <state width="1237" height="498" key="GridCell.Tab.1.bottom" timestamp="1595621863992">
+    <state width="1237" height="498" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1596650353524" />
+    <state width="1237" height="498" key="GridCell.Tab.1.bottom" timestamp="1596650353525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1595621863992" />
-    <state width="1237" height="498" key="GridCell.Tab.1.center" timestamp="1595621863992">
+    <state width="1237" height="498" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1596650353525" />
+    <state width="1237" height="498" key="GridCell.Tab.1.center" timestamp="1596650353524">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1595621863992" />
-    <state width="1237" height="498" key="GridCell.Tab.1.left" timestamp="1595621863992">
+    <state width="1237" height="498" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1596650353524" />
+    <state width="1237" height="498" key="GridCell.Tab.1.left" timestamp="1596650353524">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1595621863992" />
-    <state width="1237" height="498" key="GridCell.Tab.1.right" timestamp="1595621863992">
+    <state width="1237" height="498" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1596650353524" />
+    <state width="1237" height="498" key="GridCell.Tab.1.right" timestamp="1596650353525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1595621863992" />
-    <state width="1237" height="498" key="GridCell.Tab.2.bottom" timestamp="1595621863992">
+    <state width="1237" height="498" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1596650353525" />
+    <state width="1237" height="498" key="GridCell.Tab.2.bottom" timestamp="1596650353525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.2.bottom/0.0.1280.689@0.0.1280.689" timestamp="1595621863992" />
-    <state width="1237" height="498" key="GridCell.Tab.2.center" timestamp="1595621863992">
+    <state width="1237" height="498" key="GridCell.Tab.2.bottom/0.0.1280.689@0.0.1280.689" timestamp="1596650353525" />
+    <state width="1237" height="498" key="GridCell.Tab.2.center" timestamp="1596650353525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.2.center/0.0.1280.689@0.0.1280.689" timestamp="1595621863992" />
-    <state width="1237" height="498" key="GridCell.Tab.2.left" timestamp="1595621863992">
+    <state width="1237" height="498" key="GridCell.Tab.2.center/0.0.1280.689@0.0.1280.689" timestamp="1596650353525" />
+    <state width="1237" height="498" key="GridCell.Tab.2.left" timestamp="1596650353525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.2.left/0.0.1280.689@0.0.1280.689" timestamp="1595621863992" />
-    <state width="1237" height="498" key="GridCell.Tab.2.right" timestamp="1595621863992">
+    <state width="1237" height="498" key="GridCell.Tab.2.left/0.0.1280.689@0.0.1280.689" timestamp="1596650353525" />
+    <state width="1237" height="498" key="GridCell.Tab.2.right" timestamp="1596650353525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.2.right/0.0.1280.689@0.0.1280.689" timestamp="1595621863992" />
-    <state width="1237" height="498" key="GridCell.Tab.3.bottom" timestamp="1595621863993">
+    <state width="1237" height="498" key="GridCell.Tab.2.right/0.0.1280.689@0.0.1280.689" timestamp="1596650353525" />
+    <state width="1237" height="498" key="GridCell.Tab.3.bottom" timestamp="1596650353525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.3.bottom/0.0.1280.689@0.0.1280.689" timestamp="1595621863993" />
-    <state width="1237" height="498" key="GridCell.Tab.3.center" timestamp="1595621863992">
+    <state width="1237" height="498" key="GridCell.Tab.3.bottom/0.0.1280.689@0.0.1280.689" timestamp="1596650353525" />
+    <state width="1237" height="498" key="GridCell.Tab.3.center" timestamp="1596650353525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.3.center/0.0.1280.689@0.0.1280.689" timestamp="1595621863992" />
-    <state width="1237" height="498" key="GridCell.Tab.3.left" timestamp="1595621863992">
+    <state width="1237" height="498" key="GridCell.Tab.3.center/0.0.1280.689@0.0.1280.689" timestamp="1596650353525" />
+    <state width="1237" height="498" key="GridCell.Tab.3.left" timestamp="1596650353525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.3.left/0.0.1280.689@0.0.1280.689" timestamp="1595621863992" />
-    <state width="1237" height="498" key="GridCell.Tab.3.right" timestamp="1595621863993">
+    <state width="1237" height="498" key="GridCell.Tab.3.left/0.0.1280.689@0.0.1280.689" timestamp="1596650353525" />
+    <state width="1237" height="498" key="GridCell.Tab.3.right" timestamp="1596650353525">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="498" key="GridCell.Tab.3.right/0.0.1280.689@0.0.1280.689" timestamp="1595621863993" />
+    <state width="1237" height="498" key="GridCell.Tab.3.right/0.0.1280.689@0.0.1280.689" timestamp="1596650353525" />
     <state x="79" y="0" key="SettingsEditor" timestamp="1596153423152">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

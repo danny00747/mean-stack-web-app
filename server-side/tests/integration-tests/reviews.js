@@ -81,7 +81,7 @@ describe('Reviews', () => {
 
         });
 
-        it('it should NOT create a review with a wrong user id', async () => {
+        it('it should NOT create a review for unregistered user', async () => {
 
 
             const review = await chai.request(server)
@@ -197,7 +197,7 @@ describe('Reviews', () => {
 
             updatedReview.status.should.be.eql(404);
             updatedReview.body.should.have.property('message')
-                .eql('No user was found with provided email');
+                .eql('No user was found with provided username');
 
         });
 

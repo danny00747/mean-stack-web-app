@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95% </span>
+                <span class="strong">90.48% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>38/40</span>
+                <span class='fraction'>38/42</span>
             </div>
         
             
@@ -170,7 +170,12 @@
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
 <a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -179,9 +184,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,6 +219,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -222,6 +231,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -290,11 +300,14 @@ export default function reviewServiceFactory({reviewRepository}) {
         addReview, editReview, listReviews, removeReview
     });
 &nbsp;
+    //TODO add review author to the review domain
+&nbsp;
     async function addReview({id, ...changes} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
 &nbsp;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!id) <span class="cstat-no" title="statement not covered" >throw n</span>ew Error('You must supply an id.');
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!id) <span class="cstat-no" title="statement not covered" >return {</span>message: 'You must supply an id.'};
 &nbsp;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!(id.match(/^[0-9a-fA-F]{24}$/))) <span class="cstat-no" title="statement not covered" >throw n</span>ew TypeError(`${id} is not a valid ObjectId`);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!(id.match(/^[0-9a-fA-F]{24}$/)))
+<span class="cstat-no" title="statement not covered" >            return {</span>message: `${id} is not a valid ObjectId`};
 &nbsp;
         const existing = await reviewRepository.findById({id});
 &nbsp;
@@ -321,21 +334,23 @@ export default function reviewServiceFactory({reviewRepository}) {
 &nbsp;
     async function editReview({id, username, ...changes} = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span>
 &nbsp;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!id) <span class="cstat-no" title="statement not covered" >throw n</span>ew Error('You must supply an id.');
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!id) <span class="cstat-no" title="statement not covered" >return {</span>message: 'You must supply an id.'};
 &nbsp;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!(id.match(/^[0-9a-fA-F]{24}$/))) <span class="cstat-no" title="statement not covered" >throw n</span>ew TypeError(`${id} is not a valid ObjectId`);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!(id.match(/^[0-9a-fA-F]{24}$/)))
+<span class="cstat-no" title="statement not covered" >            return {</span>message: `${id} is not a valid ObjectId`};
 &nbsp;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!username) <span class="cstat-no" title="statement not covered" >throw n</span>ew Error('You must supply the username.');
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!username) <span class="cstat-no" title="statement not covered" >return {</span>message: 'You must supply the username.'};
 &nbsp;
         <span class="missing-if-branch" title="if path not taken" >I</span>if (username.length &lt; 4 || username.length &gt; 12)
-<span class="cstat-no" title="statement not covered" >            throw n</span>ew RangeError('A username length must be between 4 and 12 .');
+<span class="cstat-no" title="statement not covered" >            return {</span>message:'A username length must be between 4 and 12 .'};
 &nbsp;
         const existing = await reviewRepository.findByUsername({username});
 &nbsp;
-        if (!existing) return {message: "No user was found with provided email"};
+        if (!existing) return {message: "No user was found with provided username"};
 &nbsp;
         if (existing.reviews.length === 0) return {
-            message: `${existing.username} doesn't have any reviews at the moment !`};
+            message: `${existing.username} doesn't have any reviews at the moment !`
+        };
 &nbsp;
         //const reviewToEdit = existing.reviews.id(id);
         const index = existing.reviews.findIndex(i =&gt; (i._id).toString() === id);
@@ -403,7 +418,7 @@ export default function reviewServiceFactory({reviewRepository}) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 04 2020 05:38:50 GMT+0200 (Central European Summer Time)
+                at Thu Aug 06 2020 05:07:07 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
