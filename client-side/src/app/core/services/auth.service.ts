@@ -40,7 +40,10 @@ export class AuthService {
   }
 
   getLogs(limit : number){
-    return this._http.get(`/server/api/users/metrics/max/${limit}`, {headers});
+    const httpAuthHeaders = new HttpHeaders()
+      .set('Authorization', this.authToken);
+    return this._http.get(`/server/api/users/metrics/max/${limit}`,
+      {headers: httpAuthHeaders});
   }
 
 
