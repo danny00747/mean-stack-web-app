@@ -103,9 +103,10 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
 
     async function getUser({id} = {}) {
 
-        if (!id) throw new Error('You must supply an id.');
+        if (!id) return {message: 'You must supply an id.'};
 
-        if (!(id.match(/^[0-9a-fA-F]{24}$/))) throw new TypeError(`${id} is not a valid ObjectId`);
+        if (!(id.match(/^[0-9a-fA-F]{24}$/)))
+            return {message: `${id} is not a valid ObjectId`};
 
         return userRepository.findById({id});
 
@@ -165,6 +166,7 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
     async function verifyUser({key} = {}) {
 
         if (!key) return {message: 'You must supply the key.'};
+
         if (key.length !== 64) return {message: 'Invalid key'};
 
         const findTheKey = await tokenRepository.findKey({key});
@@ -173,7 +175,7 @@ export default function userServiceFactory({userRepository, tokenRepository}) {
 
         return userRepository.patch({
             id: findTheKey.userId,
-            isVerified: true,
+            isVerified: true
         });
 
     }

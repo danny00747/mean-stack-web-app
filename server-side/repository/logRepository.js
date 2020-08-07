@@ -16,7 +16,7 @@ export default function makeLogRepository({Logs}) {
 
     async function findLogs(limit) {
         return await Logs.find()
-            .sort({date: -1})
+            .sort({date: 1})
             .limit(Number(limit))
             .select("-__v")
             .exec();

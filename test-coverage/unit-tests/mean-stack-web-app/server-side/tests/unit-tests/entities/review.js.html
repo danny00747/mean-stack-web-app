@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>39/39</span>
+                <span class='fraction'>57/57</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>26/26</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>33/33</span>
+                <span class='fraction'>47/47</span>
             </div>
         
             
@@ -122,7 +122,38 @@
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,6 +173,33 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -188,6 +246,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//During the test the env variable is set to test
+import makeFakeUser from "../../fixtures/fakeUser";
+&nbsp;
 process.env.NODE_ENV = 'test';
 &nbsp;
 //bring in dev-dependencies
@@ -195,7 +255,7 @@ import {expect} from 'chai';
 import {describe, it} from 'mocha';
 &nbsp;
 import makeFakeReview from '../../fixtures/fakeReview'
-import {makeReview} from '../../../domain'
+import {makeReview, makeUser} from '../../../domain'
 import {RequiredParameterError} from "../../../helpers/errors"
 &nbsp;
 describe('REVIEW ENTITY', () =&gt; {
@@ -207,6 +267,33 @@ describe('REVIEW ENTITY', () =&gt; {
             const buildReview = makeReview({...review});
             expect(buildReview.getRating()).to.be.eql(review.rating);
             expect(buildReview.getReviewText()).to.be.eql(review.reviewText);
+        });
+    });
+&nbsp;
+    describe('#author', () =&gt; {
+&nbsp;
+        it('a review must have an author', () =&gt; {
+            const review = makeFakeReview({author: undefined});
+            expect(() =&gt; makeReview({...review}))
+                .to.throw(RequiredParameterError, 'The author is a required');
+        });
+&nbsp;
+        it("an author can't be null", () =&gt; {
+            const review = makeFakeReview({author: null});
+            expect(() =&gt; makeReview({...review}))
+                .to.throw(TypeError, 'The author must be a string.');
+        });
+&nbsp;
+        it("an author max length must be 12", () =&gt; {
+            const review = makeFakeReview({author: "abcdefjkhlmnpo"});
+            expect(() =&gt; makeReview({...review}))
+                .to.throw(RangeError, 'An author length must be between 4 and 12.');
+        });
+&nbsp;
+        it("an author min length must be 4", () =&gt; {
+            const review = makeFakeReview({author: "ab"});
+            expect(() =&gt; makeReview({...review}))
+                .to.throw(RangeError, 'An author length must be between 4 and 12.');
         });
     });
 &nbsp;
@@ -259,7 +346,7 @@ describe('REVIEW ENTITY', () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Aug 06 2020 05:02:23 GMT+0200 (Central European Summer Time)
+                at Fri Aug 07 2020 05:02:53 GMT+0200 (Central European Summer Time)
             </div>
         </div>
         <script src="../../../../../prettify.js"></script>
