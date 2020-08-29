@@ -103,16 +103,27 @@ Documentation available [here](https://danny00747.github.io/mean-stack-web-app/ 
 
 # Integration Test Code Coverage 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bdf7e790-329b-4be4-82bc-b620617bd4b3/deploy-status)](https://app.netlify.com/sites/test-coverage/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bdf7e790-329b-4be4-82bc-b620617bd4b3/deploy-status)](https://app.netlify.com/sites/integration-test-code-coverage/deploys)
 
-The code coverage available [here](https://test-coverage.netlify.app/ "test coverage")
+The code coverage available [here](https://integration-test-code-coverage.netlify.app/ "integration test coverage")
 
 # Integration Test Report 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bdf7e790-329b-4be4-82bc-b620617bd4b3/deploy-status)](https://app.netlify.com/sites/test-coverage/deploys)
 
-Integration tests report available [here](https://tests-report.netlify.app/ "integration tests report")
+Integration tests report available [here](https://integration-test-report.netlify.app/ "integration tests report")
 
+# Unit Test Code Coverage 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9b99b41c-2dc0-4551-b5a0-623639936f49/deploy-status)](https://app.netlify.com/sites/unit-test-code-coverage/deploys)
+
+The code coverage available [here](https://unit-test-code-coverage.netlify.app/ "unit tests code coverage")
+
+# Unit Test Report
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0e25ef6a-52da-4984-a23b-164190f31ba6/deploy-status)](https://app.netlify.com/sites/unit-test-report/deploys)
+
+Unit tests report available [here](https://unit-test-report.netlify.app/ "unit tests report")
 
 # End to End Test Report 
 

@@ -305,7 +305,7 @@ describe('Reviews', () => {
 
             deletedReview.status.should.be.eql(404);
             deletedReview.body.should.have.property('message')
-                .eql('No user was found with provided email !');
+                .eql('No user was found with provided username !');
 
         });
 

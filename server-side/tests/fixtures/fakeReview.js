@@ -1,7 +1,7 @@
-export default function makeFakeReview (overrides) {
+export default function makeFakeReview(overrides) {
 
     const review = {
-        author : 'toto',
+        author: 'toto',
         rating: 3,
         reviewText: 'I think, therefore I am'
     };

@@ -58,6 +58,8 @@ export default function reviewServiceFactory({reviewRepository}) {
 
         if (index === -1) return {message: "No was review found with provided id !"};
 
+        changes.author = existing.username;
+
         const review = makeReview({...changes});
 
         existing.reviews[index].rating = review.getRating();
