@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+
+  node:
+    container_name: node-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: 20152011/mean-app
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - nodeapp-network
+    depends_on:
+      - mongodb
+
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    networks:
+      - nodeapp-network
+
+networks:
+  nodeapp-network:
+    driver: bridge

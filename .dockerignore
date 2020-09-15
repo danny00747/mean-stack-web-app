@@ -1,2 +1,16 @@
 node_modules
 npm-debug.log
+.idea
+.git
+.env
+client-side
+test-coverage
+test-reports
+Dockerfile
+.dockerignore
+wiki
+LICENSE
+mean-stack-web-app.iml
+.nyc_output
+.gitignore
+README.md

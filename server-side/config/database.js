@@ -3,6 +3,7 @@ import {success, info, error, debug} from 'consola';
 
 import env from './environment'
 
+// mongodb is the mongodb container name
 const dbURL = `mongodb://mongodb:27017/web_app`;
 
 //connect with the database NODE_ENV=test
@@ -22,14 +23,14 @@ if (env.NODE_ENV === 'test' || env.NODE_ENV === 'dev') {
         error({message: `Mongoose connection error: ${err}`, badge: true});
     });
 } else if (process.env.NODE_ENV === 'production') {
-    mongoose.connect(env.MONGODB_URI,
+    mongoose.connect(env["MONGODB_URI"],
         {
             useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,
             useFindAndModify: false
         })
         .then(() => {
             success({
-                message: `Database connected successfully to ${env.MONGODB_URI}`,
+                message: `Database connected successfully to ${env["MONGODB_URI"]}`,
                 badge: true
             });
         }).catch(err => {

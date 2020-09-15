@@ -1,0 +1,188 @@
+[{
+    "_id": {
+        "$oid": "5e768d7e3188554118fc7ffd"
+    },
+    "email": "dan10@gmail.com",
+    "isVerified": true,
+    "password": "$2a$10$oSbxi5z0JzvvgrQ9Z2GDsuI0EPjmLrMRUbSMzP99bWKgdMYqQKOqm",
+    "reviews": [],
+    "__v": 4,
+    "role": "student",
+    "score": 7,
+    "username": "dan10",
+    "level": "B2"
+}, {
+    "_id": {
+        "$oid": "5e768daf3188554118fc8000"
+    },
+    "email": "dan40@gmail.com",
+    "isVerified": true,
+    "password": "$2a$10$ce3rRDd9RO.rd4MdHRsbrecF8UVZDwCq8FjuB4nXMXJZSSVGMwapC",
+    "reviews": [
+        {
+            "_id": {
+                "$oid": "5ec1931d535f6d4598352d8d"
+            },
+            "author": "dan40",
+            "rating": 3,
+            "reviewText": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.",
+            "created": "Sun May 17 2020 21:40:13 GMT+0200 (Central European Summer Time)",
+            "updated": "Sun May 17 2020 21:40:13 GMT+0200 (Central European Summer Time)"
+    },
+        {
+            "_id": {
+                "$oid": "5ec1933c535f6d4598352d8e"
+            },
+            "author": "dan40",
+            "rating": 5,
+            "reviewText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "created": "Sun May 17 2020 21:40:44 GMT+0200 (Central European Summer Time)",
+            "updated": "Sun May 17 2020 21:40:44 GMT+0200 (Central European Summer Time)"
+    },
+        {
+            "_id": {
+                "$oid": "5ec1a20baa6c0f001744cd9c"
+            },
+            "author": "dan40",
+            "rating": 3,
+            "reviewText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            "created": "Sun May 17 2020 20:43:55 GMT+0000 (Coordinated Universal Time)",
+            "updated": "Sun May 17 2020 20:43:55 GMT+0000 (Coordinated Universal Time)"
+    }
+  ],
+    "__v": 64,
+    "role": "student",
+    "score": 3,
+    "username": "dan40",
+    "level": "A2"
+}, {
+    "_id": {
+        "$oid": "5e7fcf6b40bcd946a8ffa9fe"
+    },
+    "role": "teacher",
+    "email": "teacher@gmail.com",
+    "isVerified": true,
+    "password": "$2a$10$039DphhlaQDNEo0/tc26nuSJQFy7RGgv77HihF29XO20GPxN16pAy",
+    "reviews": [],
+    "__v": 0,
+    "username": "teacher",
+    "score": 5
+}, {
+    "_id": {
+        "$oid": "5e7fd9abf35b123cbc246898"
+    },
+    "role": "admin",
+    "email": "admin@gmail.com",
+    "isVerified": true,
+    "password": "$2a$10$.tEcRXcxJkhbUdkEDKQHK.anz/t5UDuTsxHVdbpVY.Vg7GO2uQ/y.",
+    "reviews": [{
+        "rating": 3,
+        "reviewText": "This is the 3rd review !!!"
+    }],
+    "__v": 12,
+    "username": "admin",
+    "level": "A1",
+    "score": 0
+}, {
+    "_id": {
+        "$oid": "5e7fd9d5f35b123cbc246899"
+    },
+    "role": "student",
+    "email": "dan30@gmail.com",
+    "isVerified": true,
+    "password": "$2a$10$QdXZvB37qy0OftxaqEkSpOPZRZWOVgzoKLYe2anSPgak..C5yPG76",
+    "reviews": [
+        {
+            "_id": {
+                "$oid": "5ec192db535f6d4598352d8b"
+            },
+            "author": "dan30",
+            "rating": 2,
+            "reviewText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            "created": "Sun May 17 2020 21:39:07 GMT+0200 (Central European Summer Time)",
+            "updated": "Sun May 17 2020 21:39:07 GMT+0200 (Central European Summer Time)"
+    },
+        {
+            "_id": {
+                "$oid": "5ec192fb535f6d4598352d8c"
+            },
+            "author": "dan30",
+            "rating": 1,
+            "reviewText": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+            "created": "Sun May 17 2020 21:39:39 GMT+0200 (Central European Summer Time)",
+            "updated": "Sun May 17 2020 21:43:52 GMT+0200 (Central European Summer Time)"
+    },
+        {
+            "_id": {
+                "$oid": "5ec19707204cc700170523e0"
+            },
+            "author": "dan30",
+            "rating": 3,
+            "reviewText": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.",
+            "created": "Sun May 17 2020 19:56:55 GMT+0000 (Coordinated Universal Time)",
+            "updated": "Sun May 17 2020 19:56:55 GMT+0000 (Coordinated Universal Time)"
+    }
+  ],
+    "__v": 34,
+    "score": 0,
+    "username": "dan30",
+    "level": "A1"
+}, {
+    "_id": {
+        "$oid": "5ec19360535f6d4598352d8f"
+    },
+    "score": 0,
+    "level": "A1",
+    "role": "student",
+    "username": "morgan50",
+    "email": "morgan50@gmail.com",
+    "isVerified": true,
+    "password": "$2a$10$EKb1c.tM/0HzWnUKRIy3geWYxXNk5rNI6JHxn5CYZRCbg/px.baem",
+    "reviews": [
+        {
+            "_id": {
+                "$oid": "5ec19376535f6d4598352d90"
+            },
+            "author": "morgan50",
+            "rating": 3,
+            "reviewText": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. ",
+            "created": "Sun May 17 2020 21:41:42 GMT+0200 (Central European Summer Time)",
+            "updated": "Sun May 17 2020 21:41:42 GMT+0200 (Central European Summer Time)"
+    }
+  ],
+    "__v": 1
+}, {
+    "_id": {
+        "$oid": "5ec1939d535f6d4598352d91"
+    },
+    "score": 0,
+    "level": "A1",
+    "role": "student",
+    "username": "edwin50",
+    "isVerified": true,
+    "email": "edwin50@gmail.com",
+    "password": "$2a$10$2lUO/ZZn/AxjOMk39BgNIezMqojxZIr.EJL6KDw96oNKN2YHGwiMe",
+    "reviews": [
+        {
+            "_id": {
+                "$oid": "5ec193be535f6d4598352d92"
+            },
+            "author": "edwin50",
+            "rating": 3,
+            "reviewText": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business .",
+            "created": "Sun May 17 2020 21:42:54 GMT+0200 (Central European Summer Time)",
+            "updated": "Sun May 17 2020 21:42:54 GMT+0200 (Central European Summer Time)"
+    },
+        {
+            "_id": {
+                "$oid": "5ec193d3535f6d4598352d93"
+            },
+            "author": "edwin50",
+            "rating": 4,
+            "reviewText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
+            "created": "Sun May 17 2020 21:43:15 GMT+0200 (Central European Summer Time)",
+            "updated": "Sun May 17 2020 21:43:15 GMT+0200 (Central European Summer Time)"
+    }
+  ],
+    "__v": 2
+}]
