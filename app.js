@@ -81,8 +81,8 @@ app.get('*', (req, res) => {
         .join(__dirname + '/server-side', 'public', 'dist', 'index.html'));
 });
 
-app.listen(env.PORT, () => {
-    consola.info({message: `Server started on port ${env.PORT}`, badge: true});
+app.listen(env["PORT"], () => {
+    consola.info({message: `Server started on port ${env["PORT"]}`, badge: true});
 });
 
 // catch 404 and forward to error handler

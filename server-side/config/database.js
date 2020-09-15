@@ -3,8 +3,7 @@ import {success, info, error, debug} from 'consola';
 
 import env from './environment'
 
-// mongodb is the mongodb container name
-const dbURL = `mongodb://mongodb:27017/web_app`;
+const dbURL = `mongodb://${env["DB_HOST"]}/web_app`;
 
 //connect with the database NODE_ENV=test
 
