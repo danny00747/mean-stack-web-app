@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+
+  express-server:
+    container_name: express-server
+    image: 20152011/mean-app
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=mongo-container
+    restart: unless-stopped
+    networks:
+      - nodeapp-network
+    depends_on:
+      - database
+
+  database:
+    container_name: mongo-container
+    image: mongo
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    networks:
+      - nodeapp-network
+
+networks:
+  nodeapp-network:
+    driver: bridge
