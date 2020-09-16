@@ -5,8 +5,8 @@ process.env.NODE_ENV = 'test';
 import server from "../../../../app";
 
 //bring in dev-dependencies
-import chai, {assert, should, expect} from 'chai';
-import {describe, before, it} from 'mocha';
+import {expect} from 'chai';
+import {describe, it} from 'mocha';
 
 import makeFakeUser from '../../fixtures/fakeUser'
 import env from '../../../config/environment'

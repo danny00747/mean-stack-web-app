@@ -1,25 +1,23 @@
 //During the test the env variable is set to test
-import makeFakeUser from "../../fixtures/fakeUser";
-
 process.env.NODE_ENV = 'test';
 
 //import server to bring in everything together
 import server from "../../../../app";
 
 //bring in dev-dependencies
-import chai, {assert, should, expect} from 'chai';
-import {describe, before, it, after} from 'mocha';
+import  {expect} from 'chai';
+import {describe, it, after} from 'mocha';
 
 import makeFakeReview from '../../fixtures/fakeReview'
 import env from '../../../config/environment'
-import {reviewService, userService} from "../../../services"
-import {userRepository, reviewRepository} from '../../../repository'
+import {reviewService} from "../../../services"
+import {reviewRepository} from '../../../repository'
 
 describe('REVIEW SERVICE', () => {
 
     after(async () => {
         await reviewRepository.save({
-            id: env.ADMIN_ID, new: true, reviews: [
+            id: env["ADMIN_ID"], new: true, reviews: [
                 {"rating": 3, "reviewText": "This is the 3rd review !!!"}]
         });
     });
@@ -30,13 +28,13 @@ describe('REVIEW SERVICE', () => {
         it('inserts a review in the database', async () => {
 
             await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: []
+                id: env["ADMIN_ID"], new: true, reviews: []
             });
 
             const {...newReview} = makeFakeReview();
 
             const inserted = await reviewService.addReview(
-                {id: env.ADMIN_ID, ...newReview});
+                {id: env["ADMIN_ID"], ...newReview});
 
             expect(inserted.reviews).not.to.be.empty;
             expect(inserted.reviews[0]).to.have.property('rating')
@@ -72,7 +70,7 @@ describe('REVIEW SERVICE', () => {
 
         it('get all reviews in the database', async () => {
             await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: [
+                id: env["ADMIN_ID"], new: true, reviews: [
                     {"rating": 3, "reviewText": "This is the 3rd review !!!"}]
             });
 
@@ -87,19 +85,19 @@ describe('REVIEW SERVICE', () => {
         it('can edit a review', async () => {
 
             await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: []
+                id: env["ADMIN_ID"], new: true, reviews: []
             });
 
             const {...newReview} = makeFakeReview();
 
             const createdReview = await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: [{...newReview}]
+                id: env["ADMIN_ID"], new: true, reviews: [{...newReview}]
             });
 
             const reviewId = (createdReview.reviews[0]._id).toString();
 
             const editedReview = await reviewService.editReview(
-                {id: reviewId, username: env.ADMIN_PSEUDO, ...newReview});
+                {id: reviewId, username: env["ADMIN_PSEUDO"], ...newReview});
 
             expect(reviewId).to.be.eql((editedReview.updatedDocument.reviews[0]._id).toString());
             expect(editedReview.updatedDocument.reviews[0].rating).to.be.eql(newReview.rating);
@@ -139,7 +137,7 @@ describe('REVIEW SERVICE', () => {
 
             const editedReview = await reviewService.editReview(
                 {
-                    id: '1f468dbf5082002118fc8821', username: env.ADMIN_PSEUDO,
+                    id: '1f468dbf5082002118fc8821', username: env["ADMIN_PSEUDO"],
                     ...makeFakeReview()
                 });
 
@@ -150,19 +148,19 @@ describe('REVIEW SERVICE', () => {
         it("can't edit a review for a registered user with no reviews", async () => {
 
             await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: []
+                id: env["ADMIN_ID"], new: true, reviews: []
             });
 
             const {...newReview} = makeFakeReview();
 
             const editedReview = await reviewService.editReview(
-                {id: '1f468dbf5082002118fc8821', username: env.ADMIN_PSEUDO, ...newReview});
+                {id: '1f468dbf5082002118fc8821', username: env["ADMIN_PSEUDO"], ...newReview});
 
             expect(editedReview.message)
-                .to.equal(`${env.ADMIN_PSEUDO} doesn't have any reviews at the moment !`);
+                .to.equal(`${env["ADMIN_PSEUDO"]} doesn't have any reviews at the moment !`);
 
             await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: [
+                id: env["ADMIN_ID"], new: true, reviews: [
                     {"rating": 3, "reviewText": "This is the 3rd review !!!"}]
             });
         });
@@ -173,19 +171,19 @@ describe('REVIEW SERVICE', () => {
         it('can delete a review', async () => {
 
             await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: []
+                id: env["ADMIN_ID"], new: true, reviews: []
             });
 
             const {...newReview} = makeFakeReview();
 
             const createdReview = await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: [{...newReview}]
+                id: env["ADMIN_ID"], new: true, reviews: [{...newReview}]
             });
 
             const reviewId = (createdReview.reviews[0]._id).toString();
 
             const deletedReview = await reviewService.removeReview(
-                {id: reviewId, username: env.ADMIN_PSEUDO});
+                {id: reviewId, username: env["ADMIN_PSEUDO"]});
 
             expect(deletedReview.ancientDocument.reviews).not.to.be.empty;
             expect(reviewId).to.be.eql((deletedReview.ancientDocument.reviews[0]._id).toString());
@@ -193,7 +191,7 @@ describe('REVIEW SERVICE', () => {
             expect(deletedReview.ancientDocument.reviews[0].reviewText).to.be.eql(newReview.reviewText);
 
             await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: [
+                id: env["ADMIN_ID"], new: true, reviews: [
                     {"rating": 3, "reviewText": "This is the 3rd review !!!"}]
             });
         });
@@ -229,7 +227,7 @@ describe('REVIEW SERVICE', () => {
         it("can't delete a review given a wrong review id ", async () => {
 
             const editedReview = await reviewService.removeReview(
-                {id: '1f468dbf5082002118fc8821', username: env.ADMIN_PSEUDO});
+                {id: '1f468dbf5082002118fc8821', username: env["ADMIN_PSEUDO"]});
 
             expect(editedReview.message)
                 .to.equal('No was review found with provided id !');
@@ -238,17 +236,17 @@ describe('REVIEW SERVICE', () => {
         it("can't delete a review for a registered user with no reviews", async () => {
 
             await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: []
+                id: env["ADMIN_ID"], new: true, reviews: []
             });
 
             const deletedReview = await reviewService.removeReview(
-                {id: '1f468dbf5082002118fc8821', username: env.ADMIN_PSEUDO});
+                {id: '1f468dbf5082002118fc8821', username: env["ADMIN_PSEUDO"]});
 
             expect(deletedReview.message)
-                .to.equal(`${env.ADMIN_PSEUDO} doesn't have any reviews at the moment !`);
+                .to.equal(`${env["ADMIN_PSEUDO"]} doesn't have any reviews at the moment !`);
 
             await reviewRepository.save({
-                id: env.ADMIN_ID, new: true, reviews: [
+                id: env["ADMIN_ID"], new: true, reviews: [
                     {"rating": 3, "reviewText": "This is the 3rd review !!!"}]
             });
         });

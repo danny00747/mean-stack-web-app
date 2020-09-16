@@ -2,150 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test-reports/e2e/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-reports/integration/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-reports/unit/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/appBuilder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/services/reviewService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/services/reviewService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/fixtures/fakeReview.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/fixtures/fakeReview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/integration-tests/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/integration-tests/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/app.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/app.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/config/database.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/config/database.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/config/environment.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/config/environment.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/config/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/config/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/logsController.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/logsController.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/questionController.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/questionController.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/reviewController.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/reviewController.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/userController.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/controllers/userController.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/logs.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/logs.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/question.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/question.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/reviews.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/reviews.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/user.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/domain/user.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/errors.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/errors.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/express-callback.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/express-callback.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/required-parameter.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/required-parameter.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/sendMail.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/sendMail.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/sendMailTemplate.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/sendMailTemplate.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/validate-email.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/helpers/validate-email.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/models/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/models/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/models/logs.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/models/logs.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/models/questions.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/models/questions.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/models/users.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/models/users.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/logRepository.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/logRepository.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/questionRepository.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/questionRepository.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/reviewRepository.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/reviewRepository.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/tokenRepository.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/tokenRepository.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/userRepository.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/repository/userRepository.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/logs.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/logs.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/questions.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/questions.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/reviews.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/reviews.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/users.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/routes/users.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/email-key.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/email-key.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/grandAccess.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/grandAccess.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/jwt.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/jwt.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/passport.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/passport.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/password.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/password.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/roles.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/security/roles.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/logService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/logService.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/questionService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/questionService.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/reviewService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/reviewService.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/userService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/services/userService.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/fixtures/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/fixtures/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/fixtures/make2users.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/fixtures/make2users.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/fixtures/rbacTestWith2users.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/fixtures/rbacTestWith2users.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/integration-tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/integration-tests/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/integration-tests/questions.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/integration-tests/questions.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/integration-tests/reviews.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/integration-tests/reviews.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/integration-tests/users..js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/integration-tests/mean-stack-web-app/server-side/tests/integration-tests/users..js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/app.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/app.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/config/database.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/config/database.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/config/environment.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/config/environment.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/config/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/config/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/logsController.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/logsController.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/questionController.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/questionController.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/reviewController.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/reviewController.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/userController.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/controllers/userController.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/logs.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/logs.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/question.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/question.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/reviews.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/reviews.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/user.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/domain/user.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/errors.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/errors.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/express-callback.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/express-callback.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/required-parameter.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/required-parameter.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/sendMail.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/sendMail.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/sendMailTemplate.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/sendMailTemplate.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/validate-email.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/helpers/validate-email.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/models/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/models/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/models/logs.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/models/logs.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/models/questions.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/models/questions.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/models/users.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/models/users.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/logRepository.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/logRepository.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/questionRepository.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/questionRepository.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/reviewRepository.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/reviewRepository.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/tokenRepository.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/tokenRepository.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/userRepository.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/repository/userRepository.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/logs.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/logs.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/questions.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/questions.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/reviews.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/reviews.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/users.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/routes/users.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/email-key.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/email-key.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/grandAccess.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/grandAccess.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/jwt.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/jwt.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/passport.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/passport.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/password.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/password.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/roles.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/security/roles.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/logService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/logService.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/questionService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/questionService.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/reviewService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/reviewService.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/userService.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/services/userService.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeQuestion.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeQuestion.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeReview.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeReview.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeUser.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/fakeUser.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/fixtures/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/question.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/question.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/review.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/review.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/user.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/entities/user.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/review-service.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/review-service.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/user-service.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-coverage/unit-tests/mean-stack-web-app/server-side/tests/unit-tests/services/user-service.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-reports/e2e/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-reports/e2e/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-reports/integration/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-reports/integration/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-reports/integration/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-reports/integration/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-reports/light-house/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-reports/light-house/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-reports/unit/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-reports/unit/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-reports/unit/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-reports/unit/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mean-stack-web-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mean-stack-web-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/services/review-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/services/review-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/services/user-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/services/user-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,9 +22,7 @@
     <option name="done" value="true" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -176,9 +40,6 @@
   </component>
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../mean-stack-web-app\exportToHTML" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="mean-stack-web-app" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -209,7 +70,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
@@ -218,19 +78,21 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.14.1" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.12.59" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last.edited.regexp" value="dan@gmail.com" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/client-side/node_modules/protractor" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="nodejs_package_manager_path" value="$PROJECT_DIR$/../../../../Program Files/nodejs/node_modules/npm" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="ts.external.directory.path" value="C:\Users\morga\Documents\mean-stack-web-app\client-side\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -245,6 +107,17 @@
     </option>
   </component>
   <component name="RunManager" selected="npm.cover:unit:mocha">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2E Tests (client-side)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/client-side/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -346,14 +219,15 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.cover:unit:mocha" />
-        <item itemvalue="Mocha.USER ENTITY.#email.a user must have an email" />
         <item itemvalue="Mocha.Users./PATCH/:id/score.it should PATCH the user's score " />
+        <item itemvalue="Mocha.USER ENTITY.#email.a user must have an email" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.heroku-postbuild" />
+        <item itemvalue="npm.cover:unit:mocha" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -555,6 +429,8 @@
       <workItem from="1596762234470" duration="9783000" />
       <workItem from="1597679757902" duration="1381000" />
       <workItem from="1598726579763" duration="2945000" />
+      <workItem from="1600267793105" duration="718000" />
+      <workItem from="1600268822594" duration="25059000" />
     </task>
     <task id="LOCAL-00126" summary="working on angular grip api">
       <created>1586829461731</created>
@@ -903,20 +779,19 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -1032,10 +907,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="315" y="0" key="NewModule_or_Project.wizard/0.0.1280.689@0.0.1280.689" timestamp="1597680018537" />
-    <state x="79" y="0" key="SettingsEditor" timestamp="1596153423152">
+    <state x="79" y="0" key="SettingsEditor" timestamp="1600291267908">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1596153423152" />
+    <state x="79" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1600291267908" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1596764943896">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
