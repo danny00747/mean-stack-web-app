@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server-side/appBuilder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mean-stack-web-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mean-stack-web-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/services/review-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/services/review-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-side/tests/unit-tests/services/user-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/tests/unit-tests/services/user-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -430,7 +422,7 @@
       <workItem from="1597679757902" duration="1381000" />
       <workItem from="1598726579763" duration="2945000" />
       <workItem from="1600267793105" duration="718000" />
-      <workItem from="1600268822594" duration="25059000" />
+      <workItem from="1600268822594" duration="27136000" />
     </task>
     <task id="LOCAL-00126" summary="working on angular grip api">
       <created>1586829461731</created>

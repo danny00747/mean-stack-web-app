@@ -85,8 +85,9 @@ export default function appBuilder() {
         this.app.use('/server/api/', route.logsRoutes)
 
         this.app.use('/server/api/api-documentation', (req, res) => {
-            return res.sendFile(path.normalize('../docs/index.html'));
+            return res.sendFile(path.resolve('./docs/index.html'));
         });
+
         this.app.get('*', (req, res) => {
             return res.sendFile(path
                 .join(__dirname + '/public', 'dist', 'index.html'));
