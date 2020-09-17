@@ -23,16 +23,14 @@ export default function buildMakeUser(isValidEmail, hashedPassword, requiredPara
 
         if (typeof reviews !== 'object') throw new TypeError('Reviews must be an array');
 
-      //  if (!makeHash().match(/^\$2[aby]?\$\d{1,2}\$[.\/A-Za-z0-9]{53}$/)) throw new Error('Password not hashed !');
+        //  if (!makeHash().match(/^\$2[aby]?\$\d{1,2}\$[.\/A-Za-z0-9]{53}$/)) throw new Error('Password not hashed !');
 
-        const levelEnum = {
+        const levelEnum = Object.freeze({
             A1: "A1", A2: "A2", B1: "B1",
             B2: "B2", C1: "C1", C2: "C2"
-        };
-        Object.freeze(levelEnum);
+        });
 
-        const roleEnum = {ADMIN: "admin", TEACHER: "teacher", STUDENT: "student"};
-        Object.freeze(roleEnum);
+        const roleEnum = Object.freeze({ADMIN: "admin", TEACHER: "teacher", STUDENT: "student"});
 
         if (role !== roleEnum.ADMIN && role !== roleEnum.TEACHER &&
             role !== roleEnum.STUDENT) {

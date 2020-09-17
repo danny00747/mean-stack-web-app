@@ -1,15 +1,14 @@
-import express from 'express'
 import path from "path";
 import consola from "consola";
 import startDatabase from "./config/database";
 import {authenticateUser} from './security';
 
-export default function appBuilder() {
+export default function express_server(express) {
 
     this.app = express();
 
     /** @databaseInitiation
-     * Function to initiate the database
+     * Function to initiate the database connection
      * @returns {this} reference to the function it selt
      */
     this.initDatabase = () => {
@@ -56,7 +55,7 @@ export default function appBuilder() {
     }
 
     /** @passportConfiguration
-     * Function to configure passport libary
+     * Function to configure the passport libary
      * @returns {this} reference to the express app
      * @param passport
      */
@@ -74,20 +73,24 @@ export default function appBuilder() {
      */
     this.addRouting = route => {
 
+        /* homepage route */
         this.app.get('/', (req, res) => {
             return res.sendFile(path
                 .join(__dirname + '/public', 'dist', 'index.html'));
         });
 
+        /* API routes */
         this.app.use('/server/api/', route.usersRoutes)
         this.app.use('/server/api/', route.questionsRoutes)
         this.app.use('/server/api/', route.reviewsRoutes)
         this.app.use('/server/api/', route.logsRoutes)
 
+        /* API documentation route */
         this.app.use('/server/api/api-documentation', (req, res) => {
             return res.sendFile(path.resolve('./docs/index.html'));
         });
 
+        /* ANY route */
         this.app.get('*', (req, res) => {
             return res.sendFile(path
                 .join(__dirname + '/public', 'dist', 'index.html'));
@@ -121,7 +124,7 @@ export default function appBuilder() {
     }
 
     /** @errorHandler
-     * Method to handle erros of type 500
+     * Function to handle erros of type 500
      * @returns {this} return an error message with an http code
      */
     this.errorHandler = () => {

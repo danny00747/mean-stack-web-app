@@ -5,8 +5,6 @@ import env from './environment'
 
 const dbURL = `mongodb://${env["DB_HOST"]}/web_app`;
 
-//connect with the database NODE_ENV=test
-
 export default function startDatabase() {
 
     if (env.NODE_ENV === 'test' || env.NODE_ENV === 'dev') {

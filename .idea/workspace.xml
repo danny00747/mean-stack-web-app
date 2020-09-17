@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/.env.sample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/domain/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/domain/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-side/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -422,7 +426,7 @@
       <workItem from="1597679757902" duration="1381000" />
       <workItem from="1598726579763" duration="2945000" />
       <workItem from="1600267793105" duration="718000" />
-      <workItem from="1600268822594" duration="27136000" />
+      <workItem from="1600268822594" duration="30732000" />
     </task>
     <task id="LOCAL-00126" summary="working on angular grip api">
       <created>1586829461731</created>
