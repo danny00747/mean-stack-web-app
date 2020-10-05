@@ -5,7 +5,7 @@ WORKDIR /home/nodeApp
 
 # ---- Dependencies ----
 FROM base AS dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# Copy the package.json file
 COPY package.json .
 # install app dependencies including 'devDependencies'
 RUN npm install

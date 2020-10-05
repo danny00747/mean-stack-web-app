@@ -1,16 +1,13 @@
-version: '3.3'
+version: '3.7'
 
-  services:
-    postgres:
-      container_name: postgres
-      image: postgres:
-      restart: always
-      environment:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: danny
-        POSTGRES_DB: testing
-        PGDATA: /var/lib/postgresql/data/pgdata
-      ports:
-        - "5432:5432"
-      volumes:
-        - ./data/postgres/pgdata:/var/lib/postgresql/data/pgdata
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    env_file:
+      - .env.dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres/pgdata:/data/postgres/pgdata
