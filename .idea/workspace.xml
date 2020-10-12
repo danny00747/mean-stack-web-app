@@ -46,11 +46,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.env.dev" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/admin/components/all-users/all-users.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/admin/components/all-users/all-users.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/profile/profile.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/profile/profile.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/reviews/reviews.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/reviews/reviews.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/reviews/reviews.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/reviews/reviews.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/3rdpartylicenses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/5-es2015.61a1d0bcb229df04b212.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/5-es5.61a1d0bcb229df04b212.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/Mean-Stack-Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/email.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/email1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/emoji.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/exipired.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/invalid-key.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/no-profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/resend-email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/trophy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/verified.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/emoji.e7af79dc6a3d598d1835.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.674f50d287a8c48dc19b.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.912ec66d7572ff821749.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.af7ae505a9eed503f8b8.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.b06871f281fee6b241d6.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/fontawesome-webfont.fee66e712a8a08eef580.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.ae7e43c191ecf1b5fde0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.ae7e43c191ecf1b5fde0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/polyfills-es2015.5b10b8fd823b6392f1fd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/polyfills-es5.3e8196928d184a6e5319.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/runtime-es2015.be0a0fc985feb5bcd808.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/runtime-es5.be0a0fc985feb5bcd808.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/scripts.23aa742c21d8986e2732.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/styles.00eef741aecaa1742a2a.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -459,6 +505,14 @@
       <workItem from="1601816671767" duration="3301000" />
       <workItem from="1601828324881" duration="1791000" />
       <workItem from="1601839381972" duration="1056000" />
+      <workItem from="1601925704335" duration="10352000" />
+      <workItem from="1602000948421" duration="133000" />
+      <workItem from="1602028738735" duration="3574000" />
+      <workItem from="1602082164366" duration="183000" />
+      <workItem from="1602088029464" duration="1714000" />
+      <workItem from="1602094577953" duration="646000" />
+      <workItem from="1602096106291" duration="612000" />
+      <workItem from="1602545071388" duration="731000" />
     </task>
     <task id="LOCAL-00126" summary="working on angular grip api">
       <created>1586829461731</created>
