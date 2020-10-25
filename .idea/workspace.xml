@@ -46,14 +46,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05bdb945-85d8-4a5d-aea5-09310512b609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client-side/src/assets/img/c1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/assets/img/c2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-side/src/assets/img/c3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/61e1c462-0f20-4182-8ae0-3ab3be0b26aa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/61e1c462-0f20-4182-8ae0-3ab3be0b26aa.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/61e1c462-0f20-4182-8ae0-3ab3be0b26aa/storage_v2/_src_/database/kots.41IyAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/61e1c462-0f20-4182-8ae0-3ab3be0b26aa/storage_v2/_src_/database/kots.41IyAA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/core/components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/components/footer/footer.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-side/src/app/core/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/core/components/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-side/src/app/features/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/features/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/app/shared/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/src/app/shared/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/assets/img/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/assets/img/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/src/assets/img/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/assets/img/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/public/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es2015.386b3dff9a0284cc6983.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/public/dist/main-es5.386b3dff9a0284cc6983.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -477,7 +482,7 @@
       <workItem from="1602718421264" duration="1206000" />
       <workItem from="1602720294731" duration="1232000" />
       <workItem from="1602968006341" duration="470000" />
-      <workItem from="1603658077237" duration="685000" />
+      <workItem from="1603658077237" duration="1767000" />
     </task>
     <task id="LOCAL-00126" summary="working on angular grip api">
       <created>1586829461731</created>
