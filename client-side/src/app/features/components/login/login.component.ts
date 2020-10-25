@@ -84,7 +84,8 @@ export class LoginComponent implements OnInit {
   }
 
   sessionExpired(token: string) {
-    const expirationDate = new JwtHelperService().getTokenExpirationDate(token).getTime();
+    const expirationDate = new JwtHelperService()
+      .getTokenExpirationDate(token).getTime();
     const sessionExpired = expirationDate - this.timeLoggedIn;
     setTimeout(() => {
       this.authService.logout();
