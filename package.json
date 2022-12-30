@@ -57,7 +57,7 @@
     "express-request-id": "^1.4.1",
     "helmet": "^3.22.0",
     "jsonwebtoken": "^8.5.1",
-    "mocha": "^7.1.2",
+    "mocha": "^10.2.0",
     "mochawesome": "^6.1.1",
     "mongoose": "^5.9.3",
     "mongoose-unique-validator": "^2.0.3",
